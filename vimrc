@@ -105,8 +105,12 @@ set <A-B>=B
 set <A-w>=w
 set <A-W>=W
 set <A-v>=v
+set <A-V>=V
 set <A-i>=i
 set <A-a>=a
+set <A-m>=m
+set <A-M>=M
+set <A-`>=`
 
 " ======= PLUGIN MAPPINGS =======
 " Sneak-f
@@ -115,8 +119,8 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 " Sneak ,;
-map , <Plug>Sneak_;
-map ; <Plug>Sneak_,
+" map , <Plug>Sneak_;
+" map ; <Plug>Sneak_,
 " Align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -134,6 +138,7 @@ noremap <C-s> :w<CR>
 noremap! <C-s> <Esc>:w<CR>
 " Ctrl-F to search
 noremap <C-f> /
+noremap <C-h> :%s/
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
@@ -149,12 +154,16 @@ nnoremap <A-K> yyP
 " Joining lines without taking J
 nnoremap <C-j> J
 nnoremap g<C-j> gJ
-" Adding lines and line breaks
+" Adding spaces, lines and line breaks
+nnoremap <Leader>i i<Space><Esc>l
+nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
 nnoremap <Leader>O m`O<Esc>0D``
 nnoremap <Leader><CR> cl<CR><Esc>
 " Quick q macro
 nnoremap Q @q
+" Quick m marker
+nnoremap M `m
 " Paste last yank
 nnoremap <Leader>p "0p
 nnoremap <Leader>P "0P
@@ -178,13 +187,16 @@ vnoremap ñ <Esc>
 vnoremap j gj
 vnoremap k gk
 " HJKL: 10-fold j/k & Beginning/end of line
-vnoremap J 10gjzz
-vnoremap K 10gkzz
+vnoremap J 10gj
+vnoremap K 10gk
 vnoremap H ^
 vnoremap L $h
 " Moving multiple lines
 vnoremap <A-j> dpgv`[o`]
 vnoremap <A-k> dkPgv`[o`]
+" Pasting last yank on top of selection
+nnoremap <Leader>p "0p
+nnoremap <Leader>P "0P
 
 " ======= INSERT MODE MAPPINGS =======
 " Insert easy exit
@@ -192,13 +204,18 @@ inoremap kj <Esc>
 inoremap KJ <Esc>
 " Line-enders
 inoremap ;; <C-o>$;
-" Newline up
+" Newlines
 inoremap <S-CR> <Esc>O
+inoremap <A-o> <Esc>o
+inoremap <A-O> <Esc>O
 " hjkl moving
 inoremap <A-h> <C-o>h
 inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>l
+" Quick markers
+inoremap <A-m> <C-o>m`
+inoremap <A-`> <C-o>``
 " Beginning/end of line moving
 inoremap <A-i> <C-o>^
 inoremap <A-a> <Esc>A
