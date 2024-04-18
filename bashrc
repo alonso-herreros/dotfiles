@@ -1,3 +1,5 @@
+export LANG=en_US.utf8
+
 PATH="$HOME/.local/bin:$PATH"
 
 function detach(){
