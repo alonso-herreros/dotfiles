@@ -2,6 +2,12 @@ source $VIMRUNTIME/defaults.vim
 language en_US.utf8
 filetype plugin indent on
 
+" Install vim-plug if needed
+if empty(glob("~/.vim/autoload/plug.vim"))
+  silent! execute '!curl --create-dirs -fsSLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * silent! PlugInstall
+endif
+
 call plug#begin()
 Plug 'tomasiser/vim-code-dark'
 Plug 'preservim/vim-indent-guides'
