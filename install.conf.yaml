@@ -10,6 +10,7 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.gitignore_global: gitignore_global
+    ~/.config/synth-shell: synth-shell
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
