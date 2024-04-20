@@ -38,3 +38,7 @@ fi
 
 eval "$(zoxide init bash --cmd cd)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f ~/.bashrc_local ]; then
+    source ~/.bashrc_local
+fi
