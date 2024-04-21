@@ -19,4 +19,6 @@ eval "$(zoxide init bash --cmd cd)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+[ -f ~/.config/alias.sh ] && source ~/.config/alias.sh
+
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
