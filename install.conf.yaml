@@ -7,7 +7,7 @@
 
 - link:
     ~/.bashrc: bashrc
-    ~/.vim: vim
+    # ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.gitignore_global: gitignore_global
     ~/.config/synth-shell: synth-shell
