@@ -17,3 +17,5 @@ function mkdircd() {
     cd ${@:1}
 }
 
+alias lsg="ls && echo ' ' && git status"
+
