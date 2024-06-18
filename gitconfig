@@ -1,0 +1,7 @@
+[user]
+	email = alonso.herreros.c@gmail.com
+	name = Alonso Herreros
+[core]
+    editor = vim
+    excludesFile = ~/.gitignore_global
+
