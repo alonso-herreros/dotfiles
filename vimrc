@@ -125,15 +125,18 @@ map F <Plug>Sneak_F
 map t <Plug>Sneak_t
 map T <Plug>Sneak_T
 " Sneak ,;
-" map , <Plug>Sneak_;
-" map ; <Plug>Sneak_,
+map , <Plug>Sneak_;
+map ; <Plug>Sneak_,
 " Align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 " Commentary with Ctrl+ç
 nmap  m`gcc``
+nmap <C-ç> m`gcc``
 vmap  gc
+vmap <C-ç> gc
 imap  <C-o>gcc
+imap <C-ç> <C-o>gcc
 " fzf Files with C-S-e
 nmap <C-E> :Files<CR>
 
@@ -144,7 +147,7 @@ noremap <C-s> :w<CR>
 noremap! <C-s> <Esc>:w<CR>
 " Ctrl-F to search
 noremap <C-f> /
-noremap <C-h> :%s/
+noremap <C-h> :%s/\v
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
@@ -231,6 +234,11 @@ inoremap <A-J> <C-o>vj
 inoremap <A-K> <C-o>vk
 inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
+
+" ======= COMMAND MODE MAPPINGS =======
+" Use very magic. Commands swapped because I use %s more.
+cnoremap s/ %s/\v
+cnoremap %s/ s/\v
 
 cnoreabbr tree NERDTree
 
