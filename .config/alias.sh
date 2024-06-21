@@ -18,4 +18,5 @@ function mkdircd() {
 }
 
 alias lsg="ls && echo ' ' && git status"
+alias fonts="fc-list"
 
