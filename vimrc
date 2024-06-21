@@ -33,6 +33,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'jasonccox/vim-wayland-clipboard'
+Plug 'chrisbra/Colorizer'
 call plug#end()
 
 set t_Co=256
@@ -173,9 +175,11 @@ nnoremap <Leader><CR> cl<CR><Esc>
 nnoremap Q @q
 " Quick m marker
 nnoremap M `m
-" Paste last yank
+" Yank and delete from yank register
 nnoremap <Leader>p "0p
 nnoremap <Leader>P "0P
+nnoremap <Leader>d "0d
+nnoremap <Leader>D "0D
 " Yank-to-end like C and D
 nnoremap Y y$
 " Redo with U
@@ -203,9 +207,11 @@ vnoremap L $h
 " Moving multiple lines
 vnoremap <A-j> dpgv`[o`]
 vnoremap <A-k> dkPgv`[o`]
-" Pasting last yank on top of selection
-nnoremap <Leader>p "0p
-nnoremap <Leader>P "0P
+" Yank and delete from yank register
+vnoremap <Leader>p "0p
+vnoremap <Leader>P "0P
+vnoremap <Leader>d "0d
+vnoremap <Leader>D "0D
 
 " ======= INSERT MODE MAPPINGS =======
 " Insert easy exit
