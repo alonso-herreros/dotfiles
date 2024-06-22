@@ -2,11 +2,11 @@ swipe:
   3:
     up:
       update:
-        command: "hyprctl dispatch workspace -1"
+        command: "hyprctl dispatch workspace +1"
         inteval: 4
     down:
       update:
-        command: "hyprctl dispatch workspace +1"
+        command: "hyprctl dispatch workspace -1"
         inteval: 4
     left:
       update:
