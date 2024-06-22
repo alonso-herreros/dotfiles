@@ -1,13 +1,9 @@
 swipe:
   3:
     up:
-      update:
-        command: "hyprctl dispatch workspace +1"
-        inteval: 4
+      command: "hyprctl dispatch workspace +1"
     down:
-      update:
-        command: "hyprctl dispatch workspace -1"
-        inteval: 4
+      command: "hyprctl dispatch workspace -1"
     left:
       update:
         command: "hyprctl dispatch sendshortcut CTRL, Tab, activewindow"
@@ -39,7 +35,7 @@ hold:
     command: "playerctl play-pause"
 
 rotate:
-  2:
+  3:
     clockwise:
       update:
         command: "pamixer -i 5"
@@ -48,7 +44,7 @@ rotate:
       update:
         command: "pamixer -d 5"
         interval: 0.5
-  3:
+  4:
     clockwise:
       update:
         command: "brightnessctl s 10%+"
