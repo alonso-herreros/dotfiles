@@ -17,6 +17,10 @@ function mkdircd() {
     cd ${@:1}
 }
 
+function ozone-wayland() {
+    ${@:1} --enable-features=UseOzonePlatform --ozone-platform=wayland
+}
+
 alias lsg="ls && echo ' ' && git status"
 alias fonts="fc-list"
 
