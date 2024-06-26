@@ -16,6 +16,7 @@
     ~/.config/kitty: .config/kitty
     ~/.config/hypr: .config/hypr
     ~/.config/fusuma: .config/fusuma
+    ~/.config/gh: .config/gh
 
     ~/.config/alias.sh: .config/alias.sh
     ~/.config/libinput-gestures.conf: .config/libinput-gestures.conf
