@@ -214,9 +214,14 @@ vnoremap <Leader>d "0d
 vnoremap <Leader>D "0D
 
 " ======= INSERT MODE MAPPINGS =======
-" Insert easy exit
+" Ctrl+backspace/delete
+inoremap <C-Backspace> <C-w>
+inoremap <C-Delete> <C-o>de
+" Easy exit, optionally saving
 inoremap kj <Esc>
 inoremap KJ <Esc>
+inoremap jk <Esc>:w<Return>
+inoremap JK <Esc>:w<Return>
 " Line-enders
 inoremap ;; <C-o>$;
 " Newlines
@@ -224,10 +229,10 @@ inoremap <S-CR> <Esc>O
 inoremap <A-o> <Esc>o
 inoremap <A-O> <Esc>O
 " hjkl moving
-inoremap <A-h> <C-o>h
-inoremap <A-j> <C-o>j
-inoremap <A-k> <C-o>k
-inoremap <A-l> <C-o>l
+inoremap <A-h> <Left>
+inoremap <A-j> <Down>
+inoremap <A-k> <Up>
+inoremap <A-l> <Right>
 " Quick markers
 inoremap <A-m> <C-o>m`
 inoremap <A-`> <C-o>``
