@@ -1,0 +1,254 @@
+@import "macchiato.css";
+@define-color burgundy #800020;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Serif CJK JP", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: @text;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+#waybar {
+    background-color: transparent;
+    border-radius: 10px;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+.modules-right,
+.modules-center,
+.modules-left {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+#mode {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+/* ====== GENERAL ====== */
+
+/* Groups and standalones */
+#timebat,
+#keyboard,
+#workspaces,
+#tray,
+#window,
+#load,
+#media,
+#audio,
+#status,
+#power {
+    background-color: @surface0;
+    border-radius: 100px;
+    padding: 0;
+    margin: 0 3px;
+}
+
+/* Modules */
+#clock,
+#battery,
+#power-profiles-daemon,
+#keyboard-icon,
+#keyboard-state,
+#language,
+#tray > *:not(menu),
+#window,
+#submap,
+#temperature,
+#cpu,
+#memory,
+#mpris,
+#custom-prevsong,
+#custom-nextsong,
+#network,
+#bluetooth,
+#pulseaudio {
+    border-radius: 100px;
+    padding: 0 10px;
+    margin: 0 1px;
+}
+
+/* Buttons */
+
+#idle_inhibitor,
+button {
+    border-radius: 100px;
+    padding: 0 5px;
+}
+#idle_inhibitor.activated,
+button.active { background-color: @surface1; }
+
+#idle_inhibitor:hover,
+button:hover { background: @surface2; }
+
+#idle_inhibitor:focus,
+button.focused { background-color: @lavender; }
+
+button.urgent { background-color: @red; }
+
+
+/* ====== SPECIFIC ====== */
+
+/* Time-battery group */
+#clock { color: @flamingo; }
+/* #clock:hover { background-color: @surface2; } */
+
+#battery {
+    color: @base;
+    background-color: @overlay1;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(@green, @green);
+}
+#battery._5, #battery._10, #battery._20 {
+    background-image: linear-gradient(@red, @red);
+}
+#battery._30, #battery._40 {
+    background-image: linear-gradient(@peach, @peach);
+}
+#battery._50, #battery._00 {
+    background-image: linear-gradient(@yellow, @yellow);
+}
+#battery.charging, #battery.plugged {
+    background-image: linear-gradient(@sapphire, @sapphire);
+}
+
+#battery._5 { background-size: 5% 100%; }
+#battery._10 { background-size: 10% 100%; }
+#battery._20 { background-size: 20% 100%; }
+#battery._30 { background-size: 30% 100%; }
+#battery._40 { background-size: 40% 100%; }
+#battery._50 { background-size: 50% 100%; }
+#battery._60 { background-size: 60% 100%; }
+#battery._70 { background-size: 70% 100%; }
+#battery._80 { background-size: 80% 100%; }
+#battery._90 { background-size: 90% 100%; }
+#battery._95 { background-size: 95% 100%; }
+#battery._100 { background-size: 100%; }
+
+/* Using steps() instead of linear to limit cpu usage */
+#battery._5:not(.charging) {
+    background-color: @red;
+    animation: 1s steps(20) blink infinite alternate;
+}
+#battery._10:not(.charging) {
+    background-color: @surface2;
+    animation: 5s steps(100) blink2 infinite alternate;
+}
+@keyframes blink2 {
+    0%   { color: @red; }
+    75%  { color: @red; }
+    80%  { color: white; }
+    85%  { color: red; }
+    90%  { color: white; }
+    95%  { color: red; }
+    100% { color: white; }
+}
+@keyframes blink {
+    0%   { color: @red; background-color: @surface2; }
+    80%  { color: @red; background-color: @surface2; }
+    90%  { color: @text; background-color: @burgundy; }
+    100% { color: @red; background-color: @surface2; }
+}
+
+#power-profiles-daemon { padding: 0 8px; }
+#power-profiles-daemon:hover { background-color: @surface2; }
+#power-profiles-daemon.power-saver { color: @green; }
+#power-profiles-daemon.balanced { color: @peach; }
+#power-profiles-daemon.performance { color: @sapphire; }
+
+
+/* Utils */
+#idle_inhibitor.activated { background-color: @surface1; }
+#idle_inhibitor:hover { background: @surface2; }
+#idle_inhibitor:focus { background-color: @lavender; }
+
+/* Keyboard */
+#language { padding: 0 8px; }
+#language:hover { background-color: @surface2; }
+
+#keyboard-state { padding: 0; }
+#keyboard-state * { color: @teal; }
+#keyboard-state .numlock { /* Round left */
+    border-radius: 0 100px 100px 0;
+    padding: 0 8px 0 5px;
+}
+#keyboard-state .capslock { /* Round right */
+    border-radius: 100px 0 0 100px;
+    padding: 0 7px 0 8px;
+}
+#keyboard-state .locked {
+    background-color: @teal;
+    color: @base;
+}
+
+/* Workspaces */
+#workspaces * {
+    color: @mauve;
+}
+
+/* Tray */
+#tray > *:not(menu) > * { padding: 0 5px; }
+#tray > .passive { background-color: @base; }
+#tray > .active { background-color: @surface0; }
+#tray > .needs-attention { background-color: @red; }
+#tray *:hover { background-color: @surface2; }
+#tray menu {
+    background: @base;
+    padding: 0;
+}
+#tray menu > menuitem {
+    padding: 3px 0;
+    border-radius: 5px;
+}
+#tray menu > menuitem > * {
+    font-family: Arial, sans-serif;
+    font-size: 9.7pt;
+}
+
+/* Window */
+#window { color: @rosewater; }
+
+/* Load */
+#temperature { color: @sky; }
+/* #cpu { */
+/*     color: @green; */
+/* } */
+/* #memory { */
+/*     color: @green; */
+/* } */
+
+/* Media */
+#mpris.stopped { padding: 0; }
+#mpris:hover { background-color: @surface2; }
+#custom-prevsong:hover, #custom-nextsong:hover { background-color: @surface2; }
+
+/* Status */
+#audio {
+    margin: 0;
+    padding: 0 6px;
+}
+#audio:hover {
+    background-color: @surface2;
+}
+#pulseaudio {
+    padding: 0 3px;
+    color: @maroon;
+}
+#pulseaudio.muted { color: @overlay0; }
+
+#bluetooth {
+    color: @blue;
+    letter-spacing: -3px;
+    padding: 0 4px;
+}
+#bluetooth.disabled, #bluetooth.off { color: @overlay0; }
+#bluetooth:hover { background-color: @surface2; }
+
+#network { color: @yellow; }
+#network.disconnected { color: @overlay0; }
+
