@@ -42,7 +42,7 @@
 #media,
 #audio,
 #status,
-#power {
+#session {
     background-color: @surface0;
     border-radius: 100px;
     padding: 0;
@@ -65,9 +65,10 @@
 #mpris,
 #custom-prevsong,
 #custom-nextsong,
-#network,
+#pulseaudio,
 #bluetooth,
-#pulseaudio {
+#network,
+#user {
     border-radius: 100px;
     padding: 0 10px;
     margin: 0 1px;
@@ -251,4 +252,6 @@ button.urgent { background-color: @red; }
 
 #network { color: @yellow; }
 #network.disconnected { color: @overlay0; }
+
+#user { padding: 0 2px; }
 

@@ -18,7 +18,7 @@
         "group/media",
         // "group/audio",
         "group/status",
-        "group/power"
+        "group/session"
     ],
 
     // Hyprland
@@ -344,14 +344,29 @@
         "tooltip-format-ethernet": "  {ifname}: {ipaddr}/{cidr} via {gwaddr}",
     },
 
-    "group/power": {
+    "group/session": {
         "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
         "modules": [
-            "power"
+            "user",
+            "user#info"
         ]
     },
     
-    "power": {
-
+    "user": {
+        "interval": 60,
+        "format": "",
+        "icon": true,
+        "height": 20,
+        "width": 20,
+        "open-on-click": false
+    },
+    "user#info": {
+        "interval": 60,
+        "format": " Uptime: {work_d} d {work_H}:{work_M}"
     }
+
 }
