@@ -320,28 +320,60 @@
         "modules": [
             // "group/backlight",
             "group/audio",
-            "bluetooth",
-            "network"
+            "group/bluetooth-group",
+            "group/network-group"
         ]
     },
 
+    "group/bluetooth-group": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200
+        },
+        "modules": [
+            "bluetooth",
+            "bluetooth#bt2"
+        ]
+    },
     "bluetooth": {
-        "format": "  ",
-        "format-connected": "··", //{num_connections}",
+        "format": "",
+        "format-connected": "··",
+        "tooltip-format": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "• {device_alias}",
+        "on-click": "~/.scripts/bluetooth-toggle",
+        // "on-click-right": "bluetoothctl"
+    },
+    "bluetooth#bt2": {
+        "format": "{num_connections}",
         "tooltip-format": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "on-click": "~/.scripts/bluetooth-toggle",
         // "on-click-right": "bluetoothctl"
     },
 
+
+    "group/network-group": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200
+        },
+        "modules": [
+            "network",
+            "network#nw2"
+        ]
+    },
     "network": {
-        "interval": 5,
+        "interval": 10,
         "format-wifi": " ",
         "format-ethernet": " ",
-        "format-alt": "{bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-linked": "{ifname} (No IP) ",
+        "format-alt": "{bandwidthDownBytes}  {bandwidthUpBytes}",
         "tooltip-format-wifi": "  {} ({frequency} GHz) {signalStrength}% | {signaldBm} dBm\n{ifname}: {ipaddr}/{cidr} via {gwaddr}",
-        "tooltip-format-ethernet": "  {ifname}: {ipaddr}/{cidr} via {gwaddr}",
+        "tooltip-format-ethernet": "  {ifname}: {ipaddr}/{cidr} via {gwaddr}"
+    },
+    "network#nw2": {
+        "interval": 10,
+        "format-wifi": "{}"
     },
 
     "group/session": {

@@ -40,13 +40,22 @@
 #window,
 #load,
 #media,
-#audio,
 #status,
+#audio,
+#bluetooth-group,
+#network-group,
 #session {
     background-color: @surface0;
     border-radius: 100px;
     padding: 0;
     margin: 0 3px;
+}
+
+/* Subgroups */
+#audio,
+#bluetooth-group,
+#network-group {
+    margin: 0;
 }
 
 /* Modules */
@@ -68,7 +77,10 @@
 #pulseaudio,
 #bluetooth,
 #network,
-#user {
+#user,
+#custom-poweroff,
+#custom-restart,
+#custom-hibernate {
     border-radius: 100px;
     padding: 0 10px;
     margin: 0 1px;
@@ -242,14 +254,20 @@ button.urgent { background-color: @red; }
 }
 #pulseaudio.muted { color: @overlay0; }
 
-#bluetooth {
+#bluetooth-group {
     color: @blue;
+    padding: 0 5px;
+}
+#bluetooth-group:hover { background-color: @surface2; }
+#bluetooth {
+    padding: 0 2px;
     letter-spacing: -3px;
-    padding: 0 4px;
 }
 #bluetooth.disabled, #bluetooth.off { color: @overlay0; }
-#bluetooth:hover { background-color: @surface2; }
 
+#network-group {
+
+}
 #network { color: @yellow; }
 #network.disconnected { color: @overlay0; }
 
