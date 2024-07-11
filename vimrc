@@ -150,6 +150,19 @@ noremap! <C-s> <Esc>:w<CR>
 " Ctrl-F to search
 noremap <C-f> /
 noremap <C-h> :%s/\v
+" Ctrl-A to select all
+noremap <C-a> <Esc>ggvG$
+" Increment and decrement
+noremap <C-+> <C-a>
+noremap <C-_> <C-x>
+" Yank to w register and clipboard
+noremap <Leader>y "wy:let @+ = @w<CR>
+noremap <Leader>Y "wY:let @+ = @w<CR>
+" Put and delete from yank register
+nnoremap <Leader>p "0p
+nnoremap <Leader>P "0P
+nnoremap <Leader>d "0d
+nnoremap <Leader>D "0D
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
@@ -175,11 +188,6 @@ nnoremap <Leader><CR> cl<CR><Esc>
 nnoremap Q @q
 " Quick m marker
 nnoremap M `m
-" Yank and delete from yank register
-nnoremap <Leader>p "0p
-nnoremap <Leader>P "0P
-nnoremap <Leader>d "0d
-nnoremap <Leader>D "0D
 " Yank-to-end like C and D
 nnoremap Y y$
 " Redo with U
@@ -207,11 +215,6 @@ vnoremap L $h
 " Moving multiple lines
 vnoremap <A-j> dpgv`[o`]
 vnoremap <A-k> dkPgv`[o`]
-" Yank and delete from yank register
-vnoremap <Leader>p "0p
-vnoremap <Leader>P "0P
-vnoremap <Leader>d "0d
-vnoremap <Leader>D "0D
 
 " ======= INSERT MODE MAPPINGS =======
 " Ctrl+backspace/delete
