@@ -78,12 +78,14 @@
 #bluetooth,
 #network,
 #user,
+#custom-lock,
+#custom-exit,
 #custom-poweroff,
 #custom-restart,
 #custom-hibernate {
     border-radius: 100px;
     padding: 0 10px;
-    margin: 0 1px;
+    margin: 0;
 }
 
 /* Buttons */
@@ -112,6 +114,7 @@ button.urgent { background-color: @red; }
 /* #clock:hover { background-color: @surface2; } */
 
 #battery {
+    margin: 0 1px;
     color: @base;
     background-color: @overlay1;
     background-repeat: no-repeat;
@@ -242,7 +245,6 @@ button.urgent { background-color: @red; }
 
 /* Status */
 #audio {
-    margin: 0;
     padding: 0 6px;
 }
 #audio:hover {
@@ -254,13 +256,11 @@ button.urgent { background-color: @red; }
 }
 #pulseaudio.muted { color: @overlay0; }
 
-#bluetooth-group {
-    color: @blue;
-    padding: 0 5px;
-}
+#bluetooth-group { padding: 0 5px; }
 #bluetooth-group:hover { background-color: @surface2; }
 #bluetooth {
     padding: 0 2px;
+    color: @blue;
     letter-spacing: -3px;
 }
 #bluetooth.disabled, #bluetooth.off { color: @overlay0; }
@@ -272,4 +272,18 @@ button.urgent { background-color: @red; }
 #network.disconnected { color: @overlay0; }
 
 #user { padding: 0 2px; }
+#custom-lock,
+#custom-exit,
+#custom-poweroff,
+#custom-hibernate,
+#custom-restart {
+    padding: 0 4px 0 6px;
+}
+#custom-lock:hover,
+#custom-exit:hover,
+#custom-poweroff:hover,
+#custom-hibernate:hover,
+#custom-restart:hover {
+    background-color: @surface2;
+}
 

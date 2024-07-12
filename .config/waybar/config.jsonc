@@ -355,6 +355,7 @@
     "group/network-group": {
         "orientation": "inherit",
         "drawer": {
+            "transition-left-to-right": false,
             "transition-duration": 200
         },
         "modules": [
@@ -384,21 +385,58 @@
         },
         "modules": [
             "user",
-            "user#info"
+            // "user#info"
+            "custom/restart",
+            "custom/hibernate",
+            "custom/poweroff",
+            "custom/lock",
+            "custom/exit",
         ]
     },
     
     "user": {
         "interval": 60,
         "format": "",
+        "tooltip-format": "{user}",
         "icon": true,
         "height": 20,
         "width": 20,
-        "open-on-click": false
+        "open-on-click": false,
+        "on-click-right": "hyprlock"
     },
-    "user#info": {
-        "interval": 60,
-        "format": " Uptime: {work_d} d {work_H}:{work_M}"
-    }
+    // "user#info": {
+    //     "interval": 60,
+    //     "format": " Uptime: {work_d} d {work_H}:{work_M}"
+    // },
+
+    "custom/exit": {
+        "format": " ",
+        "tooltip-format": "Exit session",
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": " ",
+        "tooltip-format": "Lock screen",
+        "on-click": "hyprlock"
+    },
+    "custom/poweroff": {
+        "format": " ",
+        "tooltip-format": "Power Off",
+        "on-click": "systemctl poweroff",
+        "on-click-right": "systemctl poweroff -i"
+    },
+    "custom/restart": {
+        "format": " ",
+        "tooltip-format": "Restart",
+        "on-click": "systemctl reboot -i",
+        "on-click-right": "systemctl reboot",
+        "on-click-middle": "systemctl soft-reboot -i"
+    },
+    "custom/hibernate": {
+        "format": " ",
+        "tooltip-format": "Hibernate",
+        "on-click": "hyprlock & sleep 0.5; systemctl hibernate",
+        "on-click-right": "hyprlock & sleep 0.5; systemctl hibernate -i"
+    },
 
 }
