@@ -1,5 +1,5 @@
 function detach(){
-    ${@:1} </dev/null &>/dev/null &
+    setsid ${@:1} >/dev/null 2>&1 < /dev/null &
 }
 
 function cdls() {

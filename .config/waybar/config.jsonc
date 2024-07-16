@@ -275,6 +275,16 @@
 //         "scroll-step": 0.2
 //     },
 
+    "group/status": {
+        "orientation": "inherit",
+        "modules": [
+            // "group/backlight",
+            "group/audio",
+            "group/bluetooth-group",
+            "group/network-group"
+        ]
+    },
+
     // Audio
     "group/audio": {
         "orientation": "inherit",
@@ -304,7 +314,6 @@
         "on-click": "pamixer -t",
         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
         "reverse-scrolling": true,
-        "scroll-step": 0.2
     },
     "pulseaudio#pa2": {
         "format": "{volume}%",
@@ -312,17 +321,6 @@
         "on-click": "pamixer -t",
         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
         "reverse-scrolling": true,
-        "scroll-step": 0.2
-    },
-
-    "group/status": {
-        "orientation": "inherit",
-        "modules": [
-            // "group/backlight",
-            "group/audio",
-            "group/bluetooth-group",
-            "group/network-group"
-        ]
     },
 
     "group/bluetooth-group": {
