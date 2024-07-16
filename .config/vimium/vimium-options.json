@@ -1,0 +1,25 @@
+{
+  "keyMappings": "unmapAll\n\nmap j scrollDown\nmap k scrollUp\nmap T Vomnibar.activateInNewTab\nmap b Vomnibar.activateBookmarks\nmap B Vomnibar.activateBookmarksInNewTab\nmap ñ LinkHints.activateMode\nmap Ñ LinkHints.activateModeToOpenInNewTab\nmap <A-ñ> LinkHints.activateMode action=hover\nmap i focusInput\nmap / enterFindMode\nmap , performFind\nmap ; performBackwardsFind\nmap <C-o> passNextKey\nmap <A-t> duplicateTab\nmap <A-v> enterVisualMode\nmap <A-h> previousTab\nmap <A-l> nextTab\nmap <A-k> goBack\nmap <A-j> goForward",
+  "linkHintCharacters": "sadfkjlewcmpghvn",
+  "scrollStepSize": 200,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\ng: https://www.google.com/search?q=%s Google\nd: https://drive.google.com/drive/search?q=%s Drive\nm: https://www.google.com/maps?q=%s Google maps\n\ny: https://www.youtube.com/results?search_query=%s Youtube\na: https://aniwave.to/filter?keyword=%s AniWave\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "settingsVersion": "2.1.2",
+  "exclusionRules": [
+    {
+      "passKeys": "qwertyuiopasdfghjklzxcvbnm*/?.,:;-+=[]{}",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "kjnpt?",
+      "pattern": "https?://calendar.google.com*"
+    },
+    {
+      "passKeys": "1234567890qwertyuiopasdfghjklzxcvbnm",
+      "pattern": "https?://drive.google.com*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://docs.google.com*"
+    }
+  ]
+}
