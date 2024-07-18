@@ -158,11 +158,11 @@ noremap <C-_> <C-x>
 " Yank to w register and clipboard
 noremap <Leader>y "wy:let @+ = @w<CR>
 noremap <Leader>Y "wY:let @+ = @w<CR>
-" Put and delete from yank register
-nnoremap <Leader>p "0p
-nnoremap <Leader>P "0P
-nnoremap <Leader>d "0d
-nnoremap <Leader>D "0D
+" Put and delete from/to yank register
+noremap <Leader>p "0p
+noremap <Leader>P "0P
+noremap <Leader>d "0d
+noremap <Leader>D "0D
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
