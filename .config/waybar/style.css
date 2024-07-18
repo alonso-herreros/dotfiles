@@ -104,7 +104,9 @@ button:hover { background: @surface2; }
 #idle_inhibitor:focus,
 button.focused { background-color: @lavender; }
 
-button.urgent { background-color: @red; }
+button.urgent {
+    background-color: @red;
+}
 
 
 /* ====== SPECIFIC ====== */
@@ -206,6 +208,7 @@ button.urgent { background-color: @red; }
 #workspaces * {
     color: @mauve;
 }
+#workspaces button.urgent * { color: @base; }
 
 /* Tray */
 #tray > *:not(menu) > * { padding: 0 5px; }
