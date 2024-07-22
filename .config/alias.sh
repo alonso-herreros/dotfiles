@@ -24,4 +24,6 @@ function ozone-wayland() {
 alias lsg="ls && echo ' ' && git status"
 alias fonts="fc-list"
 alias open="xdg-open"
+alias yay="yay --color=auto"
+alias btctl="bluetoothctl"
 
