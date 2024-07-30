@@ -342,6 +342,7 @@
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• ({device_battery_percentage}%) {device_alias}",
         "on-click": "~/.scripts/bluetooth-toggle",
+        "on-click-right": "~/.scripts/hyprland-kitty-btctl-top-right",
         // "on-click-right": "bluetoothctl"
     },
     "bluetooth#bt2": {
@@ -350,6 +351,7 @@
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• ({device_battery_percentage}%) {device_alias}",
         "on-click": "~/.scripts/bluetooth-toggle",
+        "on-click-right": "~/.scripts/hyprland-kitty-btctl-top-right",
         // "on-click-right": "bluetoothctl"
     },
 
