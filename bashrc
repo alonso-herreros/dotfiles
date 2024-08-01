@@ -2,10 +2,6 @@ export LANG=en_US.utf8
 
 PATH="$HOME/.local/bin:$PATH"
 
-function detach(){
-    ${@:1} </dev/null &>/dev/null &
-}
-
 ## synth-shell
 if [ -n "$( echo $- | grep i )" ]; then
     [ -f ~/.config/synth-shell/synth-shell-greeter.sh ] && source ~/.config/synth-shell/synth-shell-greeter.sh
