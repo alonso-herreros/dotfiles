@@ -23,4 +23,4 @@ eval "$(zoxide init bash --cmd cd)"
 
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
 
-eval `ssh-agent`
+eval `ssh-agent` > /dev/null
