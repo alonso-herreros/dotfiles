@@ -16,10 +16,10 @@ alias ss-greeter="source ~/.config/synth-shell/synth-shell-greeter.sh"
 
 eval "$(zoxide init bash --cmd cd)"
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash || eval "$(fzf --bash)"
 
 [ -f ~/.config/alias.sh ] && source ~/.config/alias.sh
 
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
 
-eval `ssh-agent` > /dev/null
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
