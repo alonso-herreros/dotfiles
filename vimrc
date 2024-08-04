@@ -147,6 +147,8 @@ nmap <C-E> :Files<CR>
 " Save with C-s
 noremap <C-s> :w<CR>
 noremap! <C-s> <Esc>:w<CR>
+noremap <C-A-s> :w !sudo tee %<CR>
+noremap! <C-A-s> :w !sudo tee %<CR>
 " Ctrl-F to search
 noremap <C-f> /
 noremap <C-h> :%s/\v
