@@ -6,16 +6,16 @@
     "modules-left": [
         "group/timebat",
         "group/keyboard",
-        "tray"
+        "group/media",
     ],
     "modules-center": [
+        "tray",
         "hyprland/workspaces",
         // "hyprland/window",
         "hyprland/submap"
     ],
     "modules-right": [
         "group/load",
-        "group/media",
         // "group/audio",
         "group/status",
         "group/session"
@@ -212,12 +212,13 @@
         "orientation": "inherit",
         "drawer": {
             "transition-duration": 200,
-            "transition-left-to-right": false
+            "transition-left-to-right": true
         },
         "modules": [
+            "mpris#track",
             "mpris",
             "custom/prevsong",
-            "custom/nextsong"
+            "custom/nextsong",
         ]
     },
 
@@ -230,7 +231,24 @@
             "paused": "",
             "stopped": "???"
         },
-        // "player-icons": { "spotify": "" }
+        "player-icons": { "spotify": "" }
+    },
+    "mpris#track": {
+        "format": "{player_icon} <i>{dynamic}</i>",
+        "format-paused": "{player_icon} ({dynamic})",
+        "tooltip-format": "{artist} - {title} | {album}",
+        "status-icons": {
+            "playing": "",
+            "paused": "",
+            "stopped": "???"
+        },
+        "dynamic-order": [ "title", "artist" ],
+        "dynamic-len": 40,
+        "player-icons": {
+            "spotify": "<span color='#2EF770'> </span>",
+            "brave": "<span color='#DB2A04'></span>",
+        },
+        "on-click-middle": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Raise"
     },
     "custom/prevsong": {
         "format": "",
