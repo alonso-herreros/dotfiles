@@ -346,7 +346,7 @@
         // "on-click-right": "bluetoothctl"
     },
     "bluetooth#bt2": {
-        "format": "{num_connections} ",
+        "format": "{num_connections}",
         "tooltip-format": "{device_enumerate} ",
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• ({device_battery_percentage}%) {device_alias}",
