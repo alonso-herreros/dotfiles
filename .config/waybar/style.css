@@ -242,7 +242,8 @@ button.urgent {
 /* } */
 
 /* Media */
-#mpris.stopped { padding: 0; }
+/* #mpris.stopped { padding: 0; } */
+#mpris.track.paused { color: @overlay2; }
 #mpris:hover { background-color: @surface2; }
 #custom-prevsong:hover, #custom-nextsong:hover { background-color: @surface2; }
 

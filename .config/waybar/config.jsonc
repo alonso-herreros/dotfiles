@@ -1,7 +1,7 @@
 {
     "margin" : "5 2 3",
     "position": "top",
-    "reload_style_on_change": true, // TODO: remove this
+    // "reload_style_on_change": true, // TODO: remove this
 
     "modules-left": [
         "group/timebat",
@@ -216,7 +216,7 @@
         },
         "modules": [
             "mpris#track",
-            "mpris",
+            // "mpris",
             "custom/prevsong",
             "custom/nextsong",
         ]
@@ -235,7 +235,7 @@
     },
     "mpris#track": {
         "format": "{player_icon} <i>{dynamic}</i>",
-        "format-paused": "{player_icon} ({dynamic})",
+        "format-paused": "{player_icon} {dynamic}",
         "tooltip-format": "{artist} - {title} | {album}",
         "status-icons": {
             "playing": "",
@@ -243,7 +243,7 @@
             "stopped": "???"
         },
         "dynamic-order": [ "title", "artist" ],
-        "dynamic-len": 40,
+        "dynamic-len": 35,
         "player-icons": {
             "spotify": "<span color='#2EF770'> </span>",
             "brave": "<span color='#DB2A04'></span>",
@@ -424,7 +424,7 @@
         "height": 20,
         "width": 20,
         "open-on-click": false,
-        "on-click-right": "hyprlock"
+        "on-click-right": "loginctl lock-session"
     },
     // "user#info": {
     //     "interval": 60,
@@ -439,7 +439,7 @@
     "custom/lock": {
         "format": " ",
         "tooltip-format": "Lock screen",
-        "on-click": "hyprlock"
+        "on-click": "loginctl lock-session"
     },
     "custom/poweroff": {
         "format": " ",
@@ -450,8 +450,8 @@
     "custom/restart": {
         "format": " ",
         "tooltip-format": "Restart",
-        "on-click": "systemctl reboot -i",
-        "on-click-right": "systemctl reboot",
+        "on-click": "systemctl reboot",
+        "on-click-right": "systemctl reboot -i",
         "on-click-middle": "systemctl soft-reboot -i"
     },
     "custom/hibernate": {
