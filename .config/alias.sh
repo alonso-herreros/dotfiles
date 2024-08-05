@@ -26,4 +26,6 @@ alias fonts="fc-list"
 alias open="xdg-open"
 alias yay="yay --color=auto"
 alias btctl="bluetoothctl"
+alias n="nnn"
+alias nn="nnn -n"
 

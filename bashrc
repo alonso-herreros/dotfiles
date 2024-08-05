@@ -23,3 +23,11 @@ eval "$(zoxide init bash --cmd cd)"
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
+# nnn options
+export EDITOR=vim
+export PAGER="less -Ri"
+export NNN_COLORS="#5251d0be;2341"
+export NNN_OPTS="cdADEHiQrRux"
+export NNN_TRASH=2
+
