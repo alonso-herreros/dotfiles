@@ -217,6 +217,11 @@ vnoremap L $h
 " Moving multiple lines
 vnoremap <A-j> dpgv`[o`]
 vnoremap <A-k> dkPgv`[o`]
+" Indenting while keeping selection
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+vnoremap > >gv
+vnoremap < <gv
 
 " ======= INSERT MODE MAPPINGS =======
 " Ctrl+backspace/delete
