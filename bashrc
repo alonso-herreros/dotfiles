@@ -27,8 +27,7 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 # nnn options
 export EDITOR=vim
 export PAGER="less -Ri"
-export NNN_COLORS="#5251d0be;2341"
-export NNN_OPTS="aAcdDEHiQrRux"
+export NNN_OPTS="aAcEGHiQrRux" # Must be compiled with O_GITSTATUS=1
 export NNN_TRASH=2
-export NNN_PLUG="v:-preview-tui"
+export NNN_PLUG="v:-preview-tui;s:-!git status;d:-!git diff"
 
