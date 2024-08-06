@@ -3,22 +3,18 @@
 // Don't know why, but this is the default 'custom' entry
 default partial
 xkb_symbols "types" {
-    name[Group1]="Default";
 };
 
 // Testing purposes.
 partial
 xkb_symbols "test" {
     // Closest thing to anything that already works
-    name[Group1]="Testing layer";
     key <AD03>	{ [  NoSymbol,   NoSymbol,   paragraph,	NoSymbol ]	};
 };
 
 // Custom layer to print greek letters using the 3rd level
 partial alphanumeric_keys
 xkb_symbols "altgreek" {
-    name[Group1]="AltGreek layer";
-
     key <AD01>	{[ NoSymbol,  NoSymbol, Greek_finalsmallsigma,  NoSymbol ]}; // ς Σ
     key <AD02>	{[ NoSymbol,  NoSymbol,      Greek_omega,    Greek_OMEGA ]}; // ω Ω
     key <AD03>	{[ NoSymbol,  NoSymbol,            U03F5,  Greek_EPSILON ]}; // ϵ Ε
@@ -52,16 +48,12 @@ xkb_symbols "altgreek" {
 
 partial alphanumeric_keys
 xkb_symbols "undead_except_spanish" {
-    name[Group1]="Undead non-spanish keys";
-
     key <AE04>  {[ NoSymbol,  NoSymbol,       asciitilde,       NoSymbol ]}; // ~
     key <AD11>  {[    grave, asciicircum,       NoSymbol,       NoSymbol ]}; // ` ^
 };
 
 partial alphanumeric_keys
 xkb_symbols "altmath" {
-    name[Group1]="Math symbols under AltGr";
-
     key <TLDE>  {[ NoSymbol,  NoSymbol,         NoSymbol,         degree ]}; // °
     key <AE01>  {[ NoSymbol,  NoSymbol,         NoSymbol,       integral ]}; // ∫
     key <AE02>  {[ NoSymbol,  NoSymbol,         NoSymbol,          U2200 ]}; // ∀
