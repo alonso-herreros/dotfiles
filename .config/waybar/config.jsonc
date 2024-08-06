@@ -197,16 +197,6 @@
         "tooltip-format": "{used} / {total} G RAM\n{swapUsed} / {swapTotal} G swap"
     },
 
-    // // Keyboard
-    // "group/keyboard": {
-    //     "orientation": "inherit",
-    //     "drawer": {
-    //         "transition-left-to-right": false
-    //     },
-    //     "modules": [
-    //     ]
-    // },
-
     // Media
     "group/media": {
         "orientation": "inherit",
