@@ -1,0 +1,8 @@
+// Add these lines under the '! option = symbols' section. If it doesn't exist, create it.
+
+  custom:types                   = +custom(types)
+  custom:test                    = +custom(test)
+  custom:altgreek                = +custom(altgreek)
+  custom:altmath                 = +custom(altmath)
+  custom:undead_except_spanish   = +custom(undead_except_spanish)
+

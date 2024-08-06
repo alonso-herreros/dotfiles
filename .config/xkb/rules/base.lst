@@ -1,0 +1,11 @@
+; Replace the 'custom' entries at the end of the file, under the '! option' section.
+; If the last section is not the '! option' section, find it and add these lines there.
+; If there's no such section, add a `! option` line and these lines under it.
+
+  custom               Miscellaneous options
+  custom:types         Use user-defined custom XKB types
+  custom:test          Option for testing
+  custom:altgreek      Greek alphabet using AltGr
+  custom:altmath       Math symbols under AltGr
+  custom:undead_except_spanish Make non-spanish keys not dead
+

@@ -1,0 +1,39 @@
+<!-- Replace the group that contains a configItem with <name>custom</name> with this tag -->
+<!-- If there's no such group, create one under the <optionList> group -->
+
+    <group allowMultipleSelection="true">
+      <configItem>
+        <name>custom</name>
+        <description>Miscellaneous options</description>
+      </configItem>
+      <option>
+        <configItem>
+          <name>custom:types</name>
+          <description>Use user-defined custom XKB types</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>custom:test</name>
+          <description>Option for testing</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>custom:altgreek</name>
+          <description>Greek alphabet using AltGr</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>custom:altmath</name>
+          <description>Math symbols under AltGr</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>custom:undead_except_spanish</name>
+          <description>Make non-spanish keys not dead</description>
+        </configItem>
+      </option>
+    </group>
