@@ -31,7 +31,7 @@
         },
         "sort-by-number": true,
         "persistent-workspaces": {
-            "*": 5, // 5 workspaces by default on every monitor
+            "*": 3, // 3 workspaces by default on every monitor
         }
     },
     // "hyprland/window": {
@@ -243,7 +243,7 @@
             "stopped": "???"
         },
         "dynamic-order": [ "title", "artist" ],
-        "dynamic-len": 35,
+        "dynamic-len": 39,
         "player-icons": {
             "spotify": "<span color='#2EF770'> </span>",
             "brave": "<span color='#DB2A04'></span>",
