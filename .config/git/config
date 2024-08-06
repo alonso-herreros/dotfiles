@@ -1,7 +1,44 @@
 [user]
 	email = alonso.herreros.c@gmail.com
 	name = Alonso Herreros
+
 [core]
     editor = vim
+    pager = less -x5,9
     excludesFile = $XDG_CONFIG_HOME/git/gitignore
+
+[alias]
+    a = add
+	s = status
+    c = commit
+
+[init]
+    defaultBranch = main
+
+[status]
+    submoduleSummary = true
+
+[push]
+    autoSetupRemote = true
+
+[pull]
+    ff = only
+
+[diff]
+    algorithm = histogram
+    colorMoved = default
+    submodule = log
+
+[merge]
+    conflictstyle = zdiff3
+
+[submodule]
+    recurse = true
+
+[help]
+    autocorrect = prompt
+
+[url "git@github.com"]
+    pushInsteadOf = "https://github.com/"
+    insteadOf = "gh"
 
