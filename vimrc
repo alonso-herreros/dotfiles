@@ -145,10 +145,10 @@ nmap <C-E> :Files<CR>
 
 " ======= GENERAL MAPPINGS =======
 " Save with C-s, sudo save with C-A-s
-noremap <C-s> :w<CR>
-noremap <C-A-s> :w!!<CR>
-noremap! <C-s> <Esc>:w<CR>
-noremap! <C-A-s> <Esc>:w!!<CR>
+map <C-s> :w<CR>
+map! <C-s> <Esc>:w<CR>
+map <C-A-s> :w!!<CR>
+map! <C-A-s> <Esc>:w!!<CR>
 " Ctrl-F to search
 noremap <C-f> /
 noremap <C-h> :%s/\v
@@ -275,7 +275,7 @@ inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
 
 " ======= COMMAND MODE MAPPINGS =======
-" Sudo write. Recursive so i can use it in other mappings
+" Sudo write
 cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Use very magic. Commands swapped because I use %s more.
