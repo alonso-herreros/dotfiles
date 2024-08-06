@@ -147,8 +147,9 @@ nmap <C-E> :Files<CR>
 " Save with C-s
 noremap <C-s> :w<CR>
 noremap! <C-s> <Esc>:w<CR>
-noremap <C-A-s> :w !sudo tee %<CR>
-noremap! <C-A-s> :w !sudo tee %<CR>
+" Sudo save with C-A-s
+noremap <C-A-s> :w!!
+noremap! <C-A-s> <Esc>:w!!
 " Ctrl-F to search
 noremap <C-f> /
 noremap <C-h> :%s/\v
@@ -158,13 +159,20 @@ noremap <C-a> <Esc>ggvG$
 noremap <C-+> <C-a>
 noremap <C-_> <C-x>
 " Yank to w register and clipboard
-noremap <Leader>y "wy:let @+ = @w<CR>
-noremap <Leader>Y "wY:let @+ = @w<CR>
+map <Leader>y "+y
+map <Leader>Y "+Y
 " Put and delete from/to yank register
 noremap <Leader>p "0p
 noremap <Leader>P "0P
 noremap <Leader>d "0d
 noremap <Leader>D "0D
+" Quick use: q macro and m marker
+nnoremap Q @q
+nnoremap M `m
+" Yank-to-end like C and D
+nnoremap Y y$
+" Redo with U
+nnoremap U <C-r>
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
@@ -186,14 +194,6 @@ nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
 nnoremap <Leader>O m`O<Esc>0D``
 nnoremap <Leader><CR> cl<CR><Esc>
-" Quick q macro
-nnoremap Q @q
-" Quick m marker
-nnoremap M `m
-" Yank-to-end like C and D
-nnoremap Y y$
-" Redo with U
-nnoremap U <C-r>
 " Tabs with Tab
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
@@ -257,9 +257,16 @@ inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
 
 " ======= COMMAND MODE MAPPINGS =======
+" Sudo write. Recursive so i can use it in other mappings
+cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
 " Use very magic. Commands swapped because I use %s more.
-cnoremap s/ %s/\v
-cnoremap %s/ s/\v
+" UPDATE: cnoremap breaks shit because 's/' is replaced everywhere,
+" including paths
+" cnoremap s/ %s/\v
+" cnoremap %s/ s/\v
+command! -nargs=1 S %s/\v<args>
 
 cnoreabbr tree NERDTree
+
 
