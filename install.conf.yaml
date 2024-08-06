@@ -26,5 +26,7 @@
 
     ~/.scripts: .scripts
 
+    ~/.ssh/config: private/.ssh/config
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
