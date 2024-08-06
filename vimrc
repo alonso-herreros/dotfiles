@@ -144,12 +144,11 @@ nmap <C-E> :Files<CR>
 
 
 " ======= GENERAL MAPPINGS =======
-" Save with C-s
+" Save with C-s, sudo save with C-A-s
 noremap <C-s> :w<CR>
+noremap <C-A-s> :w!!<CR>
 noremap! <C-s> <Esc>:w<CR>
-" Sudo save with C-A-s
-noremap <C-A-s> :w!!
-noremap! <C-A-s> <Esc>:w!!
+noremap! <C-A-s> <Esc>:w!!<CR>
 " Ctrl-F to search
 noremap <C-f> /
 noremap <C-h> :%s/\v
@@ -162,17 +161,31 @@ noremap <C-_> <C-x>
 map <Leader>y "+y
 map <Leader>Y "+Y
 " Put and delete from/to yank register
-noremap <Leader>p "0p
-noremap <Leader>P "0P
-noremap <Leader>d "0d
-noremap <Leader>D "0D
+map <Leader>p "0p
+map <Leader>P "0P
+map <Leader>d "0d
+map <Leader>D "0D
 " Quick use: q macro and m marker
-nnoremap Q @q
-nnoremap M `m
+noremap Q @q
+noremap M `m
 " Yank-to-end like C and D
-nnoremap Y y$
+noremap Y y$
 " Redo with U
-nnoremap U <C-r>
+noremap U <C-r>
+" Tab moving with Alt+h/l (matching my vimium config)
+noremap <A-l> gt
+noremap <A-h> gT
+noremap! <A-l> gt
+noremap! <A-h> gT
+" Split moving with C-A-hjkl (not used enough to need C-hjkl)
+noremap <C-A-h> <C-w>h
+noremap <C-A-j> <C-w>j
+noremap <C-A-k> <C-w>k
+noremap <C-A-l> <C-w>l
+noremap! <C-A-h> <C-w>h
+noremap! <C-A-j> <C-w>j
+noremap! <C-A-k> <C-w>k
+noremap! <C-A-l> <C-w>l
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
@@ -188,6 +201,11 @@ nnoremap <A-K> yyP
 " Joining lines without taking J
 nnoremap <C-j> J
 nnoremap g<C-j> gJ
+" Save/quit with leader->key
+nnoremap <Leader>q :q!<CR>
+nnoremap <Leader>z :wq<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>W :w!!<CR>
 " Adding spaces, lines and line breaks
 nnoremap <Leader>i i<Space><Esc>l
 nnoremap <Leader>a a<Space><Esc>h
