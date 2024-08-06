@@ -3,5 +3,5 @@
 	name = Alonso Herreros
 [core]
     editor = vim
-    excludesFile = ~/.gitignore_global
+    excludesFile = $XDG_CONFIG_HOME/git/gitignore
 

@@ -9,9 +9,8 @@
     ~/.bashrc: bashrc
     # ~/.vim: vim
     ~/.vimrc: vimrc
-    ~/.gitignore_global: gitignore_global
-    ~/.gitconfig: gitconfig
 
+    ~/.config/git: .config/git
     ~/.config/synth-shell: .config/synth-shell
     ~/.config/kitty: .config/kitty
     ~/.config/hypr: .config/hypr
