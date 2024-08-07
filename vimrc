@@ -177,15 +177,22 @@ noremap <A-l> gt
 noremap <A-h> gT
 noremap! <A-l> gt
 noremap! <A-h> gT
-" Split moving with C-A-hjkl (not used enough to need C-hjkl)
+" Split manipulation with Ctrl+Alt+key (Not used enough to need Ctrl+key)
 noremap <C-A-h> <C-w>h
 noremap <C-A-j> <C-w>j
 noremap <C-A-k> <C-w>k
 noremap <C-A-l> <C-w>l
+noremap <C-A-LT> <C-w><LT>
+" noremap <C-A->> <C-w>> (doesn't work, switch split and use the above)
+noremap <C-A-+> <C-w>+
+noremap <C-A-_> <C-w>-
 noremap! <C-A-h> <C-w>h
 noremap! <C-A-j> <C-w>j
 noremap! <C-A-k> <C-w>k
 noremap! <C-A-l> <C-w>l
+noremap! <C-A-LT> <C-w><LT>
+noremap! <C-A-+> <C-w>+
+noremap! <C-A-_> <C-w>-
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
