@@ -219,9 +219,9 @@ nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
 nnoremap <Leader>O m`O<Esc>0D``
 nnoremap <Leader><CR> cl<CR><Esc>
-" Tabs with Tab
-nnoremap <Tab> gt
-nnoremap <S-Tab> gT
+" Buffers with Tab. Tabs are on Alt-h/l
+nnoremap <Tab> :bn<CR>
+nnoremap <S-Tab> :bN<CR>
 
 " ======= OP-PENDING MODE MAPPINGS =======
 " Beginning/end of line with H/L
