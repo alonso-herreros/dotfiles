@@ -208,20 +208,20 @@ nnoremap <A-K> yyP
 " Joining lines without taking J
 nnoremap <C-j> J
 nnoremap g<C-j> gJ
-" Save/quit with leader->key
-nnoremap <Leader>q :q!<CR>
-nnoremap <Leader>z :wq<CR>
-nnoremap <Leader>w :w<CR>
-nnoremap <Leader>W :w!!<CR>
 " Adding spaces, lines and line breaks
 nnoremap <Leader>i i<Space><Esc>l
 nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
 nnoremap <Leader>O m`O<Esc>0D``
 nnoremap <Leader><CR> cl<CR><Esc>
+" Save/quit with leader->key
+nmap <Leader>q :q!<CR>
+nmap <Leader>z :wq<CR>
+nmap <Leader>w :w<CR>
+nmap <Leader>W :w!!<CR>
 " Buffers with Tab. Tabs are on Alt-h/l
-nnoremap <Tab> :bn<CR>
-nnoremap <S-Tab> :bN<CR>
+nmap <Tab> :bn<CR>
+nmap <S-Tab> :bN<CR>
 
 " ======= OP-PENDING MODE MAPPINGS =======
 " Beginning/end of line with H/L
