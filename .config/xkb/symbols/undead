@@ -1,0 +1,8 @@
+// Layers to remove/specify dead keys
+
+partial alphanumeric_keys
+xkb_symbols "es_only" {
+    key <AE04>  {[ NoSymbol,  NoSymbol,       asciitilde,       NoSymbol ]}; // ~
+    key <AD11>  {[    grave, asciicircum,       NoSymbol,       NoSymbol ]}; // ` ^
+};
+

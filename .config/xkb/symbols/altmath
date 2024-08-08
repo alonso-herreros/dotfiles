@@ -1,0 +1,48 @@
+// Custom layer to print math symbols using the 3rd level
+
+default partial alphanumeric_keys
+xkb_symbols "basic" {
+    key <TLDE>  {[ NoSymbol,  NoSymbol,         NoSymbol,         degree ]}; // °
+    key <AE01>  {[ NoSymbol,  NoSymbol,         NoSymbol,       integral ]}; // ∫
+    key <AE02>  {[ NoSymbol,  NoSymbol,         NoSymbol,          U2200 ]}; // ∀
+    key <AE03>  {[ NoSymbol,  NoSymbol,         NoSymbol, periodcentered ]}; // ·
+    key <AE04>  {[ NoSymbol,  NoSymbol,         NoSymbol,     logicaland ]}; // ∧
+    key <AE05>  {[ NoSymbol,  NoSymbol,         NoSymbol,      logicalor ]}; // ∨
+    key <AE06>  {[ NoSymbol,  NoSymbol,         NoSymbol,       NoSymbol ]}; // 
+    key <AE07>  {[ NoSymbol,  NoSymbol,       squareroot,       NoSymbol ]}; // √
+    key <AE08>  {[ NoSymbol,  NoSymbol,         infinity,       NoSymbol ]}; // ∞
+    key <AE09>  {[ NoSymbol,  NoSymbol, partialderivative,         nabla ]}; // ∂ ∇
+    key <AE10>  {[ NoSymbol,  NoSymbol,         approxeq,       notequal ]}; // ≈ ≠
+    key <AE11>  {[ NoSymbol,  NoSymbol,          minutes,       NoSymbol ]}; // ′
+    key <AE12>  {[ NoSymbol,  NoSymbol,         emptyset,       NoSymbol ]}; // ∅
+
+    key <AD11>  {[ NoSymbol,  NoSymbol,         NoSymbol,       NoSymbol ]}; // 
+    key <AD12>  {[ NoSymbol,  NoSymbol,         NoSymbol,       multiply ]}; // ×
+
+    key <AC10>  {[ NoSymbol,  NoSymbol,          implies,       ifonlyif ]}; // ⇒ ⇔
+    key <AC11>  {[ NoSymbol,  NoSymbol,       NoSymbol, leftanglebracket ]}; // ⟨
+    key <BKSL>  {[ NoSymbol,  NoSymbol,      NoSymbol, rightanglebracket ]}; // ⟩
+
+    key <LSGT>  {[ NoSymbol,  NoSymbol,  lessthanequal, greaterthanequal ]}; // ≤ ≥
+
+    key <AB08>  {[ NoSymbol,  NoSymbol,     NoSymbol, enfilledcircbullet ]}; // •
+    key <AB09>  {[ NoSymbol,  NoSymbol,         NoSymbol,       ellipsis ]}; // …
+    key <AB10>  {[ NoSymbol,  NoSymbol,           endash,         emdash ]}; // – —
+
+    include "altmath(sub_comma)"
+    include "altmath(sup_dot)"
+}
+
+
+// Superscript dead key at AltGr+,
+default partial alphanumeric_keys
+xkb_symbols "sub_comma" {
+    key <AB08>  {[ NoSymbol,  NoSymbol,     dead_lowline,       NoSymbol ]}; // •
+};
+
+// Subscript dead key at AltGr+.
+default partial alphanumeric_keys
+xkb_symbols "sup_dot" {
+    key <AB09>  {[ NoSymbol,  NoSymbol,  dead_circumflex,       NoSymbol ]}; // …
+};
+

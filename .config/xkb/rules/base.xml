@@ -1,6 +1,54 @@
 <!-- Replace the group that contains a configItem with <name>custom</name> with this tag -->
 <!-- If there's no such group, create one under the <optionList> group -->
 
+    <group allowMultipleSelection="false">
+      <option>
+        <configItem>
+          <name>altgreek</name>
+          <description>Access the greek alphabet using AltGr</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>altgreek:mathvar</name>
+          <description>Letter variants that are more common in math</description>
+        </configItem>
+      </option>
+    </group>
+    <group allowMultipleSelection="false">
+      <option>
+        <configItem>
+          <name>altmath</name>
+          <description>Access math symbols using AltGr</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>altmath:sub_comma</name>
+          <description>Superscript dead key at AltGr+,</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>altmath:sup_dot</name>
+          <description>Subscript dead key at AltGr+.</description>
+        </configItem>
+      </option>
+    </group>
+    <group allowMultipleSelection="true">
+      <option>
+        <configItem>
+          <name>undead</name>
+          <description>Layers to remove or specify dead keys</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>undead:es_only</name>
+          <description>Make non-spanish keys not dead</description>
+        </configItem>
+      </option>
+    </group>
     <group allowMultipleSelection="true">
       <configItem>
         <name>custom</name>
@@ -16,24 +64,6 @@
         <configItem>
           <name>custom:test</name>
           <description>Option for testing</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>custom:altgreek</name>
-          <description>Greek alphabet using AltGr</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>custom:altmath</name>
-          <description>Math symbols under AltGr</description>
-        </configItem>
-      </option>
-      <option>
-        <configItem>
-          <name>custom:undead_except_spanish</name>
-          <description>Make non-spanish keys not dead</description>
         </configItem>
       </option>
     </group>

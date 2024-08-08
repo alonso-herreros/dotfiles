@@ -1,11 +1,10 @@
 // Custom layer to print greek letters using the 3rd level
+
 default partial alphanumeric_keys
 xkb_symbols "basic" {
-    name[Group1]="AltGreek layer";
-
     key <AD01>	{[ NoSymbol,  NoSymbol, Greek_finalsmallsigma,  NoSymbol ]}; // ς Σ
     key <AD02>	{[ NoSymbol,  NoSymbol,      Greek_omega,    Greek_OMEGA ]}; // ω Ω
-    key <AD03>	{[ NoSymbol,  NoSymbol,            U03F5,  Greek_EPSILON ]}; // ϵ Ε
+    key <AD03>	{[ NoSymbol,  NoSymbol,    Greek_epsilon,  Greek_EPSILON ]}; // _ Ε
     key <AD04>	{[ NoSymbol,  NoSymbol,        Greek_rho,      Greek_RHO ]}; // ρ Ρ
     key <AD05>	{[ NoSymbol,  NoSymbol,        Greek_tau,      Greek_TAU ]}; // τ Τ
     key <AD06>	{[ NoSymbol,  NoSymbol,    Greek_upsilon,  Greek_UPSILON ]}; // υ Υ
@@ -17,7 +16,7 @@ xkb_symbols "basic" {
     key <AC01>	{[ NoSymbol,  NoSymbol,      Greek_alpha,    Greek_ALPHA ]}; // α Α
     key <AC02>	{[ NoSymbol,  NoSymbol,      Greek_sigma,    Greek_SIGMA ]}; // σ Σ
     key <AC03>	{[ NoSymbol,  NoSymbol,      Greek_delta,    Greek_DELTA ]}; // δ Δ
-    key <AC04>	{[ NoSymbol,  NoSymbol,            U03D5,      Greek_PHI ]}; // ϕ Φ
+    key <AC04>	{[ NoSymbol,  NoSymbol,        Greek_phi,      Greek_PHI ]}; // _ Φ
     key <AC05>	{[ NoSymbol,  NoSymbol,      Greek_gamma,    Greek_GAMMA ]}; // γ Γ
     key <AC06>	{[ NoSymbol,  NoSymbol,        Greek_eta,      Greek_ETA ]}; // η Η
     key <AC07>	{[ NoSymbol,  NoSymbol,         Greek_xi,       Greek_XI ]}; // ξ Ξ
@@ -32,4 +31,13 @@ xkb_symbols "basic" {
     key <AB06>	{[ NoSymbol,  NoSymbol,         Greek_nu,       Greek_NU ]}; // ν Ν
     key <AB07>	{[ NoSymbol,  NoSymbol,         Greek_mu,       Greek_MU ]}; // μ Μ
 
-}
+};
+
+// Use some letter variants that are more common in math
+partial alphanumeric_keys
+xkb_symbols "mathvar" {
+    include "altgreek"
+
+    key <AD03>	{[ NoSymbol,  NoSymbol,            U03F5,       NoSymbol ]}; // ϵ
+    key <AC04>	{[ NoSymbol,  NoSymbol,            U03D5,       NoSymbol ]}; // ϕ
+};

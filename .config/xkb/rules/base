@@ -1,8 +1,11 @@
 // Add these lines under the '! option = symbols' section. If it doesn't exist, create it.
 
+  altgreek                       = +altgreek(basic)
+  altgreek:mathvar               = +altgreek(mathvar)
+  altmath                        = +altmath(basic)
+  altmath:sub_comma              = +altmath(sub_comma)
+  altmath:sup_dot                = +altmath(sup_dot)
+  undead:es_only                 = +undead(es_only)
   custom:types                   = +custom(types)
   custom:test                    = +custom(test)
-  custom:altgreek                = +custom(altgreek)
-  custom:altmath                 = +custom(altmath)
-  custom:undead_except_spanish   = +custom(undead_except_spanish)
 
