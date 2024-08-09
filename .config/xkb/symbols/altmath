@@ -31,7 +31,7 @@ xkb_symbols "basic" {
 
     include "altmath(sub_comma)"
     include "altmath(sup_dot)"
-}
+};
 
 
 // Superscript dead key at AltGr+,
