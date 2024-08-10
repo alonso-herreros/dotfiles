@@ -214,11 +214,14 @@ nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
 nnoremap <Leader>O m`O<Esc>0D``
 nnoremap <Leader><CR> cl<CR><Esc>
+" Overwrite with yanked
+nmap <Leader>R R<C-R>0<Esc>
 " Save/quit with leader->key
-nmap <Leader>q :q!<CR>
-nmap <Leader>z :wq<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>W :w!!<CR>
+nmap <Leader>q :q!<CR>
+nmap <Leader>e :e!<CR>
+nmap <Leader>z :wq<CR>
 " Buffers with Tab. Tabs are on Alt-h/l
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bN<CR>
