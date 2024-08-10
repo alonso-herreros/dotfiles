@@ -10,10 +10,6 @@
       "pattern": "https?://mail.google.com*"
     },
     {
-      "passKeys": "jknptwm?",
-      "pattern": "https?://calendar.google.com/*"
-    },
-    {
       "passKeys": "1234567890qwertyuiopasdfghjklzxcvbnm",
       "pattern": "https?://drive.google.com*"
     },
@@ -28,6 +24,14 @@
     {
       "passKeys": "/",
       "pattern": "https?://www.google.com*"
+    },
+    {
+      "passKeys": "jknptwm?",
+      "pattern": "https?://calendar.google.com/*"
+    },
+    {
+      "passKeys": "hl",
+      "pattern": "https?://calendar.google.com/calendar(/u/\\d+/r)/(?!tasks).*"
     }
   ]
 }
