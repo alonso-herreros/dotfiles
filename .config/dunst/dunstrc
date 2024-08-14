@@ -1,0 +1,226 @@
+[global]
+
+    ### Display ###
+
+    origin = top-right      # Origin on screen
+    # offset = (10, 10)     # Offset from origin
+    width = 300             # Width
+    height = (0, 300)       # Minimum and maximum height
+
+    notification_limit = 10 # How many notifications can appear at a time
+    notification_height = 0 # Height of whole notification    
+    padding = 4             # Text and seperator padding
+    horizontal_padding = 12 # Horizontal padding
+    corner_radius = 20      # Corner radius of dunst
+    corners = all           # Which corners to round
+
+    follow = mouse          # Display notifications on monitor with mouse focus
+    shrink = no             # Shrink window if smaller than width
+    transparency = 30       # Set transparency of notifications
+
+    separator_height = 1    # Height of seperators
+    separator_color = auto
+
+    frame_width = 1         # Width of frame around window
+    frame_color = "#4287f5" # Color of frame around window
+
+    sort = yes              # Sort messages by urgency
+    idle_threshold = 0      # Idle seconds
+
+    ### Text ###
+    
+    font = Iosevka 10 # Set font of notifications
+    line-height = 0   # Spacing between lines
+    markup = full     # Markup parsing
+    # Message format:
+    # %a - appname
+    # %s - summary
+    # %b - body
+    # %i - iconname (with path)
+    # %I - iconname (without path)
+    # %p - progress value (if set)
+    # %n - progress value no extra characters
+    # %% - literal %
+    format = "<b>%s</b>\n%b"
+
+    alignment = left            # Align message text horizontally
+    vertical_alignment = center # Align message text vertically
+
+    word_wrap = yes             # Split notifications into multiple lines
+    ellipsize = middle          # If message too long, add ellipsize to...
+    # bounce_freq = 5           # Frequency for long text bouncing
+    ignore_newline = no         # Ignore newlines in notifications
+
+    stack_duplicates = true     # Stack duplicate notifications
+    hide_duplicate_count = true # Hide number of duplicate notifications
+    indicate_hidden = yes       # Show number of hidden notifications
+    show_indicators = yes       # Show indicatiors  for urls and actions
+    show_age_threshold = 60     # Show age if message is older than x seconds
+   
+    ### Icons ###
+    
+    icon_position = left        # Disable icons
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_theme = Adwaita
+    max_icon_size = 16          # Max icon size in pixels
+    icon_corner_radius = 10     # Corner radius for icon in pixels
+    icon_corners = all          # Which icon corners to round
+    enable_recursive_icon_lookup = true
+
+    ### History ###
+    
+    history_length = 20 # Length of history
+    
+    ### Misc ###
+    
+    dmenu = /usr/bin/rofi -dmenu -i -p '' # Dmenu path
+    browser = /usr/bin/xdg_open           # Browser
+    always_run_script = true              # Always run scripts
+    title = Dunst                         # Title of notification
+    class = Dunst                         # Notification class
+    startup_notification = false          # Print notification on startup
+    verbosity = mesg                      # Dunst verbosity
+    ignore_dbusclose = false              # Ignore dbus closeNotification
+
+    ### Mouse ###
+
+    mouse_left_click = close_current # Left click
+    mouse_middle_click = open_url    # Middle click
+    mouse_right_click = context      # Right click
+
+[shortcuts]
+    # X11 only
+
+    # Shortcuts are specified as [modifier+][modifier+]...key
+    # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
+    # "mod3" and "mod4" (windows-key).
+    # Xev might be helpful to find names for keys.
+    
+    close = mod1+space          # Close notification.
+    close_all = ctrl+mod1+space # Close all notifications.
+    history = ctrl+mod4+h       # Redisplay last message(s).
+    context = ctrl+mod1+c       # Context menu.
+
+[urgency_low]
+    background = "#263238"
+    foreground = "#556064"
+    timeout = 10
+
+[urgency_normal]
+    background = "#263238"
+    foreground = "#F9FAF9"
+    timeout = 10
+
+[urgency_critical]
+    background = "#D62929"
+    foreground = "#F9FAF9"
+    timeout = 0
+
+
+# Every section that isn't one of the above is interpreted as a rules to
+# override settings for certain messages.
+# Messages can be matched by "appname", "summary", "body", "icon", "category",
+# "msg_urgency" and you can override the "timeout", "urgency", "foreground",
+# "background", "new_icon" and "format".
+# Shell-like globbing will get expanded.
+#
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+# 
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+[ignore]
+    # This notification will not be displayed
+    appname = "spotify"
+    format = ""
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+#[Claws Mail]
+#    appname = claws-mail
+#    category = email.arrived
+#    urgency = normal
+#    background = "#2F899E"
+#    foreground = "#FFA247"
+#
+#[mute.sh]
+#     appname = mute
+#     category = mute.sound
+#     script = mute.sh
+#
+#[JDownloader]
+#    appname = JDownloader
+#    category = JD
+#    background = "#FFA247"
+#    foreground = "#FFFFFF"
+#
+#[newsbeuter]
+#    summary = *Feeds*
+#    background = "#A8EB41"
+#    foreground = "#FFFFFF"
+#
+# [irc]
+#         appname = weechat
+#         timeout = 0
+#         background = "#0033bb"
+#         foreground = "#dddddd"
+#
+# [weechat hl]
+#      appname = weechat
+#      category = weechat.HL
+#      background = "#FF5C47"
+#      foreground = "#FFFFFF"
+#
+# [weechat pn]
+#      appname = weechat
+#      category = weechat.PM
+#      background = "#D53B84"
+#      foreground = "#FFFFFF"
+#
+#[CMUS]
+#    appname = CMUS
+#    category = cmus
+#    background = "#6C4AB7"
+#    foreground = "#FFE756"
+#
+#
+#     background = "#30AB70"
+#     foreground = "#F67245"
+#
+# vim: ft=cfg
+
+# [speech]
+#     summary = "*"
+#     script = dunst-notify-speech.sh
+
