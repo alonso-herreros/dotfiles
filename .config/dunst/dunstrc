@@ -5,11 +5,10 @@
     origin = top-right      # Origin on screen
     # offset = (10, 10)     # Offset from origin
     width = 300             # Width
-    height = (0, 300)       # Minimum and maximum height
+    height = (0, 300)       # Maximum height
 
     notification_limit = 10 # How many notifications can appear at a time
-    notification_height = 0 # Height of whole notification    
-    padding = 4             # Text and seperator padding
+  padding = 4             # Text and seperator padding
     horizontal_padding = 12 # Horizontal padding
     corner_radius = 20      # Corner radius of dunst
     corners = all           # Which corners to round
@@ -30,7 +29,7 @@
     ### Text ###
     
     font = Iosevka 10 # Set font of notifications
-    line-height = 0   # Spacing between lines
+    line_height = 0   # Spacing between lines
     markup = full     # Markup parsing
     # Message format:
     # %a - appname
@@ -74,12 +73,12 @@
     ### Misc ###
     
     dmenu = /usr/bin/rofi -dmenu -i -p '' # Dmenu path
-    browser = /usr/bin/xdg_open           # Browser
+    browser = /usr/bin/brave              # Browser
     always_run_script = true              # Always run scripts
     title = Dunst                         # Title of notification
     class = Dunst                         # Notification class
-    startup_notification = false          # Print notification on startup
-    verbosity = mesg                      # Dunst verbosity
+    # startup_notification = false          # Print notification on startup
+    # verbosity = mesg                      # Dunst verbosity
     ignore_dbusclose = false              # Ignore dbus closeNotification
 
     ### Mouse ###
@@ -88,7 +87,6 @@
     mouse_middle_click = open_url    # Middle click
     mouse_right_click = context      # Right click
 
-[shortcuts]
     # X11 only
 
     # Shortcuts are specified as [modifier+][modifier+]...key
