@@ -15,26 +15,27 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'wellle/targets.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/NERDTree', { 'on': 'NERDTreeToggle' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
-Plug 'junegunn/vim-peekaboo'
 Plug 'airblade/vim-gitgutter'
 Plug 'obcat/vim-sclow'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'kshenoy/vim-signature'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'chrisbra/Colorizer'
+Plug 'godlygeek/tabular'
 call plug#end()
 
 set t_Co=256
@@ -137,8 +138,10 @@ nmap  m`gcc``
 nmap <C-ç> m`gcc``
 vmap  gc
 vmap <C-ç> gc
-imap  <C-o>gcc
-imap <C-ç> <C-o>gcc
+imap  <C-o>m`gcc``
+imap <C-ç> <C-o>m`gcc``
+" Tabular with Ctrl+t
+noremap <C-t> :Tab/
 " fzf Files with C-S-e
 nmap <C-E> :Files<CR>
 
@@ -215,7 +218,7 @@ nnoremap <Leader>o m`o<Esc>0D``
 nnoremap <Leader>O m`O<Esc>0D``
 nnoremap <Leader><CR> cl<CR><Esc>
 " Overwrite with yanked
-nmap <Leader>R R<C-R>0<Esc>
+nmap <Leader>R R<C-r>0<Esc>
 " Save/quit with leader->key
 nmap <Leader>w :w<CR>
 nmap <Leader>W :w!!<CR>
