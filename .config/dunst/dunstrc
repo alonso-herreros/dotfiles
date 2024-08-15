@@ -8,7 +8,7 @@
     height = (0, 300)       # Maximum height
 
     notification_limit = 10 # How many notifications can appear at a time
-  padding = 4             # Text and seperator padding
+    padding = 4             # Text and seperator padding
     horizontal_padding = 12 # Horizontal padding
     corner_radius = 20      # Corner radius of dunst
     corners = all           # Which corners to round
@@ -72,14 +72,14 @@
     
     ### Misc ###
     
-    dmenu = /usr/bin/rofi -dmenu -i -p '' # Dmenu path
-    browser = /usr/bin/brave              # Browser
-    always_run_script = true              # Always run scripts
-    title = Dunst                         # Title of notification
-    class = Dunst                         # Notification class
-    # startup_notification = false          # Print notification on startup
-    # verbosity = mesg                      # Dunst verbosity
-    ignore_dbusclose = false              # Ignore dbus closeNotification
+    dmenu = /usr/bin/fuzzel -d     # Dmenu path
+    browser = /usr/bin/brave       # Browser
+    always_run_script = true       # Always run scripts
+    title = Dunst                  # Title of notification
+    class = Dunst                  # Notification class
+    # startup_notification = false   # Print notification on startup
+    # verbosity = mesg               # Dunst verbosity
+    ignore_dbusclose = false       # Ignore dbus closeNotification
 
     ### Mouse ###
 
