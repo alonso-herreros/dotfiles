@@ -20,8 +20,10 @@
     separator_height = 1    # Height of seperators
     separator_color = auto
 
+    background = "#363a4f"  # Color of background: macchiato surface0
+    foreground = "#cad3f5"  # Color of text: macchiato text
+    frame_color = "#363a4f" # Color of frame around window: macchiato surface0
     frame_width = 1         # Width of frame around window
-    frame_color = "#4287f5" # Color of frame around window
 
     sort = yes              # Sort messages by urgency
     idle_threshold = 0      # Idle seconds
@@ -87,32 +89,18 @@
     mouse_middle_click = open_url    # Middle click
     mouse_right_click = context      # Right click
 
-    # X11 only
-
-    # Shortcuts are specified as [modifier+][modifier+]...key
-    # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
-    # "mod3" and "mod4" (windows-key).
-    # Xev might be helpful to find names for keys.
-    
-    close = mod1+space          # Close notification.
-    close_all = ctrl+mod1+space # Close all notifications.
-    history = ctrl+mod4+h       # Redisplay last message(s).
-    context = ctrl+mod1+c       # Context menu.
 
 [urgency_low]
-    background = "#263238"
-    foreground = "#556064"
-    timeout = 10
+    foreground = "#939ab7" # Macchiato overlay2
+    timeout = 5
 
 [urgency_normal]
-    background = "#263238"
-    foreground = "#F9FAF9"
-    timeout = 10
+    timeout = 5
 
 [urgency_critical]
-    background = "#D62929"
-    foreground = "#F9FAF9"
-    timeout = 0
+    frame_color = "#ed8796" # Macchiato red
+    foreground = "#ed8796"  # Macchiato red
+    timeout = 30
 
 
 # Every section that isn't one of the above is interpreted as a rules to
