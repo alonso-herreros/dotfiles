@@ -205,25 +205,13 @@
             "transition-left-to-right": true
         },
         "modules": [
-            "mpris#track",
-            // "mpris",
+            "mpris",
             "custom/prevsong",
             "custom/nextsong",
         ]
     },
 
     "mpris": {
-        "format": "{status_icon}",
-        // "format-stopped": "{player_icon}",
-        "tooltip-format": "{artist} - {title} | {album}",
-        "status-icons": {
-            "playing": "",
-            "paused": "",
-            "stopped": "???"
-        },
-        "player-icons": { "spotify": "" }
-    },
-    "mpris#track": {
         "format": "{player_icon} <i>{dynamic}</i>",
         "format-paused": "{player_icon} {dynamic}",
         "tooltip-format": "{artist} - {title} | {album}",
@@ -236,9 +224,9 @@
         "dynamic-len": 39,
         "player-icons": {
             "spotify": "<span color='#2EF770'> </span>",
-            "brave": "<span color='#DB2A04'></span>",
+            "brave": "<span color='#DB2A04'> </span>",
         },
-        "on-click-middle": "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Raise"
+        "on-click-middle": "~/.scripts/media_raise.sh & sleep 0.1; hyprctl dispatch movetoworkspace special:tmp"
     },
     "custom/prevsong": {
         "format": "",
