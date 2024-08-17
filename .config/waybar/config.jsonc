@@ -226,7 +226,7 @@
             "spotify": "<span color='#2EF770'> </span>",
             "brave": "<span color='#DB2A04'> </span>",
         },
-        "on-click-middle": "~/.scripts/media_raise.sh & sleep 0.1; hyprctl dispatch movetoworkspace special:tmp"
+        "on-click-middle": "hyprctl dispatch workspace special:tmp; ~/.scripts/media_raise.sh"
     },
     "custom/prevsong": {
         "format": "",
