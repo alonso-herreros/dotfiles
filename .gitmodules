@@ -4,4 +4,4 @@
 	ignore = dirty
 [submodule "private"]
 	path = private
-	url = github:alonso-herreros/dotfiles_private
+	url = git@github.com:alonso-herreros/dotfiles_private
