@@ -25,7 +25,9 @@
     ~/.config/alias.sh: .config/alias.sh
     ~/.config/libinput-gestures.conf: .config/libinput-gestures.conf
     ~/.config/locale.conf: .config/locale/locale.conf
+
     ~/.config/spotify-flags.conf: .config/spotify-flags.conf
+    ~/.config/brave-flags.conf: .config/brave-flags.conf
 
     ~/.scripts: .scripts
 
