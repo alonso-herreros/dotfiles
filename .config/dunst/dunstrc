@@ -30,7 +30,7 @@
 
     ### Text ###
     
-    font = Iosevka 10 # Set font of notifications
+    font = "Font Awesome 5 Free Regular 13, Iosevka 10"
     line_height = 0   # Spacing between lines
     markup = full     # Markup parsing
     # Message format:
@@ -67,6 +67,18 @@
     icon_corner_radius = 10     # Corner radius for icon in pixels
     icon_corners = all          # Which icon corners to round
     enable_recursive_icon_lookup = true
+
+    ### Progress bar ###
+
+    highlight = "#a6da95"                      # Color: macchiato green
+    progress_bar = true                        # Allow progress bars
+    progress_bar_horizontal_alignment = center # Center progress bars
+    progress_bar_height = 7                    # Height including the frame
+    progress_bar_min_width = 150               # ...
+    progress_bar_max_width = 270               # ...
+    progress_bar_frame_width = 1               # ...
+    progress_bar_corner_radius = 10            # ...
+    progress_bar_corners = all                 # Which corners to round
 
     ### History ###
     
