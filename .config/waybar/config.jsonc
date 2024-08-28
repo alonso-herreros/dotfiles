@@ -310,6 +310,7 @@
         "on-click": "pamixer -t",
         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
         "on-click-middle": "pactl play-sample bell",
+        "scroll-step": 2.0,
         "reverse-scrolling": true,
     },
     "pulseaudio#pa2": {
@@ -318,6 +319,7 @@
         "on-click": "pamixer -t",
         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
         "on-click-middle": "pactl play-sample bell",
+        "scroll-step": 5.0,
         "reverse-scrolling": true,
     },
 
