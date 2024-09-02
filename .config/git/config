@@ -16,6 +16,8 @@
     cm = commit -m
     cc = commit .
     ccm = commit . -m
+    ca = commit --amend
+    cane = commit --amend --no-edit
 
     d = diff
     m = merge
