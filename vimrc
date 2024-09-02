@@ -258,6 +258,8 @@ vnoremap < <gv
 " Ctrl+backspace/delete
 inoremap <C-Backspace> <C-w>
 inoremap <C-Delete> <C-o>de
+" Back-tabbing
+inoremap <S-Tab> <C-d>
 " Easy exit, optionally saving
 inoremap kj <Esc>
 inoremap KJ <Esc>
