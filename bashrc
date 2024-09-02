@@ -22,6 +22,8 @@ eval "$(zoxide init bash --cmd cd)"
 
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
 
+[ -f /usr/share/git/completion/git-completion.bash ] && source /usr/share/git/completion/git-completion.bash
+
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 # nnn options
