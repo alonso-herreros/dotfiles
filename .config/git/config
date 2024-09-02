@@ -8,9 +8,22 @@
     excludesFile = $XDG_CONFIG_HOME/git/gitignore
 
 [alias]
-    a = add
 	s = status
+    l = log --oneline
+
+    a = add
     c = commit
+    cm = commit -m
+    cc = commit .
+    ccm = commit . -m
+
+    d = diff
+    m = merge
+    mt = mergetool
+    co = checkout
+    cob = checkout -b
+
+    uncommit = reset --soft HEAD^
 
 [init]
     defaultBranch = main
@@ -18,19 +31,32 @@
 [status]
     submoduleSummary = true
 
+[log]
+    decorate = short
+    abbrevCommit = true
+
 [push]
     autoSetupRemote = true
 
 [pull]
     ff = only
 
+[merge]
+    conflictstyle = zdiff3
+    tool = vimdiff
+
+[mergetool]
+    tool = vimdiff
+    hideResolve=true
+    writeToTemp=true
+
+[mergetool.vimdiff]
+    layout = "LOCAL,REMOTE / MERGED + MERGED,REMOTE"
+
 [diff]
     algorithm = histogram
     colorMoved = default
     submodule = log
-
-[merge]
-    conflictstyle = zdiff3
 
 [submodule]
     recurse = true
