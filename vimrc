@@ -67,6 +67,7 @@ let g:codedark_modern=1
 let g:codedark_transparent=1
 let g:airline_theme = 'codedark'
 colorscheme codedark
+hi DiffText term=bold cterm=bold ctermfg=188 ctermbg=25 guifg=#D4D4D4 guibg=#339ab2
 
 let g:peekaboo_delay=300
 let g:peekaboo_compact=1
@@ -160,7 +161,7 @@ noremap <C-a> <Esc>ggvG$
 " Increment and decrement
 noremap <C-+> <C-a>
 noremap <C-_> <C-x>
-" Yank to w register and clipboard
+" Yank to clipboard
 map <Leader>y "+y
 map <Leader>Y "+Y
 " Put and delete from/to yank register
@@ -186,7 +187,7 @@ noremap <C-A-j> <C-w>j
 noremap <C-A-k> <C-w>k
 noremap <C-A-l> <C-w>l
 noremap <C-A-LT> <C-w><LT>
-" noremap <C-A->> <C-w>> (doesn't work, switch split and use the above)
+"! noremap <C-A->> <C-w>> (doesn't work, switch split and use the above)
 noremap <C-A-+> <C-w>+
 noremap <C-A-_> <C-w>-
 noremap! <C-A-h> <C-w>h
@@ -225,6 +226,7 @@ nmap <Leader>W :w!!<CR>
 nmap <Leader>q :q!<CR>
 nmap <Leader>e :e!<CR>
 nmap <Leader>z :wq<CR>
+nmap <Leader>x :bd<CR>
 " Buffers with Tab. Tabs are on Alt-h/l
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bN<CR>
