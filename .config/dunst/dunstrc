@@ -20,10 +20,10 @@
     separator_height = 1    # Height of seperators
     separator_color = auto
 
-    background = "#363a4f"  # Color of background: macchiato surface0
-    foreground = "#cad3f5"  # Color of text: macchiato text
-    frame_color = "#363a4f" # Color of frame around window: macchiato surface0
-    frame_width = 1         # Width of frame around window
+    background = "#363a4f66"  # Color of background: macchiato surface0
+    foreground = "#cad3f5"    # Color of text: macchiato text
+    frame_color = "#363a4fdd" # Color of frame around window: macchiato surface0
+    frame_width = 1           # Width of frame around window
 
     sort = yes              # Sort messages by urgency
     idle_threshold = 0      # Idle seconds
