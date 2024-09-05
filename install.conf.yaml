@@ -31,6 +31,8 @@
 
     ~/.scripts: .scripts
 
+    ~/Pictures/Wallpaper: wallpaper
+
     ~/.ssh/config: private/.ssh/config
 
 - shell:
