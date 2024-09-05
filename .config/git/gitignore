@@ -5,3 +5,5 @@ build/
 CMakeUserPresets.json
 matlabInVSCodeVariableInfo.csv
 *.pyc
+*.orig
+
