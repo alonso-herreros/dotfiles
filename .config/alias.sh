@@ -17,6 +17,14 @@ function mkdircd() {
     cd ${@:1}
 }
 
+function ukill() {
+    kill $(pgrep -u $USER ${@:1})
+}
+
+function uprestart() {
+    kill $(pgrep -u $USER $1); detach ${@:1}
+}
+
 function ozone-wayland() {
     ${@:1} --enable-features=UseOzonePlatform --ozone-platform=wayland
 }
