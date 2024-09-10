@@ -5,13 +5,9 @@ swipe:
     down:
       command: "hyprctl dispatch workspace -1"
     left:
-      update:
-        command: "hyprctl dispatch sendshortcut CTRL, Tab, activewindow"
-        interval: 2
+      command: "hyprctl dispatch sendshortcut CTRL, Tab, activewindow"
     right:
-      update:
-        command: "hyprctl dispatch sendshortcut CTRL SHIFT, Tab, activewindow"
-        interval: 2
+      command: "hyprctl dispatch sendshortcut CTRL SHIFT, Tab, activewindow"
   4:
     up:
       update:
