@@ -15,11 +15,11 @@ swipe:
   4:
     up:
       update:
-        command: "pamixer -i 5"
+        command: "~/.scripts/system/volume_ctl.sh -i 5"
         interval: 0.5
     down:
       update:
-        command: "pamixer -d 5"
+        command: "~/.scripts/system/volume_ctl.sh -d 5"
         interval: 0.5
     left:
       command: "playerctl next"
@@ -28,7 +28,7 @@ swipe:
 
 hold:
   2:
-    command: "pamixer -t"
+    command: "~/.scripts/system/volume_ctl.sh -t"
   3:
     command: "hyprctl dispatch sendshortcut , F5, activewindow"
   4:
@@ -38,19 +38,19 @@ rotate:
   3:
     clockwise:
       update:
-        command: "pamixer -i 5"
+        command: "~/.scripts/system/volume_ctl.sh -i 5"
         interval: 0.5
     counterclockwise:
       update:
-        command: "pamixer -d 5"
+        command: "~/.scripts/system/volume_ctl.sh -d 5"
         interval: 0.5
   4:
     clockwise:
       update:
-        command: "brightnessctl s 10%+"
+        command: "~/.scripts/system/brightness_ctl.sh s 10%+"
         interval: 0.5
     counterclockwise:
       update:
-        command: "brightnessctl s 10%-"
+        command: "~/.scripts/system/brightness_ctl.sh s 10%-"
         interval: 0.5
 
