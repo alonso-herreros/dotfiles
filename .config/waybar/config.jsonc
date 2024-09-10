@@ -339,8 +339,8 @@
         "tooltip-format": "{device_enumerate}",
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• {device_alias} (󰥉 {device_battery_percentage}%)",
-        "on-click": "~/.scripts/bt_toggle.sh",
-        "on-click-right": "~/.scripts/hyprland_kitty_btctl.sh",
+        "on-click": "~/.scripts/system/bt_toggle.sh",
+        "on-click-right": "~/.scripts/launch/hyprland_kitty_btctl.sh",
         // "on-click-right": "bluetoothctl"
     },
     "bluetooth#bt2": {
@@ -348,8 +348,8 @@
         "tooltip-format": "{device_enumerate} ",
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• {device_alias} (󰥉 {device_battery_percentage}%)",
-        "on-click": "~/.scripts/bt_toggle.sh",
-        "on-click-right": "~/.scripts/hyprland_kitty_btctl.sh",
+        "on-click": "~/.scripts/system/bt_toggle.sh",
+        "on-click-right": "~/.scripts/launch/hyprland_kitty_btctl.sh",
         // "on-click-right": "bluetoothctl"
     },
 
