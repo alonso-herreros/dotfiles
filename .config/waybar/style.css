@@ -116,7 +116,7 @@ button.urgent {
 /* #clock:hover { background-color: @surface2; } */
 
 #battery {
-    margin: 0 1px;
+    margin: 0;
     color: @base;
     background-color: @overlay1;
     background-repeat: no-repeat;
