@@ -17,7 +17,11 @@ function mkdircd() {
     cd ${@:1}
 }
 
-function ukill() {
+function upgrep() {
+    pgrep -u $USER ${@:1}
+}
+
+function upkill() {
     kill $(pgrep -u $USER ${@:1})
 }
 
