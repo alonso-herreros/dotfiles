@@ -1,9 +1,9 @@
 swipe:
   3:
     up:
-      command: "hyprctl dispatch workspace +1"
+      command: "hyprctl dispatch workspace previous"
     down:
-      command: "hyprctl dispatch workspace -1"
+      command: "hyprctl dispatch togglespecialworkspace tmp"
     left:
       command: "hyprctl dispatch sendshortcut CTRL, Tab, activewindow"
     right:
