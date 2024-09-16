@@ -26,10 +26,12 @@ eval "$(zoxide init bash --cmd cd)"
 
 export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
-# nnn options
 export EDITOR=vim
 export PAGER="less -Ri"
-export NNN_OPTS="aAcEGHiQRux" # Must be compiled with O_GITSTATUS=1
+
+# nnn options
+# export NNN_OPTS="aAcEGHiQRux" # Must be compiled with O_GITSTATUS=1
+export NNN_OPTS="aAcEHiQRux"
 export NNN_TRASH=2
 export NNN_PLUG="v:-preview-tui;s:-!git status;d:-!git diff"
 
