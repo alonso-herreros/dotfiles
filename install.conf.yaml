@@ -38,3 +38,7 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [hyprctl reload]
+  - [kill $(pgrep -u $USER waybar); setsid waybar >/dev/null 2>&1 < /dev/null &]
+  - [kill $(pgrep -u $USER dunst); setsid dunst >/dev/null 2>&1 < /dev/null &]
+  - [kill $(pgrep -u $USER fusuma); setsid fusuma >/dev/null 2>&1 < /dev/null &]
