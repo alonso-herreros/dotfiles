@@ -5,7 +5,6 @@
 [core]
     editor = vim
     pager = less -x5,9
-    excludesFile = $XDG_CONFIG_HOME/git/gitignore
 
 [alias]
 	s = status

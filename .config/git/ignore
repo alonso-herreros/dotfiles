@@ -1,6 +1,7 @@
 *.code-workspace
 .vscode/
 *.ova
+.venv/
 build/
 CMakeUserPresets.json
 matlabInVSCodeVariableInfo.csv
