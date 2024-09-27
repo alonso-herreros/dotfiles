@@ -27,6 +27,7 @@
     ~/.config/locale.conf: .config/locale/locale.conf
 
     ~/.config/brave-flags.conf: .config/brave-flags.conf
+    ~/.config/chromium-flags.conf: .config/chromium-flags.conf
     ~/.config/spotify-flags.conf: .config/spotify-flags.conf
     ~/.config/code-flags.conf: .config/code-flags.conf
 
