@@ -43,6 +43,5 @@ alias btctl="bluetoothctl"
 alias v="vim"
 alias g="git"
 alias c="cd"
-alias n="nnn"
 alias nn="nnn -n"
 

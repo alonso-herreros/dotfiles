@@ -18,7 +18,7 @@ eval "$(zoxide init bash --cmd cd)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash || eval "$(fzf --bash)"
 
-[ -f ~/.config/alias.sh ] && source ~/.config/alias.sh
+[ -f ~/.scripts/rc/alias.sh ] && source ~/.scripts/rc/alias.sh
 
 [ -f ~/.bashrc_local ] && source ~/.bashrc_local
 
@@ -29,7 +29,8 @@ export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 export EDITOR=vim
 export PAGER="less -Ri"
 
-# nnn options
+# ==== nnn ====
+[ -f ~/.scripts/rc/nnn_quitcd.sh ] && source ~/.scripts/rc/nnn_quitcd.sh
 # export NNN_OPTS="aAcEGHiQRux" # Must be compiled with O_GITSTATUS=1
 export NNN_OPTS="aAcEHiQRux"
 export NNN_TRASH=2

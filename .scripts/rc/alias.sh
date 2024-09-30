@@ -1,0 +1,1 @@
+/home/alonso_uni/.dotfiles/.config/alias.sh
