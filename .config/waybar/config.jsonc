@@ -141,11 +141,23 @@
     "group/load": {
         "orientation": "inherit",
         "modules": [
+            "group/load-temp",
             "group/load-cpu",
             "group/load-mem"
         ]
     },
 
+    "group/load-temp": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "temperature#cpu",
+            "temperature#cpu_val"
+        ]
+    },
     "group/load-cpu": {
         "orientation": "inherit",
         "drawer": {
@@ -154,7 +166,6 @@
         },
         "modules": [
             "cpu",
-            "temperature#cpu",
             "cpu#val"
         ]
     },
@@ -165,7 +176,9 @@
             "transition-left-to-right": false
         },
         "modules": [
-            "memory"
+            "memory#ram",
+            "memory#sw",
+            "memory#ram_val"
         ]
     },
 
@@ -208,17 +221,62 @@
     },
     "temperature#cpu": {
         "interval": 10,
-        "critical-threshold": 60,
         "thermal-zone": 7,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "critical-threshold": 60,
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
     },
-    "memory": {
+    "temperature#cpu_val": {
+        "interval": 10,
+        "thermal-zone": 7,
+        "critical-threshold": 55,
+        "format": "{temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+
+    "memory#ram": {
         "interval": 10,
         // "format": "<span color='green'></span> {percentage}%",
-        "format": " {percentage}%",
-        "format-alt": " {used:.1f} G",
-        "tooltip-format": "{used} / {total} G RAM\n{swapUsed} / {swapTotal} G swap"
+        "format": "",
+        "format-alt": "",
+        "tooltip-format": "{used} / {total} G RAM\n{swapUsed} / {swapTotal} G swap",
+        "states": {
+            "low": 0,
+            "normal": 30,
+            "medium": 60,
+            "high": 70,
+            "max": 90
+        }
+    },
+    "memory#ram_val": {
+        "interval": 10,
+        // "format": "<span color='green'></span> {percentage}%",
+        "format": "{percentage}%",
+        "format-alt": "{percentage}%",
+        "tooltip-format": "{used} / {total} G RAM\n{swapUsed} / {swapTotal} G swap",
+        "states": {
+            "low": 0,
+            "normal": 30,
+            "medium": 60,
+            "high": 70,
+            "max": 90
+        }
+    },
+    "memory#sw": {
+        "interval": 10,
+        // "format": "<span color='green'></span> {percentage}%",
+        "format": "{swapPercentage}%  ",
+        "format-alt": "{swapPercentage}%  ",
+        "tooltip-format": "{used} / {total} G RAM\n{swapUsed} / {swapTotal} G swap",
+        "states": {
+            "low": 0,
+            "normal": 30,
+            "medium": 60,
+            "high": 70,
+            "max": 90
+        }
     },
 
     // Media

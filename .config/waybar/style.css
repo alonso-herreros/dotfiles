@@ -51,6 +51,7 @@
 }
 
 /* Subgroups */
+#load-temp,
 #load-cpu,
 #load-gpu,
 #load-mem,
@@ -237,15 +238,13 @@ button.urgent {
 #window { color: @rosewater; }
 
 /* Load */
+#load-temp:hover { background-color: @surface1; }
 #load-cpu:hover { background-color: @surface1; }
+#load-gpu:hover { background-color: @surface1; }
 #load-mem:hover { background-color: @surface1; }
 
-#cpu {
-    padding: 0 7px;
-}
-#cpu.val {
-    padding: 0 2px;
-}
+#cpu { padding: 0 7px; }
+#cpu.val { padding: 0 1px 0 7px; }
 
 #cpu.low { color: @teal; }
 #cpu.normal { color: @green; }
@@ -253,12 +252,19 @@ button.urgent {
 #cpu.high { color: @peach; }
 #cpu.max { color: @red; }
 
-#temperature {
-    padding: 0 7px;
-    color: @sky;
-}
+#temperature.cpu_val { padding: 0 0 0 10px; }
+#temperature { color: @blue; }
+#temperature.critical { color: @red; }
 
-/* #memory { color: @green; } */
+
+#memory { padding: 0 7px; }
+#memory.val { padding: 0 2px; }
+
+#memory.low { color: @teal; }
+#memory.normal { color: @green; }
+#memory.medium { color: @yellow; }
+#memory.high { color: @peach; }
+#memory.max { color: @red; }
 
 /* Media */
 /* #mpris.stopped { padding: 0; } */
