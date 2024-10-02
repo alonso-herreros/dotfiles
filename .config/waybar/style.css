@@ -41,8 +41,6 @@
 #load,
 #media,
 #status,
-#audio-sinks,
-#audio-sources,
 #bluetooth-group,
 #network-group,
 #session {
@@ -53,11 +51,15 @@
 }
 
 /* Subgroups */
+#load-cpu,
+#load-gpu,
+#load-mem,
 #audio-sinks,
 #audio-sources,
 #bluetooth-group,
 #network-group {
     margin: 0;
+    border-radius: 100px;
 }
 
 /* Modules */
@@ -235,13 +237,28 @@ button.urgent {
 #window { color: @rosewater; }
 
 /* Load */
-#temperature { color: @sky; }
-/* #cpu { */
-/*     color: @green; */
-/* } */
-/* #memory { */
-/*     color: @green; */
-/* } */
+#load-cpu:hover { background-color: @surface1; }
+#load-mem:hover { background-color: @surface1; }
+
+#cpu {
+    padding: 0 7px;
+}
+#cpu.val {
+    padding: 0 2px;
+}
+
+#cpu.low { color: @teal; }
+#cpu.normal { color: @green; }
+#cpu.medium { color: @yellow; }
+#cpu.high { color: @peach; }
+#cpu.max { color: @red; }
+
+#temperature {
+    padding: 0 7px;
+    color: @sky;
+}
+
+/* #memory { color: @green; } */
 
 /* Media */
 /* #mpris.stopped { padding: 0; } */

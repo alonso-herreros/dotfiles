@@ -141,27 +141,55 @@
     "group/load": {
         "orientation": "inherit",
         "modules": [
-            "temperature",
+            "group/load-cpu",
+            "group/load-mem"
+        ]
+    },
+
+    "group/load-cpu": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
             "cpu",
+            "temperature#cpu",
+            "cpu#val"
+        ]
+    },
+    "group/load-mem": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
             "memory"
         ]
     },
 
-    "temperature": {
-        "interval": 10,
-        "critical-threshold": 60,
-        "thermal-zone": 7,
-        "format": "{icon} {temperatureC}°C",
-        "format-icons": ["", "", "", "", ""]
-    },
     "cpu": {
-        "interval": 5,
-        "format": "  {usage}%",
+        "interval": 10,
+        "format": " ",
+        "format-alt": " ",
         "tooltip": true,
-        "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
+        "states": {
+            "low": 0,
+            "normal": 10,
+            "medium": 30,
+            "high": 60,
+            "max": 85
+        }
+    },
+    "cpu#val": {
+        "interval": 10,
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ({usage}%)",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ({usage}%)",
+        "tooltip": true,
         "format-icons": [
             // Catppuccin macchiato
-            "<span color='#a6da95'>▁</span>", // Green
+            "<span color='#8bd5ca'>▁</span>", // Teal
             "<span color='#a6da95'>▂</span>", // Green
             "<span color='#a6da95'>▃</span>", // Green
             "<span color='#eed49f'>▄</span>", // Yellow
@@ -171,23 +199,19 @@
             "<span color='#ed8796'>█</span>"  // Red
         ],
         "states": {
-            "warning": 20,
-            "critical": 10,
-            "emergency": 70
-            // "_0": 0,
-            // "_5": 5,
-            // "_10": 10,
-            // "_20": 20,
-            // "_30": 30,
-            // "_40": 40,
-            // "_50": 50,
-            // "_60": 60,
-            // "_5": 70,
-            // "_80": 80,
-            // "_90": 90,
-            // "_95": 95,
-            // "_100": 100
+            "low": 0,
+            "normal": 10,
+            "medium": 30,
+            "high": 60,
+            "max": 85
         }
+    },
+    "temperature#cpu": {
+        "interval": 10,
+        "critical-threshold": 60,
+        "thermal-zone": 7,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", "", "", ""]
     },
     "memory": {
         "interval": 10,
