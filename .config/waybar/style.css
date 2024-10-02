@@ -41,7 +41,8 @@
 #load,
 #media,
 #status,
-#audio,
+#audio-sinks,
+#audio-sources,
 #bluetooth-group,
 #network-group,
 #session {
@@ -52,7 +53,8 @@
 }
 
 /* Subgroups */
-#audio,
+#audio-sinks,
+#audio-sources,
 #bluetooth-group,
 #network-group {
     margin: 0;
@@ -248,17 +250,26 @@ button.urgent {
 #custom-prevsong:hover, #custom-nextsong:hover { background-color: @surface2; }
 
 /* Status */
-#audio {
+#audio-sinks,
+#audio-sources {
     padding: 0 6px;
 }
-#audio:hover {
+#audio-sinks:hover,
+#audio-sources:hover {
     background-color: @surface2;
 }
 #pulseaudio {
     padding: 0 3px;
     color: @maroon;
 }
-#pulseaudio.muted { color: @overlay0; }
+#pulseaudio.sink.muted,
+#pulseaudio.sink_val.muted {
+    color: @overlay0;
+}
+#pulseaudio.mic.source-muted,
+#pulseaudio.mic_val.source-muted {
+    color: @overlay0;
+}
 
 #bluetooth-group { padding: 0 5px; }
 #bluetooth-group:hover { background-color: @surface2; }
