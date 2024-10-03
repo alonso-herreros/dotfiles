@@ -152,7 +152,7 @@ button.active,
 }
 
 /* Focused */
-button.focused,
+button.focused *,
 #idle_inhibitor:focus {
     background: @lavender;
 }
