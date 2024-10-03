@@ -4,7 +4,7 @@
     // "reload_style_on_change": true, // TODO: remove this
 
     "modules-left": [
-        "group/timebat",
+        "group/batt-utils",
         "group/keyboard",
         "group/media",
     ],
@@ -18,7 +18,7 @@
         "group/load",
         // "group/audio",
         "group/status",
-        "group/session"
+        "group/session-time"
     ],
 
     // Hyprland
@@ -49,30 +49,13 @@
     },
 
     // Time and Battery
-    "group/timebat": {
-        "orientation": "inherit",
-        "modules": [
-            "clock",
-            "group/batt-utils"
-        ]
-    },
-
-    "clock": {
-        // "locale": "es_ES.UTF-8", // Makes weeks start on Monday, but uses Spanish
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%d/%m/%Y}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": "3",
-            // "weeks-pos": "right",
-            "on-scroll": 1,
-            "on-click-right": "mode",
-            "format": {
-                "today": "<span color='red'><b>{}</b></span>"
-            }
-        }
-    },
+    // "group/timebat": {
+    //     "orientation": "inherit",
+    //     "modules": [
+    //         "clock",
+    //         "group/batt-utils"
+    //     ]
+    // },
 
     "group/batt-utils": {
         "orientation": "inherit",
@@ -322,37 +305,6 @@
     },
 
 
-//     // Backlight
-//     "group/backlight": {
-//         "orientation": "inherit",
-//         "drawer": {
-//             "transition-duration": 200
-//         },
-//         // "modules": [
-//         //     // "backlight",
-//         //     // "backlight#br2"
-//         // ]
-//     },
-//     "backlight": {
-//         "format": "{icon} ",
-//         "format-muted": "",
-//         "format-icons": {
-//             "headphone": "",
-//             "hands-free": "",
-//             "headset": "",
-//             "phone": "",
-//             "portable": "",
-//             "car": "",
-//             "hdmi": "",
-//             "default": ["", "", ""]
-//         },
-//         "tooltip-format": "{desc}: {volume}%",
-//         "on-click": "pamixer -t",
-//         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
-//         "reverse-scrolling": true,
-//         "scroll-step": 0.2
-//     },
-
     "group/status": {
         "orientation": "inherit",
         "modules": [
@@ -397,7 +349,7 @@
             "portable": "",
             "car": "",
             "hdmi": "",
-            "default": [" ", " ", " "]
+            "default": [" ", " ", " "]
         },
         "tooltip-format": "{desc}: {volume}%",
         "on-click": "pamixer -t",
@@ -421,8 +373,8 @@
     },
     "pulseaudio#mic": {
         "format": "{format_source}",
-        "format-source": "",
-        "format-source-muted": " ", // Using thin space " "
+        "format-source": " ",
+        "format-source-muted": " ", // Not using thin space " "
         "on-click": "pamixer --default-source -t",
         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
         "on-scroll-up": "pamixer --default-source -i 2",
@@ -498,6 +450,14 @@
         "format-wifi": "{}"
     },
 
+    "group/session-time": {
+        "orientation": "inherit",
+        "modules": [
+            "clock",
+            "group/session"
+        ]
+    },
+
     "group/session": {
         "orientation": "inherit",
         "drawer": {
@@ -506,58 +466,49 @@
         },
         "modules": [
             "user",
-            // "user#info"
             "custom/restart",
             "custom/hibernate",
             "custom/poweroff",
-            "custom/lock",
-            "custom/exit",
+            "custom/lock"
         ]
+    },
+
+    "clock": {
+        // "locale": "es_ES.UTF-8", // Makes weeks start on Monday, but uses Spanish
+        "format": "{:%b %e, %I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": "3",
+            // "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "today": "<span color='red'><b>{}</b></span>"
+            }
+        }
     },
     
     "user": {
         "interval": 60,
         "format": "",
-        "tooltip-format": "{user}",
         "icon": true,
         "height": 20,
         "width": 20,
         "open-on-click": false,
         "on-click-right": "loginctl lock-session"
     },
-    // "user#info": {
-    //     "interval": 60,
-    //     "format": " Uptime: {work_d} d {work_H}:{work_M}"
-    // },
-
-    "custom/exit": {
-        "format": " ",
-        "tooltip-format": "Exit session",
-        "on-click": "hyprctl dispatch exit"
-    },
     "custom/lock": {
-        "format": " ",
-        "tooltip-format": "Lock screen",
-        "on-click": "loginctl lock-session"
+        "format": " ",
+        "tooltip-format": "Lock screen\nR: Exit Hyprland",
+        "on-click": "loginctl lock-session",
+        "on-click-right": "hyprctl dispatch exit"
     },
     "custom/poweroff": {
         "format": " ",
-        "tooltip-format": "Power Off",
-        "on-click": "systemctl poweroff",
-        "on-click-right": "systemctl poweroff -i"
-    },
-    "custom/restart": {
-        "format": " ",
-        "tooltip-format": "Restart",
-        "on-click": "systemctl reboot",
-        "on-click-right": "systemctl reboot -i",
-        "on-click-middle": "systemctl soft-reboot -i"
-    },
-    "custom/hibernate": {
-        "format": " ",
-        "tooltip-format": "Hibernate",
-        "on-click": "hyprlock & sleep 0.5; systemctl hibernate",
-        "on-click-right": "hyprlock & sleep 0.5; systemctl hibernate -i"
-    },
-
+        "tooltip-format": "Sleep\nR: Hibernate\nM: Shut down",
+        "on-click": "systemctl sleep -i",
+        "on-click-right": "systemctl hibernate -i",
+        "on-click-middle": "systemctl poweroff -i"
+    }
 }
