@@ -23,10 +23,11 @@ swipe:
       command: "playerctl previous"
 
 hold:
-  2:
-    command: "~/.scripts/system/volume_ctl.sh -t"
+  # 2:
+    # command: "~/.scripts/system/volume_ctl.sh -t"
   3:
-    command: "hyprctl dispatch sendshortcut , F5, activewindow"
+    command: "~/.scripts/system/volume_ctl.sh -t"
+    # command: "hyprctl dispatch sendshortcut , F5, activewindow"
   4:
     command: "playerctl play-pause"
 
