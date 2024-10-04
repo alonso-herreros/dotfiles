@@ -9,12 +9,17 @@
 [alias]
 	s = status
     l = log --oneline
+    ls = log --oneline -n 10
 
     a = add
+    aa = add -A
+
     c = commit
     cm = commit -m
-    cc = commit .
-    ccm = commit . -m
+    cmp = "!cmp() { git commit -m \"$@\"; git push; }; cmp"
+    cc = commit -a
+    ccm = commit -am
+    ccmp = "!ccmp() { git commit -am \"$@\"; git push; }; ccmp"
     ca = commit --amend
     cane = commit --amend --no-edit
 
