@@ -152,7 +152,7 @@ button.active,
 }
 
 /* Focused */
-button.focused *,
+button.focused,
 #idle_inhibitor:focus {
     background: @lavender;
 }
@@ -161,6 +161,9 @@ button.focused *,
 button.urgent,
 #tray > .needs-attention {
     background: @red;
+    color: @base;
+}
+#workspaces button.urgent * {
     color: @base;
 }
 
