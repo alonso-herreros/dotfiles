@@ -27,10 +27,10 @@
     ~/.config/locale.conf: config/locale/locale.conf
     ~/.config/mimeapps.list: config/mimeapps.list
 
-    ~/.config/brave-flags.conf: config/brave-flags.conf
-    ~/.config/chromium-flags.conf: config/chromium-flags.conf
-    ~/.config/spotify-flags.conf: config/spotify-flags.conf
-    ~/.config/code-flags.conf: config/code-flags.conf
+    ~/.config/brave-flags.conf: config/app-flags/brave-flags.conf
+    ~/.config/chromium-flags.conf: config/app-flags/chromium-flags.conf
+    ~/.config/spotify-flags.conf: config/app-flags/spotify-flags.conf
+    ~/.config/code-flags.conf: config/app-flags/code-flags.conf
 
     ~/.scripts: scripts
 
