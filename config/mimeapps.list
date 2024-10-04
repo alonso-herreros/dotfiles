@@ -1,5 +1,10 @@
 
 [Default Applications]
-x-scheme-handler/mailto=brave-browser.desktop
 text/markdown=vim.desktop
+x-scheme-handler/webcal=brave-browser.desktop
+x-scheme-handler/mailto=brave-browser.desktop
+video/quicktime=com.github.rafostar.Clapper.desktop
+
+[Added Associations]
+video/quicktime=brave-browser.desktop;com.github.rafostar.Clapper.desktop;
 
