@@ -7,12 +7,18 @@
     pager = less -x5,9
 
 [alias]
+    i = init
 	s = status
     l = log --oneline
     ls = log --oneline -n 10
 
     a = add
     aa = add -A
+    ap = add --patch
+    r = restore
+    rr = restore .
+    rs = restore --staged
+    rrs = restore . --staged
 
     c = commit
     cm = commit -m
@@ -24,12 +30,17 @@
     cane = commit --amend --no-edit
 
     d = diff
+    ds = diff --cached
+
     m = merge
     mt = mergetool
+
+    b = branch
     co = checkout
     cob = checkout -b
 
     uncommit = reset --soft HEAD^
+    unstage = reset HEAD --
 
 [init]
     defaultBranch = main
