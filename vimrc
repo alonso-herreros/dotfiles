@@ -99,26 +99,38 @@ set to tm=1000 ttimeout ttm=50
 
 let mapleader = " "
 
-" This allows Alt-Key mappings
-set <A-h>=h
-set <A-H>=H
-set <A-j>=j
-set <A-J>=J
-set <A-k>=k
-set <A-K>=K
-set <A-l>=l
-set <A-L>=L
-set <A-e>=e
-set <A-E>=E
-set <A-b>=b
-set <A-B>=B
+" This allows Alt-Key mappings, especially over ssh
+set <A-q>=q
 set <A-w>=w
-set <A-W>=W
-set <A-v>=v
-set <A-V>=V
+set <A-e>=e
+set <A-r>=r
 set <A-i>=i
+set <A-o>=o
 set <A-a>=a
+set <A-s>=s
+set <A-d>=d
+set <A-f>=f
+set <A-g>=g
+set <A-h>=h
+set <A-j>=j
+set <A-k>=k
+set <A-l>=l
+set <A-z>=z
+set <A-x>=x
+set <A-c>=c
+set <A-v>=v
+set <A-b>=b
+set <A-n>=n
 set <A-m>=m
+set <A-Q>=Q
+set <A-W>=W
+set <A-E>=E
+set <A-H>=H
+set <A-J>=J
+set <A-K>=K
+set <A-L>=L
+set <A-V>=V
+set <A-B>=B
 set <A-M>=M
 set <A-`>=`
 
@@ -198,6 +210,7 @@ noremap! <C-A-LT> <C-w><LT>
 noremap! <C-A-+> <C-w>+
 noremap! <C-A-_> <C-w>-
 
+
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
 nnoremap J 10gjzz
@@ -230,6 +243,8 @@ nmap <Leader>x :bd<CR>
 " Buffers with Tab. Tabs are on Alt-h/l
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bN<CR>
+" Reflow with Alt+q (due to VSCode reflow shortcut)
+nnoremap <A-q> gwip
 
 " ======= OP-PENDING MODE MAPPINGS =======
 " Beginning/end of line with H/L
@@ -255,8 +270,12 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
+" Reflow with Alt+q (due to VSCode reflow shortcut)
+vnoremap <A-q> gw
 
 " ======= INSERT MODE MAPPINGS =======
+" Since Ctrl+z in insert mode doesn't do anything useful, let it... do this
+inoremap <C-z> <C-u>
 " Ctrl+backspace/delete
 inoremap <C-Backspace> <C-w>
 inoremap <C-Delete> <C-o>de
@@ -290,6 +309,8 @@ inoremap <A-J> <C-o>vj
 inoremap <A-K> <C-o>vk
 inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
+" Reflow with Alt+q (due to VSCode reflow shortcut)
+inoremap <A-q> <C-o>gwip
 
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write
