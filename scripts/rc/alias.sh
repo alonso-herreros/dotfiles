@@ -30,7 +30,7 @@ function ozone-wayland() {
 }
 
 function sshback() {
-    ssh $SSH_MASTER_USER@master
+    ssh $SSH_MASTER_USER@master ${@:1}
 }
 
 alias lsg="ls && echo ' ' && git status"
