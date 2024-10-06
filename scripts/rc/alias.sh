@@ -6,12 +6,10 @@ function cdls() {
     cd ${@:1}
     ls
 }
-
 function cdl() {
     cd ${@:1}
     ls
 }
-
 function mkdircd() {
     mkdir ${@:1}
     cd ${@:1}
@@ -20,17 +18,19 @@ function mkdircd() {
 function upgrep() {
     pgrep -u $USER ${@:1}
 }
-
 function upkill() {
     kill $(pgrep -u $USER ${@:1})
 }
-
 function uprestart() {
     kill $(pgrep -u $USER $1); detach ${@:1}
 }
 
 function ozone-wayland() {
     ${@:1} --enable-features=UseOzonePlatform --ozone-platform=wayland
+}
+
+function sshback() {
+    ssh $SSH_MASTER_USER@master
 }
 
 alias lsg="ls && echo ' ' && git status"
