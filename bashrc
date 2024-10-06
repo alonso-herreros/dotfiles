@@ -24,7 +24,8 @@ eval "$(zoxide init bash --cmd cd)"
 
 [ -f /usr/share/git/completion/git-completion.bash ] && source /usr/share/git/completion/git-completion.bash
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+# Should be set by services and the Desktop Environment. It can fuck shit up in cases like Agent Forwarding
+# export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
 export EDITOR=vim
 export PAGER="less -Ri"
