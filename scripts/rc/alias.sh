@@ -44,5 +44,7 @@ alias btctl="bluetoothctl"
 alias v="vim"
 alias g="git"
 alias c="cd"
+alias s="ssh"
+alias sf="ssh -o ForwardAgent=yes"
 alias nn="nnn -n"
 
