@@ -26,10 +26,14 @@ else
     exit 1
 fi
 
+# Well, empty the file, duh
 if [ $CLEAR -eq 1 ]; then
     > $FILE
 fi
 
+# Log date and command running
 echo "[$(date '+%Y-%m-%d, %T')] ${@:1}" >> $FILE
-${@:1} 2>&1 | tee -a $FILE
+
+# If the program doesn't flush, not using stdbuf means we won't see anything
+stdbuf -oL ${@:1} 2>&1 | tee -a $FILE
 
