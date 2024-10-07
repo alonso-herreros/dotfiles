@@ -34,6 +34,11 @@
 
     ~/.scripts: scripts
 
+    # Warning: this is a bunch of files added to path!
+    ~/.local/bin/:
+      glob: True
+      path: scripts/to-path/**
+
     ~/Pictures/Wallpaper: wallpaper
 
     ~/.ssh/config: private/.ssh/config
