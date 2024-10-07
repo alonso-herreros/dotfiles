@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
 
 echo_help() {
-    echo "Usage: $0 [flags] <filename> <command>"
+    echo "Usage: logcmd [flags] <filename> <command>"
     echo "  Flags:"
-    echo "   -a  --apend   Use append mode"
+    echo "   -c  --clear   Clear file before writing"
+    echo "   -h  --help    Show this message"
 }
 
+CLEAR=0
+
 case "$1" in
-    -a | --apend)
-        TEE_MODE = "-a"
+    -c | --clear)
+        CLEAR=1
         shift;;
     -h | --help)
         echo_help
@@ -23,6 +26,10 @@ else
     exit 1
 fi
 
-echo "[$(date "+%Y-%m-%d, %T")] ${@:1}" | tee $TEE_MODE $FILE
+if [ $CLEAR -eq 1 ]; then
+    > $FILE
+fi
+
+echo "[$(date '+%Y-%m-%d, %T')] ${@:1}" >> $FILE
 ${@:1} 2>&1 | tee -a $FILE
 
