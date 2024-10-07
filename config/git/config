@@ -81,6 +81,9 @@
 [help]
     autocorrect = prompt
 
+[advice]
+    addIgnoredFile = false
+
 [url "git@github.com:"]
     pushInsteadOf = "https://github.com/"
     insteadOf = "gh:"
