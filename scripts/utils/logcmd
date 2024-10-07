@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+echo_help() {
+    echo "Usage: $0 [flags] <filename> <command>"
+    echo "  Flags:"
+    echo "   -a  --apend   Use append mode"
+}
+
+case "$1" in
+    -a | --apend)
+        TEE_MODE = "-a"
+        shift;;
+    -h | --help)
+        echo_help
+        exit 0;;
+esac
+
+if [[ -n "$1" && "$1" != -* ]]; then
+    FILE="$1"
+    shift
+else
+    echo_help
+    exit 1
+fi
+
+echo "[$(date "+%Y-%m-%d, %T")] ${@:1}" | tee $TEE_MODE $FILE
+${@:1} 2>&1 | tee -a $FILE
+
