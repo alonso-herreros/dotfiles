@@ -243,6 +243,9 @@ nmap <Leader>x :bd<CR>
 " Buffers with Tab. Tabs are on Alt-h/l
 nmap <Tab> :bn<CR>
 nmap <S-Tab> :bN<CR>
+" Inspect character
+nnoremap gi ga
+nnoremap g? ga
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 nnoremap <A-q> gwip
 
