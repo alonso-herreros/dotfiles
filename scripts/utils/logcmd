@@ -1,5 +1,22 @@
 #!/usr/bin/env bash
 
+# =========================================================
+#
+# @filename: logcmd
+#
+# @author: Alonso Herreros
+#
+# @description:
+# log a command name and output to a file
+#
+# @dependencies:
+# - tee
+#
+# @optional:
+# - stdbuf
+#
+# =========================================================
+
 function echo_help() {
     echo "Usage: logcmd [flags] <filename> <command>"
     echo "  Flags:"
