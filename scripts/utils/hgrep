@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+function args() {
+    if [[ "$1" =~ ^-[0-9]+ ]]; then
+        HEADER_LINES="${1:1}"
+        shift
+    fi
+
+    GREP_ARGS=${@:1}
+}
+
+HEADER_LINES=1
+
+args $@
+
+# tee >(head -$HEADER_LINES <&0)
+# tee >(grep --color=auto $GREP_ARGS)
+tee >(grep --color=auto $GREP_ARGS)
+# head -$HEADER_LINES <&0
+# grep --color=auto $GREP_ARGS
+# tee >(head -$HEADER_LINES) | grep --color=auto $GREP_ARGS
+# tee >(grep --color=auto $GREP_ARGS) | head -$HEADER_LINES
+
