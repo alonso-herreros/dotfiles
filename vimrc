@@ -36,6 +36,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'chrisbra/Colorizer'
 Plug 'godlygeek/tabular'
+Plug 'wellle/context.vim'
 call plug#end()
 
 set t_Co=256
@@ -78,6 +79,22 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' |'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v (%p%%)%#__restore__#'
+
+" Context plugin
+function IndentWithHeadings(line)
+    let indent = indent(a:line)
+    if indent < 0 | return [indent, indent] | endif
+
+    let headings = match(getline(a:line), '^#\+\zs\s')+1
+    if headings <= 0 | let headings = 6 | endif
+
+    return [indent+headings, indent]
+endfunction
+
+let g:context_max_height = 8
+let g:context_skip_regex = '^\s*\($\|//\|/\*\|\*\($\|/s\|\/\)\)'
+let g:Context_indent = funcref("IndentWithHeadings")
+
 
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
