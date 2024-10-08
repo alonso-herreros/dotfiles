@@ -58,15 +58,16 @@ echo "[$(date '+%Y-%m-%d, %T')] $COMMAND" >> $FILE
 
 trap 'kill -INT $cmd_pid' SIGINT
 
-# If the program doesn't flush, not using stdbuf means we won't see anything
+# If the program doesn't flush, output will be held back
+
+# Stdbuf is pretty good, but lines sometimes get out of order
 if command -v stdbuf &> /dev/null; then
-    stdbuf -oL $COMMAND 2>&1 | tee -a $FILE &
-    cmd_pid=$!
+    eval stdbuf -oL $COMMAND 2>&1 | tee -a $FILE &
 else
     # If stdbuf is not installed, can't use it
-    $COMMAND 2>&1 | tee -a $FILE &
-    cmd_pid=$!
+    eval $COMMAND 2>&1 | tee -a $FILE &
 fi
+cmd_pid=$!
 
 wait $cmd_pid
 
