@@ -1,30 +1,35 @@
 #!/usr/bin/env bash
 
-echo_help() {
+function echo_help() {
     echo "Usage: logcmd [flags] <filename> <command>"
     echo "  Flags:"
     echo "   -c  --clear   Clear file before writing"
     echo "   -h  --help    Show this message"
 }
 
-CLEAR=0
+function args() {
+    case "$1" in
+        -c | --clear)
+            CLEAR=1
+            shift;;
+        -h | --help)
+            echo_help
+            exit 0;;
+    esac
 
-case "$1" in
-    -c | --clear)
-        CLEAR=1
-        shift;;
-    -h | --help)
+    if [[ -n "$1" && "$1" != -* ]]; then
+        FILE="$1"
+        shift
+    else
         echo_help
-        exit 0;;
-esac
+        exit 1
+    fi
 
-if [[ -n "$1" && "$1" != -* ]]; then
-    FILE="$1"
-    shift
-else
-    echo_help
-    exit 1
-fi
+    COMMAND=${@:1}
+}
+
+CLEAR=0
+args $@
 
 # Well, empty the file, duh
 if [ $CLEAR -eq 1 ]; then
@@ -32,13 +37,19 @@ if [ $CLEAR -eq 1 ]; then
 fi
 
 # Log date and command running
-echo "[$(date '+%Y-%m-%d, %T')] ${@:1}" >> $FILE
+echo "[$(date '+%Y-%m-%d, %T')] $COMMAND" >> $FILE
+
+trap 'kill -INT $cmd_pid' SIGINT
 
 # If the program doesn't flush, not using stdbuf means we won't see anything
 if command -v stdbuf &> /dev/null; then
-    stdbuf -oL ${@:1} 2>&1 | tee -a $FILE
+    stdbuf -oL $COMMAND 2>&1 | tee -a $FILE &
+    cmd_pid=$!
 else
     # If stdbuf is not installed, can't use it
-    ${@:1} 2>&1 | tee -a $FILE
+    $COMMAND 2>&1 | tee -a $FILE &
+    cmd_pid=$!
 fi
+
+wait $cmd_pid
 
