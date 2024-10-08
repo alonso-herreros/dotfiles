@@ -1,4 +1,6 @@
 *.sw?
+.nfs*
+
 *.code-workspace
 .vscode/
 *.ova
