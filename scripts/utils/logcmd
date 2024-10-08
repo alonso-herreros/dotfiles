@@ -35,5 +35,10 @@ fi
 echo "[$(date '+%Y-%m-%d, %T')] ${@:1}" >> $FILE
 
 # If the program doesn't flush, not using stdbuf means we won't see anything
-stdbuf -oL ${@:1} 2>&1 | tee -a $FILE
+if command -v stdbuf &> /dev/null; then
+    stdbuf -oL ${@:1} 2>&1 | tee -a $FILE
+else
+    # If stdbuf is not installed, can't use it
+    ${@:1} 2>&1 | tee -a $FILE
+fi
 
