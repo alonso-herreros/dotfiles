@@ -19,7 +19,7 @@ xkb_symbols "basic" {
     key <AD11>  {[ NoSymbol,  NoSymbol,         NoSymbol,       NoSymbol ]}; // 
     key <AD12>  {[ NoSymbol,  NoSymbol,         NoSymbol,       multiply ]}; // ×
 
-    key <AC10>  {[ NoSymbol,  NoSymbol,          implies,       ifonlyif ]}; // ⇒ ⇔
+    key <AC10>  {[ NoSymbol,  NoSymbol,            U27FA,          U27F9 ]}; // ⟺ ⟹ (not ⇒ ⇔)
     key <AC11>  {[ NoSymbol,  NoSymbol,       NoSymbol, leftanglebracket ]}; // ⟨
     key <BKSL>  {[ NoSymbol,  NoSymbol,      NoSymbol, rightanglebracket ]}; // ⟩
 
