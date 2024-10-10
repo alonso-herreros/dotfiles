@@ -5,7 +5,7 @@ xkb_symbols "basic" {
     key <TLDE>  {[ NoSymbol,  NoSymbol,         NoSymbol,         degree ]}; // °
     key <AE01>  {[ NoSymbol,  NoSymbol,         NoSymbol,       integral ]}; // ∫
     key <AE02>  {[ NoSymbol,  NoSymbol,         NoSymbol,          U2200 ]}; // ∀
-    key <AE03>  {[ NoSymbol,  NoSymbol,         NoSymbol, periodcentered ]}; // ·
+    key <AE03>  {[ NoSymbol,  NoSymbol,         NoSymbol,          U22C5 ]}; // ⋅ (not ·)
     key <AE04>  {[ NoSymbol,  NoSymbol,         NoSymbol,     logicaland ]}; // ∧
     key <AE05>  {[ NoSymbol,  NoSymbol,         NoSymbol,      logicalor ]}; // ∨
     key <AE06>  {[ NoSymbol,  NoSymbol,         NoSymbol,       NoSymbol ]}; // 
