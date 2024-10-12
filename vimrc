@@ -301,11 +301,11 @@ inoremap <C-Backspace> <C-w>
 inoremap <C-Delete> <C-o>de
 " Back-tabbing
 inoremap <S-Tab> <C-d>
-" Easy exit, optionally saving
+" Easy exit, kj to the left and jk to the right 
 inoremap kj <Esc>
 inoremap KJ <Esc>
-inoremap jk <Esc>:w<Return>
-inoremap JK <Esc>:w<Return>
+inoremap jk <Esc>l
+inoremap JK <Esc>l
 " Line-enders
 inoremap ;; <C-o>$;
 " Newlines
