@@ -1,0 +1,34 @@
+# Ignore missing battery errors
+-i
+
+# Cause notifications to expire
+-e
+# Use icon
+-I
+battery-low
+
+# Use custom command to send notifications
+# -N
+# -M
+# "notify-send '%s' '' -i battery-caution -t 5000"
+
+
+# Warning at 15%, consistent with waybar
+-w
+15
+-W
+Battery warning
+
+# Critical at 8%, not consistent with waybar
+-c
+8
+-C
+Battery critical
+
+# At 5%, there are udev rules set to hibernate.
+# We'll hibernate at 4% just in case
+-d
+4
+-D
+systemctl hibernate -i
+

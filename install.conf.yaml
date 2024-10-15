@@ -26,6 +26,7 @@
     ~/.config/libinput-gestures.conf: config/libinput-gestures.conf
     ~/.config/locale.conf: config/locale/locale.conf
     ~/.config/mimeapps.list: config/mimeapps.list
+    ~/.config/batsignal: config/batsignal
 
     ~/.config/brave-flags.conf: config/app-flags/brave-flags.conf
     ~/.config/chromium-flags.conf: config/app-flags/chromium-flags.conf
