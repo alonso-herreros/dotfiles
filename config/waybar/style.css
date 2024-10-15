@@ -213,7 +213,7 @@ button.urgent,
     background-color: @red;
     animation: 1s steps(20) blink infinite alternate;
 }
-#battery._10:not(.charging) {
+#battery._15:not(.charging) {
     background-color: @surface2;
     animation: 5s steps(100) blink2 infinite alternate;
 }
