@@ -7,37 +7,45 @@
     pager = less -x5,9
 
 [alias]
-    i = init
-	s = status
-    l = log --oneline
-    ls = log --oneline -n 10
+    i    = init
 
-    a = add
-    aa = add -A
-    ap = add --patch
-    r = restore
-    rr = restore .
-    rs = restore --staged
-    rrs = restore . --staged
+	s    = status
+	ss   = status --short
+    l    = log --oneline -n 20  # Log (default)
+    ls   = log --oneline -n 10  # Log short
+    ln   = log --oneline -n     # Log n
+    la   = log --oneline        # Log all
 
-    c = commit
-    cm = commit -m
-    cmp = "!cmp() { git commit -m \"$@\"; git push; }; cmp"
-    cc = commit -a
-    ccm = commit -am
+    a    = add
+    aa   = add -A
+    ap   = add --patch
+    r    = restore
+    rr   = restore .
+    rs   = restore --staged
+    rrs  = restore . --staged
+
+    c    = commit
+    cm   = commit -m
+    cmp  = "!cmp() { git commit -m \"$@\"; git push; }; cmp"
+    cc   = commit -a
+    ccm  = commit -am
     ccmp = "!ccmp() { git commit -am \"$@\"; git push; }; ccmp"
-    ca = commit --amend
+    ca   = commit --amend
     cane = commit --amend --no-edit
 
-    d = diff
-    ds = diff --cached
+    d    = diff
+    ds   = diff --cached
 
-    m = merge
-    mt = mergetool
+    m    = merge
+    mt   = mergetool
 
-    b = branch
-    co = checkout
-    cob = checkout -b
+    b    = branch
+    co   = checkout
+    cob  = checkout -b
+
+    Rv   = remote --verbose
+    Ra   = remote add
+    Rao  = remote add origin
 
     uncommit = reset --soft HEAD^
     unstage = reset HEAD --
