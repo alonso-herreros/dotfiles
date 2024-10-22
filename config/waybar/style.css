@@ -182,7 +182,7 @@ button.urgent,
     background-repeat: no-repeat;
     background-image: linear-gradient(@green, @green);
 }
-#battery._5, #battery._10, #battery._20 {
+#battery._5, #battery._10, #battery._15, #battery._20 {
     background-image: linear-gradient(@red, @red);
 }
 #battery._30, #battery._40 {
@@ -197,6 +197,7 @@ button.urgent,
 
 #battery._5 { background-size: 5% 100%; }
 #battery._10 { background-size: 10% 100%; }
+#battery._15 { background-size: 15% 100%; }
 #battery._20 { background-size: 20% 100%; }
 #battery._30 { background-size: 30% 100%; }
 #battery._40 { background-size: 40% 100%; }
