@@ -48,3 +48,5 @@ alias s="ssh"
 alias sf="ssh -o ForwardAgent=yes"
 alias nn="nnn -n"
 
+alias matlabcli="matlab -nosplash -nodisplay"
+
