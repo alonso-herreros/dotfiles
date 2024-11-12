@@ -33,6 +33,7 @@ function sshback() {
     ssh $SSH_MASTER_USER@master ${@:1}
 }
 
+alias ls="ls -hlA --color=auto --group-directories-first"
 alias lsg="ls && echo ' ' && git status"
 alias fonts="fc-list"
 alias open="xdg-open"

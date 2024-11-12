@@ -6,7 +6,7 @@ PATH="$HOME/.local/bin:$PATH"
 if [ -n "$( echo $- | grep i )" ]; then
     # [ -f ~/.config/synth-shell/synth-shell-greeter.sh ] && source ~/.config/synth-shell/synth-shell-greeter.sh
     [ -f ~/.config/synth-shell/synth-shell-prompt.sh ] && source ~/.config/synth-shell/synth-shell-prompt.sh
-    [ -f ~/.config/synth-shell/better-ls.sh ] && source ~/.config/synth-shell/better-ls.sh
+    # [ -f ~/.config/synth-shell/better-ls.sh ] && source ~/.config/synth-shell/better-ls.sh
     [ -f ~/.config/synth-shell/alias.sh ] && source ~/.config/synth-shell/alias.sh
     [ -f ~/better-history.sh ] && source ~/.config/synth-shell/better-history.sh
 fi
