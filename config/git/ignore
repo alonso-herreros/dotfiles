@@ -3,11 +3,16 @@
 
 *.code-workspace
 .vscode/
-*.ova
-build/
-CMakeUserPresets.json
 matlabInVSCodeVariableInfo.csv
+
+CMakeUserPresets.json
+build/
+*.ova
+
 .venv/
 *.pyc
 *.orig
+
+tmp/
+ignore/
 
