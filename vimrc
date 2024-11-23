@@ -161,8 +161,10 @@ map T <Plug>Sneak_T
 map , <Plug>Sneak_;
 map ; <Plug>Sneak_,
 " Align
+nmap <A-a> <Plug>(EasyAlign)ip
 xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+nmap <A-a> <Plug>(EasyAlign)ip
+xmap ga <Plug>(EasyAlign)
 " Commentary with Ctrl+ç
 nmap  m`gcc``
 nmap <C-ç> m`gcc``
