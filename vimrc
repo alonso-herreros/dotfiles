@@ -331,6 +331,8 @@ inoremap <A-J> <C-o>vj
 inoremap <A-K> <C-o>vk
 inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
+" Joining lines with Ctrl+j
+nnoremap <C-j> J
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 inoremap <A-q> <C-o>gwip
 
