@@ -30,7 +30,8 @@ set_pm() {
     case "$1" in
         on)
             hyprctl keyword decoration:blur:enabled false
-            hyprctl keyword decoration:drop_shadow false
+            hyprctl keyword decoration:shadow:enabled false
+            hyprctl keyword misc:vfr true
             ;;
         off)
             hyprctl reload
