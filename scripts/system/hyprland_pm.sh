@@ -29,9 +29,14 @@ send_notification() {
 set_pm() {
     case "$1" in
         on)
+            hyprctl keyword decoration:inactive_opacity 1.0
             hyprctl keyword decoration:blur:enabled false
             hyprctl keyword decoration:shadow:enabled false
+
             hyprctl keyword misc:vfr true
+            hyprctl keyword plugin:dynamic-cursors:enabled false
+
+            hyprctl keyword windowrulev2 opacity 1.0 override,title:.*
             ;;
         off)
             hyprctl reload
