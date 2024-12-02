@@ -31,7 +31,7 @@ alias wlc='wl-copy'
 
 # ==== Combos & Options ====
 
-alias lsg='ls && echo ' ' && git status'
+alias lsg='ls && echo " " && git status'
 alias sf='ssh -o ForwardAgent=yes'
 alias nn='nnn -n'
 alias matlabcli='matlab -nosplash -nodisplay'
