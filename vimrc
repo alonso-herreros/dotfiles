@@ -195,11 +195,13 @@ noremap <C-_> <C-x>
 " Yank to clipboard
 map <Leader>y "+y
 map <Leader>Y "+Y
-" Put and delete from/to yank register
+" Put, delete and change from/to yank register
 map <Leader>p "0p
 map <Leader>P "0P
 map <Leader>d "0d
 map <Leader>D "0D
+map <Leader>c "0c
+map <Leader>C "0C
 " Quick use: q macro and m marker
 noremap Q @q
 noremap M `m
