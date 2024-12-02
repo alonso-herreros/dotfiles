@@ -180,7 +180,7 @@
     },
     "cpu#val": {
         "interval": 10,
-        "format": "({usage}%)",
+        "format": "{usage}%",
         // "format-alt": "({usage}%)",
         // "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ({usage}%)",
         "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ({usage}%)",
