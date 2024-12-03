@@ -207,7 +207,7 @@
     "temperature#cpu": {
         "interval": 10,
         "thermal-zone": 7,
-        "critical-threshold": 60,
+        "critical-threshold": 45,
         "format": "{icon}",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false
@@ -215,7 +215,7 @@
     "temperature#cpu_val": {
         "interval": 10,
         "thermal-zone": 7,
-        "critical-threshold": 55,
+        "critical-threshold": 45,
         "format": "{temperatureC}°C",
         "format-icons": ["", "", "", "", ""],
         "tooltip": false
