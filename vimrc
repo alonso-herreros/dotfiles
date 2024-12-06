@@ -326,6 +326,10 @@ inoremap <A-h> <Left>
 inoremap <A-j> <Down>
 inoremap <A-k> <Up>
 inoremap <A-l> <Right>
+" TODO: fix wbe moving in insert mode
+" inoremap <A-w> <C-o>w
+" inoremap <A-e> <C-Right>
+" inoremap <A-b> <C-o>b
 " Quick markers
 inoremap <A-m> <C-o>m`
 inoremap <A-`> <C-o>``
