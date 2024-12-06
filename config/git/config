@@ -26,10 +26,10 @@
 
     c    = commit
     cm   = commit -m
-    cmp  = "!cmp() { git commit -m \"$@\"; git push; }; cmp"
-    cc   = commit -a
-    ccm  = commit -am
-    ccmp = "!ccmp() { git commit -am \"$@\"; git push; }; ccmp"
+    cmp  = "!cmp()  { git commit -m \"$@\"; git push; }; cmp"
+    cc   = "!cc()   { git add -A; git commit; }; cc"
+    ccm  = "!ccm()  { git add -A; git commit -m \"$@\"; }; ccm"
+    ccmp = "!ccmp() { git add -A; git commit -m \"$@\"; git push; }; ccmp"
     ca   = commit --amend
     cane = commit --amend --no-edit
 
