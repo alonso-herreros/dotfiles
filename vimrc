@@ -2,6 +2,9 @@ source $VIMRUNTIME/defaults.vim
 language en_US.utf8
 filetype plugin indent on
 
+" Source .bash_aliases when running shell commands with :!
+let $BASH_ENV = "~/.bash_aliases"
+
 " Install vim-plug if needed
 if empty(glob("~/.vim/autoload/plug.vim"))
   silent! execute '!curl --create-dirs -fsSLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
