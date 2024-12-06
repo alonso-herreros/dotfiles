@@ -212,14 +212,14 @@ noremap Q @q
 noremap M `m
 " Redo with U
 noremap U <C-r>
-" Buffers with (shift)+Tab or Alt+h/l. I don't know what I'll do with tabs.
-map <Tab> :bn<CR>
-map <S-Tab> :bN<CR>
+" Buffers with Alt+h/l or Ctrl+(Shift)+Tab, as they're the most 'tab'-like
 noremap <A-l> :bn<CR>
 noremap <A-h> :bN<CR>
-" Tabs with Ctr+Tab... it is what it is, you know
-noremap <C-Tab> gt
-noremap <C-S-Tab> gT
+map <C-Tab> :bn<CR>
+map <C-S-Tab> :bN<CR>
+" Tabs with (Shift)+Tab. Not normally used in other programs, but useful here.
+noremap <Tab> gt
+noremap <S-Tab> gT
 " Split manipulation with Ctrl+Alt+key (Not used enough to need Ctrl+key)
 noremap <C-A-h> <C-w>h
 noremap <C-A-j> <C-w>j
