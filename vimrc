@@ -73,7 +73,7 @@ let g:airline_theme = 'codedark'
 colorscheme codedark
 hi DiffText term=bold cterm=bold ctermfg=188 ctermbg=25 guifg=#D4D4D4 guibg=#339ab2
 
-let g:peekaboo_delay=300
+let g:peekaboo_delay=1000
 let g:peekaboo_compact=1
 
 let g:airline_powerline_fonts = 1
@@ -99,16 +99,16 @@ let g:context_skip_regex = '^\s*\($\|//\|/\*\|\*\($\|/s\|\/\)\)'
 let g:Context_indent = funcref("IndentWithHeadings")
 
 
-set showcmd		" Show (partial) command in status line.
-set showmatch		" Show matching brackets.
-set ignorecase		" Do case insensitive matching
-set smartcase		" Do smart case matching
+set showcmd                " Show (partial) command in status line.
+set showmatch              " Show matching brackets.
+set ignorecase             " Do case insensitive matching
+set smartcase              " Do smart case matching
 let g:sneak#use_ic_scs = 1 " Make Sneak use smartcase as well
-set incsearch		" Incremental search
-set autowrite		" Automatically save before commands like :next and :make
-set hidden		" Hide buffers when they are abandoned
+set incsearch              " Incremental search
+set autowrite              " Automatically save before commands like :next and :make
+set hidden                 " Hide buffers when they are abandoned
 
-set mouse=a		" Enable mouse usage (all modes)
+set mouse=a                " Enable mouse usage (all modes)
 
 set whichwrap+=h,l
 
@@ -165,8 +165,10 @@ map , <Plug>Sneak_;
 map ; <Plug>Sneak_,
 " Align
 nmap <A-a> <Plug>(EasyAlign)ip
+nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 nmap <A-a> <Plug>(EasyAlign)ip
+nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
 " Commentary with Ctrl+ç
 nmap  m`gcc``
@@ -176,16 +178,16 @@ vmap <C-ç> gc
 imap  <C-o>m`gcc``
 imap <C-ç> <C-o>m`gcc``
 " Tabular with Ctrl+t
-noremap <C-t> :Tab/
+" noremap <C-t> :Tab/
 " fzf Files with C-S-e
 nmap <C-E> :Files<CR>
 
 
 " ======= GENERAL MAPPINGS =======
 " Save with C-s, sudo save with C-A-s
-map <C-s> :w<CR>
-map! <C-s> <Esc>:w<CR>
-map <C-A-s> :w!!<CR>
+map  <C-s>   :w<CR>
+map! <C-s>   <Esc>:w<CR>
+map  <C-A-s> :w!!<CR>
 map! <C-A-s> <Esc>:w!!<CR>
 " Ctrl-F to search
 noremap <C-f> /
@@ -208,15 +210,16 @@ map <Leader>C "0C
 " Quick use: q macro and m marker
 noremap Q @q
 noremap M `m
-" Yank-to-end like C and D
-noremap Y y$
 " Redo with U
 noremap U <C-r>
-" Tab moving with Alt+h/l (matching my vimium config)
-noremap <A-l> gt
-noremap <A-h> gT
-noremap! <A-l> gt
-noremap! <A-h> gT
+" Buffers with (shift)+Tab or Alt+h/l. I don't know what I'll do with tabs.
+map <Tab> :bn<CR>
+map <S-Tab> :bN<CR>
+noremap <A-l> :bn<CR>
+noremap <A-h> :bN<CR>
+" Tabs with Ctr+Tab... it is what it is, you know
+noremap <C-Tab> gt
+noremap <C-S-Tab> gT
 " Split manipulation with Ctrl+Alt+key (Not used enough to need Ctrl+key)
 noremap <C-A-h> <C-w>h
 noremap <C-A-j> <C-w>j
@@ -241,6 +244,8 @@ nnoremap J 10gjzz
 nnoremap K 10gkzz
 nnoremap H ^
 nnoremap L $
+" Yank-to-end like C and D
+nnoremap Y y$
 " Moving and duplicating lines
 nnoremap <A-j> ddp
 nnoremap <A-J> yyp
@@ -264,9 +269,6 @@ nmap <Leader>q :q!<CR>
 nmap <Leader>e :e!<CR>
 nmap <Leader>z :wq<CR>
 nmap <Leader>x :bd<CR>
-" Buffers with Tab. Tabs are on Alt-h/l
-nmap <Tab> :bn<CR>
-nmap <S-Tab> :bN<CR>
 " Inspect character
 nnoremap gi ga
 nnoremap g? ga
@@ -308,13 +310,13 @@ inoremap <C-Backspace> <C-w>
 inoremap <C-Delete> <C-o>de
 " Back-tabbing
 inoremap <S-Tab> <C-d>
-" Easy exit, kj to the left and jk to the right 
+" Easy exit, kj to the left and jk to the right
 inoremap kj <Esc>
 inoremap KJ <Esc>
 inoremap jk <Esc>l
 inoremap JK <Esc>l
-" Line-enders
-inoremap ;; <C-o>$;
+" Line-enders - not that useful in my experience
+" inoremap ;; <C-o>$;
 " Newlines
 inoremap <S-CR> <Esc>O
 inoremap <A-o> <Esc>o
@@ -337,7 +339,7 @@ inoremap <A-K> <C-o>vk
 inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
 " Joining lines with Ctrl+j
-nnoremap <C-j> J
+nnoremap <C-j> <C-o>J
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 inoremap <A-q> <C-o>gwip
 
