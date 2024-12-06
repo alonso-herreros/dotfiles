@@ -1,3 +1,6 @@
+# In case this is not sourced from an interactive shell
+shopt -s expand_aliases
+
 ##################
 ## TRUE ALIASES ##
 ##################
