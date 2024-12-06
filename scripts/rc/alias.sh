@@ -26,19 +26,31 @@ alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 alias fonts='fc-list'
 alias open='xdg-open'
 
-# ==== Shortcuts ====
+# ==== Shortcuts and shorthand ====
 
 # One-chars
+alias c='cd'
+alias l='ls'
 alias v='vim'
 alias g='git'
-alias c='cd'
 alias s='ssh'
 alias n='nnn'
+alias h='hyprctl'
 
 alias pm='pacman'
+alias so='source'
 
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
+alias gimme='git clone'
+
+# Hyprctl
+alias hk='hyprctl keyword'
+alias hd='hyprctl dispatch'
+alias hm='hyprctl monitor'
+alias hms='hyprctl monitors'
+alias hcs='hyprctl clients'
+alias hpm='hyprpm'
 
 # cd back
 alias ..='cd ..'
@@ -53,6 +65,7 @@ alias lsg='ls && echo " " && git status'
 alias sf='ssh -o ForwardAgent=yes'
 alias nn='nnn -n'
 alias matlabcli='matlab -nosplash -nodisplay'
+alias gpconnect='sudo gpclient connect --default-browser'
 
 # ==== Confusions & Mistypes ====
 
@@ -60,20 +73,23 @@ alias pamcan='pacman'
 alias nmctl='nmcli'
 alias suod='sudo'
 alias sduo='sudo'
+
 alias dog='cat'
 alias meow='cat'
-alias :q='echo Not vi, but ok; exit'
+alias :q='echo Not vi, but okay...; sleep 0.5; exit'
 alias :e='vim'
 
 # ==== Yeah ... ====
-alias sudo='\sudo'
+alias sudo='\sudo '
 alias fucking='sudo'
-alias fkin='sudo'
+alias fkin='fucking'
 alias simonsays='sudo'
-alias please='sudo $(history -p !!)'
-alias plz='ffs'
-alias cmon='ffs'
-alias ffs='please'
+alias please='sudo'
+alias plz='please'
+alias fuck='sudo $(history -p !!)'
+alias ffs='fuck'
+alias frtho='fuck'
+alias cmon='fuck'
 
 #######################
 ## UTILITY FUNCITONS ##
