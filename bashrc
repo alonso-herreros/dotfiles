@@ -16,7 +16,8 @@ if [ -n "$( echo $- | grep i )" ]; then
     [ -f ~/better-history.sh ] && source ~/.config/synth-shell/better-history.sh
 fi
 
-[ -f ~/.scripts/rc/alias.sh ] && source ~/.scripts/rc/alias.sh
+# [ -f ~/.scripts/rc/alias.sh ] && source ~/.scripts/rc/alias.sh
+[ -f ~/.bash_aliases ] && source ~/.bash_aliases
 
 eval "$(zoxide init bash --cmd cd)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash || eval "$(fzf --bash)"

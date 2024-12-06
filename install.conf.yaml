@@ -7,6 +7,7 @@
 
 - link:
     ~/.bashrc: bashrc
+    ~/.bash_aliases: scripts/rc/alias.sh
     # ~/.vim: vim
     ~/.vimrc: vimrc
 
