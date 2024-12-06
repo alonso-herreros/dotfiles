@@ -40,8 +40,9 @@ alias s='ssh'
 alias n='nnn'
 alias h='hyprctl'
 
-alias pm='pacman'
+alias hg='history | grep'
 alias so='source'
+alias pm='pacman'
 
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
