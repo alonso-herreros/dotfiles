@@ -37,8 +37,9 @@ alias l='ls'
 alias v='vim'
 alias g='git'
 alias s='ssh'
-alias n='nnn'
 alias h='hyprctl'
+alias n='nnn'
+# alias y='yazi' # sourcing the yazi_quitcd script instead
 
 alias hg='history | grep'
 alias so='source'

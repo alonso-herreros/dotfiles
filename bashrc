@@ -26,6 +26,9 @@ eval "$(zoxide init bash --cmd cd)"
 # Should be set by services and the Desktop Environment. It can fuck shit up in cases like Agent Forwarding
 # export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
 
+# ==== yazi ====
+[ -f ~/.scripts/rc/yazi_quitcd.sh ] && source ~/.scripts/rc/yazi_quitcd.sh
+
 # ==== nnn ====
 [ -f ~/.scripts/rc/nnn_quitcd.sh ] && source ~/.scripts/rc/nnn_quitcd.sh
 # export NNN_OPTS="aAcEGHiQRux" # Must be compiled with O_GITSTATUS=1

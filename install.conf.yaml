@@ -22,6 +22,7 @@
     ~/.config/cura: config/cura
     ~/.config/fuzzel: config/fuzzel
     ~/.config/dunst: config/dunst
+    ~/.config/yazi: config/yazi
 
     # ~/.config/alias.sh: config/alias.sh
     ~/.config/libinput-gestures.conf: config/libinput-gestures.conf
