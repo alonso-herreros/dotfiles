@@ -98,6 +98,8 @@ let g:context_max_height = 8
 let g:context_skip_regex = '^\s*\($\|//\|/\*\|\*\($\|/s\|\/\)\)'
 let g:Context_indent = funcref("IndentWithHeadings")
 
+" Remove mappings from context.vim, which conflict hard with my H
+let g:context_add_mappings = 0
 
 set showcmd                " Show (partial) command in status line.
 set showmatch              " Show matching brackets.
