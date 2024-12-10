@@ -360,6 +360,6 @@ cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 " cnoremap %s/ s/\v
 command! -nargs=1 S %s/\v<args>
 
-cnoreabbr tree NERDTree
+" cnoreabbr tree NERDTree
 
 
