@@ -17,7 +17,7 @@ alias df='df -h'
 alias bc='bc -ql'
 
 alias grep='grep --color=auto'
-alias tree='tree --dirsfirst -C'
+alias tree='tree --dirsfirst -F'
 
 alias pacman='pacman --color=auto'
 alias yay="yay --color=auto"
