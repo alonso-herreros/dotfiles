@@ -31,17 +31,27 @@ ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
+
 edit = [
-	{ run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
-	{ run = 'code $@',    orphan = true, desc = "Code",           for = "windows"},
-	{ run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
-	{ run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
+	{ run = '${EDITOR:-vi} "$@"', desc = "Use $EDITOR",    for = "unix",    block = true },
+    { run = 'vim "$1"',           desc = "Vim",            for = "unix" },
+	{ run = 'code %*',            desc = "Edit with Code", for = "windows", orphan = true },
+    { run = 'vim "%1"',           desc = "Vim",            for = "windows" }
 ]
+
+view = [
+    { run = 'vim -R "$1"', desc = "Vim (read-only)", for = "unix" },
+    { run = 'vim -R "%1"', desc = "Vim (read-only)", for = "windows" }
+]
+
 open = [
-	{ run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
-	{ run = 'open "$@"',                    desc = "Open", for = "macos" },
-	{ run = 'start "" "%1"', orphan = true, desc = "Open", for = "windows" },
+	{ run = 'xdg-open "$1"', desc = "Open",           for = "linux" },
+	{ run = 'open "$@"',     desc = "Open",           for = "macos" },
+	{ run = 'start "" "%1"', desc = "Open",           for = "windows", orphan = true },
+    { run = 'code $@',       desc = "Open with Code", for = "unix" },
+    { run = 'code %@',       desc = "Open with Code", for = "windows" }
 ]
+
 reveal = [
 	{ run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
 	{ run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
@@ -206,3 +216,4 @@ sort_translit  = false
 
 [log]
 enabled = false
+
