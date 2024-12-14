@@ -151,3 +151,20 @@ function sshback() {
     ssh $SSH_MASTER_USER@master ${@:1}
 }
 
+# ==== Misc? ====
+function brave-2pdf() {
+    if [[ -z "$1" || ! -f "$1" ]]; then
+        echo "Usage: $0 <input_file> [output_file]"
+        echo "Make sure the input file exists."
+        exit 1
+    fi
+
+    in=$( realpath "$1" )
+    out=$( realpath "${2:-${in%.*}.pdf}" )
+    shift 2;
+
+    echo "Exporting '$in' to '$out'..."
+
+    brave --headless --disable-gpu --print-to-pdf="$out" --no-pdf-header-footer "$in"
+}
+
