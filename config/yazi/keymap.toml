@@ -54,10 +54,10 @@ keymap = [
 	{ on = "<C-A>",   run = "escape --select",       desc = "Deselect all files everywhere" },
 
 	# Operation
-	{ on = "o",         run = "open",               desc = "Open selected files" },
-	{ on = "O",         run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "<Enter>",   run = "open",               desc = "Open selected files" },
 	{ on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
+	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
+	{ on = "O",         run = "shell ' \"$0\"' --interactive --cursor=1",               desc = "Open selected files" },
 
 	{ on = "y",     run = "yank",            desc = "Yank selected files (copy)" },
 	{ on = "x",     run = "yank --cut",      desc = "Yank selected files (cut)" },

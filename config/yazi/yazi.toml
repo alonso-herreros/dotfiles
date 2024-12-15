@@ -33,24 +33,27 @@ ueberzug_offset = [ 0, 0, 0, 0 ]
 [opener]
 
 open = [
-    { run = 'xdg-open "$1"', desc = "Open",           for = "linux" },
-    { run = 'open "$@"',     desc = "Open",           for = "macos" },
-    { run = 'start "" "%1"', desc = "Open",           for = "windows", orphan = true },
-    { run = 'code $@',       desc = "Open with Code", for = "unix" },
-    { run = 'code %@',       desc = "Open with Code", for = "windows" },
-    { run = '$DEFAULT_' }
+    { run = 'xdg-open "$1"', desc = "Open (XDG)",      for = "linux", orphan = true },
+    { run = 'open "$@"',     desc = "Open",            for = "macos" },
+    { run = 'start "" "%1"', desc = "Open",            for = "windows", orphan = true },
+
+    { run = 'vim -R $@', desc = "Vim (view)", for = "unix",    block = true },
+    { run = 'vim -R %@', desc = "Vim (view)", for = "windows", block = true },
+    { run = 'code $@',   desc = "Code",       for = "unix" },
+    { run = 'code %@',   desc = "Code",       for = "windows" }
 ]
 
 edit = [
-    { run = '${EDITOR:-vi} "$@"', desc = "Use $EDITOR",    for = "unix",    block = true },
-    { run = 'vim "$1"',           desc = "Vim",            for = "unix" },
-    { run = 'code %*',            desc = "Edit with Code", for = "windows", orphan = true },
-    { run = 'vim "%1"',           desc = "Vim",            for = "windows" }
+    { run = '${EDITOR:-vi} "$@"', desc = "Use $EDITOR", for = "unix",    block = true },
+    { run = 'vim "$1"',           desc = "Vim",         for = "unix",    block = true },
+    { run = 'vim "%1"',           desc = "Vim",         for = "windows", block = true },
+    { run = 'code $@',            desc = "Code",        for = "unix",    orphan = true },
+    { run = 'code %*',            desc = "Code",        for = "windows", orphan = true }
 ]
 
 view = [
-    { run = 'vim -R "$1"', desc = "Vim (read-only)", for = "unix" },
-    { run = 'vim -R "%1"', desc = "Vim (read-only)", for = "windows" }
+    { run = 'vim -R "$1"', desc = "Vim (read-only)", for = "unix",    block = true},
+    { run = 'vim -R "%1"', desc = "Vim (read-only)", for = "windows", block = true }
 ]
 
 reveal = [
@@ -75,7 +78,7 @@ rules = [
     { name = "*/", use = [ "edit", "open", "reveal" ] },
     # Text
     { mime = "text/html", use = [ "open", "edit", "reveal" ] },
-    { mime = "text/*", use = [ "edit", "reveal" ] },
+    { mime = "text/*", use = [ "edit", "open", "reveal" ] },
     # Image
     { mime = "image/*", use = [ "open", "reveal" ] },
     # Media
