@@ -46,11 +46,11 @@ keymap = [
 	{ on = "<A-j>", run = "seek 5",  desc = "Seek down 5 units in the preview" },
 
 	# Selection
-	{ on = "<Space>", run = ["select", "arrow 1"], desc = "Toggle selection" },
+	{ on = "<Space>", run = ["toggle", "arrow 1"], desc = "Toggle selection" },
 	{ on = "v",       run = "visual_mode",         desc = "Enter visual selection mode" },
 	{ on = "V",       run = "visual_mode --unset", desc = "Enter visual deselection mode" },
-	{ on = "<C-a>",   run = "select_all --state=true", desc = "Select all" },
-	{ on = "<C-r>",   run = "select_all",            desc = "Inverse selection" },
+	{ on = "<C-a>",   run = "toggle_all --state=true", desc = "Select all" },
+	{ on = "<C-r>",   run = "toggle_all",            desc = "Inverse selection" },
 	{ on = "<C-A>",   run = "escape --select",       desc = "Deselect all files everywhere" },
 
 	# Operation
@@ -76,7 +76,7 @@ keymap = [
 	{ on = "<F2>", run = "rename --cursor=before_ext",      desc = "Rename selected file(s)" },
 	{ on = "r",    run = "rename --cursor=before_ext",      desc = "Rename selected file(s)" },
 	{ on = "R", run = "rename --empty=stem --cursor=start", desc = "Rewrite name of file(s)" },
-	{ on = "<C-r>", run = ["select_all --state=true", "rename"], desc = "Batch rename (all)" },
+	{ on = "<C-r>", run = ["toggle_all --state=true", "rename"], desc = "Batch rename (all)" },
 
 	{ on = ";", run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":", run = "shell --block --interactive", desc = "Run a shell command (blocking)" },
@@ -87,23 +87,23 @@ keymap = [
 	{ on = "S",     run = "search rg",       desc = "Search files by content using ripgrep" },
 	{ on = "<C-s>", run = "escape --search", desc = "Cancel the ongoing search" },
 
-	{ on = "z",     run = "plugin zoxide",   desc = "Jump to a directory using zoxide" },
+	{ on = "z",     run = "plugin zoxide",   desc = "Zoxide" },
 	{ on = "Z",     run = "plugin fzf",      desc = "Jump to a directory or reveal a file using fzf" },
 
 	# Linemode
-	{ on = ["m", "s"], run = "linemode size",        desc = "Set linemode to size" },
-	{ on = ["m", "p"], run = "linemode permissions", desc = "Set linemode to permissions" },
-	{ on = ["m", "c"], run = "linemode ctime",       desc = "Set linemode to ctime" },
-	{ on = ["m", "m"], run = "linemode mtime",       desc = "Set linemode to mtime" },
-	{ on = ["m", "o"], run = "linemode owner",       desc = "Set linemode to owner" },
-	{ on = ["m", "n"], run = "linemode none",        desc = "Set linemode to none" },
+	{ on = ["m", "s"], run = "linemode size",        desc = "Linemode: size" },
+	{ on = ["m", "p"], run = "linemode permissions", desc = "Linemode: permissions" },
+	{ on = ["m", "c"], run = "linemode btime",       desc = "Linemode: btime" },
+	{ on = ["m", "m"], run = "linemode mtime",       desc = "Linemode: mtime" },
+	{ on = ["m", "o"], run = "linemode owner",       desc = "Linemode: owner" },
+	{ on = ["m", "n"], run = "linemode none",        desc = "Linemode: none" },
 
 	# Copy
-	{ on = "Y",        run = "copy path",             desc = "Copy the file path" },
-	{ on = ["c", "c"], run = "copy path",             desc = "Copy the file path" },
-	{ on = ["c", "d"], run = "copy dirname",          desc = "Copy the directory path" },
-	{ on = ["c", "f"], run = "copy filename",         desc = "Copy the filename" },
-	{ on = ["c", "n"], run = "copy name_without_ext", desc = "Copy the filename without extension" },
+	{ on = "Y",        run = "copy path",             desc = "Copy file path" },
+	{ on = ["c", "c"], run = "copy path",             desc = "Copy file path" },
+	{ on = ["c", "d"], run = "copy dirname",          desc = "Copy dir path" },
+	{ on = ["c", "f"], run = "copy filename",         desc = "Copy filename" },
+	{ on = ["c", "n"], run = "copy name_without_ext", desc = "Copy name without extension" },
 
 	# Filter and find
 	{ on = "f", run = "filter --smart",          desc = "Filter files" },
@@ -113,63 +113,64 @@ keymap = [
 	{ on = "N", run = "find_arrow --previous",   desc = "Go to the previous found" },
 
 	# Sorting
-	{ on = [",", "m"], run = ["sort modified --reverse=no", "linemode mtime"], desc = "Sort by modified time" },
-	{ on = [",", "M"], run = ["sort modified --reverse", "linemode mtime"],    desc = "Sort by modified time (reverse)" },
-	{ on = [",", "c"], run = ["sort created --reverse=no", "linemode ctime"],  desc = "Sort by created time" },
-	{ on = [",", "C"], run = ["sort created --reverse", "linemode ctime"],     desc = "Sort by created time (reverse)" },
-	{ on = [",", "e"], run = "sort extension --reverse=no",                      desc = "Sort by extension" },
-	{ on = [",", "E"], run = "sort extension --reverse",                         desc = "Sort by extension (reverse)" },
-	{ on = [",", "a"], run = "sort alphabetical --reverse=no",                   desc = "Sort alphabetically" },
-	{ on = [",", "A"], run = "sort alphabetical --reverse",                      desc = "Sort alphabetically (reverse)" },
-	{ on = [",", "n"], run = "sort natural --reverse=no",                        desc = "Sort naturally" },
-	{ on = [",", "N"], run = "sort natural --reverse",                           desc = "Sort naturally (reverse)" },
-	{ on = [",", "s"], run = ["sort size --reverse=no", "linemode size"],      desc = "Sort by size" },
-	{ on = [",", "S"], run = ["sort size --reverse", "linemode size"],         desc = "Sort by size (reverse)" },
-	{ on = [",", "r"], run = "sort random --reverse=no",                         desc = "Sort randomly" },
+	{ on = [",", "m"], run = ["sort mtime", "linemode mtime"],           desc = "Sort: ↓ modified time" },
+	{ on = [",", "M"], run = ["sort mtime --reverse", "linemode mtime"], desc = "Sort: ↑ modified time" },
+	{ on = [",", "c"], run = ["sort btime", "linemode ctime"],           desc = "Sort: ↓ created time" },
+	{ on = [",", "C"], run = ["sort btime --reverse", "linemode ctime"], desc = "Sort: ↑ created time" },
+	{ on = [",", "s"], run = ["sort size", "linemode size"],             desc = "Sort: ↓ size" },
+	{ on = [",", "S"], run = ["sort size --reverse", "linemode size"],   desc = "Sort: ↑ size" },
+
+	{ on = [",", "e"], run = "sort extension",              desc = "Sort: ↓ extension" },
+	{ on = [",", "E"], run = "sort extension --reverse",    desc = "Sort: ↑ extension" },
+	{ on = [",", "a"], run = "sort alphabetical",           desc = "Sort: ↓ alphabetically" },
+	{ on = [",", "A"], run = "sort alphabetical --reverse", desc = "Sort: ↑ alphabetically" },
+	{ on = [",", "n"], run = "sort natural",                desc = "Sort: ↓ naturally" },
+	{ on = [",", "N"], run = "sort natural --reverse",      desc = "Sort: ↑ naturally" },
+	{ on = [",", "r"], run = "sort random",                 desc = "Sort: randomly" },
 
 	# Goto/bookmarks
-	{ on = ["~"],       run = "cd ~",              desc = "Go home" },
-	{ on = ["`", "~"],  run = "cd ~",              desc = "Go home" },
-	{ on = ["`", "h"],  run = "cd ~",              desc = "Go home" },
-	{ on = ["`", "/"],  run = "cd /",              desc = "Go to the root directory" },
-	{ on = ["`", "r"],  run = "cd /",              desc = "Go to the root directory" },
-	{ on = ["`", "c"],  run = "cd ~/.config",      desc = "Go to the .config directory" },
-	{ on = ["`", "."],  run = "cd ~/.dotfiles",    desc = "Go to the .dotfiles directory" },
-	{ on = ["`", "b"],  run = "cd ~/.bookmarks",   desc = "Go to the .bookmarks directory" },
-	{ on = ["`", "t"],  run = "cd ~/tmp",          desc = "Go to the tmp directory" },
-	{ on = ["`", "p"],  run = "cd ~/Projects",     desc = "Go to the Projects directory" },
-	{ on = ["`", "d"],  run = "cd ~/Downloads",    desc = "Go to the Downloads directory" },
+	{ on = ["~"],       run = "cd ~",              desc = "Go: ~" },
+	{ on = ["`", "~"],  run = "cd ~",              desc = "Go: ~" },
+	{ on = ["`", "h"],  run = "cd ~",              desc = "Go: ~" },
+	{ on = ["`", "/"],  run = "cd /",              desc = "Go: /" },
+	{ on = ["`", "r"],  run = "cd /",              desc = "Go: /" },
+	{ on = ["`", "c"],  run = "cd ~/.config",      desc = "Go: .config" },
+	{ on = ["`", "."],  run = "cd ~/.dotfiles",    desc = "Go: .dotfiles" },
+	{ on = ["`", "b"],  run = "cd ~/.bookmarks",   desc = "Go: .bookmarks" },
+	{ on = ["`", "t"],  run = "cd ~/tmp",          desc = "Go: tmp" },
+	{ on = ["`", "p"],  run = "cd ~/Projects",     desc = "Go: Projects" },
+	{ on = ["`", "d"],  run = "cd ~/Downloads",    desc = "Go: Downloads" },
 
-	{ on = ["`", "1"],  run = "cd ~/.bookmarks/1", desc = "Go to bookmark 1" },
-	{ on = ["`", "2"],  run = "cd ~/.bookmarks/2", desc = "Go to bookmark 2" },
-	{ on = ["`", "3"],  run = "cd ~/.bookmarks/3", desc = "Go to bookmark 3" },
-	{ on = ["`", "4"],  run = "cd ~/.bookmarks/4", desc = "Go to bookmark 4" },
-	{ on = ["`", "5"],  run = "cd ~/.bookmarks/5", desc = "Go to bookmark 5" },
-	{ on = ["`", "6"],  run = "cd ~/.bookmarks/6", desc = "Go to bookmark 6" },
-	{ on = ["`", "7"],  run = "cd ~/.bookmarks/7", desc = "Go to bookmark 7" },
-	{ on = ["`", "8"],  run = "cd ~/.bookmarks/8", desc = "Go to bookmark 8" },
-	{ on = ["`", "9"],  run = "cd ~/.bookmarks/9", desc = "Go to bookmark 9" },
+	{ on = ["`", "1"],  run = "cd ~/.bookmarks/1", desc = "Go: bookmark 1" },
+	{ on = ["`", "2"],  run = "cd ~/.bookmarks/2", desc = "Go: bookmark 2" },
+	{ on = ["`", "3"],  run = "cd ~/.bookmarks/3", desc = "Go: bookmark 3" },
+	{ on = ["`", "4"],  run = "cd ~/.bookmarks/4", desc = "Go: bookmark 4" },
+	{ on = ["`", "5"],  run = "cd ~/.bookmarks/5", desc = "Go: bookmark 5" },
+	{ on = ["`", "6"],  run = "cd ~/.bookmarks/6", desc = "Go: bookmark 6" },
+	{ on = ["`", "7"],  run = "cd ~/.bookmarks/7", desc = "Go: bookmark 7" },
+	{ on = ["`", "8"],  run = "cd ~/.bookmarks/8", desc = "Go: bookmark 8" },
+	{ on = ["`", "9"],  run = "cd ~/.bookmarks/9", desc = "Go: bookmark 9" },
 
 	{ on = ["g", "<Space>"], run = "cd --interactive", desc = "Change Directory" },
 
 	# Tabs
 	{ on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },
 
-	{ on = "1", run = "tab_switch 0", desc = "Switch to the 1st tab" },
-	{ on = "2", run = "tab_switch 1", desc = "Switch to the 2nd tab" },
-	{ on = "3", run = "tab_switch 2", desc = "Switch to the 3rd tab" },
-	{ on = "4", run = "tab_switch 3", desc = "Switch to the 4th tab" },
-	{ on = "5", run = "tab_switch 4", desc = "Switch to the 5th tab" },
-	{ on = "6", run = "tab_switch 5", desc = "Switch to the 6th tab" },
-	{ on = "7", run = "tab_switch 6", desc = "Switch to the 7th tab" },
-	{ on = "8", run = "tab_switch 7", desc = "Switch to the 8th tab" },
-	{ on = "9", run = "tab_switch 8", desc = "Switch to the 9th tab" },
+	{ on = "1", run = "tab_switch 0", desc = "Switch to tab 1" },
+	{ on = "2", run = "tab_switch 1", desc = "Switch to tab 2" },
+	{ on = "3", run = "tab_switch 2", desc = "Switch to tab 3" },
+	{ on = "4", run = "tab_switch 3", desc = "Switch to tab 4" },
+	{ on = "5", run = "tab_switch 4", desc = "Switch to tab 5" },
+	{ on = "6", run = "tab_switch 5", desc = "Switch to tab 6" },
+	{ on = "7", run = "tab_switch 6", desc = "Switch to tab 7" },
+	{ on = "8", run = "tab_switch 7", desc = "Switch to tab 8" },
+	{ on = "9", run = "tab_switch 8", desc = "Switch to tab 9" },
 
-	{ on = "[", run = "tab_switch -1 --relative", desc = "Switch to the previous tab" },
-	{ on = "]", run = "tab_switch 1 --relative",  desc = "Switch to the next tab" },
+	{ on = "[", run = "tab_switch -1 --relative", desc = "Previous tab" },
+	{ on = "]", run = "tab_switch 1 --relative",  desc = "Next tab" },
 
-	{ on = "{", run = "tab_swap -1", desc = "Swap current tab with previous tab" },
-	{ on = "}", run = "tab_swap 1",  desc = "Swap current tab with next tab" },
+	{ on = "{", run = "tab_swap -1", desc = "Swap tab with previous" },
+	{ on = "}", run = "tab_swap 1",  desc = "Swap tab with next" },
 
 	# Tasks
 	{ on = "w", run = "tasks_show", desc = "Show task manager" },
@@ -199,7 +200,7 @@ keymap = [
 	{ on = "<F1>", run = "help", desc = "Open help" },
 ]
 
-[select]
+[pick]
 
 keymap = [
 	{ on = "<Esc>",   run = "close",          desc = "Cancel selection" },
