@@ -50,12 +50,6 @@ set tabstop=4 shiftwidth=4 expandtab
 
 set nu rnu cul
 
-if &term =~ "xterm"
-    let &t_SI = "\<Esc>]12;purple\x7"
-    let &t_SR = "\<Esc>]12;red\x7"
-    let &t_EI = "\<Esc>]12;blue\x7"
-endif
-
 if &term =~ 'xterm' || &term == 'win32'
     " Use DECSCUSR escape sequences
     let &t_SI .= "\e[5 q"  " blink bar
