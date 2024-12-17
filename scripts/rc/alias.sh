@@ -5,30 +5,6 @@ shopt -s expand_aliases
 ## TRUE ALIASES ##
 ##################
 
-# ==== Sensible Options ====
-
-alias ls='ls -hlA --color=auto --group-directories-first'
-alias cp='cp -r'
-alias mkdir='mkdir -p'
-
-alias free='free -mht'
-alias du='du -h'
-alias df='df -h'
-alias bc='bc -ql'
-
-alias grep='grep --color=auto'
-alias tree='tree --dirsfirst -F'
-
-alias pacman='pacman --color=auto'
-alias yay="yay --color=auto"
-
-alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
-
-# ==== Easy Remember ====
-
-alias fonts='fc-list'
-alias open='xdg-open'
-
 # ==== Shortcuts and shorthand ====
 
 # One-chars
@@ -57,12 +33,32 @@ alias hms='hyprctl monitors'
 alias hcs='hyprctl clients'
 alias hpm='hyprpm'
 
-# cd back
+# Quick cd
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ..3='cd ../../..'
 alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
+-() { cd -; }
+
+# ==== Sensible Options ====
+
+alias ls='ls -hlA --color=auto --group-directories-first'
+alias cp='cp -r'
+alias mkdir='mkdir -p'
+
+alias free='free -mht'
+alias du='du -h'
+alias df='df -h'
+alias bc='bc -ql'
+
+alias grep='grep --color=auto'
+alias tree='tree --dirsfirst -F'
+
+alias pacman='pacman --color=auto'
+alias yay="yay --color=auto"
+
+alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 
 # ==== Combos & Options ====
 
@@ -71,6 +67,11 @@ alias sf='ssh -o ForwardAgent=yes'
 alias nn='nnn -n'
 alias matlabcli='matlab -nosplash -nodisplay'
 alias gpconnect='sudo gpclient connect --default-browser'
+
+# ==== Easy Remember ====
+
+alias fonts='fc-list'
+alias open='xdg-open'
 
 # ==== Confusions & Mistypes ====
 
