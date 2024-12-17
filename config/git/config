@@ -11,10 +11,12 @@
 
     s    = status
     ss   = status --short
-    l    = log --oneline -n 20  # Log (default)
-    ls   = log --oneline -n 10  # Log short
-    ln   = log --oneline -n     # Log n
-    la   = log --oneline        # Log all
+
+    l    = log --oneline               # Log (oneline by default)
+    ls   = log --oneline -n 10         # Log short
+    la   = log --oneline --all --graph # Log all (in graph)
+    ll   = log                         # Log long (with details)
+    lla  = log --all --graph           # Log long all (graph, with details)
 
     a    = add
     aa   = add -A
