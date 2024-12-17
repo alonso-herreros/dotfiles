@@ -350,6 +350,10 @@ inoremap <C-j> <C-o>J
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 inoremap <A-q> <C-o>gwip
 
+" imap <expr> <Tab> pumvisible() ? '<C-y>' : '<Tab>'
+imap <expr> <Tab> getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible()
+      \ ? '<C-y>' : '<Tab>'
+
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write
 cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
