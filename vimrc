@@ -57,12 +57,19 @@ if &term =~ "xterm"
 endif
 
 if &term =~ 'xterm' || &term == 'win32'
-" Use DECSCUSR escape sequences
-    let &t_SI = "\e[5 q"    " blink bar
-    let &t_SR = "\e[3 q"    " blink underline
-    let &t_EI = "\e[1 q"    " blink block
-    let &t_ti ..= "\e[1 q"  " blink block
-    let &t_te ..= "\e[0 q"  " default (depends on terminal, normally blink block)
+    " Use DECSCUSR escape sequences
+    let &t_SI .= "\e[5 q"  " blink bar
+    let &t_SR .= "\e[3 q"  " blink underline
+    let &t_EI .= "\e[1 q"  " blink block
+    let &t_ti .= "\e[1 q"  " blink block
+    let &t_te .= "\e[0 q"  " default (normally blink block)
+elseif &term =~'screen'
+    " Use DECSCUSR escape sequences
+    let &t_SI .= "\eP\e[5 q\e\\"  " blink bar
+    let &t_SR .= "\eP\e[3 q\e\\"  " blink underline
+    let &t_EI .= "\eP\e[1 q\e\\"  " blink block
+    let &t_ti .= "\eP\e[1 q\e\\"  " blink block
+    let &t_te .= "\eP\e[0 q\e\\"  " default (normally blink block)
 endif
 
 set background=dark
