@@ -1,6 +1,6 @@
 [user]
-	email = alonso.herreros.c@gmail.com
-	name = Alonso Herreros
+    email = alonso.herreros.c@gmail.com
+    name = Alonso Herreros
 
 [core]
     editor = vim
@@ -9,8 +9,8 @@
 [alias]
     i    = init
 
-	s    = status
-	ss   = status --short
+    s    = status
+    ss   = status --short
     l    = log --oneline -n 20  # Log (default)
     ls   = log --oneline -n 10  # Log short
     ln   = log --oneline -n     # Log n
