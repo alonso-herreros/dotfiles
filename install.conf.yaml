@@ -10,6 +10,7 @@
     ~/.bash_aliases: scripts/rc/alias.sh
     # ~/.vim: vim
     ~/.vimrc: vimrc
+    ~/.screenrc: screenrc
 
     ~/.config/git: config/git
     ~/.config/synth-shell: config/synth-shell

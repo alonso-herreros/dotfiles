@@ -1,0 +1,8 @@
+escape ^ka
+autodetach on 
+startup_message off 
+
+shelltitle '$ |bash'
+hardstatus alwayslastline "%{= kR} %-Lw%{=b Kk} %n%f %t %{-}%+Lw %=%{= dd}"
+# hardstatus alwayslastline '%{wk}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= w}%?%+Lw%?%? %{g}]'
+
