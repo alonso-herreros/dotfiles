@@ -76,7 +76,7 @@
     tool = vimdiff
     hideResolve=true
     writeToTemp=true
-    prompt = false
+    # prompt = false
 
 [mergetool.vimdiff]
     layout = "LOCAL,REMOTE / MERGED + MERGED,REMOTE"
@@ -103,14 +103,14 @@
     pushInsteadOf = "https://gitlab.com/"
     insteadOf = "gl:"
 
-[diff "jupyternotebook"]
-    command = git-nbdiffdriver diff
-[merge "jupyternotebook"]
-    driver = git-nbmergedriver merge %O %A %B %L %P
-    name = jupyter notebook merge driver
-[difftool "nbdime"]
-    cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
-[difftool]
-    prompt = false
-[mergetool "nbdime"]
-    cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+# [diff "jupyternotebook"]
+#     command = git-nbdiffdriver diff
+# [merge "jupyternotebook"]
+#     driver = git-nbmergedriver merge %O %A %B %L %P
+#     name = jupyter notebook merge driver
+# [difftool "nbdime"]
+#     cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+# [difftool]
+#     prompt = false
+# [mergetool "nbdime"]
+#     cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
