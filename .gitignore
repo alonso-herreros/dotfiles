@@ -1,2 +1,3 @@
 cura.cfg
 hosts.yml
+config/kitty/*.d.conf
