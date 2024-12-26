@@ -352,7 +352,7 @@ inoremap <C-j> <C-o>J
 inoremap <A-q> <C-o>gwip
 
 " imap <expr> <Tab> pumvisible() ? '<C-y>' : '<Tab>'
-imap <expr> <Tab> getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible()
+imap <expr> <Tab> (getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible())
       \ ? '<C-y>' : '<Tab>'
 
 " ======= COMMAND MODE MAPPINGS =======
