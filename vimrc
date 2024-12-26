@@ -40,6 +40,7 @@ Plug 'jasonccox/vim-wayland-clipboard'
 Plug 'chrisbra/Colorizer'
 Plug 'godlygeek/tabular'
 Plug 'wellle/context.vim'
+Plug 'fladson/vim-kitty'
 call plug#end()
 
 set t_Co=256
