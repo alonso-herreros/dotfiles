@@ -26,6 +26,28 @@ send_notification() {
 #     echo $scale_index
 # }
 
+declare -A HYPRLAND_PM_VARS_SAVING
+HYPRLAND_PM_VARS_SAVING=(
+    ["decoration:inactive_opacity"]="1.0"
+    ["decoration:blur:enabled"]="false"
+    ["decoration:shadow:enabled"]="false"
+
+    ["misc:vfr"]="true"
+)
+    # ["plugin:dynamic-cursors:enabled"]="false"
+    # ["windowrulev2"]="opacity 1.0 override,title:.*"
+
+get_opts() {
+    declare -A defaults
+
+    for key in "${!HYPRLAND_PM_VARS_SAVING[@]}"; do
+        defaults[$key]=$(hyprctl getoption $key | head -n 1 | cut -d " " -f 2)
+        echo $key - ${defaults[$key]}
+    done
+
+    # echo $defaults
+}
+
 set_pm() {
     case "$1" in
         on)
@@ -46,13 +68,17 @@ set_pm() {
 }
 
 case "$1" in
-    -e|--enable)
+    -e | --enable)
         set_pm on
         ;;
-    -d|--disable)
+    -d | --disable)
         set_pm off
         ;;
-    -h|--help)
+    -h | --help)
+        ;;
+
+    -t | --test)
+        get_opts
         ;;
     *)
         ;;
