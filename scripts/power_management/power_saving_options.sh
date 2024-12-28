@@ -25,11 +25,13 @@ function send_notification() {
 
 # ==== Specifics ====
 
+MODULES_FOLDER="$HOME/.scripts/power_management/modules"
+
 function set_pm() {
     [[ "$1" == "on" ]] && options="-e" || options="-d"
     options="$options -q"
 
-    for module in modules/*; do
+    for module in $MODULES_FOLDER/*; do
         $module $options
     done
 }
