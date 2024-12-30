@@ -1,5 +1,4 @@
-# There's nothing here! That's because this file's name is stupid, and vim can't tell this
-# configuration file format is basically YAML. That's why I'm going to be putting all of the
-# config in the drop-in folder (dunstrc.d), where dunst will actually look for files that end in
-# `.conf`. This is still not YAML, but at least I get some syntax highlighting when I open them.
+# There's nothing here! That's because this file's name is stupid. All of the
+# config is in files in the drop-in folder (dunstrc.d), where dunst will
+# actually look for files that end in `.conf`.
 
