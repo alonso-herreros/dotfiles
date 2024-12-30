@@ -119,6 +119,11 @@ function mkdircd() {
 }
 alias mkcd='mkdircd'
 
+function that() {
+    [[ -n "$1" ]] && n="$1" || n=1
+    fc -ln -$n -$n | sed 's/^\s*//'
+}
+
 # Getting specific lines from files or stdin
 function line() {
     [[ -z $1 || $1 == "-h" ]] && echo 'Usage: line <n> [file]' && return 1
