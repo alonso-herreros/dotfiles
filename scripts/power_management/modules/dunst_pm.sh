@@ -29,7 +29,8 @@ function send_notification() {
 DUNST_CONF_DIR="$HOME/.config/dunst"
 # Dunst loads all .conf files in this directory
 DUNST_DROP_IN_DIR="$DUNST_CONF_DIR/dunstrc.d"
-# IMPORTANT: This is a filename that will get included
+# IMPORTANT: The leading 9 indicates this should be loaded last. All other
+# files in the drop-in directory should have leading numbers lower than 9.
 FILE_NAME="9-power_saving.conf"
 
 set_pm() {
