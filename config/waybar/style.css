@@ -142,6 +142,7 @@ button.active,
 }
 
 /* Disabled */
+#workspaces button:not(.hosting-monitor),
 #mpris.track.paused,
 #pulseaudio.sink.muted,
 #pulseaudio.sink_val.muted,
