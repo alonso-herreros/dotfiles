@@ -48,12 +48,12 @@ rotate:
   4:
     clockwise:
       update:
-        command: "~/.scripts/system/brightness_ctl.sh s 10%+"
+        command: "~/.scripts/system/brightness_ctl.sh -n s 10%+"
         interval: 0.8
         threshold: 0.6
     counterclockwise:
       update:
-        command: "~/.scripts/system/brightness_ctl.sh s 10%-"
+        command: "~/.scripts/system/brightness_ctl.sh -n s 10%-"
         interval: 0.8
         threshold: 0.6
 
