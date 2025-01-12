@@ -44,6 +44,7 @@
     b    = branch
     co   = checkout
     cob  = checkout -b
+    c-   = checkout -
 
     Rv   = remote --verbose
     Ra   = remote add
