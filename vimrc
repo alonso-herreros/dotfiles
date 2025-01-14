@@ -7,7 +7,7 @@ syntax on
 let $BASH_ENV = "~/.bash_aliases"
 
 " =====================================================================
-" ========================       PLUGINS       ========================
+" ========================     LOAD PLUGINS    ========================
 " =====================================================================
 
 " Install vim-plug if needed
@@ -61,12 +61,16 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Languages
+" Plug 'sheerun/vim-polyglot'
+Plug 'alonso-herreros/vim-markdown'
 Plug 'fladson/vim-kitty'
 call plug#end()
 
-" ==== Plugin options ====
+" =====================================================================
+" ========================    PLUGIN OPTIONS   ========================
+" =====================================================================
 
-" Theme
+" ==== Theme ====
 set background=dark
 let g:codedark_modern=1
 let g:codedark_transparent=1
@@ -103,6 +107,21 @@ let g:Context_indent = funcref("IndentWithHeadings")
 
 " Remove mappings from context.vim, which conflict hard with my H
 let g:context_add_mappings = 0
+
+" ==== Language-specific plugins ====
+
+" Markdown.vim
+let g:markdown_fenced_languages = [ 'c', 'html', 'python', 'bash=sh', 'matlab' ]
+let g:markdown_syntax_conceal = 0
+let g:markdown_minlines = 100
+" Custom markdown file
+let g:markdown_math = 1
+let g:markdown_strikethrough = 1
+" Vim-Markdown
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+
 
 " =====================================================================
 " ========================     VIM OPTIONS     ========================
