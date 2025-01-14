@@ -61,6 +61,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Languages
+Plug 'sheerun/vim-polyglot'
 Plug 'fladson/vim-kitty'
 call plug#end()
 
@@ -85,6 +86,11 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = ' |'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v (%p%%)%#__restore__#'
+
+" Vim-Markdown options
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
 
 " Context options
 function IndentWithHeadings(line)
