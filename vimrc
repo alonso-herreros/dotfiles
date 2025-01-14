@@ -1,9 +1,14 @@
 source $VIMRUNTIME/defaults.vim
 language en_US.utf8
 filetype plugin indent on
+syntax on
 
 " Source .bash_aliases when running shell commands with :!
 let $BASH_ENV = "~/.bash_aliases"
+
+" =====================================================================
+" ========================       PLUGINS       ========================
+" =====================================================================
 
 " Install vim-plug if needed
 if empty(glob("~/.vim/autoload/plug.vim"))
@@ -11,73 +16,69 @@ if empty(glob("~/.vim/autoload/plug.vim"))
   autocmd VimEnter * silent! PlugInstall
 endif
 
+" ==== Plugin list ====
 call plug#begin()
-Plug 'tomasiser/vim-code-dark'
-Plug 'preservim/vim-indent-guides'
+" Misc
+Plug 'tpope/vim-repeat'        " Repeat (most) plugin actions with .
+Plug 'tpope/vim-abolish'       " Describe word variants (+Subvert command)
+Plug 'preservim/NERDTree'
+
+" Moving / selecting
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
-Plug 'junegunn/vim-peekaboo'
+Plug 'justinmk/vim-sneak'
+Plug 'wellle/targets.vim'      " Smarter text objects
+
+" Typing
+Plug 'jiangmiao/auto-pairs'    " Insert/delete brackets/parens/quotes in pair
+Plug 'tpope/vim-endwise'       " End certain structures automatically
+Plug 'neoclide/coc.nvim'       " Code Completion
+
+" Editing
+Plug 'tpope/vim-surround'      " Delete/change/add parentheses/quotes/tags/etc
+Plug 'tpope/vim-commentary'    " Comments
 Plug 'junegunn/vim-easy-align'
+" Plug 'godlygeek/tabular'     " Text filtering and alignment
+
+" Display
+Plug 'vim-airline/vim-airline' " Status & tabline
+Plug 'kshenoy/vim-signature'   " Toggle, display and navigate marks
+Plug 'wellle/context.vim'      " Shows the current line context
+Plug 'junegunn/vim-peekaboo'   " See registers
+Plug 'chrisbra/Colorizer'      " Show colors described by hex codes
+
+" Appearance
+Plug 'tomasiser/vim-code-dark'           " VSCode dark theme (sort of)
+Plug 'jeffkreeftmeijer/vim-numbertoggle' " Autoset line number mode
+Plug 'obcat/vim-sclow'                   " Text-based scrollbar
+Plug 'preservim/vim-indent-guides'       " Visually displaying indent levels
 Plug 'junegunn/rainbow_parentheses.vim'
+
+" Integration
+Plug 'airblade/vim-gitgutter'            " Git status in the gutter
+Plug 'jasonccox/vim-wayland-clipboard'   " Wayland clipboard in + and w regs
+" Plug 'tpope/vim-fugitive'              " A git wrapper - I don't use it
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'wellle/targets.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/NERDTree', { 'on': 'NERDTreeToggle' }
-Plug 'jiangmiao/auto-pairs'
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
-Plug 'obcat/vim-sclow'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'kshenoy/vim-signature'
-Plug 'jasonccox/vim-wayland-clipboard'
-Plug 'chrisbra/Colorizer'
-Plug 'godlygeek/tabular'
-Plug 'wellle/context.vim'
+
+" Languages
 Plug 'fladson/vim-kitty'
 call plug#end()
 
-set t_Co=256
-set t_ut=
+" ==== Plugin options ====
 
-syntax on
-set tabstop=4 shiftwidth=4 expandtab
-
-set nu rnu cul
-
-if &term =~ 'xterm' || &term == 'win32'
-    " Use DECSCUSR escape sequences
-    let &t_SI .= "\e[5 q"  " blink bar
-    let &t_SR .= "\e[3 q"  " blink underline
-    let &t_EI .= "\e[1 q"  " blink block
-    let &t_ti .= "\e[1 q"  " blink block
-    let &t_te .= "\e[0 q"  " default (normally blink block)
-elseif &term =~'screen'
-    " Use DECSCUSR escape sequences
-    let &t_SI .= "\eP\e[5 q\e\\"  " blink bar
-    let &t_SR .= "\eP\e[3 q\e\\"  " blink underline
-    let &t_EI .= "\eP\e[1 q\e\\"  " blink block
-    let &t_ti .= "\eP\e[1 q\e\\"  " blink block
-    let &t_te .= "\eP\e[0 q\e\\"  " default (normally blink block)
-endif
-
+" Theme
 set background=dark
-
 let g:codedark_modern=1
 let g:codedark_transparent=1
 let g:airline_theme = 'codedark'
 colorscheme codedark
 hi DiffText term=bold cterm=bold ctermfg=188 ctermbg=25 guifg=#D4D4D4 guibg=#339ab2
 
+" Peekaboo options
 let g:peekaboo_delay=1000
 let g:peekaboo_compact=1
 
+" Airline options
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -85,7 +86,7 @@ let g:airline#extensions#tabline#left_alt_sep = ' |'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v (%p%%)%#__restore__#'
 
-" Context plugin
+" Context options
 function IndentWithHeadings(line)
     let indent = indent(a:line)
     if indent < 0 | return [indent, indent] | endif
@@ -102,6 +103,33 @@ let g:Context_indent = funcref("IndentWithHeadings")
 
 " Remove mappings from context.vim, which conflict hard with my H
 let g:context_add_mappings = 0
+
+" =====================================================================
+" ========================     VIM OPTIONS     ========================
+" =====================================================================
+set t_Co=256
+set t_ut=
+
+set tabstop=4 shiftwidth=4 expandtab
+
+set nu rnu cul
+
+" Cursor types
+if &term =~ 'xterm' || &term == 'win32'
+    " Use DECSCUSR escape sequences
+    let &t_SI .= "\e[5 q"  " blink bar
+    let &t_SR .= "\e[3 q"  " blink underline
+    let &t_EI .= "\e[1 q"  " blink block
+    let &t_ti .= "\e[1 q"  " blink block
+    let &t_te .= "\e[0 q"  " default (normally blink block)
+elseif &term =~'screen'
+    " Use DECSCUSR escape sequences
+    let &t_SI .= "\eP\e[5 q\e\\"  " blink bar
+    let &t_SR .= "\eP\e[3 q\e\\"  " blink underline
+    let &t_EI .= "\eP\e[1 q\e\\"  " blink block
+    let &t_ti .= "\eP\e[1 q\e\\"  " blink block
+    let &t_te .= "\eP\e[0 q\e\\"  " default (normally blink block)
+endif
 
 set showcmd                " Show (partial) command in status line.
 set showmatch              " Show matching brackets.
