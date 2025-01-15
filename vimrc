@@ -78,11 +78,11 @@ let g:airline_theme = 'codedark'
 colorscheme codedark
 hi DiffText term=bold cterm=bold ctermfg=188 ctermbg=25 guifg=#D4D4D4 guibg=#339ab2
 
-" Peekaboo options
+" ==== Peekaboo ====
 let g:peekaboo_delay=1000
 let g:peekaboo_compact=1
 
-" Airline options
+" ==== Airline ====
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
@@ -90,7 +90,7 @@ let g:airline#extensions#tabline#left_alt_sep = ' |'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v (%p%%)%#__restore__#'
 
-" Context options
+" ==== Context ====
 function IndentWithHeadings(line)
     let indent = indent(a:line)
     if indent < 0 | return [indent, indent] | endif
@@ -306,6 +306,7 @@ nnoremap <A-K> yyP
 nnoremap <C-j> J
 nnoremap g<C-j> gJ
 " Adding spaces, lines and line breaks
+silent! unmap <Leader>ig
 nnoremap <Leader>i i<Space><Esc>l
 nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
