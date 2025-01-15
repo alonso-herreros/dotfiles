@@ -80,6 +80,7 @@ keymap = [
 
 	{ on = ";",     run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",     run = "shell --block --interactive", desc = "Run a shell command (blocking)" },
+    { on = "!",     run = "shell '$SHELL' --block",      desc = "Drop to shell" },
 
 	{ on = ".",     run = "hidden toggle",   desc = "Toggle the visibility of hidden files" },
 
