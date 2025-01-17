@@ -15,6 +15,7 @@
     l    = log --oneline               # Log (oneline by default)
     ls   = log --oneline -n 10         # Log short
     la   = log --oneline --all --graph # Log all (in graph)
+    las  = log --oneline --all --graph -n 10 # Log all short (in graph)
     ll   = log                         # Log long (with details)
     lla  = log --all --graph           # Log long all (graph, with details)
 
