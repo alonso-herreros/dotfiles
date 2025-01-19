@@ -27,6 +27,7 @@ Plug 'preservim/NERDTree'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 Plug 'wellle/targets.vim'      " Smarter text objects
+Plug 'tpope/vim-rsi'           " Readline mappings when appropriate
 
 " Typing
 Plug 'jiangmiao/auto-pairs'    " Insert/delete brackets/parens/quotes in pair
@@ -38,6 +39,7 @@ Plug 'tpope/vim-surround'      " Delete/change/add parentheses/quotes/tags/etc
 Plug 'tpope/vim-commentary'    " Comments
 Plug 'junegunn/vim-easy-align'
 " Plug 'godlygeek/tabular'     " Text filtering and alignment
+Plug 'tommcdo/vim-exchange'    " Exchange text objects
 
 " Display
 Plug 'vim-airline/vim-airline' " Status & tabline
@@ -221,6 +223,7 @@ xmap ga <Plug>(EasyAlign)
 nmap <A-a> <Plug>(EasyAlign)ip
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
+
 " Commentary with Ctrl+ç
 nmap  m`gcc``
 nmap <C-ç> m`gcc``
