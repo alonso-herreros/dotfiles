@@ -25,6 +25,8 @@
     ~/.config/dunst: config/dunst
     ~/.config/yazi: config/yazi
 
+    ~/.vim/UltiSnips: config/vim/UltiSnips
+
     # ~/.config/alias.sh: config/alias.sh
     ~/.config/libinput-gestures.conf: config/libinput-gestures.conf
     ~/.config/locale.conf: config/locale/locale.conf

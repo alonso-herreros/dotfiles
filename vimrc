@@ -33,6 +33,7 @@ Plug 'tpope/vim-rsi'           " Readline mappings when appropriate
 Plug 'jiangmiao/auto-pairs'    " Insert/delete brackets/parens/quotes in pair
 Plug 'tpope/vim-endwise'       " End certain structures automatically
 Plug 'neoclide/coc.nvim'       " Code Completion
+Plug 'sirver/UltiSnips'        " Snippets
 
 " Editing
 Plug 'tpope/vim-surround'      " Delete/change/add parentheses/quotes/tags/etc
@@ -117,6 +118,20 @@ let g:Context_indent = funcref("IndentWithHeadings")
 
 " Remove mappings from context.vim, which conflict hard with my H
 let g:context_add_mappings = 0
+
+" ==== UltiSnips ====
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsListSnippets="<S-space>"
+let g:UltiSnipsExpandOrJumpTrigger = "<tab>"
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 
 " ==== Language-specific plugins ====
 
@@ -266,10 +281,58 @@ vmap  gc
 vmap <C-ç> gc
 imap  <C-o>m`gcc``
 imap <C-ç> <C-o>m`gcc``
+
 " Tabular with Ctrl+t
 " noremap <C-t> :Tab/
+
 " fzf Files with C-S-e
 nmap <C-E> :Files<CR>
+
+" UltiSnips assisted \trigger. Resets `onemore` in `ve`
+let g:ulti_expand_or_jump_res = 0 "default value, just set once
+function! UltiExpandTryBackslash()
+    " If we can expand already, we just skip this block entirely
+    while !UltiSnips#CanExpandSnippet()
+        set ve+=onemore
+        " Try moving after the end
+        normal m`hel
+        if ( UltiSnips#CanExpandSnippet() ) | break
+        else                                | normal ``
+        endif
+
+        " Try prepending \ to the word (asumming we started inside the word)
+        normal lbi\
+        normal el
+        if ( UltiSnips#CanExpandSnippet() ) | break
+        else                                | normal `.x``
+        endif
+
+        " No more methods to try. WE MUST EXIT THE WHILE LOOP
+        break
+    endwhile
+
+    call UltiSnips#ExpandSnippet()
+    " normal l
+    " normal i:call UltiSnips#ExpandSnippet()
+    set ve-=onemore
+
+    return g:ulti_expand_res
+endfunction
+
+nnoremap <C-space> <CMD>call UltiExpandTryBackslash()<CR>
+inoremap <C-space> <Esc>he<CMD>call UltiExpandTryBackslash()<CR>
+vmap <C-space> <Tab>
+" UltiSnips even quicker triggers: Backslash + number symbol
+imap <A-6> \&<CMD>call UltiExpandTryBackslash()<CR>
+vmap <A-6> <Tab>\&<Tab>
+imap <A-7> \/<CMD>call UltiExpandTryBackslash()<CR>
+vmap <A-7> <Tab>\/<Tab>
+imap <A-8> \(<CMD>call UltiExpandTryBackslash()<CR>
+vmap <A-8> <Tab>\(<Tab>
+imap <A-9> \)<CMD>call UltiExpandTryBackslash()<CR>
+vmap <A-9> <Tab>\)<Tab>
+imap <A-0> \=<CMD>call UltiExpandTryBackslash()<CR>
+vmap <A-0> <Tab>\=<Tab>
 
 
 " ======= GENERAL MAPPINGS =======
@@ -387,8 +450,8 @@ vnoremap L $h
 vnoremap <A-j> dpgv`[o`]
 vnoremap <A-k> dkPgv`[o`]
 " Indenting while keeping selection
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+" vnoremap <Tab> >gv
+" vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
 " Reflow with Alt+q (due to VSCode reflow shortcut)
@@ -440,8 +503,8 @@ inoremap <C-j> <C-o>J
 inoremap <A-q> <C-o>gwip
 
 " imap <expr> <Tab> pumvisible() ? '<C-y>' : '<Tab>'
-imap <expr> <Tab> ( getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible() )
-      \ ? '<C-y>' : '<Tab>'
+" imap <expr> <Tab> ( getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible() )
+"       \ ? '<C-y>' : '<Tab>'
 
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write

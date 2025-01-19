@@ -1,0 +1,79 @@
+# Markdown snippets
+
+snippet \m "TeX: Span delimiter" i
+\$${1:${VISUAL}}\$
+endsnippet
+
+snippet \M "TeX: Block delimiter" i
+\$\$
+${0:${VISUAL}}
+\$\$
+endsnippet
+
+snippet \( "TeX: Left/right ()" i
+\\left(${1:${VISUAL}}\\right)
+endsnippet
+
+snippet \[ "TeX: Left/right []" i
+\\left[${1:${VISUAL}}\\right]
+endsnippet
+
+snippet \{ "TeX: Left/right {}" i
+\\left\\{${1:${VISUAL}}\\right\\}
+endsnippet
+
+snippet "\\(f|frac|/)" "TeX: Fraction" ir
+\\frac{${1:${VISUAL}}}{$2}
+endsnippet
+
+snippet "\\(h|hat)" "Tex: Hat" ir
+\hat{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(v|vec)" "TeX: Vector arrow" ir
+\\vec{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(-|bar)" "TeX: Bar" ir
+\\bar{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(b|boxed)" "TeX: Boxed" ir
+\\boxed{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(s|sqrt)" "TeX: Square Root" ir
+\\sqrt{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(t|text)" "TeX: Text" ir
+\\text{${1:${VISUAL}}}
+endsnippet
+
+snippet \= "Tex: aligned equals" i
+&=
+endsnippet
+
+snippet e "TeX: Scientific notation" i
+⋅10^{$1}
+endsnippet
+
+snippet B "TeX: Environment" i
+\\begin{${1:aligned}}
+	${VISUAL}$0
+\\end{$1}
+endsnippet
+
+snippet "\\\&|BAL" "TeX: Aligned Environment" ir
+\\begin{aligned}
+	$1${VISUAL: = /=/&=/}$2 \\\\
+	$0
+\\end{aligned}
+endsnippet
+
+snippet BCA "TeX: Cases Environment" i
+\\begin{cases}
+	$0${VISUAL: \\\\/\n/ \\\\\n/}
+\\end{cases}
+endsnippet
+
