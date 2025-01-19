@@ -229,6 +229,24 @@ map T <Plug>Sneak_T
 map , <Plug>Sneak_;
 map ; <Plug>Sneak_,
 
+" Easymotion custom
+map <Leader><Leader>w <Plug>(easymotion-w)
+map <A-w> <Plug>(easymotion-w)
+map <Leader><Leader>W <Plug>(easymotion-W)
+map <A-W> <Plug>(easymotion-W)
+map <Leader><Leader>e <Plug>(easymotion-e)
+map <A-e> <Plug>(easymotion-e)
+map <Leader><Leader>E <Plug>(easymotion-E)
+map <A-E> <Plug>(easymotion-E)
+map <Leader><Leader>b <Plug>(easymotion-b)
+map <A-b> <Plug>(easymotion-b)
+map <Leader><Leader>B <Plug>(easymotion-B)
+map <A-B> <Plug>(easymotion-B)
+map <Leader><Leader>f <Plug>(easymotion-f)
+map <A-f> <Plug>(easymotion-f)
+map <Leader><Leader>F <Plug>(easymotion-F)
+map <A-F> <Plug>(easymotion-F)
+
 " Unsurround (latex)
 nmap dsc csBBdF\dsB
 nnoremap dse ?\\begin<CR>dt{daB/\\end<C-r>"<CR>dt{daB
