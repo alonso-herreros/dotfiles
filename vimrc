@@ -94,6 +94,12 @@ let g:airline#extensions#tabline#left_alt_sep = ' |'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v (%p%%)%#__restore__#'
 
+" ==== Surround ====
+let g:surround_{char2nr("2")} = "\1character: \1\1\1\r\1\1\1\1"
+let g:surround_{char2nr("e")} = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
+let g:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+
+
 " ==== Context ====
 function IndentWithHeadings(line)
     let indent = indent(a:line)
@@ -222,6 +228,11 @@ map T <Plug>Sneak_T
 " Sneak ,;
 map , <Plug>Sneak_;
 map ; <Plug>Sneak_,
+
+" Unsurround (latex)
+nmap dsc csBBdF\dsB
+nnoremap dse ?\\begin<CR>dt{daB/\\end<C-r>"<CR>dt{daB
+
 " Align
 nmap <A-a> <Plug>(EasyAlign)ip
 nmap ga <Plug>(EasyAlign)
