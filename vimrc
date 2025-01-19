@@ -337,10 +337,12 @@ nmap <Leader>R R<C-r>0<Esc>
 " Save/quit with leader->key
 nmap <Leader>w :w<CR>
 nmap <Leader>W :w!!<CR>
-nmap <Leader>q :q!<CR>
-nmap <Leader>e :e!<CR>
+nmap <Leader>q :confirm q<CR>
+nmap <Leader>Q :q!<CR>
+nmap <Leader>e :confirm e<CR>
+nmap <Leader>E :e!<CR>
 nmap <Leader>z :wq<CR>
-nmap <Leader>x :bd<CR>
+nmap <Leader>x :confirm bd<CR>
 " Inspect character
 nnoremap gi ga
 nnoremap g? ga
