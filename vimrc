@@ -47,6 +47,8 @@ Plug 'kshenoy/vim-signature'   " Toggle, display and navigate marks
 Plug 'wellle/context.vim'      " Shows the current line context
 Plug 'junegunn/vim-peekaboo'   " See registers
 Plug 'chrisbra/Colorizer'      " Show colors described by hex codes
+let g:qs_enable=0
+Plug 'unblevable/quick-scope'  " Highlights a unique character in every word
 
 " Appearance
 Plug 'tomasiser/vim-code-dark'           " VSCode dark theme (sort of)
@@ -206,6 +208,10 @@ set <A-V>=V
 set <A-B>=B
 set <A-M>=M
 set <A-`>=`
+
+" ======= OPTIONS =======
+map <C-,>q <plug>(QuickScopeToggle)
+map <C-,>c <plug>(ContextToggle)
 
 " ======= PLUGIN MAPPINGS =======
 " Sneak-f
