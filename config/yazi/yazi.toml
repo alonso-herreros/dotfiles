@@ -37,17 +37,17 @@ open = [
     { run = 'open "$@"',     desc = "Open",            for = "macos" },
     { run = 'start "" "%1"', desc = "Open",            for = "windows", orphan = true },
 
-    { run = 'vim -R $@', desc = "Vim (view)", for = "unix",    block = true },
-    { run = 'vim -R %@', desc = "Vim (view)", for = "windows", block = true },
-    { run = 'code $@',   desc = "Code",       for = "unix" },
-    { run = 'code %@',   desc = "Code",       for = "windows" }
+    { run = 'vim -R "$@"', desc = "Vim (view)", for = "unix",    block = true },
+    { run = 'vim -R "%@"', desc = "Vim (view)", for = "windows", block = true },
+    { run = 'code "$@"',   desc = "Code",       for = "unix" },
+    { run = 'code "%@"',   desc = "Code",       for = "windows" }
 ]
 
 edit = [
     { run = '${EDITOR:-vi} "$@"', desc = "Use $EDITOR", for = "unix",    block = true },
     { run = 'vim "$1"',           desc = "Vim",         for = "unix",    block = true },
     { run = 'vim "%1"',           desc = "Vim",         for = "windows", block = true },
-    { run = 'code $@',            desc = "Code",        for = "unix",    orphan = true },
+    { run = 'code "$@"',          desc = "Code",        for = "unix",    orphan = true },
     { run = 'code %*',            desc = "Code",        for = "windows", orphan = true }
 ]
 
@@ -71,6 +71,9 @@ play = [
     { run = 'mpv --force-window %*', orphan = true, for = "windows" },
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+pdftools = [
+    { run = 'qpdf --empty --pages "$@" -- merged.pdf', desc = "Merge PDFs", for = "linux", orphan = true },
+]
 
 [open]
 rules = [
@@ -89,10 +92,12 @@ rules = [
     # JSON
     { mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
     { mime = "*/javascript", use = [ "edit", "reveal" ] },
+    # PDF
+    { mime = "application/pdf", use = [ "open", "pdftools", "reveal" ] },
     # Empty file
     { mime = "inode/x-empty", use = [ "edit", "reveal" ] },
     # Fallback
-    { name = "*", use = [ "open", "reveal" ] },
+    { name = "*", use = [ "open", "edit", "reveal" ] },
 ]
 
 [tasks]
