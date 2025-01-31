@@ -2,7 +2,7 @@
 @define-color burgundy #800020;
 
 * {
-    font-family: "JetBrainsMono Nerd Font", "Noto Serif CJK JP", Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", "Noto Serif CJK JP", "Noto Sans", Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     color: @text;
     border: none;
@@ -283,7 +283,7 @@ button.urgent,
     border-radius: 5px;
 }
 #tray menu > menuitem > * {
-    font-family: Arial, sans-serif;
+    font-family: Noto Sans, Arial, sans-serif;
     font-size: 9.7pt;
 }
 
