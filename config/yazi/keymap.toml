@@ -59,8 +59,10 @@ keymap = [
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=1",               desc = "Open selected files" },
 
-	{ on = "y",        run = "yank",            desc = "Yank selected files (copy)" },
-	{ on = "x",        run = "yank --cut",      desc = "Yank selected files (cut)" },
+	{ on = "y",        run = [
+        "shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list'",
+        "yank" ],                               desc = "Yank selected files" },
+	{ on = "x",        run = "yank --cut",      desc = "Cut selected files" },
 	{ on = "p",        run = "paste",           desc = "Paste yanked files" },
 	{ on = "P",        run = "paste --force",   desc = "Paste yanked files (overwrite if the destination exists)" },
 	{ on = ["@", "s"], run = "link",            desc = "Symlink yanked files" },
@@ -69,13 +71,13 @@ keymap = [
 	{ on = "<C-c>",    run = "unyank",          desc = "Cancel yank" },
 
 	{ on = "d",     run = "remove",               desc = "Trash selected files" },
-	{ on = "X",     run = "remove --hovered",     desc = "Cancel the yank status" },
+	{ on = "X",     run = "remove --hovered",     desc = "Trash hovered file" },
 	{ on = "D",     run = "remove --permanently", desc = "Permanently delete selected files" },
-	{ on = "a",     run = "create",               desc = "Create a file (or end with / for dir)" },
+	{ on = "a",     run = "create",               desc = "Create a file (end with / for dir)" },
 
 	{ on = "<F2>",  run = "rename --cursor=before_ext",          desc = "Rename selected file(s)" },
 	{ on = "r",     run = "rename --cursor=before_ext",          desc = "Rename selected file(s)" },
-	{ on = "R",     run = "rename --empty=stem --cursor=start",  desc = "Rewrite name of file(s)" },
+	{ on = "R",     run = "rename --empty=all",  desc = "Overwrite filename(s)" },
 	{ on = "<C-r>", run = ["toggle_all --state=true", "rename"], desc = "Batch rename (all)" },
 
 	{ on = ";",     run = "shell --interactive",         desc = "Run a shell command" },
