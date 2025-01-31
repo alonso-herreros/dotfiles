@@ -12,7 +12,7 @@ sort_dir_first = true
 sort_translit  = false
 linemode       = "none"
 show_hidden    = false
-show_symlink   = true
+show_symlink   = false
 scrolloff      = 4
 mouse_events   = [ "click", "scroll", "move", "drag" ]
 title_format   = "Yazi: {cwd}"
@@ -113,6 +113,8 @@ suppress_preload = false
 fetchers = [
     # Mimetype
     { id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
+    { id = "git", name = "*", run = "git" },
+    { id = "git", name = "*/", run = "git" },
 ]
 preloaders = [
     # Image

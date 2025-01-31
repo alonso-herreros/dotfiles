@@ -6,6 +6,8 @@
 [manager]
 
 keymap = [
+    { on = "<A-v>", run = "plugin toggle-view --args=preview", desc = "Toggle preview" },
+
 	{ on = "<Esc>", run = "escape",  desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = "<C-[>", run = "escape",  desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = "q",     run = "close",   desc = "Close the current tab, or quit if it is last tab" },
@@ -33,7 +35,7 @@ keymap = [
 
 	# Navigation
 	{ on = "h",       run = "leave", desc = "Go back to the parent directory" },
-	{ on = "l",       run = "enter", desc = "Enter the child directory" },
+	{ on = "l",       run = "plugin smart-enter", desc = "Enter directory or open file" },
 	{ on = "<Left>",  run = "leave", desc = "Go back to the parent directory" },
 	{ on = "<Right>", run = "enter", desc = "Enter the child directory" },
 
@@ -54,7 +56,7 @@ keymap = [
 	{ on = "<C-A>",   run = "escape --select",       desc = "Deselect all files everywhere" },
 
 	# Operation
-	{ on = "<Enter>",   run = "open",               desc = "Open selected files" },
+	{ on = "<Enter>",   run = "plugin smart-enter",  desc = "Open files or enter directory" },
 	{ on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=1",               desc = "Open selected files" },

@@ -1,0 +1,5 @@
+[plugin]
+deps = [{ use = "imsi32/yatline", rev = "9328205" }, { use = "dawsers/toggle-view", rev = "9ae57f9" }, { use = "yazi-rs/plugins:git", rev = "02d18be" }, { use = "yazi-rs/plugins:chmod", rev = "02d18be" }, { use = "yazi-rs/plugins:smart-enter", rev = "02d18be" }]
+
+[flavor]
+deps = []
