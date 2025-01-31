@@ -58,6 +58,8 @@ keymap = [
 	{ on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=1",               desc = "Open selected files" },
+    # { on = "<C-d>",     run = "shell 'dragon-drop -x -i -T -a \"$@\"'" },
+    { on = "<C-d>",     run = "shell 'ripdrag -x -A -W 200 -H 100 \"$@\" &'" },
 
 	{ on = "y",        run = [
         "shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list'",
