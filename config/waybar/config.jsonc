@@ -361,7 +361,7 @@
         "on-click-middle": "pactl play-sample bell",
         "smooth-scrolling-threshold": 0.7,
         "reverse-scrolling": true,
-        "scroll-step": 2.0,
+        "scroll-step": 5.0,
         "max-volume": 100
     },
     "pulseaudio#sink_val": {
@@ -381,8 +381,8 @@
         "format-source-muted": " ", // Not using thin space " "
         "on-click": "pamixer --default-source -t",
         "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
-        "on-scroll-up": "pamixer --default-source -i 2",
-        "on-scroll-down": "pamixer --default-source -d 2",
+        "on-scroll-up": "pamixer --default-source -i 5",
+        "on-scroll-down": "pamixer --default-source -d 5",
         "smooth-scrolling-threshold": 0.7,
         "reverse-scrolling": true
     },
