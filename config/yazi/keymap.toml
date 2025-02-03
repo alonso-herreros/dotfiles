@@ -92,54 +92,52 @@ keymap = [
 	{ on = ["@", "h"], run = "hardlink",        desc = "Hardlink yanked files" },
 	{ on = "<C-c>",    run = "unyank",          desc = "Cancel yank" },
 
-	# ==== Deleting ====
+    # ==== Deleting ====
 	{ on = "d",     run = "remove",               desc = "Trash selected files" },
 	{ on = "X",     run = "remove --hovered",     desc = "Trash hovered file" },
 	{ on = "D",     run = "remove --permanently", desc = "Permanently delete selected files" },
 	{ on = "a",     run = "create",               desc = "Create a file (end with / for dir)" },
 
-	# ==== Renaming ====
+    # ==== Renaming ====
 	{ on = "<F2>",  run = "rename --cursor=before_ext",          desc = "Rename selected file(s)" },
 	{ on = "r",     run = "rename --cursor=before_ext",          desc = "Rename selected file(s)" },
 	{ on = "R",     run = "rename --empty=all",  desc = "Overwrite filename(s)" },
 	{ on = "<C-r>", run = ["toggle_all --state=true", "rename"], desc = "Batch rename (all)" },
 
-	###########
-	## SHELL ##
-	###########
+    ###########
+    ## SHELL ##
+    ###########
 
 	{ on = ";",     run = "shell --interactive",         desc = "Run a shell command" },
 	{ on = ":",     run = "shell --block --interactive", desc = "Run a shell command (blocking)" },
     { on = "!",     run = "shell '$SHELL' --block",      desc = "Drop to shell" },
 
-	#############
-	## DISPLAY ##
-	#############
+    #############
+    ## DISPLAY ##
+    #############
 
-	# ==== Hidden ====
+    # ==== Hidden ====
 	{ on = ".",     run = "hidden toggle",   desc = "Toggle the visibility of hidden files" },
 
-	# ==== Search ====
+    # ==== Search ====
 	{ on = "s",     run = "search fd",       desc = "Search files by name using fd" },
 	{ on = "S",     run = "search rg",       desc = "Search files by content using ripgrep" },
-	{ on = "<C-s>", run = "escape --search", desc = "Cancel the ongoing search" },
 
     # ==== fzf & Zoxide ====
 	{ on = "z",     run = "plugin zoxide",   desc = "Zoxide" },
 	{ on = "Z",     run = "plugin fzf",      desc = "Jump to a directory or reveal a file using fzf" },
 
 	# ==== Linemode ====
-	{ on = ["m", "s"], run = "linemode size",        desc = "Linemode: size" },
-	{ on = ["m", "p"], run = "linemode permissions", desc = "Linemode: permissions" },
-	{ on = ["m", "c"], run = "linemode btime",       desc = "Linemode: btime" },
-	{ on = ["m", "m"], run = "linemode mtime",       desc = "Linemode: mtime" },
-	{ on = ["m", "o"], run = "linemode owner",       desc = "Linemode: owner" },
-	{ on = ["m", "n"], run = "linemode none",        desc = "Linemode: none" },
+	{ on = ["?", "s"], run = "linemode size",        desc = "Linemode: size" },
+	{ on = ["?", "p"], run = "linemode permissions", desc = "Linemode: permissions" },
+	{ on = ["?", "c"], run = "linemode btime",       desc = "Linemode: btime" },
+	{ on = ["?", "m"], run = "linemode mtime",       desc = "Linemode: mtime" },
+	{ on = ["?", "o"], run = "linemode owner",       desc = "Linemode: owner" },
+	{ on = ["?", "n"], run = "linemode none",        desc = "Linemode: none" },
 
 	# ==== Filter and find ====
 	{ on = "f", run = "filter --smart",          desc = "Filter files" },
 	{ on = "/", run = "find --smart",            desc = "Find next file" },
-	{ on = "?", run = "find --previous --smart", desc = "Find previous file" },
 	{ on = "n", run = "find_arrow",              desc = "Go to the next found" },
 	{ on = "N", run = "find_arrow --previous",   desc = "Go to the previous found" },
 
