@@ -78,7 +78,7 @@ require("yatline"):setup({
 	header_line = {
 		left = {
 			section_a = {
-                {type = "line", custom = false, name = "tabs", params = {"left"}},
+				{type = "line", custom = false, name = "tabs", params = {"left"}},
 			},
 			section_b = {
 			},
@@ -91,7 +91,7 @@ require("yatline"):setup({
 			section_b = {
 			},
 			section_c = {
-                {type = "coloreds", custom = false, name = "count"},
+				{type = "coloreds", custom = false, name = "count"},
 			}
 		}
 	},
@@ -99,7 +99,7 @@ require("yatline"):setup({
 	status_line = {
 		left = {
 			section_a = {
-                {type = "string", custom = false, name = "tab_mode"},
+				{type = "string", custom = false, name = "tab_mode"},
 			},
 			section_b = {
 				{type = "string", custom = false, name = "tab_path", params = { trimed = false, max_length=24, trim_length=10 }},
@@ -110,14 +110,14 @@ require("yatline"):setup({
 		},
 		right = {
 			section_a = {
-                {type = "string", custom = false, name = "cursor_position"},
+				{type = "string", custom = false, name = "cursor_position"},
 			},
 			section_b = {
 				-- {type = "string", custom = false, name = "hovered_mime"},
 				{type = "string", custom = false, name = "hovered_size"},
 			},
 			section_c = {
-                {type = "coloreds", custom = false, name = "permissions"},
+				{type = "coloreds", custom = false, name = "permissions"},
 			}
 		}
 	},
