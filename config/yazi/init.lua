@@ -102,10 +102,10 @@ require("yatline"):setup({
                 {type = "string", custom = false, name = "tab_mode"},
 			},
 			section_b = {
-                {type = "string", custom = false, name = "hovered_size"},
-                {type = "string", custom = false, name = "hovered_name", params = { trimed = false, show_symlink = true, max_length=24, trim_length=10 }},
+				{type = "string", custom = false, name = "tab_path", params = { trimed = false, max_length=24, trim_length=10 }},
 			},
 			section_c = {
+				-- {type = "string", custom = false, name = "hovered_name", params = { trimed = false, show_symlink = true, max_length=24, trim_length=10 }},
 			}
 		},
 		right = {
@@ -113,6 +113,8 @@ require("yatline"):setup({
                 {type = "string", custom = false, name = "cursor_position"},
 			},
 			section_b = {
+				-- {type = "string", custom = false, name = "hovered_mime"},
+				{type = "string", custom = false, name = "hovered_size"},
 			},
 			section_c = {
                 {type = "coloreds", custom = false, name = "permissions"},
