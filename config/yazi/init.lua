@@ -141,9 +141,11 @@ require("smart-enter"):setup {
 -- ==== Bookmarks ====
 require("bookmarks"):setup({
 	last_directory = { enable = false, persist = false },
-	persist = "vim",
+
+	persist = "all", -- Persist all to make number bookmarks persist.
 	desc_format = "parent",
 	file_pick_mode = "parent",
+
 	notify = {
 		enable = false,
 		timeout = 1,
