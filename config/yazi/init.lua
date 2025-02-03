@@ -133,7 +133,7 @@ THEME.git.updated_sign = "U"
 THEME.git.ignored_sign = "I"
 require("git"):setup()
 
--- ==== Smart enter ===
+-- ==== Smart enter ====
 require("smart-enter"):setup {
 	open_multi = true,
 }
