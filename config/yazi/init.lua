@@ -137,3 +137,20 @@ require("git"):setup()
 require("smart-enter"):setup {
 	open_multi = true,
 }
+
+-- ==== Bookmarks ====
+require("bookmarks"):setup({
+	last_directory = { enable = false, persist = false },
+	persist = "vim",
+	desc_format = "parent",
+	file_pick_mode = "parent",
+	notify = {
+		enable = false,
+		timeout = 1,
+		message = {
+			new = "Mark '<key>' added: '<folder>'",
+			delete = "Deleted mark '<key>'",
+			delete_all = "Deleted all bookmarks",
+		},
+	},
+})
