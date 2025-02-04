@@ -124,8 +124,8 @@ keymap = [
     ## SHELL ##
     ###########
 
-	{ on = ";",     run = "shell --interactive",         desc = "Run a shell command" },
-	{ on = ":",     run = "shell --block --interactive", desc = "Run a shell command (blocking)" },
+	{ on = ";",     run = "plugin custom-shell --args='auto --interactive'",         desc = "Run a shell command" },
+	{ on = ":",     run = "plugin custom-shell --args='auto --block --interactive'", desc = "Run a shell command (blocking)" },
     { on = "!",     run = "shell '$SHELL' --block",      desc = "Drop to shell" },
 
     #############

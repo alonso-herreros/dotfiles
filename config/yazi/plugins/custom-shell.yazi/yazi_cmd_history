@@ -1,0 +1,2 @@
+bash -ic 'vim ;exit'
+bash -ic 'v;exit'

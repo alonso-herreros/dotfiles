@@ -156,3 +156,9 @@ require("bookmarks"):setup({
 		},
 	},
 })
+
+-- ==== Custom Shell ====
+require("custom-shell"):setup({
+    history_path = "default",
+    save_history = true,
+})
