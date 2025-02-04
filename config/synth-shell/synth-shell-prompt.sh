@@ -485,6 +485,7 @@ shortenPath()
 ## -   GIT: if inside a git repository, shows the name of current branch.
 ## - PYENV: if inside a Python Virtual environment.
 ## -    TF: if inside a Terraform Workspace.
+## -  YAZI: if inside a Yazi subshell
 ## - CLOCK: shows current time in H:M format.
 ## - INPUT: actual bash input.
 ##
@@ -501,7 +502,7 @@ shortenPath()
 ##==============================================================================
 ## MAIN FORMAT
 ##==============================================================================
-format="USER HOST PWD GIT PYENV TF KUBE"
+format="USER HOST PWD GIT PYENV TF KUBE YAZI"
 separator_char='\uE0B0'           # Separation character, '\uE0B0'=triangle
 separator_padding_left=''         # Add char or string to the left of the separator
 separator_padding_right=''        # Add char or string to the right of the separator
@@ -562,6 +563,12 @@ texteffect_kube="bold"
 font_color_tf="purple"
 background_tf="light-purple"
 texteffect_tf="bold"
+##==============================================================================
+## YAZI
+##==============================================================================
+font_color_yazi="black"
+background_yazi="yellow"
+texteffect_yazi="bold"
 ##==============================================================================
 ## CLOCK
 ##==============================================================================
@@ -773,6 +780,15 @@ getKube()
 }
 ##------------------------------------------------------------------------------
 ##
+##
+getYazi()
+{
+    if [[ -n $YAZI_LEVEL ]]; then
+        [[ $YAZI_LEVEL -eq 1 ]] && echo "󰇥" || echo "󰇥 $YAZI_LEVEL"
+    fi
+}
+##------------------------------------------------------------------------------
+##
 ## Print each word of the propmpt, i.e., a small text acompanied by the
 ## separator character and formated with colors and background.
 ##
@@ -804,6 +820,7 @@ get_colors_for_element()
 		"PYENV") echo "${SSP_COLORS_PYENV[@]}";;
 		"KUBE")  echo "${SSP_COLORS_KUBE[@]}";;
 		"TF")    echo "${SSP_COLORS_TF[@]}"   ;;
+		"YAZI")  echo "${SSP_COLORS_YAZI[@]}" ;;
 		"CLOCK") echo "${SSP_COLORS_CLOCK[@]}";;
 		"INPUT") echo "${SSP_COLORS_INPUT[@]}";;
 		*)
@@ -826,6 +843,7 @@ combine_elements()
 		"PYENV") local text="$pyenv" ;;
 		"KUBE")  local text="$kube" ;;
 		"TF")    local text="$tf" ;;
+		"YAZI")  local text="$yazi" ;;
 		"CLOCK") local text="$clock" ;;
 		"INPUT") local text="" ;;
 		*)       local text="" ;;
@@ -851,6 +869,7 @@ prompt_command_hook()
 	local pyenv="$(getPyenv)"
 	local kube="$(getKube)"
 	local tf="$(getTerraform)"
+    local yazi="$(getYazi)"
 	local clock="$(date +"${SSP_CLOCK_FORMAT}")"
 	## ADAPT DYNAMICALLY ELEMENTS TO BE SHOWN
 	## Check if elements such as GIT and the Python environment should be
@@ -867,6 +886,9 @@ prompt_command_hook()
 	fi
 	if [ -z "$kube" ]; then
 		elements=( ${elements[@]/"KUBE"} ) # Remove KUBE from elements to be shown
+	fi
+	if [ -z "$yazi" ]; then
+		elements=( ${elements[@]/"YAZI"} ) # Remove YAZI from elements to be shown
 	fi
 	## WINDOW TITLE
 	## Prevent messed up terminal-window titles, must be set in the PS1 variable
@@ -945,6 +967,7 @@ prompt_command_hook()
 	SSP_COLORS_PYENV=($font_color_pyenv $background_pyenv $texteffect_pyenv)
 	SSP_COLORS_KUBE=($font_color_kube $background_kube $texteffect_kube)
 	SSP_COLORS_TF=($font_color_tf $background_tf $texteffect_tf)
+	SSP_COLORS_YAZI=($font_color_yazi $background_yazi $texteffect_yazi)
 	SSP_COLORS_CLOCK=($font_color_clock $background_clock $texteffect_clock)
 	SSP_COLORS_INPUT=($font_color_input $background_input $texteffect_input)
 	SSP_VERTICAL_PADDING=$vertical_padding
