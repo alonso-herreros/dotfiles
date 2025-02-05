@@ -56,7 +56,7 @@ set_features() {
     if [[ "$2" = "all" ]]; then
         # Reload all kitty instances
         pkill -USR1 -u $USER kitty
-    elif [[ "$2" -ne "none" ]]; then
+    elif [[ "$2" != "none" ]]; then
         # Reload calling instance
         kitten @ load-config
         # Reset features for next instances without updating
