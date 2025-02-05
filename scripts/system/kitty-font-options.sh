@@ -56,11 +56,11 @@ set_features() {
     if [[ "$2" = "all" ]]; then
         # Reload all kitty instances
         pkill -USR1 -u $USER kitty
-    else
+    elif [[ "$2" -ne "none" ]]; then
         # Reload calling instance
         kitten @ load-config
-        # Reset features for next instances
-        set_features off
+        # Reset features for next instances without updating
+        set_features off none
     fi
 }
 
@@ -103,7 +103,7 @@ function args() {
 
 # Default options
 mode="on"
-all=""
+all="no"
 quiet=0
 
 # Parse args, setting options on the way
