@@ -11,14 +11,14 @@ swipe:
   4:
     up:
       update:
-        command: "~/.scripts/system/volume_ctl.sh -i 2"
-        interval: 0.2
-        threshold: 0.6
+        command:   "~/.scripts/system/volume_ctl.sh -i 5"
+        interval:  0.3
+        threshold: 0.8
     down:
       update:
-        command: "~/.scripts/system/volume_ctl.sh -d 2"
-        interval: 0.2
-        threshold: 0.6
+        command:   "~/.scripts/system/volume_ctl.sh -d 5"
+        interval:  0.3
+        threshold: 0.8
     left:
       command: "playerctl next"
     right:
