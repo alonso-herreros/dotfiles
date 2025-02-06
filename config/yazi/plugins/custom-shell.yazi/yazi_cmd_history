@@ -1,2 +1,5 @@
 bash -ic 'vim ;exit'
 bash -ic 'v;exit'
+bash -ic 'git init;exit'
+bash -ic 'sudo cp "$0" ./;exit'
+bash -ic 'sudo mkdir images;exit'
