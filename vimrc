@@ -27,6 +27,7 @@ Plug 'preservim/NERDTree'
 Plug 'easymotion/vim-easymotion'
 Plug 'justinmk/vim-sneak'
 Plug 'wellle/targets.vim'      " Smarter text objects
+Plug 'michaeljsmith/vim-indent-object' " Indent text object
 Plug 'tpope/vim-rsi'           " Readline mappings when appropriate
 
 " Typing
