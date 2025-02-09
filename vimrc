@@ -428,6 +428,9 @@ nmap <Leader>x :confirm bd<CR>
 " Inspect character
 nnoremap gi ga
 nnoremap g? ga
+" Select recently put
+nnoremap gp `]v`[
+nnoremap gP ']V'[
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 nnoremap <A-q> gwip
 
@@ -455,6 +458,9 @@ vnoremap <A-k> dkPgv`[o`]
 " vnoremap <S-Tab> <gv
 vnoremap > >gv
 vnoremap < <gv
+" Select recently put
+nnoremap gp v`]o`[
+nnoremap gP V']o'[
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 vnoremap <A-q> gw
 
