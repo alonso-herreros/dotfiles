@@ -2,3 +2,4 @@ cura.cfg
 hosts.yml
 config/kitty/*.d.conf
 config/dunst/**/*power_saving*.conf
+yazi_cmd_history
