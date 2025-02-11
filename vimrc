@@ -96,6 +96,9 @@ let g:airline#extensions#tabline#left_alt_sep = ' |'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v (%p%%)%#__restore__#'
 
+" ==== Indent Guides ====
+let g:indent_guides_default_mapping = 0
+
 " ==== Surround ====
 let g:surround_{char2nr("2")} = "\1character: \1\1\1\r\1\1\1\1"
 let g:surround_{char2nr("e")} = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
@@ -408,7 +411,6 @@ nnoremap <A-K> yyP
 nnoremap <C-j> J
 nnoremap g<C-j> gJ
 " Adding spaces, lines and line breaks
-silent! unmap <Leader>ig
 nnoremap <Leader>i i<Space><Esc>l
 nnoremap <Leader>a a<Space><Esc>h
 nnoremap <Leader>o m`o<Esc>0D``
