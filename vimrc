@@ -22,6 +22,7 @@ call plug#begin()
 Plug 'tpope/vim-repeat'        " Repeat (most) plugin actions with .
 Plug 'tpope/vim-abolish'       " Describe word variants (+Subvert command)
 Plug 'preservim/NERDTree'
+Plug 'tpope/vim-sleuth'        " Detect tab styles
 
 " Moving / selecting
 Plug 'easymotion/vim-easymotion'
