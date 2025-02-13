@@ -8,7 +8,7 @@
 ##=================================================================##
 [manager]
 keymap = [
-    { on = "<A-v>", run = "plugin toggle-view --args=preview", desc = "Toggle preview" },
+    { on = "<A-v>", run = "plugin toggle-view preview", desc = "Toggle preview" },
 
 	{ on = "<Esc>", run = "escape",  desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = "<C-[>", run = "escape",  desc = "Exit visual mode, clear selected, or cancel search" },
@@ -37,8 +37,8 @@ keymap = [
 	{ on = "<PageUp>",     run = "arrow -100%", desc = "Move cursor up one page" },
 	{ on = "<PageDown>",   run = "arrow 100%",  desc = "Move cursor down one page" },
 
-	{ on = ["g", "g"], run = "arrow -99999999", desc = "Move cursor to the top" },
-	{ on = "G",        run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+	{ on = ["g", "g"], run = "arrow top", desc = "Move cursor to the top" },
+	{ on = "G",        run = "arrow bot",  desc = "Move cursor to the bottom" },
 
 	# ==== Entering and leaving ====
 	{ on = "h",       run = "leave", desc = "Go back to the parent directory" },
@@ -63,9 +63,9 @@ keymap = [
 	{ on = ["g", "d"],  run = "cd ~/Downloads",    desc = "Go: Downloads" },
 
     # ==== Bookmarks ====
-	{ on = ["m"],  run = "plugin bookmarks --args=save", desc = "Create mark in current dir" },
-	{ on = ["`"],  run = "plugin bookmarks --args=jump", desc = "Go to mark" },
-	{ on = ["M"],  run = "plugin bookmarks --args=delete", desc = "Delete mark" },
+	{ on = ["m"],  run = "plugin bookmarks save", desc = "Create mark in current dir" },
+	{ on = ["`"],  run = "plugin bookmarks jump", desc = "Go to mark" },
+	{ on = ["M"],  run = "plugin bookmarks delete", desc = "Delete mark" },
 
 	###############
 	## SELECTION ##
@@ -88,7 +88,7 @@ keymap = [
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=1",               desc = "Open selected files" },
     # { on = "<C-d>",     run = "shell 'dragon-drop -x -i -T -a \"$@\"'" },
-    { on = "<C-d>",     run = "shell 'ripdrag -x -A -W 200 -H 100 \"$@\" &'" },
+    { on = "<C-d>",     run = "shell -- ripdrag -x -A -W 200 -H 100 \"$@\" &" },
 
 	# ==== Copying paths and names ====
 	{ on = "Y",        run = "copy path",             desc = "Copy file path" },
@@ -99,7 +99,7 @@ keymap = [
 
 	# ==== Copy-pasting ====
 	{ on = "y",        run = [
-        "shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list'",
+        "shell -- for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list",
         "yank" ],                               desc = "Yank selected files" },
 	{ on = "x",        run = "yank --cut",      desc = "Cut selected files" },
 	{ on = "p",        run = "paste",           desc = "Paste yanked files" },
@@ -124,8 +124,8 @@ keymap = [
     ## SHELL ##
     ###########
 
-	{ on = ";",     run = "plugin custom-shell --args='auto --interactive'",         desc = "Run a shell command" },
-	{ on = ":",     run = "plugin custom-shell --args='auto --block --interactive'", desc = "Run a shell command (blocking)" },
+	{ on = ";",     run = "plugin custom-shell -- auto --interactive",         desc = "Run a shell command" },
+	{ on = ":",     run = "plugin custom-shell -- auto --block --interactive", desc = "Run a shell command (blocking)" },
     { on = "!",     run = "shell '$SHELL' --block",      desc = "Drop to shell" },
 
     #############
