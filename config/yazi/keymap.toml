@@ -41,10 +41,10 @@ keymap = [
 	{ on = "G",        run = "arrow bot",  desc = "Move cursor to the bottom" },
 
 	# ==== Entering and leaving ====
-	{ on = "h",       run = "leave", desc = "Go back to the parent directory" },
-	{ on = "l",       run = "plugin smart-enter", desc = "Enter directory or open file" },
-	{ on = "<Left>",  run = "leave", desc = "Go back to the parent directory" },
-	{ on = "<Right>", run = "enter", desc = "Enter the child directory" },
+	{ on = "h",       run = "leave", desc = "Go to parent directory" },
+	{ on = "l",       run = "enter", desc = "Enter directory" },
+	{ on = "<Left>",  run = "leave", desc = "Go to parent directory" },
+	{ on = "<Right>", run = "enter", desc = "Enter directory" },
 
 	{ on = "-", run = "back",    desc = "Go back to the previous directory" },
 	{ on = "H", run = "back",    desc = "Go back to the previous directory" },
