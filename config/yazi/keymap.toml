@@ -89,7 +89,7 @@ keymap = [
 	{ on = "<Enter>",   run = "plugin smart-enter",  desc = "Open files or enter directory" },
 	{ on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
-	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=1",               desc = "Open selected files" },
+	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=0",               desc = "Open file(s) with command" },
 	# { on = "<C-d>",     run = "shell 'dragon-drop -x -i -T -a \"$@\"'" },
 	{ on = "<C-d>",     run = "shell -- ripdrag -x -A -W 200 -H 100 \"$@\" &" },
 
