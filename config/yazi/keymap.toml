@@ -66,6 +66,7 @@ keymap = [
 	{ on = ["'", "p"],  run = "cd ~/Pictures",     desc = "Go: Pictures" },
 	{ on = ["'", "v"],  run = "cd ~/Videos",       desc = "Go: Videos" },
 	{ on = ["'", "P"],  run = "cd ~/Projects",     desc = "Go: Projects" },
+	{ on = ["'", "T"],  run = "cd ~/.local/share/Trash", desc = "Go: Trash" },
 
 	# ==== Bookmarks ====
 	{ on = ["m"],  run = "plugin bookmarks save", desc = "Create mark in current dir" },
