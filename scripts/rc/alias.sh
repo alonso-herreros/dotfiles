@@ -20,6 +20,7 @@ alias n='nnn'
 alias hg='history | grep'
 alias so='source'
 alias pm='pacman'
+alias sv='sudo virsh'
 
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
