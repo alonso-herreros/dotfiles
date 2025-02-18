@@ -523,6 +523,11 @@ inoremap <A-q> <C-o>gwip
 " imap <expr> <Tab> ( getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible() )
 "       \ ? '<C-y>' : '<Tab>'
 
+" ======= OP-PENDING MODE MAPPINGS =======
+" All file
+onoremap if :<C-u>normal! ggVG<CR>
+onoremap af :<C-u>normal! ggVG<CR>
+
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write
 cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
