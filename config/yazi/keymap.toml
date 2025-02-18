@@ -55,6 +55,8 @@ keymap = [
 	{ on = ["~"],       run = "cd ~",              desc = "Go: ~" },
 	{ on = ["'", "~"],  run = "cd ~",              desc = "Go: ~" },
 	{ on = ["'", "/"],  run = "cd /",              desc = "Go: /" },
+	{ on = ["'", "0"],  run = "cd /",              desc = "Go: /" },
+	{ on = ["'", "V"],  run = "cd /virt",          desc = "Go: /virt" },
 	{ on = ["'", "c"],  run = "cd ~/.config",      desc = "Go: .config" },
 	{ on = ["'", "."],  run = "cd ~/.dotfiles",    desc = "Go: .dotfiles" },
 	{ on = ["'", "b"],  run = "cd ~/.bookmarks",   desc = "Go: .bookmarks" },
