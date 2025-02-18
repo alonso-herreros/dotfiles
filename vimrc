@@ -56,7 +56,7 @@ Plug 'unblevable/quick-scope'  " Highlights a unique character in every word
 " Appearance
 Plug 'tomasiser/vim-code-dark'           " VSCode dark theme (sort of)
 Plug 'jeffkreeftmeijer/vim-numbertoggle' " Autoset line number mode
-Plug 'obcat/vim-sclow'                   " Text-based scrollbar
+" Plug 'obcat/vim-sclow'                   " Text-based scrollbar
 Plug 'preservim/vim-indent-guides'       " Visually displaying indent levels
 Plug 'junegunn/rainbow_parentheses.vim'
 
