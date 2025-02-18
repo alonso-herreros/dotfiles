@@ -74,11 +74,25 @@ play = [
 pdftools = [
     { run = 'qpdf --empty --pages "$@" -- merged.pdf', desc = "Merge PDFs", for = "linux", orphan = true },
 ]
+qalc = [
+    { run = 'qalc -f "$@" -i', desc = "Open with QALC", for = "linux", block = true },
+]
 
 [open]
 rules = [
+    # Empty file
+    { mime = "inode/x-empty", use = [ "edit", "reveal" ] },
     # Folder
     { name = "*/", use = [ "edit", "open", "reveal" ] },
+
+    # JSON
+    { mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
+    { mime = "*/javascript", use = [ "edit", "reveal" ] },
+    # PDF
+    { mime = "application/pdf", use = [ "open", "pdftools", "reveal" ] },
+    # QALC
+    { name = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
+
     # Text
     { mime = "text/html", use = [ "open", "edit", "reveal" ] },
     { mime = "text/*", use = [ "edit", "open", "reveal" ] },
@@ -89,13 +103,7 @@ rules = [
     # Archive
     { mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
     { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
-    # JSON
-    { mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
-    { mime = "*/javascript", use = [ "edit", "reveal" ] },
-    # PDF
-    { mime = "application/pdf", use = [ "open", "pdftools", "reveal" ] },
-    # Empty file
-    { mime = "inode/x-empty", use = [ "edit", "reveal" ] },
+
     # Fallback
     { name = "*", use = [ "open", "edit", "reveal" ] },
 ]
