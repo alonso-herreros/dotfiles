@@ -71,6 +71,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'sheerun/vim-polyglot'
 Plug 'alonso-herreros/vim-markdown'
 Plug 'fladson/vim-kitty'
+Plug 'iffse/qalculate.vim'
 call plug#end()
 
 " =====================================================================
