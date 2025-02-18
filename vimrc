@@ -137,6 +137,37 @@ let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
+let g:ulti_expand_or_jump_res = 0 "default value, just set once
+
+function! UltiExpandTryBackslash()
+    " If we can expand already, we just skip this block entirely
+    while !UltiSnips#CanExpandSnippet()
+        set ve+=onemore
+        " Try moving after the end
+        normal m`hel
+        if ( UltiSnips#CanExpandSnippet() ) | break
+        else                                | normal ``
+        endif
+
+        " Try prepending \ to the word (asumming we started inside the word)
+        normal lbi\
+        normal el
+        if ( UltiSnips#CanExpandSnippet() ) | break
+        else                                | normal `.x``
+        endif
+
+        " No more methods to try. WE MUST EXIT THE WHILE LOOP
+        break
+    endwhile
+
+    call UltiSnips#ExpandSnippet()
+    " normal l
+    " normal i:call UltiSnips#ExpandSnippet()
+    set ve-=onemore
+
+    return g:ulti_expand_res
+endfunction
+
 
 " ==== Language-specific plugins ====
 
@@ -294,36 +325,6 @@ imap <C-ç> <C-o>m`gcc``
 nmap <C-E> :Files<CR>
 
 " UltiSnips assisted \trigger. Resets `onemore` in `ve`
-let g:ulti_expand_or_jump_res = 0 "default value, just set once
-function! UltiExpandTryBackslash()
-    " If we can expand already, we just skip this block entirely
-    while !UltiSnips#CanExpandSnippet()
-        set ve+=onemore
-        " Try moving after the end
-        normal m`hel
-        if ( UltiSnips#CanExpandSnippet() ) | break
-        else                                | normal ``
-        endif
-
-        " Try prepending \ to the word (asumming we started inside the word)
-        normal lbi\
-        normal el
-        if ( UltiSnips#CanExpandSnippet() ) | break
-        else                                | normal `.x``
-        endif
-
-        " No more methods to try. WE MUST EXIT THE WHILE LOOP
-        break
-    endwhile
-
-    call UltiSnips#ExpandSnippet()
-    " normal l
-    " normal i:call UltiSnips#ExpandSnippet()
-    set ve-=onemore
-
-    return g:ulti_expand_res
-endfunction
-
 nnoremap <C-space> <CMD>call UltiExpandTryBackslash()<CR>
 inoremap <C-space> <Esc>he<CMD>call UltiExpandTryBackslash()<CR>
 vmap <C-space> <Tab>
@@ -354,6 +355,7 @@ noremap <C-a> <Esc>ggvG$
 " Increment and decrement
 noremap <C-+> <C-a>
 noremap <C-_> <C-x>
+
 " Yank to clipboard
 map <Leader>y "+y
 map <Leader>Y "+Y
@@ -369,6 +371,8 @@ noremap Q @q
 noremap M `m
 " Redo with U
 noremap U <C-r>
+
+" ---- Buffers and tabs ----
 " Buffers with Alt+h/l or Ctrl+(Shift)+Tab, as they're the most 'tab'-like
 noremap <A-l> :bn<CR>
 noremap <A-h> :bN<CR>
@@ -377,6 +381,8 @@ map <C-S-Tab> :bN<CR>
 " Tabs with (Shift)+Tab. Not normally used in other programs, but useful here.
 noremap <Tab> gt
 noremap <S-Tab> gT
+
+" ---- Splits ----
 " Split manipulation with Ctrl+Alt+key (Not used enough to need Ctrl+key)
 noremap <C-A-h> <C-w>h
 noremap <C-A-j> <C-w>j
