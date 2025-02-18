@@ -129,6 +129,9 @@ keymap = [
 	# ==== Mounting ====
 	{ on = ["g", "m"], run = "plugin mount", desc = "Mount" },
 
+	# ==== Zipping ====
+	{ on = ["g", "z"], run = ["shell 'zip -r zipped $(realpath --relative-to=\"$PWD\" \"$@\")' --interactive", "toggle_all --state=false"], desc = "Zip files" },
+
 	###########
 	## SHELL ##
 	###########
