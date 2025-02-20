@@ -452,6 +452,9 @@ onoremap L $
 " All file
 onoremap if :<C-u>normal! ggVG<CR>
 onoremap af :<C-u>normal! ggVG<CR>
+" Recently put
+onoremap gp :<C-u>normal! `]v`[<CR>
+onoremap gP :<C-u>normal! ']V'[<CR>
 
 " ======= VISUAL MODE MAPPINGS =======
 " Visual easy exit
