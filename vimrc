@@ -369,6 +369,7 @@ map <Leader>c "0c
 map <Leader>C "0C
 " Quick use: q macro and m marker
 noremap Q @q
+vnoremap Q :norm @q<CR>
 noremap M `m
 " Redo with U
 noremap U <C-r>
