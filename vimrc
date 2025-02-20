@@ -452,6 +452,8 @@ onoremap L $
 " All file
 onoremap if :<C-u>normal! ggVG<CR>
 onoremap af :<C-u>normal! ggVG<CR>
+" Last visual selection
+onoremap gv :<C-u>normal gv<CR>
 " Recently put
 onoremap gp :<C-u>normal! `]v`[<CR>
 onoremap gP :<C-u>normal! ']V'[<CR>
