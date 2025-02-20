@@ -449,6 +449,9 @@ nnoremap <A-q> gwip
 " Beginning/end of line with H/L
 onoremap H ^
 onoremap L $
+" All file
+onoremap if :<C-u>normal! ggVG<CR>
+onoremap af :<C-u>normal! ggVG<CR>
 
 " ======= VISUAL MODE MAPPINGS =======
 " Visual easy exit
@@ -523,11 +526,6 @@ inoremap <A-q> <C-o>gwip
 " imap <expr> <Tab> pumvisible() ? '<C-y>' : '<Tab>'
 " imap <expr> <Tab> ( getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible() )
 "       \ ? '<C-y>' : '<Tab>'
-
-" ======= OP-PENDING MODE MAPPINGS =======
-" All file
-onoremap if :<C-u>normal! ggVG<CR>
-onoremap af :<C-u>normal! ggVG<CR>
 
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write
