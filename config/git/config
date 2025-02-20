@@ -61,8 +61,15 @@
     submoduleSummary = true
 
 [log]
+    date = human
     decorate = short
     abbrevCommit = true
+    follow = true
+
+[blame]
+    blankBoundary = true
+    coloring = repeatedLines
+    date = human
 
 [push]
     autoSetupRemote = true
