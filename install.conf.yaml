@@ -36,10 +36,10 @@
     ~/.config/batsignal: config/batsignal
     ~/.config/oh-my-zsh.zsh: config/oh-my-zsh.zsh
 
-    ~/.config/brave-flags.conf: config/app-flags/brave-flags.conf
-    ~/.config/chromium-flags.conf: config/app-flags/chromium-flags.conf
-    ~/.config/spotify-flags.conf: config/app-flags/spotify-flags.conf
-    ~/.config/code-flags.conf: config/app-flags/code-flags.conf
+    # App flags
+    ~/.config/:
+      glob: true
+      path: config/app-flags/*.conf
 
     ~/.scripts: scripts
 
