@@ -35,8 +35,7 @@
     ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/batsignal: config/batsignal
 
-    ~/.oh-my-zsh/custom: config/oh-my-zsh/custom
-    ~/.config/oh-my-zsh.zsh: config/oh-my-zsh/config.zsh
+    ~/.config/oh-my-zsh: config/oh-my-zsh # Powerlevel10k in custom themes
     ~/.config/p10k.zsh: config/p10k/config.zsh
 
     # App flags
@@ -44,6 +43,7 @@
       glob: true
       path: config/app-flags/*.conf
 
+    # Oh My Zsh included!
     ~/.scripts: scripts
 
     # Warning: this is a bunch of files added to path!

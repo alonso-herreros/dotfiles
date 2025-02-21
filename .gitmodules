@@ -8,3 +8,6 @@
 [submodule "config/oh-my-zsh/custom/themes/powerlevel10k"]
 	path = config/oh-my-zsh/custom/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k
+[submodule "scripts/oh-my-zsh"]
+	path = scripts/oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh

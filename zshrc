@@ -20,14 +20,13 @@ export PAGER="less -Ri"
 
 # ===== Oh My Zsh! =====
 
-export ZSH="$HOME/.oh-my-zsh" # Path to Oh My Zsh installation
-# ZSH_CUSTOM="$ZSH/custom"      # Custom content folder
+export ZSH="$HOME/.scripts/oh-my-zsh"              # Path to Oh My Zsh
+ZSH_CUSTOM="$XDG_CONFIG_HOME/oh-my-zsh/custom"     # Custom content folder
+ZSH_CONFIG="$XDG_CONFIG_HOME/oh-my-zsh/config.zsh" # Separate config file
 
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then
-    # Source configuration, stored separately
-    source "$XDG_CONFIG_HOME/oh-my-zsh.zsh" 2>/dev/null
-
-    source "$ZSH/oh-my-zsh.sh"    # source Oh My Zsh!
+    [ -f "$ZSH_CONFIG" ] && source "$ZSH_CONFIG" # Source config
+    source "$ZSH/oh-my-zsh.sh"                   # Source Oh My Zsh!
 fi
 
 
