@@ -7,4 +7,4 @@
 	url = git@github.com:alonso-herreros/dotfiles_private
 [submodule "config/oh-my-zsh/custom/themes/powerlevel10k"]
 	path = config/oh-my-zsh/custom/themes/powerlevel10k
-	url = https://ghithub.com/romkat/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k

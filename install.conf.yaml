@@ -37,6 +37,7 @@
 
     ~/.oh-my-zsh/custom: config/oh-my-zsh/custom
     ~/.config/oh-my-zsh.zsh: config/oh-my-zsh/config.zsh
+    ~/.config/p10k.zsh: config/p10k/config.zsh
 
     # App flags
     ~/.config/:

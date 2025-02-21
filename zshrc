@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# See: https://github.com/romkatv/powerlevel10k#instant-prompt
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
 export LANG=en_US.utf8
 
 PATH="$HOME/.local/bin:$PATH"
@@ -22,6 +29,10 @@ if [ -f "$ZSH/oh-my-zsh.sh" ]; then
 
     source "$ZSH/oh-my-zsh.sh"    # source Oh My Zsh!
 fi
+
+
+# ===== Powerlevel10k =====
+[ -f ~/.config/p10k.zsh ] && source ~/.config/p10k.zsh
 
 
 # ===== Aliases =====
