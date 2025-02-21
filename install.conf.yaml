@@ -8,6 +8,7 @@
 - link:
     ~/.bashrc: bashrc
     ~/.bash_aliases: scripts/rc/alias.sh
+    ~/.zshrc: zshrc
     # ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.screenrc: screenrc
@@ -33,6 +34,7 @@
     ~/.config/locale.conf: config/locale/locale.conf
     ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/batsignal: config/batsignal
+    ~/.config/oh-my-zsh.zsh: config/oh-my-zsh.zsh
 
     ~/.config/brave-flags.conf: config/app-flags/brave-flags.conf
     ~/.config/chromium-flags.conf: config/app-flags/chromium-flags.conf
