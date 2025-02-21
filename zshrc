@@ -42,6 +42,11 @@ fi
 [ -f ~/.scripts/rc/yazi_quitcd.sh ] && source ~/.scripts/rc/yazi_quitcd.sh
 
 
+# ===== zsh-vi-mode =====
+file_arch="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+[ -f "$file_arch" ] && source "$file_arch"
+
+
 # ===== Local overrides =====
 
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
