@@ -6,7 +6,9 @@ export PAGER="less -Ri"
 
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
 
+# We need to check if the variable is set to avoid overriding it
 [ -z "$DEFAULT_USER" ] && export DEFAULT_USER="$(whoami)"
+[ -z "$DEFAULT_HOSTNAME" ] && export DEFAULT_HOSTNAME="$(hostname)"
 
 
 # ===== Oh My Zsh! =====

@@ -34,7 +34,9 @@
     ~/.config/locale.conf: config/locale/locale.conf
     ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/batsignal: config/batsignal
-    ~/.config/oh-my-zsh.zsh: config/oh-my-zsh.zsh
+
+    ~/.oh-my-zsh/custom: config/oh-my-zsh/custom
+    ~/.config/oh-my-zsh.zsh: config/oh-my-zsh/config.zsh
 
     # App flags
     ~/.config/:
