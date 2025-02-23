@@ -4,7 +4,7 @@
 
 [core]
     editor = vim
-    pager = less -x5,9
+    pager = less -eFRx5,9
 
 [alias]
     i    = init
