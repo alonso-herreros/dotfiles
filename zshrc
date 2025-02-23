@@ -43,6 +43,10 @@ fi
 
 
 # ===== zsh-vi-mode =====
+function zvm_config() {
+  ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
+}
+
 file_arch="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 [ -f "$file_arch" ] && source "$file_arch"
 
