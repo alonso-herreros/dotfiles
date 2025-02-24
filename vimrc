@@ -193,6 +193,8 @@ set t_ut=
 
 set tabstop=4 shiftwidth=4 expandtab
 
+set foldmethod=syntax foldlevel=99
+
 set nu rnu cul
 
 " Cursor types
