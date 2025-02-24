@@ -90,7 +90,7 @@ alias fkin='fucking'
 alias simonsays='sudo'
 alias please='sudo'
 alias plz='please'
-alias fuck='sudo $(history -p !!)'
+alias fuck='sudo $(fc -ln 1)'
 alias ffs='fuck'
 alias frtho='fuck'
 alias cmon='fuck'
@@ -117,7 +117,7 @@ function mkdircd() {
 }
 alias mkcd='mkdircd'
 
-function that() {
+function lastcmd() {
     [[ -n "$1" ]] && n="$1" || n=1
     fc -ln -$n -$n | sed 's/^\s*//'
 }
