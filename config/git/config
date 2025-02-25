@@ -88,7 +88,6 @@
 [merge]
     conflictstyle = zdiff3
     tool = vimdiff
-    ff = false
 
 [mergetool]
     tool = vimdiff
