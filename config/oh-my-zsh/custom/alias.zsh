@@ -84,7 +84,7 @@ alias :q='echo Not vi, but okay...; sleep 0.5; exit'
 alias :e='vim'
 
 # ==== Yeah ... ====
-alias sudo='\sudo '
+alias sudo='\sudo'
 alias fucking='sudo'
 alias fkin='fucking'
 alias simonsays='sudo'
