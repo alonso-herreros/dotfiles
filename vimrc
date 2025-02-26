@@ -102,7 +102,12 @@ let g:airline_section_z = '%#__accent_bold#%{g:airline_symbols.maxlinenr}%l : %v
 let g:indent_guides_default_mapping = 0
 
 " ==== Surround ====
+" Surround with newlines
+let g:surround_{char2nr("o")} = "\n\r\n"
+let g:surround_{char2nr("")} = "\n\r\n"
+" Surround with double something
 let g:surround_{char2nr("2")} = "\1character: \1\1\1\r\1\1\1\1"
+" Surround with LaTeX environments or commands
 let g:surround_{char2nr("e")} = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
 let g:surround_{char2nr("c")} = "\\\1command: \1{\r}"
 
