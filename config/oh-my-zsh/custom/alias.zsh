@@ -19,6 +19,7 @@ alias so='source'
 alias pm='pacman'
 alias sv='sudo virsh'
 
+alias svirsh='sudo virsh'
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
 alias gimme='git clone'
