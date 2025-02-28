@@ -9,7 +9,7 @@
     ~/.bashrc: bashrc
     ~/.bash_aliases: scripts/rc/alias.sh
     ~/.zshrc: zshrc
-    ~/.zshrc_aliases: config/oh-my-zsh/custom/alias.sh
+    ~/.zshrc_aliases: config/oh-my-zsh/custom/alias.zsh
     # ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.screenrc: screenrc
