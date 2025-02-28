@@ -66,6 +66,7 @@ alias sf='ssh -o ForwardAgent=yes'
 alias nn='nnn -n'
 alias matlabcli='matlab -nosplash -nodisplay'
 alias gpconnect='sudo gpclient connect --default-browser'
+alias matlabdocker="xdg-open 'https://www.mathworks.com/mwa/otp'; docker run -it --mount type=bind,src='$PWD',dst=/home/matlab/app matlab"
 
 # ==== Easy Remember ====
 
