@@ -11,6 +11,9 @@ PATH="$HOME/.local/bin:$PATH"
 export EDITOR="vim"
 export PAGER="less -Ri"
 
+unsetopt correct_all
+unsetopt correct
+
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
 
 # We need to check if the variable is set to avoid overriding it
@@ -36,6 +39,10 @@ fi
 
 # ===== Aliases =====
 # Aliases are loaded by OMZ from $ZSH_CUSTOM/aliases.zsh
+
+
+# ===== Docker =====
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 
 # ===== Yazi =====
