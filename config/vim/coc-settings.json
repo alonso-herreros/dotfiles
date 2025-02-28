@@ -1,0 +1,17 @@
+{
+    "markdownlint.config": {
+        // https://github.com/DavidAnson/markdownlint/blob/v0.31.1/doc/Rules.md
+        "MD001": false, // Heading increment by 1
+        "MD007": {"indent": 4}, // UL indentation
+        "MD022": {"lines_above": 1, "lines_below": 0}, // Blanks around headers
+        // "MD024": {"siblings_only": true}, // No duplicate heading
+        "MD025": {"front_matter_title": ""}, // Single H1
+        "MD027": false, // Multiple spaces after blockquote
+        "MD033": false, // Inline HTML
+        "MD036": false, // No emphasis as header
+        "MD038": false, // Spaces inside code spans
+        "MD041": false, // First line H1
+        "MD046": false, // Expected fenced code blocks
+        "MD049": false  // Emphasis style consistent
+    }
+}
