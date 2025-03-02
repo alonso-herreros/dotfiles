@@ -87,7 +87,7 @@
 
 [merge]
     conflictstyle = zdiff3
-    tool = vimdiff
+    tool = fugitive
 
 [mergetool]
     tool = vimdiff
@@ -97,6 +97,9 @@
 
 [mergetool.vimdiff]
     layout = "LOCAL,REMOTE / MERGED + MERGED,REMOTE"
+
+[mergetool.fugitive]
+    cmd = vim -f -c "Gdiffsplit!" "$MERGED"
 
 [diff]
     algorithm = histogram
