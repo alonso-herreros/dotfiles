@@ -131,6 +131,9 @@ let g:Context_indent = funcref("IndentWithHeadings")
 let g:context_add_mappings = 0
 
 " ==== Git ====
+" Solve merge conflicts: merge from left (h) or from right (l)
+map <Leader>mh :diffget //2 <CR>
+map <Leader>ml :diffget //2 <CR>
 " ---- Fugitive ----
 map <Leader>gs :Git<CR>
 map <Leader>ga :Gadd<CR>
