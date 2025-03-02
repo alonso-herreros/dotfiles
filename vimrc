@@ -63,7 +63,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 " Integration
 Plug 'airblade/vim-gitgutter'            " Git status in the gutter
 Plug 'jasonccox/vim-wayland-clipboard'   " Wayland clipboard in + and w regs
-" Plug 'tpope/vim-fugitive'              " A git wrapper - I don't use it
+Plug 'tpope/vim-fugitive'                " A git wrapper
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -129,6 +129,24 @@ let g:Context_indent = funcref("IndentWithHeadings")
 
 " Remove mappings from context.vim, which conflict hard with my H
 let g:context_add_mappings = 0
+
+" ==== Git ====
+" ---- Fugitive ----
+map <Leader>gs :Git<CR>
+map <Leader>ga :Gadd<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gd :Gdiff<CR>
+map <Leader>gb :Gblame<CR>
+map <Leader>gd :Gdiffsplit<CR>
+map <Leader>gm :Gdiffsplit!<CR>
+" ---- GitGutter ----
+map <Leader>gh <Plug>(GitGutterPreviewHunk)
+map <Leader>g- <Plug>(GitGutterUndoHunk)
+map <Leader>g+ <Plug>(GitGutterStageHunk)
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " ==== UltiSnips ====
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
