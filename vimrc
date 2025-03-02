@@ -111,6 +111,9 @@ let g:surround_{char2nr("2")} = "\1character: \1\1\1\r\1\1\1\1"
 let g:surround_{char2nr("e")} = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
 let g:surround_{char2nr("c")} = "\\\1command: \1{\r}"
 
+" ==== GitGutter ====
+let g:gitgutter_terminal_reports_focus=0
+let g:gitgutter_map_keys = 0
 
 " ==== Context ====
 function IndentWithHeadings(line)
@@ -129,34 +132,6 @@ let g:Context_indent = funcref("IndentWithHeadings")
 
 " Remove mappings from context.vim, which conflict hard with my H
 let g:context_add_mappings = 0
-
-" ==== Git ====
-" Solve merge conflicts: merge from left (h) or from right (l)
-map <Leader>mh :diffget //2 <CR>
-map <Leader>ml :diffget //2 <CR>
-" ---- Fugitive ----
-"Status
-map <Leader>gs :Git<CR>
-" Common git commands
-map <Leader>ga :Gadd<CR>
-map <Leader>gc :Gcommit<CR>
-map <Leader>gb :Gblame<CR>
-" Diffs and conflict resolution
-map <Leader>gd :Gdiffsplit<CR>
-map <Leader>gm :Gdiffsplit!<CR>
-" ---- GitGutter ----
-" Navigate unstaged hunks
-nmap ]h <Plug>(GitGutterNextHunk)
-nmap [h <Plug>(GitGutterPrevHunk)
-" Edit, restore or stage hunks
-map <Leader>gh <Plug>(GitGutterPreviewHunk)
-map <Leader>g+ <Plug>(GitGutterStageHunk)
-map <Leader>g- <Plug>(GitGutterUndoHunk)
-" Text objects for hunks
-omap ih <Plug>(GitGutterTextObjectInnerPending)
-omap ah <Plug>(GitGutterTextObjectOuterPending)
-xmap ih <Plug>(GitGutterTextObjectInnerVisual)
-xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 " ==== UltiSnips ====
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
@@ -375,6 +350,36 @@ imap <A-9> \)<CMD>call UltiExpandTryBackslash()<CR>
 vmap <A-9> <Tab>\)<Tab>
 imap <A-0> \=<CMD>call UltiExpandTryBackslash()<CR>
 vmap <A-0> <Tab>\=<Tab>
+
+" ---- Git (not a plugin? my dotfiles, my rules) ----
+" Solve merge conflicts: merge from left (h) or from right (l)
+map <Leader>mh :diffget //2 <CR>
+map <Leader>ml :diffget //2 <CR>
+
+" ---- Fugitive ----
+" Status
+map <Leader>gs :Git<CR>
+" Common git commands
+map <Leader>ga :Gadd<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gb :Gblame<CR>
+" Diffs and conflict resolution
+map <Leader>gd :Gdiffsplit<CR>
+map <Leader>gm :Gdiffsplit!<CR>
+
+" ---- GitGutter ----
+" Navigate unstaged hunks
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+" Edit, restore or stage hunks
+noremap <Leader>gh <Plug>(GitGutterPreviewHunk)
+noremap <Leader>g+ <Plug>(GitGutterStageHunk)
+noremap <Leader>g- <Plug>(GitGutterUndoHunk)
+" Text objects for hunks
+omap ih <Plug>(GitGutterTextObjectInnerPending)
+omap ah <Plug>(GitGutterTextObjectOuterPending)
+xmap ih <Plug>(GitGutterTextObjectInnerVisual)
+xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
 
 " ======= GENERAL MAPPINGS =======
