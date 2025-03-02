@@ -461,6 +461,7 @@ nmap <Leader>e :confirm e<CR>
 nmap <Leader>E :e!<CR>
 nmap <Leader>z :wq<CR>
 nmap <Leader>x :confirm bd<CR>
+nmap <Leader>X :confirm tabc<CR>
 " Inspect character
 nnoremap gi ga
 nnoremap g? ga
