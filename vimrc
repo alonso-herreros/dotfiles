@@ -135,11 +135,13 @@ let g:context_add_mappings = 0
 map <Leader>mh :diffget //2 <CR>
 map <Leader>ml :diffget //2 <CR>
 " ---- Fugitive ----
+"Status
 map <Leader>gs :Git<CR>
+" Common git commands
 map <Leader>ga :Gadd<CR>
 map <Leader>gc :Gcommit<CR>
-map <Leader>gd :Gdiff<CR>
 map <Leader>gb :Gblame<CR>
+" Diffs and conflict resolution
 map <Leader>gd :Gdiffsplit<CR>
 map <Leader>gm :Gdiffsplit!<CR>
 " ---- GitGutter ----
