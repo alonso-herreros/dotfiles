@@ -143,9 +143,14 @@ map <Leader>gb :Gblame<CR>
 map <Leader>gd :Gdiffsplit<CR>
 map <Leader>gm :Gdiffsplit!<CR>
 " ---- GitGutter ----
+" Navigate unstaged hunks
+nmap ]h <Plug>(GitGutterNextHunk)
+nmap [h <Plug>(GitGutterPrevHunk)
+" Edit, restore or stage hunks
 map <Leader>gh <Plug>(GitGutterPreviewHunk)
-map <Leader>g- <Plug>(GitGutterUndoHunk)
 map <Leader>g+ <Plug>(GitGutterStageHunk)
+map <Leader>g- <Plug>(GitGutterUndoHunk)
+" Text objects for hunks
 omap ih <Plug>(GitGutterTextObjectInnerPending)
 omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
