@@ -16,7 +16,8 @@ keymap = [
 	{ on = "q",     run = "close",   desc = "Close tab, or quit if last tab" },
 	{ on = "<C-w>", run = "close",   desc = "Close tab, or quit if last tab" },
 	{ on = "<C-z>", run = "suspend", desc = "Suspend the process" },
-	{ on = "Q",     run = "quit --no-cwd-file", desc = "Exit the process without writing cwd-file" },
+	{ on = "Q",     run = "quit",	 desc = "Quit" },
+	{ on = "<C-q>", run = "quit --no-cwd-file", desc = "Quit (no cwd)" },
 
 	################
 	## NAVIGATION ##
