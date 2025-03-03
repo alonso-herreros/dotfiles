@@ -189,7 +189,8 @@ keymap = [
 	##########
 
 	# ==== Create tab ====
-	{ on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },
+	{ on = "t", run = "tab_create --current", desc = "Split to tab" },
+	{ on = "T", run = "tab_create",           desc = "New tab" },
 
 	# ==== Swith tabs ====
 	{ on = "1", run = "tab_switch 0", desc = "Switch to tab 1" },
@@ -202,12 +203,12 @@ keymap = [
 	{ on = "8", run = "tab_switch 7", desc = "Switch to tab 8" },
 	{ on = "9", run = "tab_switch 8", desc = "Switch to tab 9" },
 
-	{ on = "[", run = "tab_switch -1 --relative", desc = "Previous tab" },
-	{ on = "]", run = "tab_switch 1 --relative",  desc = "Next tab" },
+	{ on = "<A-h>", run = "tab_switch -1 --relative", desc = "Previous tab" },
+	{ on = "<A-l>", run = "tab_switch 1 --relative",  desc = "Next tab" },
 
 	# ==== Swap tabs ====
-	{ on = "{", run = "tab_swap -1", desc = "Swap tab with previous" },
-	{ on = "}", run = "tab_swap 1",  desc = "Swap tab with next" },
+	{ on = "<A-H>", run = "tab_swap -1", desc = "Swap tab with previous" },
+	{ on = "<A-L>", run = "tab_swap 1",  desc = "Swap tab with next" },
 
 	##########
 	## MISC ##
