@@ -483,6 +483,8 @@ nnoremap g? ga
 " Select recently put
 nnoremap gp `]v`[
 nnoremap gP ']V'[
+" Drop to shell!
+nnoremap ! :sh<CR>
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 nnoremap <A-q> gwip
 
