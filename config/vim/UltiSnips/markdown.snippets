@@ -1,5 +1,41 @@
 # Markdown snippets
 
+## Templates
+
+### Uni exercises
+snippet \exercises "Uni: exercises"
+## ${1:Subject} <!-- omit in toc -->
+
+# ${2:Title}
+
+---
+
+$0
+endsnippet
+
+### Uni readme
+snippet \readme "Uni: readme"
+# ${1:Subject} - ${2:Project}
+**`[GITT]` `[Sem ${3:3.2}]` `[${4:tag}]` `(${5:Spring 2025})`**
+
+**Telecommunication Technologies Engineering** | *Universidad Carlos III de Madrid*
+
+---
+endsnippet
+
+### Exercise answer
+snippet \ans "Uni exercises answer"
+
+> **Answer**$1
+
+$0
+
+---
+
+endsnippet
+
+## TeX snippets {{{
+
 snippet \m "TeX: Span delimiter" i
 \$${1:${VISUAL}}\$
 endsnippet
@@ -64,11 +100,18 @@ snippet B "TeX: Environment" i
 \\end{$1}
 endsnippet
 
-snippet "\\\&|BAL" "TeX: Aligned Environment" ir
+snippet "\\\&|BALd" "TeX: Aligned Environment" ir
 \\begin{aligned}
 	$1${VISUAL: = /=/&=/}$2 \\\\
 	$0
 \\end{aligned}
+endsnippet
+
+snippet "\\\&|BAL" "TeX: Aligned Environment" ir
+\\begin{align}
+	$1${VISUAL: = /=/&=/}$2 \\\\
+	$0
+\\end{align}
 endsnippet
 
 snippet BCA "TeX: Cases Environment" i
