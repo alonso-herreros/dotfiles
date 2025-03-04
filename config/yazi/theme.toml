@@ -112,6 +112,10 @@ rules = [
 	# Documents
 	{ mime = "application/{pdf,doc,rtf}", fg = "#a6da95" },
 
+	# Links
+	{ name = "*", is = "link", fg = "#c6a0f6" },
+	{ name = "*/", is = "link", fg = "#c6a0f6" },
+
 	# Fallback
 	{ name = "*", fg = "#cad3f5" },
 	{ name = "*/", fg = "#8aadf4" }
