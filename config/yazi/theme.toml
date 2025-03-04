@@ -5,7 +5,7 @@
 cwd = { fg = "#8bd5ca" }
 
 hovered         = { fg = "#24273a", bg = "#8aadf4" }
-preview_hovered = { fg = "#24273a", bg = "#cad3f5" }
+preview_hovered = { fg = "#24273a", bg = "#dce0e8" }
 
 find_keyword  = { fg = "#eed49f", italic = true }
 find_position = { fg = "#f5bde6", bg = "reset", italic = true }
@@ -15,8 +15,8 @@ marker_cut      = { fg = "#ed8796", bg = "#ed8796" }
 marker_marked   = { fg = "#8bd5ca", bg = "#8bd5ca" }
 marker_selected = { fg = "#8aadf4", bg = "#8aadf4" }
 
-tab_active   = { fg = "#24273a", bg = "#cad3f5" }
-tab_inactive = { fg = "#cad3f5", bg = "#494d64" }
+tab_active   = { fg = "#24273a", bg = "#dce0e8" }
+tab_inactive = { fg = "#dce0e8", bg = "#494d64" }
 tab_width    = 1
 
 count_copied   = { fg = "#24273a", bg = "#a6da95" }
@@ -92,7 +92,7 @@ on      = { fg = "#8bd5ca" }
 run     = { fg = "#f5bde6" }
 desc    = { fg = "#939ab7" }
 hovered = { bg = "#5b6078", bold = true }
-footer  = { fg = "#cad3f5", bg = "#494d64" }
+footer  = { fg = "#dce0e8", bg = "#494d64" }
 
 [notify]
 title_info  = { fg = "#8bd5ca" }
@@ -117,7 +117,7 @@ rules = [
 	{ name = "*/", is = "link", fg = "#c6a0f6" },
 
 	# Fallback
-	{ name = "*", fg = "#cad3f5" },
+	{ name = "*", fg = "#dce0e8" }, # Macchiato text is way too dim
 	{ name = "*/", fg = "#8aadf4" }
 ]
 
@@ -142,7 +142,7 @@ files = [
   { name = ".prettierignore", text = "", fg = "#8aadf4" },
   { name = "rakefile", text = "", fg = "#181926" },
   { name = "code_of_conduct", text = "", fg = "#ed8796" },
-  { name = "cmakelists.txt", text = "", fg = "#cad3f5" },
+  { name = "cmakelists.txt", text = "", fg = "#dce0e8" },
   { name = ".env", text = "", fg = "#eed49f" },
   { name = "copying.lesser", text = "", fg = "#eed49f" },
   { name = "readme", text = "󰂺", fg = "#f4dbd6" },
@@ -212,7 +212,7 @@ files = [
   { name = "xmobarrc.hs", text = "", fg = "#ed8796" },
   { name = ".prettierrc.yaml", text = "", fg = "#8aadf4" },
   { name = ".pre-commit-config.yaml", text = "󰛢", fg = "#eed49f" },
-  { name = "i3blocks.conf", text = "", fg = "#cad3f5" },
+  { name = "i3blocks.conf", text = "", fg = "#dce0e8" },
   { name = "xorg.conf", text = "", fg = "#f5a97f" },
   { name = ".zshenv", text = "", fg = "#a6da95" },
   { name = "vlcrc", text = "󰕼", fg = "#f5a97f" },
@@ -231,7 +231,7 @@ files = [
   { name = "procfile", text = "", fg = "#8087a2" },
   { name = "mpv.conf", text = "", fg = "#24273a" },
   { name = ".prettierrc.json5", text = "", fg = "#8aadf4" },
-  { name = "i3status.conf", text = "", fg = "#cad3f5" },
+  { name = "i3status.conf", text = "", fg = "#dce0e8" },
   { name = "prettier.config.mjs", text = "", fg = "#8aadf4" },
   { name = ".pylintrc", text = "", fg = "#8087a2" },
   { name = "prettier.config.cjs", text = "", fg = "#8aadf4" },
@@ -324,7 +324,7 @@ exts = [
   { name = "gemspec", text = "", fg = "#181926" },
   { name = "mjs", text = "", fg = "#eed49f" },
   { name = "csh", text = "", fg = "#5b6078" },
-  { name = "cmake", text = "", fg = "#cad3f5" },
+  { name = "cmake", text = "", fg = "#dce0e8" },
   { name = "fodp", text = "", fg = "#f5a97f" },
   { name = "vi", text = "", fg = "#eed49f" },
   { name = "msf", text = "", fg = "#8aadf4" },
@@ -341,7 +341,7 @@ exts = [
   { name = "rmd", text = "", fg = "#7dc4e4" },
   { name = "wv", text = "", fg = "#7dc4e4" },
   { name = "xml", text = "󰗀", fg = "#f5a97f" },
-  { name = "markdown", text = "", fg = "#cad3f5" },
+  { name = "markdown", text = "", fg = "#dce0e8" },
   { name = "qml", text = "", fg = "#a6da95" },
   { name = "3gp", text = "", fg = "#f5a97f" },
   { name = "pxi", text = "", fg = "#8aadf4" },
@@ -436,7 +436,7 @@ exts = [
   { name = "webmanifest", text = "", fg = "#eed49f" },
   { name = "webm", text = "", fg = "#f5a97f" },
   { name = "fcbak", text = "", fg = "#ed8796" },
-  { name = "log", text = "󰌱", fg = "#cad3f5" },
+  { name = "log", text = "󰌱", fg = "#dce0e8" },
   { name = "wav", text = "", fg = "#7dc4e4" },
   { name = "wasm", text = "", fg = "#5b6078" },
   { name = "styl", text = "", fg = "#a6da95" },
@@ -688,7 +688,7 @@ exts = [
   { name = "qrc", text = "", fg = "#a6da95" },
   { name = "lua", text = "", fg = "#7dc4e4" },
   { name = "lhs", text = "", fg = "#8087a2" },
-  { name = "md", text = "", fg = "#cad3f5" },
+  { name = "md", text = "", fg = "#dce0e8" },
   { name = "leex", text = "", fg = "#8087a2" },
   { name = "ai", text = "", fg = "#eed49f" },
   { name = "lck", text = "", fg = "#b8c0e0" },
