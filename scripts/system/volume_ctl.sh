@@ -20,7 +20,12 @@ function send_notification {
 
   message="Volume$muteText: $volume %"
 
-  dunstify "$message" -i $icon -t 1500 -r 2593 -u low -h int:value:$volume
+  notify-send "$message" "" \
+    -i "$icon" \
+    -t 1500 \
+    -r 2593 \
+    -u low \
+    -h int:value:$volume
 }
 
 pamixer $@

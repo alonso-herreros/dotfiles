@@ -12,7 +12,11 @@ send_notification() {
 
   message="Monitor scale: $scale"
 
-  dunstify "$message" "" -i $icon -t 1500 -r 2593 -u low
+  notify-send "$message" "" \
+    -i "$icon" \
+    -t 1500 \
+    -r 2593 \
+    -u low \
 }
 
 get_scale() {

@@ -16,7 +16,12 @@ function send_notification {
 
   message="Brightness: $level %"
 
-  dunstify "$message" -i $icon -t 1500 -r 2593 -u low -h int:value:$level
+  notify-send "$message" "" \
+    -i "$icon" \
+    -t 1500 \
+    -r 2593 \
+    -u low \
+    -h int:value:$level
 }
 
 brightnessctl $@
