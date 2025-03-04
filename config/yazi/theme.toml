@@ -238,7 +238,7 @@ rules = [
 	{ name = "*/", is ="link", fg = "cyan" },
 
 	# Fallback
-	{ name = "*", fg = "white" },
+	# { name = "*", fg = "white" },
 	{ name = "*/", fg = "blue" }
 ]
 
