@@ -365,9 +365,9 @@ map <Leader>ml :diffget //2 <CR>
 " Status
 map <Leader>gs :Git<CR>
 " Common git commands
-map <Leader>ga :Gadd<CR>
-map <Leader>gc :Gcommit<CR>
-map <Leader>gb :Gblame<CR>
+map <Leader>ga :Git add %<CR>
+map <Leader>gc :Git commit<CR>
+map <Leader>gb :Git blame<CR>
 " Diffs and conflict resolution
 map <Leader>gd :Gdiffsplit<CR>
 map <Leader>gm :Gdiffsplit!<CR>
