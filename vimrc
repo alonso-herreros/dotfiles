@@ -182,12 +182,13 @@ endfunction
 
 " Markdown.vim
 let g:markdown_fenced_languages = [ 'c', 'html', 'python', 'bash=sh', 'matlab' ]
-let g:markdown_syntax_conceal = 0
+let g:markdown_syntax_conceal = 1
 let g:markdown_minlines = 100
+let g:markdown_folding = 1
 " Custom markdown file
 let g:markdown_math = 1
 let g:markdown_strikethrough = 1
-" Vim-Markdown
+" Preservim's Vim-Markdown
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
