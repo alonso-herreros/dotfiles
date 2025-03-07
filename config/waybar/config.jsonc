@@ -1,4 +1,10 @@
+/////////////////////////////////////////////////////////////////////
+//                          WAYBAR CONFIG                          //
+/////////////////////////////////////////////////////////////////////
+
+// https://github.com/Alexays/Waybar/wiki/Configuration
 {
+    // ==== Global config ====
     "margin" : "5 2 3",
     "position": "top",
     // "reload_style_on_change": true, // TODO: remove this
@@ -21,11 +27,15 @@
         "group/session-time"
     ],
 
-    // Hyprland
+    // ==== Hyprland ====
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland
+
+    // ---- Workspaces ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Workspaces
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
-        "all-outputs": "true",
+        "all-outputs": "true", // Pretty sure this is wrong
         "format-icons": { // Japanese. Don't ask why.
             "1": "一", "2": "二", "3": "三", "4": "四", "5": "五",
             "6": "六", "7": "七", "8": "八", "9": "九", "10": "十"
@@ -37,6 +47,9 @@
         //     "*": 3, // 3 workspaces by default on every monitor
         // }
     },
+
+    // ---- Window ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Window
     // "hyprland/window": {
     //     "format": "{}",
     //     "max-length": 35,
@@ -45,12 +58,16 @@
     //     },
     //     "separate-outputs": true
     // },
+
+    // ---- Submap ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Submap
     "hyprland/submap": {
         "format": "<b>󰇘</b>",
         "max-length": 8,
         "tooltip": true
     },
 
+    // https://github.com/Alexays/Waybar/wiki/Module:-Group
     // Time and Battery
     // "group/timebat": {
     //     "orientation": "inherit",
@@ -60,6 +77,8 @@
     //     ]
     // },
 
+    // ==== Battery and Utils group ====
+    // https://github.com/Alexays/Waybar/wiki/Module:-Group
     "group/batt-utils": {
         "orientation": "inherit",
         "drawer": {
@@ -71,6 +90,9 @@
             "idle_inhibitor"
         ]
     },
+
+    // ---- Battery ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Battery
     "battery": {
         "interval": 30,
         "states": {
@@ -85,7 +107,9 @@
         "format-icons": [ "󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹" ],
         "tooltip-format": "{timeTo} | {power} W"
     },
-    // Utils
+
+    // ---- Power Profiles Daemon ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-PowerProfilesDaemon
     "power-profiles-daemon": {
         "format": "{icon}",
         "format-icons": {
@@ -94,6 +118,9 @@
             "power-saver": " "
         }
     },
+
+    // ---- Idle Inhibitor ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Idle-Inhibitor
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": { "activated": " ", "deactivated": " " },
@@ -101,6 +128,8 @@
         "tooltip-format-deactivated": "Idle inhibitor: off"
     },
 
+    // ==== Keyboard group ====
+    // https://github.com/Alexays/Waybar/wiki/Module:-Group
     "group/keyboard": {
         "orientation": "inherit",
         "modules": [
@@ -108,22 +137,29 @@
             "keyboard-state"
         ]
     },
+    // ---- Keyboard language ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Language
     "hyprland/language": {
         // "format": "  {}",
         "format": "{}",
         "format-es": "ES", "format-en": "EN", "format-jp": "JP"
     },
+    // ----- Keyboard state ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Keyboard-State
     "keyboard-state": {
         "format": { "numlock": "#", "capslock": "" },
         "numlock": true, "capslock": true
     },
 
+    // ---- Tray ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Tray
     "tray": {
         "icon-size": 16,
         "spacing": 5,
     },
 
-    // System load
+    // ==== System load group ====
+    // https://github.com/Alexays/Waybar/wiki/Module:-Group
     "group/load": {
         "orientation": "inherit",
         "modules": [
@@ -133,17 +169,7 @@
         ]
     },
 
-    "group/load-temp": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 200,
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "temperature#cpu",
-            "temperature#cpu_val"
-        ]
-    },
+    // ---- CPU ----
     "group/load-cpu": {
         "orientation": "inherit",
         "drawer": {
@@ -155,19 +181,7 @@
             "cpu#val"
         ]
     },
-    "group/load-mem": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 200,
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "memory#ram",
-            "memory#sw",
-            "memory#ram_val"
-        ]
-    },
-
+    // https://github.com/Alexays/Waybar/wiki/Module:-CPU
     "cpu": {
         "interval": 10,
         "format": " ",
@@ -207,6 +221,20 @@
             "max": 85
         }
     },
+
+    // ---- Temperature ----
+    "group/load-temp": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "temperature#cpu",
+            "temperature#cpu_val"
+        ]
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Temperature
     "temperature#cpu": {
         "interval": 10,
         "thermal-zone": 7,
@@ -224,6 +252,20 @@
         "tooltip": false
     },
 
+    // ---- Memory and Swap ----
+    "group/load-mem": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "memory#ram",
+            "memory#sw",
+            "memory#ram_val"
+        ]
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Memory
     "memory#ram": {
         "interval": 10,
         // "format": "<span color='green'></span> {percentage}%",
@@ -267,7 +309,7 @@
         }
     },
 
-    // Media
+    // ==== Media group ====
     "group/media": {
         "orientation": "inherit",
         "drawer": {
@@ -281,6 +323,8 @@
         ]
     },
 
+    // ---- MPRIS ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-MPRIS
     "mpris": {
         "format": "{player_icon} <i>{dynamic}</i>",
         "format-paused": "{player_icon} {dynamic}",
@@ -298,6 +342,9 @@
         },
         "on-click-middle": "hyprctl dispatch workspace special:tmp; ~/.scripts/media_raise.sh"
     },
+
+    // ---- Custom media controls ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Custom
     "custom/prevsong": {
         "format": "",
         "tooltip": false,
@@ -310,6 +357,8 @@
     },
 
 
+    // ==== Status group ====
+    // https://github.com/Alexays/Waybar/wiki/Module:-Group
     "group/status": {
         "orientation": "inherit",
         "modules": [
@@ -321,7 +370,7 @@
         ]
     },
 
-    // Audio
+    // ---- Audio sink ----
     "group/audio-sinks": {
         "orientation": "inherit",
         "drawer": {
@@ -332,17 +381,7 @@
             "pulseaudio#sink_val"
         ]
     },
-    "group/audio-sources" : {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 200
-        },
-        "modules": [
-            "pulseaudio#mic",
-            "pulseaudio#mic_val"
-        ]
-    },
-
+    // https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
     "pulseaudio#sink": {
         "format": "{icon}",
         "format-muted": "",
@@ -376,6 +415,19 @@
         "scroll-step": 5.0,
         "max-volume": 100
     },
+
+    // ---- Mic ----
+    "group/audio-sources" : {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200
+        },
+        "modules": [
+            "pulseaudio#mic",
+            "pulseaudio#mic_val"
+        ]
+    },
+    // https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
     "pulseaudio#mic": {
         "format": "{format_source}",
         "format-source": " ",
@@ -399,6 +451,8 @@
         "reverse-scrolling": true
     },
 
+
+    // ---- Bluetooth ----
     "group/bluetooth-group": {
         "orientation": "inherit",
         "drawer": {
@@ -409,6 +463,7 @@
             "bluetooth#bt2"
         ]
     },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Bluetooth
     "bluetooth": {
         "format": "",
         "format-connected": "··",
@@ -429,7 +484,7 @@
         // "on-click-right": "bluetoothctl"
     },
 
-
+    // ---- Network ----
     "group/network-group": {
         "orientation": "inherit",
         "drawer": {
@@ -441,6 +496,7 @@
             "network#nw2"
         ]
     },
+    // https://github.com/Alexays/Waybar/wiki/Module:-Network
     "network": {
         "interval": 10,
         "format-wifi": " ",
@@ -455,6 +511,7 @@
         "format-wifi": "{}"
     },
 
+    // ==== Session and Time ====
     "group/session-time": {
         "orientation": "inherit",
         "modules": [
@@ -463,21 +520,8 @@
         ]
     },
 
-    "group/session": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 200,
-            "transition-left-to-right": false
-        },
-        "modules": [
-            "user",
-            "custom/restart",
-            "custom/hibernate",
-            "custom/poweroff",
-            "custom/lock"
-        ]
-    },
-
+    // ---- Clock ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Clock
     "clock": {
         // "locale": "es_ES.UTF-8", // Makes weeks start on Monday, but uses Spanish
         "format": "{:%b %e, %I:%M %p}",
@@ -493,7 +537,24 @@
             }
         }
     },
-    
+
+    // ---- Session ----
+    "group/session": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "user",
+            "custom/restart",
+            "custom/hibernate",
+            "custom/poweroff",
+            "custom/lock"
+        ]
+    },
+
+    // https://github.com/Alexays/Waybar/wiki/Module:-User
     "user": {
         "interval": 60,
         "format": "",
