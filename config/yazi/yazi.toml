@@ -75,8 +75,9 @@ play = [
 ]
 
 pdf = [
-	{ run = 'zathura --fork "$@"', desc = "Open with Zathura", for = "linux", "orphan" = true },
+    { run = 'okular "$@" &', desc = "Open with Okular", for = "linux", "orphan" = true },
     { run = 'qpdf --empty --pages "$@" -- merged.pdf', desc = "Merge PDFs", for = "linux", orphan = true },
+    { run = 'zathura --fork "$@"', desc = "Open with Zathura", for = "linux", "orphan" = true },
 ]
 
 qalc = [
