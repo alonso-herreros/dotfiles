@@ -1,5 +1,5 @@
 {
-  "keyMappings": "unmapAll\n\nmap j scrollDown\nmap k scrollUp\nmap h scrollLeft\nmap l scrollRight\nmap T Vomnibar.activateInNewTab\nmap b Vomnibar.activateBookmarks\nmap B Vomnibar.activateBookmarksInNewTab\nmap ñ LinkHints.activateMode\nmap Ñ LinkHints.activateModeToOpenInNewTab\nmap <A-ñ> LinkHints.activateMode action=hover\nmap i focusInput\nmap / enterFindMode\nmap , performFind\nmap ; performBackwardsFind\nmap <C-o> passNextKey\nmap <A-t> duplicateTab\nmap <A-v> enterVisualMode\nmap <A-h> previousTab\nmap <A-l> nextTab\nmap <A-k> goBack\nmap <A-j> goForward",
+  "keyMappings": "unmapAll\n\nmap j scrollDown\nmap k scrollUp\nmap h scrollLeft\nmap l scrollRight\nmap T Vomnibar.activateInNewTab\nmap b Vomnibar.activateBookmarks\nmap B Vomnibar.activateBookmarksInNewTab\nmap ñ LinkHints.activateMode\nmap Ñ LinkHints.activateModeToOpenInNewTab\nmap <A-ñ> LinkHints.activateModeToCopyLinkUrl\nmap gñ LinkHints.activateMode action=hover\nmap i focusInput\nmap / enterFindMode\nmap , performFind\nmap ; performBackwardsFind\n\nmap { goPrevious\nmap } goNext\n\nmap <C-o> passNextKey\nmap <A-v> enterVisualMode",
   "linkHintCharacters": "sadfjklewcmpghvn",
   "scrollStepSize": 200,
   "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\ng: https://www.google.com/search?q=%s Google\nd: https://drive.google.com/drive/search?q=%s Drive\nm: https://www.google.com/maps?q=%s Google maps\n\ny: https://www.youtube.com/results?search_query=%s Youtube\na: https://aniwave.to/filter?keyword=%s AniWave\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# l: https://www.google.com/search?q=%s&btnI I'm feeling lucky...\n# b: https://www.bing.com/search?q=%s Bing\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# qw: https://www.qwant.com/?q=%s Qwant",
@@ -10,12 +10,16 @@
       "pattern": "https?://mail.google.com*"
     },
     {
-      "passKeys": "1234567890qwertyuiopasdfghjklzxcvbnm",
-      "pattern": "https?://drive.google.com*"
+      "passKeys": "jknptwm?",
+      "pattern": "https?://calendar.google.com*"
     },
     {
-      "passKeys": "",
-      "pattern": "https?://docs.google.com*"
+      "passKeys": "hl",
+      "pattern": "https?://calendar.google.com/calendar(/u/\\d+/r)/(?!tasks).*"
+    },
+    {
+      "passKeys": "1234567890qwertyuiopasdfghjklzxcvbnm",
+      "pattern": "https?://drive.google.com*"
     },
     {
       "passKeys": "",
@@ -26,12 +30,16 @@
       "pattern": "https?://www.google.com*"
     },
     {
-      "passKeys": "jknptwm?",
-      "pattern": "https?://calendar.google.com/*"
+      "passKeys": "",
+      "pattern": "*falstad.com*"
     },
     {
-      "passKeys": "hl",
-      "pattern": "https?://calendar.google.com/calendar(/u/\\d+/r)/(?!tasks).*"
+      "passKeys": "tjkg",
+      "pattern": "https?://docs.google.com*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://docs.google.com/spreadsheets*"
     }
   ]
 }
