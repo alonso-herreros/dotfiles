@@ -269,6 +269,12 @@ button.urgent,
     border-radius: 100px;
     padding: 0 5px;
 }
+#workspaces button.special {
+    background: @mauve;
+}
+#workspaces button.special * {
+    color: @base;
+}
 
 /* ==== Tray ==== */
 #tray > *:not(menu) > * { padding: 0 5px; }
