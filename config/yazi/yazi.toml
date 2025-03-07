@@ -74,7 +74,8 @@ play = [
     { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
 
-pdftools = [
+pdf = [
+	{ run = 'zathura --fork "$@"', desc = "Open with Zathura", for = "linux", "orphan" = true },
     { run = 'qpdf --empty --pages "$@" -- merged.pdf', desc = "Merge PDFs", for = "linux", orphan = true },
 ]
 
@@ -93,7 +94,7 @@ rules = [
     { mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
     { mime = "*/javascript", use = [ "edit", "reveal" ] },
     # PDF
-    { mime = "application/pdf", use = [ "open", "pdftools", "reveal" ] },
+    { mime = "application/pdf", use = [ "open", "pdf", "reveal" ] },
     # QALC
     { name = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
 
