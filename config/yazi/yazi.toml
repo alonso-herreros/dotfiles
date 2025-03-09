@@ -47,6 +47,7 @@ edit = [
     { run = '${EDITOR:-vi} "$@"', desc = "Use $EDITOR", for = "unix",    block = true },
     { run = 'vim "$1"',           desc = "Vim",         for = "unix",    block = true },
     { run = 'vim "%1"',           desc = "Vim",         for = "windows", block = true },
+    { run = 'kitty vim "$1" &',   desc = "Vim [kitty]", for = "unix",    orphan = true },
     { run = 'code "$@"',          desc = "Code",        for = "unix",    orphan = true },
     { run = 'code %*',            desc = "Code",        for = "windows", orphan = true }
 ]
