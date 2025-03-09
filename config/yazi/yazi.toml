@@ -53,8 +53,8 @@ edit = [
 ]
 
 view = [
-    { run = 'vim -R "$1"', desc = "Vim (read-only)", for = "unix",    block = true},
-    { run = 'vim -R "%1"', desc = "Vim (read-only)", for = "windows", block = true }
+    { run = 'vim -R "$1"', desc = "Vim (view)", for = "unix",    block = true},
+    { run = 'vim -R "%1"', desc = "Vim (view)", for = "windows", block = true }
 ]
 
 reveal = [
