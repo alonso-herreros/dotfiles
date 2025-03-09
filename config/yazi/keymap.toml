@@ -120,7 +120,10 @@ keymap = [
 	{ on = "d",     run = "remove",               desc = "Trash selected files" },
 	{ on = "X",     run = "remove --hovered",     desc = "Trash hovered file" },
 	{ on = "D",     run = "remove --permanently", desc = "Permanently delete selected files" },
+
+	# ==== Creating ====
 	{ on = "a",     run = "create",               desc = "Create a file (end with / for dir)" },
+	{ on = "A",     run = "create --dir",         desc = "Create a directory" },
 
 	# ==== Renaming ====
 	{ on = "<F2>",  run = "rename --cursor=before_ext",          desc = "Rename selected file(s)" },
