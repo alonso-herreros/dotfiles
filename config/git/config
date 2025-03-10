@@ -47,10 +47,15 @@
     m    = merge
     mt   = mergetool
 
-    b    = branch
     co   = checkout
     cob  = checkout -b
     c-   = checkout -
+
+    b    = branch
+    ba   = branch -a
+    br   = branch -r
+    bl   = branch -l
+    bla  = branch -la
 
     Rv   = remote --verbose
     Ra   = remote add
