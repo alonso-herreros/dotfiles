@@ -457,6 +457,8 @@ nnoremap H ^
 nnoremap L $
 " Yank-to-end like C and D
 nnoremap Y y$
+" Previous instance of word with ^, which is to the left of *
+nnoremap ^ #
 " Moving and duplicating lines
 nnoremap <A-j> ddp
 nnoremap <A-J> yyp
