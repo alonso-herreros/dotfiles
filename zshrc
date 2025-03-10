@@ -49,6 +49,11 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 [ -f ~/.scripts/rc/yazi_quitcd.sh ] && source ~/.scripts/rc/yazi_quitcd.sh
 
 
+# ==== ghdl-ls ====
+# ghdl-ls gets completely lost without this...
+export GHDL="$(which ghdl)"
+
+
 # ===== zsh-vi-mode =====
 function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=kj

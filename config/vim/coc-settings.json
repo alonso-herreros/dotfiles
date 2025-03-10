@@ -1,4 +1,10 @@
 {
+    "languageserver": {
+        "ghdl": {
+            "command": "ghdl-ls",
+            "filetypes": [ "vhdl" ]
+        }
+    },
     "markdownlint.config": {
         // https://github.com/DavidAnson/markdownlint/blob/v0.31.1/doc/Rules.md
         "MD001": false, // Heading increment by 1
