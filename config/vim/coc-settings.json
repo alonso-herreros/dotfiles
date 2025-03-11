@@ -1,5 +1,8 @@
 // vi: ft=jsonc
 {
+    // When selecting 'next', start at the first suggestion
+    "suggest.noselect": true,
+
     // ===== Language servers =====
     "languageserver": {
         "ghdl": {

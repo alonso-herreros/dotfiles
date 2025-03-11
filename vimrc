@@ -140,8 +140,8 @@ let g:context_add_mappings = 0
 let g:UltiSnipsListSnippets="<S-space>"
 let g:UltiSnipsExpandOrJumpTrigger = "<tab>"
 " let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+let g:UltiSnipsJumpForwardTrigger="<Tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -553,8 +553,8 @@ inoremap <C-z> <C-u>
 " Ctrl+backspace/delete
 inoremap <C-Backspace> <C-w>
 inoremap <C-Delete> <C-o>de
-" Back-tabbing
-inoremap <S-Tab> <C-d>
+" Back-tabbing -- included below
+" inoremap <S-Tab> <C-d>
 " Easy exit, kj to the left and jk to the right
 inoremap kj <Esc>
 inoremap KJ <Esc>
@@ -592,9 +592,18 @@ inoremap <C-j> <C-o>J
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 inoremap <A-q> <C-o>gwip
 
-" imap <expr> <Tab> pumvisible() ? '<C-y>' : '<Tab>'
-" imap <expr> <Tab> ( getline('.')[col('.')-2] !~ '^\s\?$' \|\| pumvisible() )
-"       \ ? '<C-y>' : '<Tab>'
+" ---- Tab (completion & snippets) ----
+" Snippet jumping is handled by plugin. See `:h UltiSnips-trigger-key-mappings`
+" Selection of first instead of second handled in `coc-settings.json`
+inoremap <silent><expr> <Tab>
+    \ UltiSnips#CanExpandSnippet() ? '<C-R>=UltiSnips#ExpandSnippet()<CR>' :
+    \ coc#pum#visible() ? coc#pum#next(1) :
+    \ '<Tab>'
+
+inoremap <silent><expr> <S-Tab>
+    \ coc#pum#visible() ? coc#pum#prev(1) :
+    \ '<C-d>'
+
 
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write
