@@ -285,7 +285,7 @@ set <A-`>=`
 
 " ======= OPTIONS =======
 map <C-,>q <plug>(QuickScopeToggle)
-map <C-,>c <plug>(ContextToggle)
+map <C-,>c :ContextToggle<CR>
 
 " ======= PLUGIN MAPPINGS =======
 " Sneak-f
