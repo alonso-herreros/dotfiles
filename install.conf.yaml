@@ -11,7 +11,7 @@
     ~/.zshrc: zshrc
     ~/.zshrc_aliases: config/oh-my-zsh/custom/alias.zsh
     # ~/.vim: vim
-    ~/.vimrc: vimrc
+    ~/.vimrc: config/vim/vimrc
     ~/.screenrc: screenrc
 
     ~/.config/git: config/git
