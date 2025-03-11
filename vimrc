@@ -357,6 +357,19 @@ vmap <A-9> <Tab>\)<Tab>
 imap <A-0> \=<CMD>call UltiExpandTryBackslash()<CR>
 vmap <A-0> <Tab>\=<Tab>
 
+" ---- CoC ---
+" Search extensions - like in VSCode (I know.)
+nmap <C-S-x> :CocList marketplace<CR>
+" Navigate diagnostics
+nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
+nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
+" Navigate definitions
+nmap <silent><nowait> gd <Plug>(coc-definition)
+nmap <silent><nowait> gy <Plug>(coc-type-definition)
+nmap <silent><nowait> gi <Plug>(coc-implementation)
+nmap <silent><nowait> gr <Plug>(coc-references)
+
+
 " ---- Git (not a plugin? my dotfiles, my rules) ----
 " Solve merge conflicts: merge from left (h) or from right (l)
 map <Leader>mh :diffget //2 <CR>
