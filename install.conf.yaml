@@ -53,10 +53,7 @@
       glob: True
       path: scripts/.to-path/**
 
-    ~/Pictures/Wallpaper: wallpaper
-
     ~/.ssh/config: private/.ssh/config
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-
