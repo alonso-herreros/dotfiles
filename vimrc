@@ -104,7 +104,7 @@ let g:indent_guides_default_mapping = 0
 " ==== Surround ====
 " Surround with newlines
 let g:surround_{char2nr("o")} = "\n\r\n"
-let g:surround_{char2nr("")} = "\n\r\n"
+let g:surround_13             = "\n\r\n"
 " Surround with double something
 let g:surround_{char2nr("2")} = "\1character: \1\1\1\r\1\1\1\1"
 " Surround with LaTeX environments or commands
