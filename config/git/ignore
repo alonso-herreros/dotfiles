@@ -15,4 +15,5 @@ build/
 
 tmp/
 ignore/
+out/
 
