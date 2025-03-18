@@ -26,6 +26,7 @@ Plug 'tpope/vim-sleuth'        " Detect tab styles
 
 " Moving / selecting
 Plug 'easymotion/vim-easymotion'
+Plug 'chaoren/vim-wordmotion'  " More useful words
 Plug 'justinmk/vim-sneak'
 Plug 'wellle/targets.vim'      " Smarter text objects
 Plug 'michaeljsmith/vim-indent-object' " Indent text object
