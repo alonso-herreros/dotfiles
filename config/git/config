@@ -81,6 +81,9 @@
     coloring = repeatedLines
     date = human
 
+[commit]
+    verbose = true
+
 [push]
     autoSetupRemote = true
 
