@@ -138,9 +138,11 @@ let g:context_add_mappings = 0
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
-let g:UltiSnipsListSnippets="<S-space>"
-let g:UltiSnipsExpandOrJumpTrigger = "<tab>"
-" let g:UltiSnipsExpandTrigger="<tab>"
+" Handled by Coc and custom mappings
+let g:UltiSnipsListSnippets="<NUL>"
+let g:UltiSnipsExpandOrJumpTrigger="<NUL>"
+let g:UltiSnipsExpandTrigger="<NUL>"
+" These are mapped and unmapped when relevant
 let g:UltiSnipsJumpForwardTrigger="<Tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
