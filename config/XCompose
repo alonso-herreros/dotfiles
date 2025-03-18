@@ -1,0 +1,16 @@
+<dead_acute> <a> : "á"   # á
+<dead_acute> <e> : "é"   # é
+<dead_acute> <i> : "í"   # í
+<dead_acute> <o> : "ó"   # ó
+<dead_acute> <u> : "ú"   # ú
+<dead_acute> <A> : "Á"   # Á
+<dead_acute> <E> : "É"   # É
+<dead_acute> <I> : "Í"   # Í
+<dead_acute> <O> : "Ó"   # Ó
+<dead_acute> <U> : "Ú"   # Ú
+
+<dead_tilde> <n> : "ñ"   # ñ
+<dead_tilde> <N> : "Ñ"   # Ñ
+
+<dead_diaeresis> <u> : "ü"   # ü
+<dead_diaeresis> <U> : "Ü"   # Ü
