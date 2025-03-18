@@ -361,16 +361,31 @@ imap <A-0> \=<CMD>call UltiExpandTryBackslash()<CR>
 vmap <A-0> <Tab>\=<Tab>
 
 " ---- CoC ---
-" Search extensions - like in VSCode (I know.)
+" Search extensions. No, <C-X> doesn't work.
 nmap <C-S-x> :CocList marketplace<CR>
 " Navigate diagnostics
 nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
 nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
+nmap <silent><nowait> <Leader>n <Plug>(coc-diagnostic-next)
+nmap <silent><nowait> <Leader>N <Plug>(coc-diagnostic-prev)
 " Navigate definitions
 nmap <silent><nowait> gd <Plug>(coc-definition)
 nmap <silent><nowait> gy <Plug>(coc-type-definition)
 nmap <silent><nowait> gi <Plug>(coc-implementation)
 nmap <silent><nowait> gr <Plug>(coc-references)
+" Code actions
+nmap <C-.> <Plug>(coc-codeaction-selected)
+xmap <C-.> <Plug>(coc-codeaction-selected)
+nmap <C-.><C-.> <Plug>(coc-codeaction-cursor)
+" Apply preferred quickfix
+nmap <C-S-.> <Plug>(coc-fix-current)
+" Refactor actions
+nmap <silent> <F2> <Plug>(coc-codeaction-refactor-selected)
+xmap <silent> <F2> <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <F2><F2> <Plug>(coc-codeaction-refactor)
+" List symbols / outline
+nmap <silent><nowait> <C-o> :<C-u>CocList -I symbols<CR>
+nmap <silent><nowait> <C-O> :<C-u>CocList outline<CR>
 
 
 " ---- Git (not a plugin? my dotfiles, my rules) ----
