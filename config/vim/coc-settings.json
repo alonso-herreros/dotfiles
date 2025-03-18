@@ -2,6 +2,11 @@
 {
     // When selecting 'next', start at the first suggestion
     "suggest.noselect": true,
+    "inlayHint.display": false,
+
+    "diagnostic.errorSign": "!",
+    "diagnostic.warningSign": "*",
+    "diagnostic.infoSign": "i",
 
     // ===== Language servers =====
     "languageserver": {
