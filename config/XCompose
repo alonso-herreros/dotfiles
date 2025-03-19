@@ -1,3 +1,4 @@
+# Spanish characters
 <dead_acute> <a> : "á"   # á
 <dead_acute> <e> : "é"   # é
 <dead_acute> <i> : "í"   # í
@@ -9,8 +10,17 @@
 <dead_acute> <O> : "Ó"   # Ó
 <dead_acute> <U> : "Ú"   # Ú
 
+<dead_diaeresis> <u> : "ü"   # ü
+<dead_diaeresis> <U> : "Ü"   # Ü
+
 <dead_tilde> <n> : "ñ"   # ñ
 <dead_tilde> <N> : "Ñ"   # Ñ
 
-<dead_diaeresis> <u> : "ü"   # ü
-<dead_diaeresis> <U> : "Ü"   # Ü
+# 'Var' greek characters
+<dead_acute> <Greek_epsilon> : "ϵ" # \epsilon
+<dead_acute> <Greek_theta>   : "ϑ" # \vartheta
+<dead_acute> <Greek_pi>      : "ϖ" # \varpi
+<dead_acute> <Greek_rho>     : "ϱ" # \varrho
+<dead_acute> <Greek_sigma>   : "ς" # \varsigma
+<dead_acute> <Greek_phi>     : "ϕ" # \phi
+<dead_acute> <Greek_GAMMA>   : "ϝ" # \digamma
