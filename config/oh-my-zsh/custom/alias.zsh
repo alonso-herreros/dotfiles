@@ -22,6 +22,10 @@ alias sv='sudo virsh'
 alias svirsh='sudo virsh'
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
+alias sctl='systemctl'
+alias ssctl='sudo systemctl'
+alias stui='systemctl-tui'
+alias sstui='sudo systemctl-tui'
 alias gimme='git clone'
 
 # Hyprctl
