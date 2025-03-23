@@ -1,0 +1,13 @@
+[Unit]
+Description=A configurable TUI clipboard manager for Unix.
+Documentation=https://github.com/savedra1/clipse
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/clipse -listen
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

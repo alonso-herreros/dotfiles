@@ -1,0 +1,13 @@
+[Unit]
+Description=Fusuma is multitouch gesture recognizer.
+Documentation=https://github.com/iberianpig/fusuma
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/fusuma
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target
