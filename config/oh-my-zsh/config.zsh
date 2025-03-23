@@ -43,6 +43,9 @@ ENABLE_CORRECTION="false"
 # dots.  e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # COMPLETION_WAITING_DOTS="false"
 
+# Skip the verification of insecure directories, which breaks shared dotfiles.
+ZSH_DISABLE_COMPFIX=true
+
 # Disable marking untracked files under VCS as dirty. This makes repository
 # status check for large repositories much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="false"
