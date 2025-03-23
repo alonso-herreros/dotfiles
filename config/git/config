@@ -144,4 +144,5 @@
 #     cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
 [safe]
-	directory = /home/alonso_uni/.dotfiles/*
+	directory = ~/.dotfiles
+	directory = ~/.dotfiles/*
