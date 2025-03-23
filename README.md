@@ -9,6 +9,7 @@ Dotfiles just the way I like 'em.
 These dotfiles were designed for the following setup:
 
 * 🍀 **Base**: [Arch][archlinux]
+* **Session Manager**: [UWSM][uwsm]
 * 🌼 **Window Manager / compositor**: [Hyprland][hyprland]
 * ✨ **Status bar**: [Waybar][waybar]
 * 🚀 **Launcher/dmenu**: [Fuzzel][fuzzel]
@@ -51,6 +52,7 @@ and create issues/PRs (suggestions are welcome!). If it's useful to you, I'd
 be happy to know.
 
 [archlinux]: https://archlinux.org/
+[uswm]: https://github.com/Vladimir-csp/uwsm
 [hyprland]: https://hyprland.org/
 [waybar]: https://github.com/Alexays/Waybar
 [fuzzel]: https://codeberg.org/dnkl/fuzzel
