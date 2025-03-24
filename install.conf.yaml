@@ -48,6 +48,9 @@
       glob: true
       path: config/app-flags/*.conf
 
+    # Okular stores the actual config in a rather peculiar place
+    ~/.local/share/kxmlgui5/okular: config/okular
+
     # Oh My Zsh included!
     ~/.scripts: scripts
 

@@ -1,0 +1,39 @@
+<?xml version='1.0'?>
+<!DOCTYPE gui SYSTEM 'kpartgui.dtd'>
+<gui name="okular_shell" version="11">
+ <MenuBar>
+  <Menu name="file">
+   <DefineGroup append="open_merge" name="file_open"/>
+   <DefineGroup append="save_merge" name="file_save"/>
+   <DefineGroup append="print_merge" name="file_print"/>
+   <Action append="open_merge" name="undo-close-tab"/>
+  </Menu>
+  <!--Menu name="view" >
+   <Action name="fullscreen" />
+  </Menu-->
+  <Menu name="settings">
+   <DefineGroup append="show_merge" name="show_merge"/>
+   <DefineGroup append="configure_merge" name="configure_merge"/>
+  </Menu>
+  <Merge/>
+  <Menu name="help">
+   <DefineGroup append="about_merge" name="about_merge"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar name="mainToolBar" noMerge="1">
+  <text>Main Toolbar</text>
+  <!--Action name="file_open_recent" /-->
+  <!--Action name="file_print" /-->
+ </ToolBar>
+ <ActionProperties scheme="Default">
+  <Action name="tab-next" shortcut="Ctrl+Tab; Alt+L"/>
+  <Action name="tab-previous" shortcut="Ctrl+Shift+Tab; Alt+H"/>
+  <Action name="options_configure_keybinding" shortcut="Ctrl+,, K"/>
+  <Action name="open_kcommand_bar" shortcut="Ctrl+Shift+P; :"/>
+  <Action name="file_close" shortcut="Ctrl+W; Space, Q"/>
+  <Action name="options_configure_toolbars" shortcut="Ctrl+,, T"/>
+  <Action name="switch_application_language" shortcut="Ctrl+,, L"/>
+  <Action name="file_quit" shortcut="Ctrl+Q; Space, Shift+Q"/>
+  <Action name="file_open_recent" shortcut="Ctrl+R"/>
+ </ActionProperties>
+</gui>
