@@ -126,7 +126,7 @@
   <Action name="hamburger_menu"/>
  </ToolBar>
  <ActionProperties scheme="Default">
-  <Action name="show_leftpanel" priority="0"/>
+  <Action name="show_leftpanel" priority="0" shortcut="Ctrl+Shift+B"/>
   <Action name="view_zoom_out" priority="0" shortcut="Ctrl+-; -"/>
   <Action name="view_zoom_in" priority="0" shortcut="Ctrl++; +"/>
   <Action name="go_previous" shortcut="; H"/>
@@ -167,6 +167,9 @@
   <Action name="view_scroll_up" shortcut="Shift+Up; "/>
   <Action name="view_scroll_down" shortcut="Shift+Down; "/>
   <Action name="color_mode_invert_luma_srgb" shortcut="Ctrl+Alt+I"/>
+  <Action name="quick_annotation_action_bar" shortcut=""/>
+  <Action name="show_bottombar" shortcut="Alt+Shift+P"/>
+  <Action name="annotation_bookmark" shortcut="; "/>
  </ActionProperties>
  <ToolBar hidden="true" iconText="icononly" name="annotationToolBar" newline="true">
   <text>Annotation Toolbar</text>
