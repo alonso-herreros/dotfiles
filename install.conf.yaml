@@ -38,6 +38,7 @@
     ~/.config/mimeapps.list: config/mimeapps.list
     ~/.config/batsignal: config/batsignal
     ~/.config/kwalletrc: config/kwalletrc
+    ~/.config/lesskey: config/lesskey
 
     ~/.config/oh-my-zsh: config/oh-my-zsh # Powerlevel10k in custom themes
     ~/.config/p10k.zsh: config/p10k/config.zsh
