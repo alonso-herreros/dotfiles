@@ -1,0 +1,20 @@
+; WARNING: THIS SHIT DOESN'T WORK, IT KEEPS RESTARTING HYPRLOCK EVEN IF IT
+; EXITS CLEANLY
+
+; [Unit]
+; Description=hyprland’s GPU-accelerated screen locking utility
+; Documentation=https://github.com/hyprwm/hyprlock
+; Before=sleep.target
+; ConditionEnvironment=WAYLAND_DISPLAY
+
+; [Service]
+; User=%I
+; Type=simple
+; ExecStart=/usr/bin/hyprlock
+; ExecReload=kill -SIGUSR2 $MAINPID
+; KillMode=none
+; SuccessExitStatus=0
+; RestartPreventExitStatus=0
+
+; [Install]
+; WantedBy=sleep.target
