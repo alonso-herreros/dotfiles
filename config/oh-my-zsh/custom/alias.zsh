@@ -45,6 +45,8 @@ alias ..4='cd ../../../..'
 alias ..5='cd ../../../../..'
 function -() { cd -; }
 
+alias bell="echo -n $'\eg\a'"
+
 # ==== Sensible Options ====
 
 alias ls='ls -hlA --color=auto --group-directories-first'
