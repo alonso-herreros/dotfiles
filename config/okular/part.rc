@@ -170,6 +170,7 @@
   <Action name="quick_annotation_action_bar" shortcut=""/>
   <Action name="show_bottombar" shortcut="Alt+Shift+P"/>
   <Action name="annotation_bookmark" shortcut="; "/>
+  <Action name="view_trim_margins" shortcut="Z, T"/>
  </ActionProperties>
  <ToolBar hidden="true" iconText="icononly" name="annotationToolBar" newline="true">
   <text>Annotation Toolbar</text>
