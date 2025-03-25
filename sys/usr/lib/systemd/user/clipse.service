@@ -6,7 +6,7 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/clipse -listen
+ExecStart=/usr/bin/clipse -listen-shell
 Restart=on-failure
 
 [Install]
