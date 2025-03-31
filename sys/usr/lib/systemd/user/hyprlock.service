@@ -1,20 +1,19 @@
-; WARNING: THIS SHIT DOESN'T WORK, IT KEEPS RESTARTING HYPRLOCK EVEN IF IT
-; EXITS CLEANLY
+; WARNING: This BARELY works
 
-; [Unit]
-; Description=hyprland’s GPU-accelerated screen locking utility
-; Documentation=https://github.com/hyprwm/hyprlock
-; Before=sleep.target
-; ConditionEnvironment=WAYLAND_DISPLAY
+[Unit]
+Description=hyprland’s GPU-accelerated screen locking utility
+Documentation=https://github.com/hyprwm/hyprlock
+Before=sleep.target
+ConditionEnvironment=WAYLAND_DISPLAY
 
-; [Service]
+[Service]
 ; User=%I
-; Type=simple
-; ExecStart=/usr/bin/hyprlock
-; ExecReload=kill -SIGUSR2 $MAINPID
-; KillMode=none
-; SuccessExitStatus=0
-; RestartPreventExitStatus=0
+Type=exec
+ExecStart=/usr/bin/hyprlock
+ExecReload=kill -SIGUSR2 $MAINPID
+Restart=on-failure
+RestartForceExitStatus=SIGTERM
 
-; [Install]
-; WantedBy=sleep.target
+; This throws a warning because sleep.target doesn't exist as a user unit
+[Install]
+WantedBy=sleep.target
