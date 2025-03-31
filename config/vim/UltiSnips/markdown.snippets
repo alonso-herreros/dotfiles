@@ -15,12 +15,20 @@ endsnippet
 
 ### Uni readme
 snippet uni-readme "Uni: readme"
-# ${1:Subject} - ${2:Project}
-**`[GITT]` `[Sem ${3:3.2}]` `[${4:tag}]` `(${5:Spring 2025})`**
+# ${1:Course} - ${2:Project}
 
-**Telecommunication Technologies Engineering** | *Universidad Carlos III de Madrid*
+<!-- [![CC BY-SA 4.0][shield-cc-by-sa]][cc-by-sa] -->
+<!-- markdownlint-disable MD053 -->
+[![GITT][shield-gitt]][gitt]
+[![$1][shield-${3:tag}]][$3]$0
 
----
+[shield-cc-by-sa]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+[shield-gitt]:     https://img.shields.io/badge/Degree-Telecommunication_Technologies_Engineering_|_UC3M-eee
+[shield-$3]:       https://img.shields.io/badge/Course-${4:Course_name}-eee
+
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[gitt]:     https://uc3m.es/bachelor-degree/telecommunication
+[$3]:       ${5:https://example.org}
 endsnippet
 
 ### Uni report
@@ -51,6 +59,13 @@ $0
 endsnippet
 
 ## ==== Fragments ====
+
+### Badge
+snippet badge "Shields.io badge"
+[![${1:Alt text}][shield-${2:tag}]][$2]
+[shield-$2]: https://img.shields.io/badge/${3:left}-${4:right}-${5:color}
+[$2]: ${6:https://example.org}
+endsnippet
 
 ### Exercise answer
 snippet ans "Uni exercises answer"
