@@ -309,6 +309,7 @@ button.urgent,
 #cpu.max { color: @red; }
 
 #temperature { color: @blue; }
+#temperature.warning { color: @yellow; }
 #temperature.critical { color: @red; }
 
 #memory.low { color: @teal; }
