@@ -364,6 +364,9 @@ vmap <A-0> <Tab>\=<Tab>
 " ---- CoC ---
 " Search extensions. No, <C-X> doesn't work.
 nmap <C-S-x> :CocList marketplace<CR>
+" List snippets. Warning: enter doesn't insert the snippet
+nmap <C-S-space> :CocList snippets<CR>
+imap <C-S-space> <C-o>:CocList snippets<CR>
 " Navigate diagnostics
 nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
 nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
