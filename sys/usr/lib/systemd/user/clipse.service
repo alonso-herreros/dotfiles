@@ -6,7 +6,8 @@ After=graphical-session.target
 Requisite=graphical-session.target
 
 [Service]
-ExecStart=/usr/bin/clipse -listen-shell
+Type=forking
+ExecStart=/usr/bin/clipse -listen
 Restart=on-failure
 
 [Install]
