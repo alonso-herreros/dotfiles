@@ -490,22 +490,22 @@ noremap! <C-A-_> <C-w>-
 
 " ======= NORMAL MODE MAPPINGS =======
 " HJKL: 10-fold j/k & Beginning/end of line
-nnoremap J 10gjzz
-nnoremap K 10gkzz
-nnoremap H ^
-nnoremap L $
+nnoremap <silent> J 10gjzz
+nnoremap <silent> K 10gkzz
+nnoremap <silent> H ^
+nnoremap <silent> L $
 " Yank-to-end like C and D
-nnoremap Y y$
+nnoremap <silent> Y y$
 " Previous instance of word with ^, which is to the left of *
-nnoremap ^ #
+nnoremap <silent> ^ #
 " Moving and duplicating lines
 nnoremap <silent> <A-j> ddp==
-nnoremap <A-J> yyp
+nnoremap <silent> <A-J> yyp
 nnoremap <silent> <A-k> ddkP==
-nnoremap <A-K> yyP
+nnoremap <silent> <A-K> yyP
 " Joining lines without taking J
-nnoremap <C-j> J
-nnoremap g<C-j> gJ
+nnoremap <silent> <C-j> J
+nnoremap <silent> g<C-j> gJ
 " Adding spaces, lines and line breaks
 nnoremap <Leader>i i<Space><Esc>l
 nnoremap <Leader>a a<Space><Esc>h
