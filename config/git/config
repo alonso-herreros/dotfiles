@@ -7,10 +7,21 @@
     pager = less -FRXx5,9
 
 [alias]
+    # ---- Init and management ----
     i    = init
 
-    s    = status
+    su   = submodule
+    suu  = submodule update --init
+    suur = submodule update --init --recursive
+    suuu = submodule update --init --recursive
+    sum  = submodule foreach "git checkout $(git_main_branch); git reset --hard"
+
+    # ---- Informational: status, log, diff, show ----
+
+    # Taken: `st` for `stash`, `su` for `submodule`, `sh` for `show`
+    s    = status -sb
     ss   = status --short
+    sl   = status
 
     l    = log --oneline               # Log (oneline by default)
     ls   = log --oneline -n 10         # Log short
@@ -19,14 +30,26 @@
     ll   = log                         # Log long (with details)
     lla  = log --all --graph           # Log long all (graph, with details)
 
+    d    = diff
+    ds   = diff --cached
+
+    sh   = show
+
+    # ---- Index operations: add, restore ----
+
     a    = add
     aa   = add -A
     ap   = add --patch
+
+    # Taken: `rb` for `rebase`, `rv` and `ra` for `remote`
     r    = restore
     rr   = restore .
     rs   = restore --staged
     rrs  = restore . --staged
 
+    # ---- Commits and stashes ----
+
+    # Taken: `co` and `c-` for `checkout`, `cp` for `cherry-pick`
     c    = commit
     cm   = commit -m
     cmp  = "!cmp()  { git commit -m \"$@\"; git push; }; cmp"
@@ -41,11 +64,20 @@
     ccf  = "!ccf() { git add -A; git commit --fixup $(git log -n 50 --pretty=''%C(auto)%h %s' | fzf | cut -c -7); }; ccf"
     ccfm = "!ccf() { git add -A; git commit --fixup $(git log -n 50 --pretty=''%C(auto)%h %s' | fzf | cut -c -7) -m \"$@\"; }; ccfm"
 
-    d    = diff
-    ds   = diff --cached
+    st   = stash
+    stm  = stash -m
+    stt  = stash --all
+    sttm = stash --all -m
+    stk  = stash --keep-index
+    stkm = stash --keep-index -m
+    sts  = stash save
+    sta  = stash apply
+    stl  = stash list
+    stp  = stash pop
+    std  = stash drop
+    stsh = stash show
 
-    m    = merge
-    mt   = mergetool
+    # ---- Branch operations: checkout, branch, merge, rebase, tag ----
 
     co   = checkout
     cob  = checkout -b
@@ -53,16 +85,62 @@
 
     b    = branch
     ba   = branch -a
+    bd   = branch -d
     br   = branch -r
     bl   = branch -l
     bla  = branch -la
 
-    Rv   = remote --verbose
-    Ra   = remote add
-    Rao  = remote add origin
+    m    = merge
+    mt   = mergetool
+
+    cp   = cherry-pick
+    cpa  = cherry-pick --abort
+    cpc  = cherry-pick --continue
+
+    rb   = rebase
+    rba  = rebase --abort
+    rbc  = rebase --continue
+    rbi  = rebase --interactive
+    rbs  = rebase --skip
+
+    t    = tag
+
+    # ---- Remote operations: fetch, push, pull, remote ----
+
+    f    = fetch
+    fa   = fetch --all
+    fp   = fetch --prune
+    fap  = fetch --all --prune
+
+    # Taken `pl` for `pull`
+    p    = push
+    pt   = push --tags
+    pd   = push --dry-run
+    pf   = push --force-with-lease
+    pff  = push --force
+    po   = push origin
+    pu   = push upstream
+
+    pl   = pull
+    plr  = pull --rebase
+    pla  = pull --autostash
+    plar = pull --autostash --rebase
+    plom = pull origin $(git_main_branch)
+    plu  = pull upstream
+    plur = pull upstream --rebase
+
+    # Not to be confused with `reset` aliases, which also start with `r`
+    rv   = remote --verbose
+    ra   = remote add
+    rao  = remote add origin
+
+
+    # ---- Others ----
 
     uncommit = reset --soft HEAD^
+    shit = uncommit
     unstage = reset HEAD --
+    ignore = update-index --asume-unchanged
 
 [init]
     defaultBranch = main
