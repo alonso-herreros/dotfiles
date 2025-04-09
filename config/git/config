@@ -120,6 +120,7 @@
     pff  = push --force
     po   = push origin
     pu   = push upstream
+    p-   = "!git push -q &"
 
     pl   = pull
     plr  = pull --rebase
@@ -128,6 +129,8 @@
     plom = pull origin $(git_main_branch)
     plu  = pull upstream
     plur = pull upstream --rebase
+
+    pnp  = "!git pull --rebase && git push"
 
     # Not to be confused with `reset` aliases, which also start with `r`
     rv   = remote --verbose
