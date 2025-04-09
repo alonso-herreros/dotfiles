@@ -164,9 +164,11 @@
 
 [push]
     autoSetupRemote = true
+    followTags = true
 
 [pull]
     ff = only
+    rebase = true
 
 [rebase]
     autosquash = true
