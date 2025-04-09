@@ -92,6 +92,14 @@
     bla  = branch -la
 
     m    = merge
+    me   = merge --edit
+    mnc  = merge --no-ff --no-commit
+    ms   = merge --squash
+    mc   = merge --continue
+    ma   = merge --abort
+    mm   = merge $(git_main_branch)
+    mom  = merge origin/$(git_main_branch)
+
     mt   = mergetool
 
     cp   = cherry-pick
@@ -178,6 +186,7 @@
     autosquash = true
 
 [merge]
+    stat = true
     conflictstyle = zdiff3
     tool = fugitive
 
