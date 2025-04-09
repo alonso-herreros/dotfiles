@@ -1,19 +1,14 @@
 *.sw?
 .nfs*
+*.orig
 
 *.code-workspace
 .vscode/
 matlabInVSCodeVariableInfo.csv
 
 CMakeUserPresets.json
-build/
 *.ova
-
-.venv/
-*.pyc
-*.orig
 
 tmp/
 ignore/
-out/
 
