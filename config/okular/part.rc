@@ -147,7 +147,7 @@
   <Action name="edit_copy" shortcut="Ctrl+C; Y, Y"/>
   <Action name="file_export_as" shortcut="Ctrl+Shift+E"/>
   <Action name="color_mode_invert_lightness" shortcut="Ctrl+I"/>
-  <Action name="bookmark_add" shortcut="Ctrl+D; "/>
+  <Action name="bookmark_add" shortcut="Ctrl+D; M, M"/>
   <Action name="options_configure_color_modes" shortcut="Ctrl+,, C"/>
   <Action name="presentation" shortcut="; "/>
   <Action name="presentation_erase_drawings" shortcut="; D, D"/>
@@ -171,6 +171,9 @@
   <Action name="show_bottombar" shortcut="Alt+Shift+P"/>
   <Action name="annotation_bookmark" shortcut="; "/>
   <Action name="view_trim_margins" shortcut="Z, T"/>
+  <Action name="rename_bookmark" shortcut="; M, F2"/>
+  <Action name="previous_bookmark" shortcut="; ]"/>
+  <Action name="next_bookmark" shortcut="Shift+M; ["/>
  </ActionProperties>
  <ToolBar hidden="true" iconText="icononly" name="annotationToolBar" newline="true">
   <text>Annotation Toolbar</text>
