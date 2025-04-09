@@ -240,6 +240,8 @@ set mouse=a                " Enable mouse usage (all modes)
 
 set whichwrap+=h,l
 
+set runtimepath+=$PWD/.vim " Add local .vim to runtimepath
+
 " =====================================================================
 " ========================       MACROS        ========================
 " =====================================================================
