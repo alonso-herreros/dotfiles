@@ -46,6 +46,7 @@
     rr   = restore .
     rs   = restore --staged
     rrs  = restore . --staged
+    rrr  = reset --hard
 
     # ---- Commits and stashes ----
 
