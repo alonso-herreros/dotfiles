@@ -91,6 +91,9 @@ alias dog='cat'
 alias meow='cat'
 alias :q='echo Not vi, but okay...; sleep 0.5; exit'
 alias :e='vim'
+alias :view='vim -R -c"set nomodifiable readonly"'
+alias :v=':view'
+alias view=':view'
 
 # ==== Yeah ... ====
 alias sudo='\sudo'
