@@ -499,9 +499,9 @@ nnoremap Y y$
 " Previous instance of word with ^, which is to the left of *
 nnoremap ^ #
 " Moving and duplicating lines
-nnoremap <A-j> ddp
+nnoremap <silent> <A-j> ddp==
 nnoremap <A-J> yyp
-nnoremap <A-k> ddkP
+nnoremap <silent> <A-k> ddkP==
 nnoremap <A-K> yyP
 " Joining lines without taking J
 nnoremap <C-j> J
