@@ -10,6 +10,9 @@ let $BASH_ENV = "~/.bash_aliases"
 " ========================     LOAD PLUGINS    ========================
 " =====================================================================
 
+" Man page viewer!
+runtime! ftplugin/man.vim
+
 " Install vim-plug if needed
 if empty(glob("~/.vim/autoload/plug.vim"))
   silent! execute '!curl --create-dirs -fsSLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
