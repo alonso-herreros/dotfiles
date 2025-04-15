@@ -124,13 +124,13 @@ require("yatline"):setup({
 })
 
 -- ==== GIT ====
-THEME.git = THEME.git or {}
-THEME.git.added_sign = "A"
-THEME.git.untracked_sign = "?"
-THEME.git.modified_sign = "M"
-THEME.git.deleted_sign = "D"
-THEME.git.updated_sign = "U"
-THEME.git.ignored_sign = "I"
+th.git = th.git or {}
+th.git.added_sign = "A"
+th.git.untracked_sign = "?"
+th.git.modified_sign = "M"
+th.git.deleted_sign = "D"
+th.git.updated_sign = "U"
+th.git.ignored_sign = "I"
 require("git"):setup()
 
 -- ==== Smart enter ====
