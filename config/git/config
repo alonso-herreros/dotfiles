@@ -236,4 +236,8 @@
 # [mergetool "nbdime"]
 #     cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
+[include]
+    path = config_local
+    path = config.d/*
+
 # vim: ft=gitconfig

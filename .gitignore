@@ -1,6 +1,14 @@
 cura.cfg
 hosts.yml
-config/kitty/*.d.conf
-config/dunst/**/*power_saving*.conf
 yazi_cmd_history
 **/yazi/plugins
+
+
+# ==== Local / overrides ====
+
+config/git/config.d/*
+config/git/config_local
+
+config/kitty/*.d.conf
+
+config/dunst/**/*power_saving*.conf
