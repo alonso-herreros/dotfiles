@@ -14,7 +14,7 @@
     suu  = submodule update --init
     suur = submodule update --init --recursive
     suuu = submodule update --init --recursive
-    sum  = submodule foreach "git checkout $(git_main_branch); git reset --hard"
+    sum  = submodule foreach "git checkout main; git reset --hard"
 
     # ---- Informational: status, log, diff, show ----
 
@@ -71,7 +71,7 @@
     sttm = stash --all -m
     stk  = stash --keep-index
     stkm = stash --keep-index -m
-    sts  = stash save
+    sts  = stash push -S
     sta  = stash apply
     stl  = stash list
     stp  = stash pop
@@ -97,8 +97,8 @@
     ms   = merge --squash
     mc   = merge --continue
     ma   = merge --abort
-    mm   = merge $(git_main_branch)
-    mom  = merge origin/$(git_main_branch)
+    mm   = merge main
+    mom  = merge origin/main
 
     mt   = mergetool
 
@@ -135,7 +135,7 @@
     plr  = pull --rebase
     pla  = pull --autostash
     plar = pull --autostash --rebase
-    plom = pull origin $(git_main_branch)
+    plom = pull origin main
     plu  = pull upstream
     plur = pull upstream --rebase
 
