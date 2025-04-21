@@ -375,8 +375,6 @@ nmap <C-S-x> :CocList marketplace<CR>
 nmap <C-S-space> :CocList snippets<CR>
 imap <C-S-space> <C-o>:CocList snippets<CR>
 " Navigate diagnostics
-nmap <silent><nowait> [g <Plug>(coc-diagnostic-prev)
-nmap <silent><nowait> ]g <Plug>(coc-diagnostic-next)
 nmap <silent><nowait> <Leader>n <Plug>(coc-diagnostic-next)
 nmap <silent><nowait> <Leader>N <Plug>(coc-diagnostic-prev)
 " Navigate definitions
