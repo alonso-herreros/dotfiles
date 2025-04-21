@@ -28,6 +28,7 @@ alias ssctl='sudo systemctl'
 alias stui='systemctl-tui'
 alias sstui='sudo systemctl-tui'
 alias gimme='git clone'
+alias bgo='bg 1>/dev/null 2>&1'
 
 # Hyprctl
 alias hk='hyprctl keyword'
