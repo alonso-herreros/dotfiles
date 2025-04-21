@@ -83,6 +83,9 @@
     co   = checkout
     cob  = checkout -b
     c-   = checkout -
+    com  = checkout main
+    compl = "!git checkout main && git pull origin main"
+    compl- = "!git checkout main && git pull origin main && git checkout -"
 
     b    = branch
     ba   = branch -a
@@ -120,6 +123,8 @@
     fa   = fetch --all
     fp   = fetch --prune
     fap  = fetch --all --prune
+    fapb = "!git fetch --all --prune && git branch -la"
+    ff   = "!git fetch --all --prune && git branch -la"
 
     # Taken `pl` for `pull`
     p    = push
