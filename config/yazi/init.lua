@@ -124,6 +124,7 @@ require("yatline"):setup({
 })
 
 -- ==== GIT ====
+th = th or {}
 th.git = th.git or {}
 th.git.added_sign = "A"
 th.git.untracked_sign = "?"
