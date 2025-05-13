@@ -60,10 +60,10 @@
     ca   = commit --amend
     cane = commit --amend --no-edit
     # Fixup
-    cf   = "!git commit --fixup $(git log -n 50 --pretty=''%C(auto)%h %s' | fzf | cut -c -7)"
-    cfm  = "!git commit --fixup $(git log -n 50 --pretty=''%C(auto)%h %s' | fzf | cut -c -7) -m \"$@\""
-    ccf  = "!ccf() { git add -A; git commit --fixup $(git log -n 50 --pretty=''%C(auto)%h %s' | fzf | cut -c -7); }; ccf"
-    ccfm = "!ccf() { git add -A; git commit --fixup $(git log -n 50 --pretty=''%C(auto)%h %s' | fzf | cut -c -7) -m \"$@\"; }; ccfm"
+    cf   = "commit --fixup"
+    cff  = "!git commit --fixup $(git log -n 50 --pretty='%C(auto)%h %s' | fzf | cut -c -7)"
+    ccff = "!ccf() { git add -A; git commit --fixup \"$@\"; }; ccf"
+    ccff = "!ccff() { git add -A; git commit --fixup $(git log -n 50 --pretty='%C(auto)%h %s' | fzf | cut -c -7); }; ccff"
 
     st   = stash
     stm  = stash -m
