@@ -17,8 +17,6 @@
     "modules-center": [
         "tray",
         "hyprland/workspaces",
-        // "hyprland/window",
-        "hyprland/submap"
     ],
     "modules-right": [
         "group/load",
@@ -63,14 +61,6 @@
     //     },
     //     "separate-outputs": true
     // },
-
-    // ---- Submap ----
-    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Submap
-    "hyprland/submap": {
-        "format": "<b>󰇘</b>",
-        "max-length": 8,
-        "tooltip": true
-    },
 
     // https://github.com/Alexays/Waybar/wiki/Module:-Group
     // Time and Battery
@@ -138,9 +128,15 @@
     "group/keyboard": {
         "orientation": "inherit",
         "modules": [
+            "hyprland/submap",
             "hyprland/language",
             "keyboard-state"
         ]
+    },
+    // ---- Keyboard submap ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Submap
+    "hyprland/submap": {
+        "format": "{}",
     },
     // ---- Keyboard language ----
     // https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#Language

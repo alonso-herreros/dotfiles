@@ -246,6 +246,27 @@ button.urgent,
 /* ==== Keyboard ==== */
 #language { padding: 0 8px; }
 
+#submap {
+    padding: 0 8px 0 8px;
+    background-color: @subtext1; /* This will apply to CMD and OP */
+    color: @base;
+}
+#submap.REPLACE,
+#submap.NORMAL {
+    background-color: @blue;
+}
+#submap.CMD { /* Won't actually work because of extra characters */
+    background-color: @mauve;
+}
+#submap.INSERT {
+    background-color: @peach;
+}
+#submap.VISUAL {
+    background-color: @surface1;
+    color: @blue;
+    font-weight: bold;
+}
+
 #keyboard-state { padding: 0; }
 #keyboard-state * { color: @teal; }
 #keyboard-state .numlock { /* Round left */
