@@ -172,8 +172,8 @@
   <Action name="annotation_bookmark" shortcut="; "/>
   <Action name="view_trim_margins" shortcut="Z, T"/>
   <Action name="rename_bookmark" shortcut="; M, F2"/>
-  <Action name="previous_bookmark" shortcut="; ]"/>
-  <Action name="next_bookmark" shortcut="Shift+M; ["/>
+  <Action name="previous_bookmark" shortcut="; ["/>
+  <Action name="next_bookmark" shortcut="Shift+M; ]"/>
  </ActionProperties>
  <ToolBar hidden="true" iconText="icononly" name="annotationToolBar" newline="true">
   <text>Annotation Toolbar</text>
