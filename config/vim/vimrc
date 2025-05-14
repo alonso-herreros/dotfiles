@@ -402,7 +402,7 @@ nmap <silent><nowait> <C-O> :<C-u>CocList outline<CR>
 " ---- Git (not a plugin? my dotfiles, my rules) ----
 " Solve merge conflicts: merge from left (h) or from right (l)
 map <Leader>mh :diffget //2 <CR>
-map <Leader>ml :diffget //2 <CR>
+map <Leader>ml :diffget //3 <CR>
 
 " ---- Fugitive ----
 " Status
