@@ -28,6 +28,7 @@
     ~/.config/fuzzel: config/fuzzel
     ~/.config/dunst: config/dunst
     ~/.config/yazi: config/yazi
+    ~/.config/clipse: config/clipse
 
     ~/.vim/UltiSnips: config/vim/UltiSnips
     ~/.vim/coc-settings.json: config/vim/coc-settings.json
@@ -63,3 +64,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p $XDG_STATE_HOME/clipse, Creating Clipse state directory]
