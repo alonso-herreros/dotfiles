@@ -34,7 +34,8 @@
   <Action name="options_configure_toolbars" shortcut="Ctrl+,, T"/>
   <Action name="switch_application_language" shortcut="Ctrl+,, L"/>
   <Action name="file_quit" shortcut="Ctrl+Q; Space, Shift+Q"/>
-  <Action name="file_open_recent" shortcut="Ctrl+R"/>
+  <Action name="file_open_recent" shortcut="Ctrl+R; Ctrl+K, Ctrl+R"/>
   <Action name="options_show_menubar" shortcut="Alt+M"/>
+  <Action name="fullscreen" shortcut="Ctrl+Shift+F; F11"/>
  </ActionProperties>
 </gui>
