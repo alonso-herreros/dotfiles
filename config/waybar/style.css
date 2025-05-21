@@ -23,6 +23,7 @@
 .modules-center,
 .modules-left {
     background-color: transparent;
+    margin: 5px 3px;
 }
 
 #mode {

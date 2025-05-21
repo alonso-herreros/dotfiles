@@ -5,7 +5,7 @@
 // https://github.com/Alexays/Waybar/wiki/Configuration
 {
     // ==== Global config ====
-    "margin" : "5 2 3",
+    // "margin" : "5 2 3",
     "position": "top",
     // "reload_style_on_change": true, // TODO: remove this
 
