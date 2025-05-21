@@ -81,6 +81,10 @@ pdf = [
     { run = 'zathura --fork "$@"', desc = "Open with Zathura", for = "linux", "orphan" = true },
 ]
 
+image = [
+	{ run = 'gimp "$@" &', desc = "GIMP", for = "linux", orphan = true },
+]
+
 qalc = [
     { run = 'qalc -f "$@" -i', desc = "Open with QALC", for = "linux", block = true },
 ]
@@ -97,6 +101,10 @@ rules = [
     { mime = "*/javascript", use = [ "edit", "reveal" ] },
     # PDF
     { mime = "application/pdf", use = [ "open", "pdf", "reveal" ] },
+
+	# Images
+	{ mime = "image/*", use = [ "open", "image", "reveal" ] },
+
     # QALC
     { name = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
 
