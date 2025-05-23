@@ -14,7 +14,25 @@ export PAGER="less -Ri"
 unsetopt correct_all
 unsetopt correct
 
+# ==== Set XDG Base Directories ====
+
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
+[ -z "$XDG_CACHE_HOME" ]  && export XDG_CACHE_HOME="$HOME/.cache"
+[ -z "$XDG_DATA_HOME" ]   && export XDG_DATA_HOME="$HOME/.local/share"
+[ -z "$XDG_STATE_HOME" ]  && export XDG_STATE_HOME="$HOME/.local/state"
+
+# ---- Make Zsh store its files where it should ----
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+[ -d "$XDG_STATE_HOME/zsh" ] || mkdir -p "$XDG_STATE_HOME/zsh"
+HISTFILE="$XDG_STATE_HOME"/zsh/history
+
+[ -d "$XDG_CACHE_HOME/zsh" ] || mkdir -p "$XDG_CACHE_HOME/zsh"
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
+# zcompdump handled by OMZ
+
+
+# ==== Default user and hostname ====
 
 # We need to check if the variable is set to avoid overriding it
 [ -z "$DEFAULT_USER" ] && export DEFAULT_USER="$(whoami)"
@@ -26,6 +44,8 @@ unsetopt correct
 export ZSH="$HOME/.scripts/oh-my-zsh"              # Path to Oh My Zsh
 ZSH_CUSTOM="$XDG_CONFIG_HOME/oh-my-zsh/custom"     # Custom content folder
 ZSH_CONFIG="$XDG_CONFIG_HOME/oh-my-zsh/config.zsh" # Separate config file
+ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh/oh-my-zsh"      # OMZ Cache directory
+ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then
     [ -f "$ZSH_CONFIG" ] && source "$ZSH_CONFIG" # Source config
@@ -38,7 +58,7 @@ fi
 
 
 # ===== Aliases =====
-# Aliases are loaded by OMZ from $ZSH_CUSTOM/aliases.zsh
+[ -f "$XDG_CONFIG_HOME/zsh/alias.zsh" ] && source "$XDG_CONFIG_HOME/zsh/alias.zsh"
 
 
 # ===== Docker =====

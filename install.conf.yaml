@@ -8,8 +8,7 @@
 - link:
     ~/.bashrc: bashrc
     ~/.bash_aliases: scripts/rc/alias.sh
-    ~/.zshrc: zshrc
-    ~/.zshrc_aliases: config/oh-my-zsh/custom/alias.zsh
+    ~/.zshrc: config/zsh/.zshrc
     # ~/.vim: vim
     ~/.vimrc: config/vim/vimrc
     ~/.screenrc: screenrc
@@ -29,6 +28,7 @@
     ~/.config/dunst: config/dunst
     ~/.config/yazi: config/yazi
     ~/.config/clipse: config/clipse
+    ~/.config/zsh: config/zsh
     
     # I wish this fucker kept its history out of the config directory
     ~/.config/qalculate/qalc.cfg: config/qalculate/qalc.cfg
