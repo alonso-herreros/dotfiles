@@ -354,7 +354,7 @@
     "custom/mediavolume": {
         "format": "{}",
         "hide-empty-text": true,
-        "exec": "~/.config/waybar/scripts/media-ctl.sh volume get --cache-only",
+        "exec": "~/.scripts/system/media_ctl.sh volume get --cache-only",
         "exec-on-event": false,
         "interval": "once",
         "return-type": "text",
@@ -376,12 +376,12 @@
     "custom/shuffle": {
         "format": "",
         // Due to concurrent updates, we need to use a short sleep.
-        "exec": "sleep 0.2; ~/.config/waybar/scripts/media-ctl.sh shuffle get --json",
+        "exec": "sleep 0.2; ~/.scripts/system/media_ctl.sh shuffle get --json",
         "exec-on-event": true,
         "return-type": "json",
         // We need to run every now and then in case there are outside changes.
         "interval": 20,
-        "on-click": "~/.config/waybar/scripts/media-ctl.sh shuffle Toggle"
+        "on-click": "~/.scripts/system/media_ctl.sh shuffle Toggle"
     },
     "custom/loop": {
         "format": "{icon}",
@@ -391,12 +391,12 @@
             "Playlist": " "
         },
         // Due to concurrent updates, we need to use a short sleep.
-        "exec": "sleep 0.2; ~/.config/waybar/scripts/media-ctl.sh loop get --json",
+        "exec": "sleep 0.2; ~/.scripts/system/media_ctl.sh loop get --json",
         "exec-on-event": true,
         "return-type": "json",
         // We need to run every now and then in case there are outside changes.
         "interval": 20,
-        "on-click": "~/.config/waybar/scripts/media-ctl.sh loop Cycle"
+        "on-click": "~/.scripts/system/media_ctl.sh loop Cycle"
     },
 
 
