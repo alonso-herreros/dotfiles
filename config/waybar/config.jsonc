@@ -323,6 +323,8 @@
             "mpris",
             "custom/prevsong",
             "custom/nextsong",
+            "custom/shuffle",
+            "custom/loop",
         ]
     },
 
@@ -357,6 +359,31 @@
         "format": "",
         "tooltip": false,
         "on-click": "playerctl next"
+    },
+    "custom/shuffle": {
+        "format": "",
+        // Due to concurrent updates, we need to use a short sleep.
+        "exec": "sleep 0.2; ~/.config/waybar/scripts/media-ctl.sh shuffle get --json",
+        "exec-on-event": true,
+        "return-type": "json",
+        // We need to run every now and then in case there are outside changes.
+        "interval": 20,
+        "on-click": "~/.config/waybar/scripts/media-ctl.sh shuffle Toggle"
+    },
+    "custom/loop": {
+        "format": "{icon}",
+        "format-icons": {
+            "None": " ",
+            "Track": "₁",
+            "Playlist": " "
+        },
+        // Due to concurrent updates, we need to use a short sleep.
+        "exec": "sleep 0.2; ~/.config/waybar/scripts/media-ctl.sh loop get --json",
+        "exec-on-event": true,
+        "return-type": "json",
+        // We need to run every now and then in case there are outside changes.
+        "interval": 20,
+        "on-click": "~/.config/waybar/scripts/media-ctl.sh loop Cycle"
     },
 
 

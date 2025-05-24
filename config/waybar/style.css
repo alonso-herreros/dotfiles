@@ -78,6 +78,8 @@
 #mpris,
 #custom-prevsong,
 #custom-nextsong,
+#custom-shuffle,
+#custom-loop,
 #pulseaudio,
 #bluetooth,
 #network,
@@ -114,6 +116,8 @@ button:hover,
 #mpris:hover,
 #custom-prevsong:hover,
 #custom-nextsong:hover,
+#custom-shuffle:hover,
+#custom-loop:hover,
 #audio-sinks:hover,
 #audio-sources:hover,
 #bluetooth-group:hover,
@@ -145,6 +149,8 @@ button.active,
 /* Disabled */
 #workspaces button:not(.hosting-monitor),
 #mpris.track.paused,
+#custom-shuffle.Off,
+#custom-loop.None,
 #pulseaudio.sink.muted,
 #pulseaudio.sink_val.muted,
 #pulseaudio.mic.source-muted,
@@ -321,6 +327,21 @@ button.urgent,
 /* ==== Media ==== */
 #mpris {
     padding: 0 10px 0 7px;
+}
+
+#custom-shuffle {
+    padding: 0 12px 0 7px;
+}
+#custom-shuffle.On {
+    color: @teal;
+}
+
+#custom-loop {
+    padding: 0 13px 0 2px;
+}
+#custom-loop.Playlist,
+#custom-loop.Track {
+    color: @teal;
 }
 
 /* ==== Load ==== */
