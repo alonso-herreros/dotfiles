@@ -10,10 +10,13 @@ fi
 readonly CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/waybar/media-ctl"
 readonly SHUFFLE_CACHE="$CACHE_DIR/shuffle_status"
 readonly LOOP_CACHE="$CACHE_DIR/loop_status"
+readonly VOLUME_CACHE="$CACHE_DIR/volume_status"
 [[ -d "$CACHE_DIR" ]] || mkdir -p "$CACHE_DIR"
 
-readonly LOOP_MODES=("None" "Track" "Playlist")
 
+# ==== Functions ====
+
+# ---- Shuffle ----
 
 function set_shuffle() {
     local shuffle_op="$1"
@@ -37,6 +40,8 @@ function get_shuffle() {
     print_status "Shuffle" "$status" "$1"
 }
 
+
+# ---- Loop ----
 
 function set_loop() {
     local loop_op="$1"
@@ -65,6 +70,34 @@ function get_loop() {
     print_status "Loop" "$status" "$1"
 }
 
+
+# ---- Volume ----
+
+function set_volume() {
+    local value="$1"
+
+    # Set the volume using playerctl
+    playerctl volume "$value" >/dev/null
+
+    # Write the new volume to cache
+    status=$(playerctl volume)
+    write_cache "$VOLUME_CACHE" "$status"
+}
+
+function get_volume() {
+    local volume=$(read_cache "$VOLUME_CACHE")
+
+    [[ -z "$volume" && "$1" != "--cache-only" ]] && volume=$(playerctl volume)
+
+    [[ -z "$volume" ]] && return 1
+
+    volume_percent=$(awk '{print int($1*100 + 0.5)}' <(echo $volume) )
+
+    echo "($volume_percent%)"
+}
+
+
+# ---- Lib functions ----
 
 function read_cache() {
     local cache_file="$1"
@@ -121,15 +154,6 @@ function print_status() {
 
 # ==== Main ====
 
-if [[ $# -lt 1 ]]; then
-    echo "Usage: $0 <command> [<arg>]"
-    echo "Commands:"
-    echo "  shuffle [on|off|toggle] - Get or set shuffle status"
-    echo "  loop [None|Track|Playlist|Cycle] - Get or set loop mode"
-    echo "  volume [0-100] - Get or set volume level"
-    exit 1
-fi
-
 case "$1" in
     shuffle )
         case "$2" in
@@ -140,5 +164,10 @@ case "$1" in
         case "$2" in
             get | '' ) get_loop "$3";;
             * )  set_loop "$2";;
+        esac;;
+    volume )
+        case "$2" in
+            get | '' ) get_volume "$3";;
+            * )  set_volume "$2";;
         esac;;
 esac

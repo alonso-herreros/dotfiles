@@ -321,6 +321,7 @@
         },
         "modules": [
             "mpris",
+            "custom/mediavolume",
             "custom/prevsong",
             "custom/nextsong",
             "custom/shuffle",
@@ -345,7 +346,19 @@
             "spotify": "<span color='#2EF770'> </span>",
             "brave": "<span color='#DB2A04'> </span>",
         },
-        "on-click-middle": "hyprctl dispatch workspace special:tmp; ~/.scripts/media_raise.sh"
+        "on-click-middle": "hyprctl dispatch workspace special:tmp; ~/.scripts/media_raise.sh",
+        "on-scroll-up": "~/.config/waybar/scripts/update-media-volume.sh 0.05+",
+        "on-scroll-down": "~/.config/waybar/scripts/update-media-volume.sh 0.05-",
+    },
+    // ---- Custom media volume ----
+    "custom/mediavolume": {
+        "format": "{}",
+        "hide-empty-text": true,
+        "exec": "~/.config/waybar/scripts/media-ctl.sh volume get --cache-only",
+        "exec-on-event": false,
+        "interval": "once",
+        "return-type": "text",
+        "signal": 10
     },
 
     // ---- Custom media controls ----

@@ -76,6 +76,7 @@
 #cpu,
 #memory,
 #mpris,
+#custom-mediavolume,
 #custom-prevsong,
 #custom-nextsong,
 #custom-shuffle,
@@ -131,6 +132,7 @@ button:hover,
 
 /* Non-actionable hovers */
 #language:hover,
+#custom-mediavolume:hover,
 #load-temp:hover,
 #load-cpu:hover,
 #load-gpu:hover,
@@ -327,6 +329,9 @@ button.urgent,
 /* ==== Media ==== */
 #mpris {
     padding: 0 10px 0 7px;
+}
+#custom-mediavolume {
+    padding: 0 4px 0 4px;
 }
 
 #custom-shuffle {
