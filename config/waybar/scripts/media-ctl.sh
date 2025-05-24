@@ -6,7 +6,33 @@ if ! command -v playerctl >/dev/null; then
     exit 1
 fi
 
+# ==== Usage ====
+USAGE="
+Usage: $0 [COMMAND] [ARGUMENTS] [COMMAND_OPTIONS]
+       $0 -h
 
+OPTIONS:
+
+    -h, --help      Show this message
+
+COMMANDS:
+    shuffle [get|Toggle|On|Off]
+        Get or set the shuffle mode
+
+    loop [get|Cycle|None|Track|Playlist]
+        Get or set the loop mode
+
+    volume [get|<value>]
+        Get or set the volume (0.0 to 1.0)
+"
+
+function Help() {
+    echo "$USAGE"
+}
+
+# ==== Constants ====
+
+# ---- Cache ----
 readonly CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/waybar/media-ctl"
 readonly SHUFFLE_CACHE="$CACHE_DIR/shuffle_status"
 readonly LOOP_CACHE="$CACHE_DIR/loop_status"
@@ -154,7 +180,15 @@ function print_status() {
 
 # ==== Main ====
 
+if [[ "$1" == "-h" || "$1" == "--help" ]]; then
+    Help
+    exit 0
+fi
+
 case "$1" in
+    -h | --help )
+        Help
+        exit 0;;
     shuffle )
         case "$2" in
             get | '' ) get_shuffle "$3";;
