@@ -58,7 +58,7 @@ fi
 
 
 # ===== Aliases =====
-[ -f "$XDG_CONFIG_HOME/zsh/alias.zsh" ] && source "$XDG_CONFIG_HOME/zsh/alias.zsh"
+[ -f "$XDG_CONFIG_HOME/shell/alias.sh" ] && source "$XDG_CONFIG_HOME/shell/alias.sh"
 
 
 # ===== Docker =====

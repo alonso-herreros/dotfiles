@@ -17,7 +17,7 @@ if [ -n "$( echo $- | grep i )" ]; then
 fi
 
 # [ -f ~/.scripts/rc/alias.sh ] && source ~/.scripts/rc/alias.sh
-[ -f ~/.bash_aliases ] && source ~/.bash_aliases
+[ -f "~/.config/shell/alias.sh" ] && source "~/.config/shell/alias.sh"
 
 eval "$(zoxide init bash --cmd cd)"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash || eval "$(fzf --bash)"
