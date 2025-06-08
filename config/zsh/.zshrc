@@ -61,6 +61,10 @@ fi
 [ -f "$XDG_CONFIG_HOME/shell/alias.sh" ] && source "$XDG_CONFIG_HOME/shell/alias.sh"
 
 
+# ===== Disable globbing in some cases =====
+alias git='noglob git'  # Disable globbing for git commands
+
+
 # ===== Docker =====
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
