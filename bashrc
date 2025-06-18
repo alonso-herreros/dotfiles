@@ -3,6 +3,7 @@ export LANG=en_US.utf8
 PATH="$HOME/.local/bin:$PATH"
 export EDITOR=vim
 export PAGER="less -Ri"
+export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
 
 #################
 ## synth-shell ##
