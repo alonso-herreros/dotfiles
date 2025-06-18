@@ -18,15 +18,24 @@ alias n='nnn'
 alias hg='history | grep'
 alias so='source'
 alias pm='pacman'
-alias sv='sudo virsh'
-
-alias svirsh='sudo virsh'
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
+alias tf='terraform'
+
+alias svirsh='sudo virsh'
+alias sv='sudo virsh'
+
+alias sdocker='sudo docker'
+alias sd='sudo docker'
+alias sdc='sudo docker-compose'
+alias sdct='sudo docker container'
+alias sdi='sudo docker image'
+
 alias sctl='systemctl'
 alias ssctl='sudo systemctl'
 alias stui='systemctl-tui'
 alias sstui='sudo systemctl-tui'
+
 alias gimme='git clone'
 alias bgo='bg 1>/dev/null 2>&1'
 
