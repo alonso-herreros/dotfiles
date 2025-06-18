@@ -245,6 +245,11 @@ set mouse=a                " Enable mouse usage (all modes)
 set whichwrap+=h,l
 set formatoptions+=j       " Remove messy characters when joining lines
 
+if empty($XDG_STATE_HOME)
+    let $XDG_STATE_HOME = $HOME . "/.local/state"
+endif
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
 set runtimepath+=$PWD/.vim " Add local .vim to runtimepath
 
 " =====================================================================
