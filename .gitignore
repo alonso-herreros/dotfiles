@@ -9,6 +9,8 @@ yazi_cmd_history
 config/git/config.d/*
 config/git/config_local
 
+config/zsh/zshrc_local
+
 config/kitty/*.d.conf
 
 config/dunst/**/*power_saving*.conf

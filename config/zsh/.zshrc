@@ -89,6 +89,7 @@ file_arch="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 
 # ===== Local overrides =====
 
+[ -f "$ZDOTDIR/zshrc_local" ] && source "$ZDOTDIR/zshrc_local"
 [ -f ~/.zshrc_local ] && source ~/.zshrc_local
 
 
