@@ -11,7 +11,6 @@
     # ~/.vim: vim
     ~/.vimrc: config/vim/vimrc
     ~/.screenrc: screenrc
-    ~/.XCompose: config/XCompose
 
     ~/.config/git: config/git
     ~/.config/synth-shell: config/synth-shell
@@ -29,6 +28,7 @@
     ~/.config/clipse: config/clipse
     ~/.config/shell: config/shell
     ~/.config/zsh: config/zsh
+    ~/.config/X11: config/X11
     
     # I wish this fucker kept its history out of the config directory
     ~/.config/qalculate/qalc.cfg: config/qalculate/qalc.cfg
