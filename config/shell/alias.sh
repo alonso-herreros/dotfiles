@@ -42,7 +42,7 @@ alias bgo='bg 1>/dev/null 2>&1'
 # Hyprctl
 alias hk='hyprctl keyword'
 alias hd='hyprctl dispatch'
-alias hm='hyprctl monitor'
+alias hm='hyprctl keyword monitor'
 alias hms='hyprctl monitors'
 alias hcs='hyprctl clients'
 alias hpm='hyprpm'
