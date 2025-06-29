@@ -17,7 +17,8 @@ These dotfiles were designed for the following setup:
 * 🤏 **Gestures daemon**: [Fusuma][fusuma]
 * ⌛ **Idle daemon**: [Hypridle][hypridle]
 * 🪫 **Battery daemon**: [Batsignal][batsignal]
-* 📷 **Screenshot utility**: my fork of [hyprshot][hyprshot]
+* 📷 **Screen capture utility**: [hyprcap][hyprcap] (also using my fork of
+  [hyprshot][hyprshot] for some features)
 
 * 🗄️ **File Manager**: [Yazi][yazi] plus [XDP termfilechooser][xdpt]
 * 📁 **GUI File Manager**: [Nautilus][nautilus]
@@ -52,7 +53,7 @@ and create issues/PRs (suggestions are welcome!). If it's useful to you, I'd
 be happy to know.
 
 [archlinux]: https://archlinux.org/
-[uswm]: https://github.com/Vladimir-csp/uwsm
+[uwsm]: https://github.com/Vladimir-csp/uwsm
 [hyprland]: https://hyprland.org/
 [waybar]: https://github.com/Alexays/Waybar
 [fuzzel]: https://codeberg.org/dnkl/fuzzel
@@ -60,6 +61,7 @@ be happy to know.
 [fusuma]: https://github.com/iberianpig/fusuma
 [batsignal]: https://github.com/electrickite/batsignal
 [hyprshot]: https://github.com/alonso-herreros/hyprshot
+[hyprcap]: https://github.com/alonso-herreros/hyprcap
 
 [yazi]: https://yazi-rs.github.io/
 [xdpt]: https://github.com/hunkyburrito/xdg-desktop-portal-termfilechooser
