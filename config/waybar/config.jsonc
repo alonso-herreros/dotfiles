@@ -375,8 +375,7 @@
     },
     "custom/shuffle": {
         "format": "",
-        // Due to concurrent updates, we need to use a short sleep.
-        "exec": "sleep 0.2; ~/.scripts/system/media_ctl.sh shuffle get --json",
+        "exec": "~/.scripts/system/media_ctl.sh shuffle get --json",
         "exec-on-event": true,
         "return-type": "json",
         // We need to run every now and then in case there are outside changes.
@@ -390,8 +389,7 @@
             "Track": "₁",
             "Playlist": " "
         },
-        // Due to concurrent updates, we need to use a short sleep.
-        "exec": "sleep 0.2; ~/.scripts/system/media_ctl.sh loop get --json",
+        "exec": "~/.scripts/system/media_ctl.sh loop get --json",
         "exec-on-event": true,
         "return-type": "json",
         // We need to run every now and then in case there are outside changes.
