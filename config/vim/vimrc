@@ -648,7 +648,7 @@ cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 " including paths
 " cnoremap s/ %s/\v
 " cnoremap %s/ s/\v
-command! -nargs=1 S %s/\v<args>
+" command! -nargs=1 S %s/\v<args>
 
 " cnoreabbr tree NERDTree
 cnoreabbr v view
