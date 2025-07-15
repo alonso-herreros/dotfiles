@@ -17,8 +17,7 @@ These dotfiles were designed for the following setup:
 * 🤏 **Gestures daemon**: [Fusuma][fusuma]
 * ⌛ **Idle daemon**: [Hypridle][hypridle]
 * 🪫 **Battery daemon**: [Batsignal][batsignal]
-* 📷 **Screen capture utility**: [hyprcap][hyprcap] (also using my fork of
-  [hyprshot][hyprshot] for some features)
+* 📷 **Screen capture utility**: [hyprcap][hyprcap]
 
 * 🗄️ **File Manager**: [Yazi][yazi] plus [XDP termfilechooser][xdpt]
 * 📁 **GUI File Manager**: [Nautilus][nautilus]
