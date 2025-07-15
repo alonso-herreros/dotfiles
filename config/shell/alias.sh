@@ -84,6 +84,8 @@ alias nn='nnn -n'
 alias matlabcli='matlab -nosplash -nodisplay'
 alias gpconnect='sudo gpclient connect --default-browser'
 alias matlabdocker="xdg-open 'https://www.mathworks.com/mwa/otp'; docker run -it --mount type=bind,src='$PWD',dst=/home/matlab/app matlab"
+alias pacman-updates='pacman -Qu --color=always | less -R'
+alias pmupds="pacman-updates"
 
 # ==== Easy Remember ====
 
