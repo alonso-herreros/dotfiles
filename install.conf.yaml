@@ -28,6 +28,7 @@
     ~/.config/clipse: config/clipse
     ~/.config/shell: config/shell
     ~/.config/zsh: config/zsh
+    ~/.config/sc-im: config/sc-im
     ~/.config/X11: config/X11
     
     # I wish this fucker kept its history out of the config directory

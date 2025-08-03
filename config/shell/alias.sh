@@ -21,6 +21,7 @@ alias pm='pacman'
 alias btctl='bluetoothctl'
 alias wlc='wl-copy'
 alias tf='terraform'
+alias sc='sc-im'
 
 alias svirsh='sudo virsh'
 alias sv='sudo virsh'

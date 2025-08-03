@@ -1,0 +1,40 @@
+# vim: ft=bash
+# SCIM configuration file
+
+# Go to first/last valid cell in row/column
+nnoremap "H" "0"
+nnoremap "L" "$"
+nnoremap "J" "^"
+nnoremap "K" "#"
+
+# Creating/opening rows/columns
+nnoremap "o" "or"
+nnoremap "O" "kor"
+nnoremap "A" "oc"
+nnoremap "I" "hoc"
+nnoremap "<Space>o" "ir"
+nnoremap "<Space>O" "kir"
+nnoremap "<Space>I" "ic"
+nnoremap "<Space>A" "hic"
+
+nmap "g-" "gl"
+
+# Quick use: M marker
+nnoremap "M" "'m"
+
+# Redo with U
+nmap "U" "<C-r>"
+# nmap "<F2>" ":renamesheet "
+# Moving tabs (<S-Tab> not supported in sc-im)
+nmap "<Tab>" "gt"
+nmap "<C-Tab>" "gT"
+
+# Save with C-s
+nmap "<C-s>" ":w<CR>"
+vmap "<C-s>" "<Esc>:w<CR>"
+emap "<C-s>" "<Esc>:w<CR>"
+imap "<C-s>" "<Esc><Esc>:w<CR>"
+
+# Ctrl-F to search
+nnoremap "<C-f>" "/"
+nnoremap "<C-h>" ":%s/\v"
