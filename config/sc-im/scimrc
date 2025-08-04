@@ -1,11 +1,27 @@
 # vim: ft=bash
 # SCIM configuration file
 
+set autocalc
+set numeric=1
+set numeric_zero=0
+set numeric_decimal=0
+
+set overlap
+set truncate
+
+set newline_action=j
+set command_timeout=1000
+set ignorecase
+
+set xlsx_readformulas
+
+# ===== Mappings =====
+
 # Go to first/last valid cell in row/column
 nnoremap "H" "0"
 nnoremap "L" "$"
-nnoremap "J" "^"
-nnoremap "K" "#"
+nnoremap "J" "#"
+nnoremap "K" "^"
 
 # Creating/opening rows/columns
 nnoremap "o" "or"
