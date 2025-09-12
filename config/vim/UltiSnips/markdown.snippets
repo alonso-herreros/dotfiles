@@ -31,6 +31,24 @@ snippet uni-readme "Uni: readme"
 [$3]:       ${5:https://example.org}
 endsnippet
 
+### Uni readme (spanish)
+snippet uni-readme-es "Uni: readme (ES)"
+# ${1:Asignatura} - ${2:Proyecto}
+
+<!-- [![CC BY-SA 4.0][shield-cc-by-sa]][cc-by-sa] -->
+<!-- markdownlint-disable MD053 -->
+[![GITT][shield-gitt]][gitt]
+[![$1][shield-${3:tag}]][$3]$0
+
+[shield-cc-by-sa]: https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg
+[shield-gitt]:     https://img.shields.io/badge/Grado-Ingeniería_en_Tecnologías_de_Telecomunicación_|_UC3M-eee
+[shield-$3]:       https://img.shields.io/badge/Asignatura-${4:Asignatura_nombre}-eee
+
+[cc-by-sa]: https://creativecommons.org/licenses/by-sa/4.0/
+[gitt]:     https://uc3m.es/grado/telecomunicacion
+[$3]:       ${5:https://example.org}
+endsnippet
+
 ### Uni report
 snippet uni-report "Uni: report"
 ---
