@@ -83,6 +83,7 @@ pdf = [
 
 image = [
 	{ run = 'gimp "$@" &', desc = "GIMP", for = "linux", orphan = true },
+	{ run = 'swappy -f "$@" -o "${@%.*}-edit.${@##*.}" &', desc = "Swappy", for = "linux", orphan = true },
 ]
 
 qalc = [
