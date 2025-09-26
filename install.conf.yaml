@@ -36,6 +36,7 @@
 
     ~/.vim/UltiSnips: config/vim/UltiSnips
     ~/.vim/coc-settings.json: config/vim/coc-settings.json
+    ~/.vim/after/ftplugin: config/vim/after/ftplugin
 
     ~/.config/libinput-gestures.conf: config/libinput-gestures.conf
     ~/.config/locale.conf: config/locale/locale.conf
