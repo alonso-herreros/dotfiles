@@ -146,10 +146,10 @@ keymap = [
 	#########
 
 	{ on = ["g", "s"], run = ["shell --block -- git -c color.status=always status | less -R"], desc = "Git Status" },
-	{ on = ["g", "a"], run = ['shell -- git add "$@"'], desc = "Git Add" },
-	{ on = ["g", "r"], run = ['shell -- git restore --staged "$@"'], desc = "Git Add" },
-	{ on = ["g", "A"], run = ['shell --block -- git add -p "$@"'], desc = "Git Add patches" },
-	{ on = ["g", "c"], run = ["shell --block -- git commit"], desc = "Git Add patches" },
+	{ on = ["g", "a"], run = ['shell         -- git add "$@"'],              desc = "Git Add" },
+	{ on = ["g", "A"], run = ['shell --block -- git add -p "$@"'],           desc = "Git Add patches" },
+	{ on = ["g", "r"], run = ['shell         -- git restore --staged "$@"'], desc = "Git Unstage" },
+	{ on = ["g", "c"], run = ["shell --block -- git commit"],                desc = "Git Commit" },
 
 	###########
 	## SHELL ##
