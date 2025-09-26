@@ -245,9 +245,12 @@ set briopt+=list:-1        " Indent wrapped list items
 set briopt+=sbr            " Add the showbreak character inside indent
 set showbreak=↪            " Character to show at start of wrapped line
 
-set mouse=a                " Enable mouse usage (all modes)
+set title                  " Set terminal title
+set titlestring=Vim:\ %<%f%m
 
-set whichwrap+=h,l
+set mouse=a                " Enable mouse usage (all modes)
+set whichwrap+=h,l         " Allow h and l to move to previous/next line
+
 set formatoptions+=j       " Remove messy characters when joining lines
 
 if empty($XDG_STATE_HOME)
