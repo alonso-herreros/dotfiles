@@ -252,6 +252,9 @@ set mouse=a                " Enable mouse usage (all modes)
 set whichwrap+=h,l         " Allow h and l to move to previous/next line
 
 set formatoptions+=j       " Remove messy characters when joining lines
+set formatoptions+=n       " Detect lists when formatting
+set formatoptions+=ro      " Insert comment leader on new lines
+set autoindent             " Autoindent new lines and formatted lines
 
 if empty($XDG_STATE_HOME)
     let $XDG_STATE_HOME = $HOME . "/.local/state"
