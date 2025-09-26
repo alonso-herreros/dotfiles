@@ -238,7 +238,12 @@ let g:sneak#use_ic_scs = 1 " Make Sneak use smartcase as well
 set incsearch              " Incremental search
 set autowrite              " Automatically save before commands like :next and :make
 set hidden                 " Hide buffers when they are abandoned
+
 set linebreak              " Wrap on word boundaries
+set breakindent            " Indent wrapped lines to match start of line
+set briopt+=list:-1        " Indent wrapped list items
+set briopt+=sbr            " Add the showbreak character inside indent
+set showbreak=↪            " Character to show at start of wrapped line
 
 set mouse=a                " Enable mouse usage (all modes)
 
