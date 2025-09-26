@@ -4,6 +4,7 @@
 
 *.code-workspace
 .vscode/
+.local/
 matlabInVSCodeVariableInfo.csv
 
 CMakeUserPresets.json
