@@ -9,8 +9,9 @@ Dotfiles just the way I like 'em.
 These dotfiles were designed for the following setup:
 
 * 🍀 **Base**: [Arch][archlinux]
-* **Session Manager**: [UWSM][uwsm]
+* 🤖 **Session Manager**: [UWSM][uwsm]
 * 🌼 **Window Manager / compositor**: [Hyprland][hyprland]
+* 🕹️ **App runner**: [runapp][runapp]
 * ✨ **Status bar**: [Waybar][waybar]
 * 🚀 **Launcher/dmenu**: [Fuzzel][fuzzel]
 * 🪵 **Notification daemon**: [Dunst][dunst]
@@ -54,6 +55,7 @@ be happy to know.
 [archlinux]: https://archlinux.org/
 [uwsm]: https://github.com/Vladimir-csp/uwsm
 [hyprland]: https://hyprland.org/
+[runapp]: https://github.com/c4rlo/runapp
 [waybar]: https://github.com/Alexays/Waybar
 [fuzzel]: https://codeberg.org/dnkl/fuzzel
 [dunst]: https://github.com/dunst-project/dunst
