@@ -61,7 +61,6 @@ be happy to know.
 [dunst]: https://github.com/dunst-project/dunst
 [fusuma]: https://github.com/iberianpig/fusuma
 [batsignal]: https://github.com/electrickite/batsignal
-[hyprshot]: https://github.com/alonso-herreros/hyprshot
 [hyprcap]: https://github.com/alonso-herreros/hyprcap
 
 [yazi]: https://yazi-rs.github.io/
