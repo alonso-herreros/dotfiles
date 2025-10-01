@@ -14,3 +14,5 @@ config/zsh/zshrc_local
 config/kitty/*.d.conf
 
 config/dunst/**/*power_saving*.conf
+
+config/waybar/*-local.*
