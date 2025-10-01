@@ -4,9 +4,10 @@
 
 // https://github.com/Alexays/Waybar/wiki/Configuration
 {
+    "include": "config-local.jsonc",
     // ==== Global config ====
     // "margin" : "5 2 3",
-    "position": "top",
+    // "position": "top", // This is the default. Now it can be overridden.
     // "reload_style_on_change": true, // TODO: remove this
 
     "modules-left": [
