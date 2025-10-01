@@ -14,9 +14,6 @@
 
 #waybar {
     background-color: transparent;
-    border-radius: 10px;
-    transition-property: background-color;
-    transition-duration: .5s;
 }
 
 .modules-right,
