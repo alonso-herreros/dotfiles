@@ -591,8 +591,8 @@
         },
         "modules": [
             "user",
-            "custom/restart",
-            "custom/hibernate",
+            // "custom/restart",
+            // "custom/hibernate",
             "custom/poweroff",
             "custom/lock"
         ]
