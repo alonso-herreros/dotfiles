@@ -33,6 +33,8 @@
     
     # I wish this fucker kept its history out of the config directory
     ~/.config/qalculate/qalc.cfg: config/qalculate/qalc.cfg
+    # ... and its definitions, which I want to track, IN the config directory!
+    ~/.local/share/qalculate/definitions: config/qalculate/definitions
 
     ~/.vim/UltiSnips: config/vim/UltiSnips
     ~/.vim/coc-settings.json: config/vim/coc-settings.json

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<QALCULATE version="5.7.0">
+  <category>
+    <title>Information</title>
+    <deactivate>bit</deactivate>
+    <unit type="base">
+      <use_with_prefixes min="0">true</use_with_prefixes>
+      <title>Bit (Binary Digit)</title>
+      <names>r:bit,p:bits,shannon,p:shannons,c:Sh,binary_digit,p:binary_digits,a-c:b</names>
+    </unit>
+  </category>
+  <category>
+    <title>Area</title>
+    <deactivate>b</deactivate>
+  </category>
+  <category>
+    <title>Load</title>
+    <unit type="base">
+      <use_with_prefixes>true</use_with_prefixes>
+      <title>Erlang</title>
+      <names>p:erlangs,erlang,ar:E</names>
+    </unit>
+  </category>
+  <category>
+    <title>Data transfer rate</title>
+    <unit type="base">
+      <title>Byte per second</title>
+      <names>cr:Bps</names>
+    </unit>
+    <unit type="base">
+      <title>Bit per second</title>
+      <names>cr:bps</names>
+    </unit>
+  </category>
+</QALCULATE>
