@@ -138,6 +138,28 @@ let g:Context_indent = funcref("IndentWithHeadings")
 " Remove mappings from context.vim, which conflict hard with my H
 let g:context_add_mappings = 0
 
+" ==== EasyAlign ====
+let g:easy_align_delimiters = {
+\ '/': {
+\     'pattern':         '//\+\|/\*\|\*/',
+\     'delimiter_align': 'l',
+\     'ignore_groups':   ['!Comment']
+\   },
+\ ']': {
+\     'pattern':       '[[\]]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   },
+\ ')': {
+\     'pattern':       '[()]',
+\     'left_margin':   0,
+\     'right_margin':  0,
+\     'stick_to_left': 0
+\   }
+\ }
+
+
 " ==== UltiSnips ====
 " Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
 " - https://github.com/Valloric/YouCompleteMe
