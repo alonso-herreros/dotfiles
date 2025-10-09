@@ -62,4 +62,10 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Plugin list to load.
 # Standard plugins are in $ZSH/plugins/, custom plugins in $ZSH_CUSTOM/plugins/
-plugins=(git zoxide fzf)
+plugins=(
+  git
+  zoxide
+  fzf
+  zsh-autosuggestions
+  fast-syntax-highlighting
+)

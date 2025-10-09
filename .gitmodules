@@ -11,3 +11,9 @@
 [submodule "scripts/oh-my-zsh"]
 	path = scripts/oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh
+[submodule "config/oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = config/oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "config/oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
+	path = config/oh-my-zsh/custom/plugins/fast-syntax-highlighting
+	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
