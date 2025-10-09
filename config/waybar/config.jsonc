@@ -37,13 +37,15 @@
         "all-outputs": "true", // Pretty sure this is wrong
         "format-icons": { // Japanese. Don't ask why.
             "1": "一", "2": "二", "3": "三", "4": "四", "5": "五",
-            "6": "六", "7": "七", "8": "八", "9": "九", "10": "十",
-            // These are like 'alt names' (my special named workspaces)
-            "1s": "一", "2s": "二", "3s": "三", "4s": "四", "5s": "五",
-            "6s": "六", "7s": "七", "8s": "八", "9s": "九", "10s": "十",
+            "6": "六", "7": "七", "8": "八", "9": "九", "10": "十", "99": "十",
+            // Secondary workspaces for each number
+            "11": "A", "21": "B", "31": "C", "41": "D", "51": "E",
+            "61": "F", "71": "G", "81": "H", "91": "I", "101": "Z", "991": "Z",
+            // "11": "1", "21": "2", "31": "3", "41": "4", "51": "5",
+            // "61": "6", "71": "7", "81": "8", "91": "9", "101": "10", "991": "10",
             "tmp": " " // Contains Hair Space " "
         },
-        "sort-by": "number",
+        "sort-by": "name",
         "show-special": true,
         "special-visible-only": true,
         "move-to-monitor": true,
