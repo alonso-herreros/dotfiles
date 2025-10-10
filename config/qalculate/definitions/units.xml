@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <QALCULATE version="5.7.0">
   <category>
+    <title>Area</title>
+    <deactivate>b</deactivate>
+  </category>
+  <category>
     <title>Information</title>
     <deactivate>bit</deactivate>
     <unit type="base">
@@ -8,10 +12,6 @@
       <title>Bit (Binary Digit)</title>
       <names>r:bit,p:bits,shannon,p:shannons,c:Sh,binary_digit,p:binary_digits,a-c:b</names>
     </unit>
-  </category>
-  <category>
-    <title>Area</title>
-    <deactivate>b</deactivate>
   </category>
   <category>
     <title>Load</title>
@@ -23,13 +23,51 @@
   </category>
   <category>
     <title>Data transfer rate</title>
-    <unit type="base">
-      <title>Byte per second</title>
-      <names>cr:Bps</names>
-    </unit>
-    <unit type="base">
+    <unit type="composite">
+      <hidden>true</hidden>
       <title>Bit per second</title>
-      <names>cr:bps</names>
+      <names>r:bit_p_s</names>
+      <part>
+        <unit>bit</unit>
+        <exponent>1</exponent>
+      </part>
+      <part>
+        <unit>s</unit>
+        <exponent>-1</exponent>
+      </part>
+    </unit>
+    <unit type="composite">
+      <hidden>true</hidden>
+      <title>Byte per second</title>
+      <names>r:byte_p_s</names>
+      <part>
+        <unit>byte</unit>
+        <exponent>1</exponent>
+      </part>
+      <part>
+        <unit>s</unit>
+        <exponent>-1</exponent>
+      </part>
+    </unit>
+    <unit type="alias">
+      <use_with_prefixes>true</use_with_prefixes>
+      <title>Bit per second</title>
+      <names>ar:bps,bit_per_second,p:bits_per_second</names>
+      <base>
+        <unit>bit_p_s</unit>
+        <relation>1</relation>
+        <exponent>1</exponent>
+      </base>
+    </unit>
+    <unit type="alias">
+      <use_with_prefixes>true</use_with_prefixes>
+      <title>Byte per second</title>
+      <names>ar:Bps,byte_per_second,p:bytes_per_second</names>
+      <base>
+        <unit>byte_p_s</unit>
+        <relation>1</relation>
+        <exponent>1</exponent>
+      </base>
     </unit>
   </category>
 </QALCULATE>
