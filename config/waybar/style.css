@@ -62,6 +62,7 @@
 #clock,
 #battery,
 #power-profiles-daemon,
+#custom-tlp,
 #idle_inhibitor,
 #keyboard-icon,
 #keyboard-state,
@@ -107,6 +108,7 @@
 /* Actionable hovers */
 button:hover,
 #power-profiles-daemon:hover,
+#custom-tlp:hover,
 #idle_inhibitor:hover,
 #tray *:hover,
 #tray > .passive:hover,
@@ -141,6 +143,7 @@ button:hover,
 
 /* Activated */
 button.active,
+#custom-tlp.manual,
 #idle_inhibitor.activated {
     background: @surface1;
 }
@@ -246,6 +249,10 @@ button.urgent,
 #power-profiles-daemon.power-saver { color: @green; }
 #power-profiles-daemon.balanced { color: @peach; }
 #power-profiles-daemon.performance { color: @sapphire; }
+
+#custom-tlp { padding: 0 8px; }
+#custom-tlp.battery { color: @green; }
+#custom-tlp.AC { color: @sapphire; }
 
 #idle_inhibitor { padding: 0 5px; }
 
