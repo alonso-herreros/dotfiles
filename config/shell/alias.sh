@@ -80,6 +80,7 @@ alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 # ==== Combos & Options ====
 
 alias lsg='ls && echo " " && git status'
+alias ks='kitten ssh'
 alias sf='ssh -o ForwardAgent=yes'
 alias nn='nnn -n'
 alias matlabcli='matlab -nosplash -nodisplay'
