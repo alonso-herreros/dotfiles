@@ -131,7 +131,7 @@
   <Action name="view_zoom_in" priority="0" shortcut="Ctrl++; +"/>
   <Action name="go_previous" shortcut="; H"/>
   <Action name="go_next" shortcut="; L"/>
-  <Action name="view_fit_to_page" shortcut="; Z, P"/>
+  <Action name="view_fit_to_page" shortcut="; Z, F"/>
   <Action name="view_scroll_page_up" shortcut="Shift+K"/>
   <Action name="view_scroll_page_down" shortcut="Shift+J"/>
   <Action name="view_fit_to_width" shortcut="; Z, W"/>
