@@ -87,6 +87,11 @@ file_arch="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 [ -f "$file_arch" ] && source "$file_arch"
 
 
+# ==== Binds ====
+bindkey '\e[A' history-beginning-search-backward
+bindkey '\e[B' history-beginning-search-forward
+
+
 # ===== Local overrides =====
 
 [ -f "$ZDOTDIR/zshrc_local" ] && source "$ZDOTDIR/zshrc_local"
