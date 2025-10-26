@@ -183,7 +183,7 @@ keymap = [
 	{ on = ["?", "n"], run = "linemode none",        desc = "Linemode: none" },
 
 	# ==== Filter and find ====
-	{ on = "f", run = "filter --smart",          desc = "Filter files" },
+	{ on = "&", run = "filter --smart",          desc = "Filter files" },
 	{ on = "/", run = "find --smart",            desc = "Find next file" },
 	{ on = "n", run = "find_arrow",              desc = "Go to the next found" },
 	{ on = "N", run = "find_arrow --previous",   desc = "Go to the previous found" },
