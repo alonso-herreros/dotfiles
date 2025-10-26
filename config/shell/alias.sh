@@ -40,10 +40,10 @@ alias sstui='sudo systemctl-tui'
 alias gimme='git clone'
 alias bgo='bg 1>/dev/null 2>&1'
 
-alias chatty='chatgpt-cli'
-alias chat='chatgpt-cli'
-alias gepeto='chatgpt-cli'
-alias gpt='chatgpt-cli'
+alias chatty='chatgpt'
+alias chat='chatgpt'
+alias gepeto='chatgpt'
+alias gpt='chatgpt'
 
 # Hyprctl
 alias hk='hyprctl keyword'
