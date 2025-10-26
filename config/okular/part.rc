@@ -149,7 +149,7 @@
   <Action name="color_mode_invert_lightness" shortcut="Ctrl+I"/>
   <Action name="bookmark_add" shortcut="Ctrl+D; M, M"/>
   <Action name="options_configure_color_modes" shortcut="Ctrl+,, C"/>
-  <Action name="presentation" shortcut="; "/>
+  <Action name="presentation" shortcut="Ctrl+F5; "/>
   <Action name="presentation_erase_drawings" shortcut="; D, D"/>
   <Action name="options_configure_annotations" shortcut="Ctrl+,, A"/>
   <Action name="mouse_select" shortcut="Ctrl+3; Ctrl+V"/>
