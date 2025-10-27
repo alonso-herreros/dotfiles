@@ -172,7 +172,11 @@ function upgrep() {
     pgrep -u $USER ${@:1}
 }
 function upkill() {
-    kill $(pgrep -u $USER ${@:1})
+    case "$1" in -*)
+        arg="$1"
+        shift;;
+    esac
+    kill $arg $(pgrep -u $USER ${@:1})
 }
 function uprestart() {
     kill $(pgrep -u $USER $1); detach ${@:1}
