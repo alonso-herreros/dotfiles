@@ -563,6 +563,7 @@ nmap <Leader>Q :q!<CR>
 nmap <Leader>e :confirm e<CR>
 nmap <Leader>E :e!<CR>
 nmap <Leader>z :wq<CR>
+nmap <Leader>Z :wqa<CR>
 nmap <Leader>x :confirm bd<CR>
 nmap <Leader>X :confirm tabc<CR>
 " Inspect character
