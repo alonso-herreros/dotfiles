@@ -58,6 +58,11 @@
     # Okular stores the actual config in a rather peculiar place
     ~/.local/share/kxmlgui5/okular: config/okular
 
+    # Desktop Entries
+    ~/.local/share/applications/:
+      glob: true
+      path: local/share/applications/*.desktop
+
     # Oh My Zsh included!
     ~/.scripts: scripts
 
