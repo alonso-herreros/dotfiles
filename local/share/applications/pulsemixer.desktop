@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PulseMixer
+GenericName=Audio Mixer
+Comment=CLI and curses mixer for PuseAudio
+TryExec=pulsemixer
+StartupNotify=true
+StartupWMClass=term-mgmt.audio
+Exec=uwsm-app -T --app-id=term-mgmt.audio pulsemixer
+Categories=System;Utility;

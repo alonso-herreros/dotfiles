@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Bluetoothctl
+GenericName=Bluetooth Manager
+Comment=Bluetooth Control Command Line Tool
+TryExec=bluetoothctl
+StartupNotify=true
+StartupWMClass=term-mgmt.bluetooth
+Exec=uwsm-app -T --app-id=term-mgmt.bluetooth bluetoothctl
+Categories=System;Utility;

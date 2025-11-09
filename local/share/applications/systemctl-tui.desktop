@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Systemctl TUI
+GenericName=System Manager
+Comment=Fast, simple TUI for interacting with systemd services and their logs
+TryExec=systemctl-tui
+StartupNotify=true
+StartupWMClass=term-mgmt.systemctl
+Exec=uwsm-app -T --app-id=term-mgmt.systemctl systemctl-tui
+Categories=System;Utility;

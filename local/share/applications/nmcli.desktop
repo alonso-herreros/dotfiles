@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NetworkManager TUI
+GenericName=Network Mangaer
+Comment=Text User Interface for controlling NetworkManager
+TryExec=nmcli
+StartupNotify=true
+StartupWMClass=term-mgmt.network
+Exec=uwsm-app -T --app-id=term-mgmt.network nmtui
+Categories=System;Utility;
