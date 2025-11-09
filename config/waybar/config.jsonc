@@ -459,7 +459,7 @@
         },
         "tooltip-format": "{desc}: {volume}%",
         "on-click": "pamixer -t",
-        "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
+        "on-click-right": "uwsm-app org.pulseaudio.pavucontrol.desktop",
         "on-click-middle": "pactl play-sample bell",
         "smooth-scrolling-threshold": 0.7,
         "reverse-scrolling": true,
@@ -470,7 +470,7 @@
         "format": "{volume}%",
         "tooltip-format": "{desc}: {volume}%",
         "on-click": "pamixer -t",
-        "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
+        "on-click-right": "uwsm-app org.pulseaudio.pavucontrol.desktop",
         "on-click-middle": "pactl play-sample bell",
         "smooth-scrolling-threshold": 0.7,
         "reverse-scrolling": true,
@@ -495,7 +495,7 @@
         "format-source": " ",
         "format-source-muted": " ", // Not using thin space " "
         "on-click": "pamixer --default-source -t",
-        "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
+        "on-click-right": "uwsm-app org.pulseaudio.pavucontrol.desktop",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "smooth-scrolling-threshold": 0.7,
@@ -506,7 +506,7 @@
         "format-source": "{volume}%",
         "format-source-muted": "{volume}%",
         "on-click": "pamixer --default-source -t",
-        "on-click-right": "hyprctl dispatch exec [floating] pavucontrol",
+        "on-click-right": "uwsm-app org.pulseaudio.pavucontrol.desktop",
         "on-scroll-up": "pamixer --default-source -i 5",
         "on-scroll-down": "pamixer --default-source -d 5",
         "smooth-scrolling-threshold": 0.7,
@@ -533,8 +533,7 @@
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• {device_alias} (󰥉 {device_battery_percentage}%)",
         "on-click": "~/.scripts/system/bt_toggle.sh",
-        "on-click-right": "~/.scripts/launch/hyprland_kitty_btctl.sh",
-        // "on-click-right": "bluetoothctl"
+        "on-click-right": "uwsm-app -- bluetoothctl.desktop"
     },
     "bluetooth#bt2": {
         "format": "{num_connections}",
@@ -542,8 +541,7 @@
         "tooltip-format-enumerate-connected": "• {device_alias}",
         "tooltip-format-enumerate-connected-battery": "• {device_alias} (󰥉 {device_battery_percentage}%)",
         "on-click": "~/.scripts/system/bt_toggle.sh",
-        "on-click-right": "~/.scripts/launch/hyprland_kitty_btctl.sh",
-        // "on-click-right": "bluetoothctl"
+        "on-click-right": "uwsm-app -- bluetoothctl.desktop"
     },
 
     // ---- Network ----
@@ -566,11 +564,13 @@
         "format-linked": "{ifname} (No IP) ",
         "format-alt": "{bandwidthDownBytes}  {bandwidthUpBytes}",
         "tooltip-format-wifi": "  {} ({frequency} GHz) {signalStrength}% | {signaldBm} dBm\n{ifname}: {ipaddr}/{cidr} via {gwaddr}",
-        "tooltip-format-ethernet": "  {ifname}: {ipaddr}/{cidr} via {gwaddr}"
+        "tooltip-format-ethernet": "  {ifname}: {ipaddr}/{cidr} via {gwaddr}",
+        "on-click-right": "uwsm-app -- nmtui.desktop"
     },
     "network#nw2": {
         "interval": 10,
-        "format-wifi": "{}"
+        "format-wifi": "{}",
+        "on-click-right": "uwsm-app -- nmtui.desktop"
     },
 
     // ==== Session and Time ====
