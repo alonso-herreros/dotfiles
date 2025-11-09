@@ -1,0 +1,17 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Qalc
+GenericName=Calculator
+Comment=Qalculate! CLI
+Terminal=true
+TryExec=qalc
+Exec=qalc %F
+Icon=qalculate
+Categories=Calculator;Math;ConsoleOnly;
+
+Actions=Float;
+
+[Desktop Action Float]
+Name=Floating Window
+Exec=uwsm-app -T --app-id=term-float -- qalc %F

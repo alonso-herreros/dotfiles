@@ -1,0 +1,19 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Yazi
+GenericName=Terminal File Manager
+Comment=Blazing fast terminal file manager written in Rust, based on async I/O
+Terminal=true
+TryExec=yazi
+Exec=yazi %u
+Icon=yazi
+MimeType=inode/directory
+Categories=Utility;Core;System;FileTools;FileManager;ConsoleOnly;
+Keywords=File;Manager;Explorer;Browser;Launcher
+
+Actions=Float;
+
+[Desktop Action Float]
+Name=Floating Window
+Exec=uwsm-app -T --app-id=term-float -- yazi %u
