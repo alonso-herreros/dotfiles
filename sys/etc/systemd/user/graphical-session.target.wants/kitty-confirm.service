@@ -1,0 +1,1 @@
+/etc/systemd/user/graphical-session.target.wants/kitty-confirm.service

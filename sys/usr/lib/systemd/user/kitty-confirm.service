@@ -7,7 +7,7 @@ Requisite=graphical-session.target
 
 [Service]
 ExecStart=/usr/bin/kitty --single-instance --start-as hidden \
-    --instance-group oneshot -o confirm_os_window_close=0
+    --instance-group confirm -o confirm_os_window_close=-1
 Restart=on-failure
 
 [Install]
