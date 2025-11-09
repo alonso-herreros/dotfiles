@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Clipse
+GenericName=Clipboard manager
+Comment=Configurable TUI clipboard manager for Unix
+TryExec=clipse
+StartupNotify=true
+StartupWMClass=clipse
+Exec=uwsm-app -T --app-id=clipse clipse
+Icon=kitty
+Categories=System;
