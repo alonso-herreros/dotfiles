@@ -29,6 +29,24 @@
     las  = log --oneline --all --graph -n 10 # Log all short (in graph)
     ll   = log                         # Log long (with details)
     lla  = log --all --graph           # Log long all (graph, with details)
+    # Log interactive (with preview)
+    li   = "!git l   --oneline --color=always | git fzfp \"$@\""
+    lai  = "!git la  --oneline --color=always | git fzfp \"$@\""
+    lsi  = "!git ls  --oneline --color=always | git fzfp \"$@\""
+    lasi = "!git las --oneline --color=always | git fzfp \"$@\""
+    # Helper for fzf-based commit selection
+    fzfp = "!gfzfp() { fzf \
+            --multi --ansi \
+            --layout=reverse-list \
+            --header=\"${1:-Browse commits}\" \
+            --preview='git show --patch-with-stat --color=always \
+                $(echo {} | grep -o \"[0-9a-f]\\{7\\}\")' \
+            --preview-window=hidden \
+            --bind='alt-p:toggle-preview' | \
+        grep -o '[0-9a-f]\\{7\\}' | \
+        paste -s; \
+    }; gfzfp"
+
 
     d    = diff
     ds   = diff --cached
@@ -37,6 +55,9 @@
     dmst = diff main --stat
 
     sh   = show
+    shh  = "!git show $(git lai)"
+    shs  = show --stat
+    shhs = "!git show --stat $(git lai)"
 
     # ---- Index operations: add, restore ----
 
@@ -66,9 +87,15 @@
     cane = commit --amend --no-edit
     # Fixup
     cf   = "commit --fixup"
-    cff  = "!git commit --fixup $(git log -n 50 --pretty='%C(auto)%h %s' | fzf | cut -c -7)"
-    ccff = "!ccf() { git add -A; git commit --fixup \"$@\"; }; ccf"
-    ccff = "!ccff() { git add -A; git commit --fixup $(git log -n 50 --pretty='%C(auto)%h %s' | fzf | cut -c -7); }; ccff"
+    cff  = "!git commit --fixup $(git li 'Select commit to fixup')"
+    ccf  = "!ccf() { \
+        git add -A; \
+        git commit --fixup \"$@\"; \
+    }; ccf"
+    ccff = "!ccff() { \
+        git add -A; \
+        git commit --fixup $(git li 'Select commit to fixup'); \
+    }; ccff"
 
     st   = stash
     stm  = stash -m
@@ -86,6 +113,7 @@
     # ---- Branch operations: checkout, branch, merge, rebase, tag ----
 
     co   = checkout
+    coo  = "!git checkout $(git branch -a --color=always | fzf --ansi | sed 's/.* //;s#remotes/origin/##')"
     cob  = checkout -b
     c-   = checkout -
     com  = checkout main
@@ -109,6 +137,9 @@
     mt   = mergetool
 
     cp   = cherry-pick
+    cpp  = "!git cherry-pick $(git lai 'Select commit(s) to cherry-pick')"
+    cpnc = cherry-pick --no-commit
+    cppnc= "!git cherry-pick --no-commit $(git lai 'Select commit(s) to cherry-pick')"
     cpa  = cherry-pick --abort
     cpc  = cherry-pick --continue
 
@@ -119,6 +150,7 @@
     rbc  = rebase --continue
     rbs  = rebase --skip
     rbi  = rebase --interactive
+    rbii = "!git rebase --interactive $(git li 'Select commit to rebase onto')"
 
     t    = tag
 
