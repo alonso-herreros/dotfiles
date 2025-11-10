@@ -154,9 +154,10 @@
     pnp  = "!git pull --rebase && git push"
 
     # Not to be confused with `reset` aliases, which also start with `r`
-    rv   = remote --verbose
-    ra   = remote add
-    rao  = remote add origin
+    re   = remote
+    rev  = remote --verbose
+    rea  = remote add
+    reao = remote add origin
 
 
     # ---- Others ----
