@@ -115,10 +115,12 @@
     cpc  = cherry-pick --continue
 
     rb   = rebase
+    rbm  = rebase main
+    rbom = rebase origin/main
     rba  = rebase --abort
     rbc  = rebase --continue
-    rbi  = rebase --interactive
     rbs  = rebase --skip
+    rbi  = rebase --interactive
 
     t    = tag
 
