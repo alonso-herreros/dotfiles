@@ -32,6 +32,9 @@
 
     d    = diff
     ds   = diff --cached
+    dst  = diff --stat
+    dm   = diff main
+    dmst = diff main --stat
 
     sh   = show
 
