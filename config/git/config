@@ -47,8 +47,10 @@
     # Taken: `rb` for `rebase`, `rv` and `ra` for `remote`
     r    = restore
     rr   = restore .
+    rp   = restore --patch
     rs   = restore --staged
     rrs  = restore . --staged
+    rsp  = restore --staged --patch
     rrr  = reset --hard
 
     # ---- Commits and stashes ----
