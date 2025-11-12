@@ -150,7 +150,7 @@
     rbc  = rebase --continue
     rbs  = rebase --skip
     rbi  = rebase --interactive
-    rbii = "!git rebase --interactive $(git li 'Select commit to rebase onto')"
+    rbii = "!git rebase --interactive $(git lai 'Select commit to rebase onto')"
 
     t    = tag
 
