@@ -68,4 +68,5 @@ plugins=(
   fzf
   zsh-autosuggestions
   fast-syntax-highlighting
+  docker
 )
