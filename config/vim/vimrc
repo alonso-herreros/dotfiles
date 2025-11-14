@@ -632,6 +632,7 @@ inoremap JK <Esc>l
 " inoremap ;; <C-o>$;
 " Newlines
 inoremap <S-CR> <Esc>O
+inoremap <C-CR> <CR><CR><Up>
 inoremap <A-o> <Esc>o
 inoremap <A-O> <Esc>O
 " hjkl moving
