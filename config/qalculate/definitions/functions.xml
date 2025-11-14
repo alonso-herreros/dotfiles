@@ -24,7 +24,7 @@
       <names>r:ErlangB</names>
       <description>Probability of a user being blocked for an M/M/c/c system</description>
       <example>ErlangB(3, 1.7)</example>
-      <expression>\x^\y/factorial(\x) / sum(\y^i/factorial(i), 0, \x, i)</expression>
+      <expression>\y^\x/factorial(\x) / sum(\y^n/factorial(n), 0, \x, n)</expression>
       <argument type="integer" index="1">
         <title>c: Number of servers</title>
         <min>1</min>
