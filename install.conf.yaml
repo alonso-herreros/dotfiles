@@ -30,6 +30,7 @@
     ~/.config/zsh: config/zsh
     ~/.config/sc-im: config/sc-im
     ~/.config/X11: config/X11
+    ~/.config/uwsm: config/uwsm
     
     # I wish this fucker kept its history out of the config directory
     ~/.config/qalculate/qalc.cfg: config/qalculate/qalc.cfg
