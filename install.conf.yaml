@@ -50,6 +50,8 @@
     ~/.config/oh-my-zsh: config/oh-my-zsh # Powerlevel10k in custom themes
     ~/.config/p10k.zsh: config/p10k/config.zsh
 
+    ~/.config/environment.d: config/environment.d
+
     # App flags
     ~/.config/:
       glob: true
