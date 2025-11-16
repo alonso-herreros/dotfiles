@@ -9,3 +9,21 @@ export QT_QPA_PLATFORM=wayland
 export SDL_VIDEODRIVER=wayland
 export ANKI_WAYLAND=1
 export PROTON_ENABLE_WAYLAND=1
+
+# ==== Paths ====
+
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
+export XCOMPOSEFILE=$XDG_CONFIG_HOME/X11/xcompose
+export XCOMPOSECACHE=$XDG_CACHE_HOME/X11/xcompose
+
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+
+export OPENAI_CONFIG_HOME=$XDG_CONFIG_HOME/chatgpt-cli
+export OPENAI_DATA_HOME=$XDG_DATA_HOME/chatgpt-cli
+
+export GHDL=/usr/local/bin/ghdl
