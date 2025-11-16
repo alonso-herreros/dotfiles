@@ -1,3 +1,8 @@
+# ==== Cursors and Theme ====
+export XCURSOR_THEME=BreezeX-RosePine-Linux
+export XCURSOR_SIZE=28
+export QT_QPA_PLATFORMTHEME=gtk3
+
 # ==== Wayland please ====
 export ELECTRON_OZONE_PLATFORM_HINT=auto
 export QT_QPA_PLATFORM=wayland
