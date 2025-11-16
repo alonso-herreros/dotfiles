@@ -16,3 +16,5 @@ config/kitty/*.d.conf
 config/dunst/**/*power_saving*.conf
 
 config/waybar/*-local.*
+
+config/hypr/**/*-local.conf
