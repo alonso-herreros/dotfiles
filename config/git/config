@@ -103,17 +103,27 @@
     # ---- Branch operations: checkout, branch, merge, rebase, tag ----
 
     co   = checkout
-    coo  = "!git checkout $(git branch -a --color=always | fzf --ansi | sed 's/.* //;s#remotes/origin/##')"
+    coo  = "!git checkout $(git blai)"
     cob  = checkout -b
     c-   = checkout -
     com  = checkout main
 
     b    = branch
     ba   = branch -a
-    bd   = branch -d
-    br   = branch -r
     bl   = branch -l
     bla  = branch -la
+    # List interactive (with short log preview)
+    bli  = "!git branch -l  --color=always | git fzfb \"$@\""
+    bai  = "!git branch -a  --color=always | git fzfb \"$@\""
+    blai = "!git branch -la --color=always | git fzfb \"$@\""
+    bia  = bai
+    blia = blai
+    # Branch operations
+    bd   = branch -d
+    bdf  = branch -D
+    bdd  = "!git branch -d $(git blai 'Select branch to delete')"
+    bddf = "!git branch -D $(git blai 'Select branch to delete')"
+    br   = branch -r
 
     m    = merge
     me   = merge --edit
@@ -212,6 +222,20 @@
         grep -o '[0-9a-f]\\{7\\}' | \
         paste -s; \
     }; gfzfc"
+
+    # Helper for branch selection: fzf --ansi | sed 's/.* //;s#remotes/origin/##'
+    fzfb = "!gfzfb() { \
+        fzf \
+            --ansi \
+            --layout=reverse-list \
+            --header=\"${1:-Browse branches}\" \
+            --preview='git log --all --graph --oneline --color=always | \
+                grep -B3 -A999 $(echo {} | \
+                sed \"s#^.\\s\\(remotes/[^/]*/\\|origin/\\)\\?##;s/\\s.*$//\")'\
+            --preview-window=hidden \
+            --bind='alt-p:toggle-preview' | \
+        sed 's#^.\\s##; s/\\s.*$//'; \
+    }; gfzfb"
 
 
 [init]
