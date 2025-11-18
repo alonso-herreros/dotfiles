@@ -124,6 +124,8 @@
     bdd  = "!git branch -d $(git blai 'Select branch to delete')"
     bddf = "!git branch -D $(git blai 'Select branch to delete')"
     br   = branch -r
+    bm   = branch -m
+    bmm  = "!git branch -m $(git branch --show-current)"
 
     m    = merge
     me   = merge --edit
