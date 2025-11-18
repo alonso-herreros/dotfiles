@@ -30,23 +30,13 @@
     ll   = log                         # Log long (with details)
     lla  = log --all --graph           # Log long all (graph, with details)
     # Log interactive (with preview)
-    li   = "!git l   --oneline --color=always | git fzfp \"$@\""
-    lai  = "!git la  --oneline --color=always | git fzfp \"$@\""
-    lsi  = "!git ls  --oneline --color=always | git fzfp \"$@\""
-    lasi = "!git las --oneline --color=always | git fzfp \"$@\""
-    # Helper for fzf-based commit selection
-    fzfp = "!gfzfp() { fzf \
-            --multi --ansi \
-            --layout=reverse-list \
-            --header=\"${1:-Browse commits}\" \
-            --preview='git show --patch-with-stat --color=always \
-                $(echo {} | grep -o \"[0-9a-f]\\{7\\}\")' \
-            --preview-window=hidden \
-            --bind='alt-p:toggle-preview' | \
-        grep -o '[0-9a-f]\\{7\\}' | \
-        paste -s; \
-    }; gfzfp"
-
+    li   = "!git l   --oneline --color=always | git fzfc \"$@\""
+    lai  = "!git la  --oneline --color=always | git fzfc \"$@\""
+    lsi  = "!git ls  --oneline --color=always | git fzfc \"$@\""
+    lasi = "!git las --oneline --color=always | git fzfc \"$@\""
+    lia  = lai
+    lis  = lsi
+    lias = lasi
 
     d    = diff
     ds   = diff --cached
@@ -207,6 +197,22 @@
     shit = uncommit
     unstage = reset HEAD --
     ignore = update-index --asume-unchanged
+
+    # ---- FZF helpers ----
+    # Helper for commit selection
+    fzfc = "!gfzfc() { \
+        fzf \
+            --multi --ansi \
+            --layout=reverse-list \
+            --header=\"${1:-Browse commits}\" \
+            --preview='git show --patch-with-stat --color=always \
+                $(echo {} | grep -o \"[0-9a-f]\\{7\\}\")' \
+            --preview-window=hidden \
+            --bind='alt-p:toggle-preview' | \
+        grep -o '[0-9a-f]\\{7\\}' | \
+        paste -s; \
+    }; gfzfc"
+
 
 [init]
     defaultBranch = main
