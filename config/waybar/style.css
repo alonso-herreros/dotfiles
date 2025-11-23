@@ -36,6 +36,7 @@
 #workspaces,
 #tray,
 #window,
+#custom-launch,
 #media,
 #load,
 #status,
@@ -69,6 +70,7 @@
 #language,
 #tray > *:not(menu),
 #window,
+#custom-launch,
 #submap,
 #temperature,
 #cpu,
@@ -107,6 +109,7 @@
 
 /* Actionable hovers */
 button:hover,
+#custom-launch:hover,
 #power-profiles-daemon:hover,
 #custom-tlp:hover,
 #idle_inhibitor:hover,
@@ -329,6 +332,11 @@ button.urgent,
 
 /* ==== Window ==== */
 /* #window { color: @rosewater; } */
+
+/* ==== Launch ==== */
+#custom-launch {
+    padding: 0 0.55rem;
+}
 
 /* ==== Media ==== */
 #mpris {

@@ -18,6 +18,7 @@
     "modules-center": [
         "tray",
         "hyprland/workspaces",
+        "custom/launch",
     ],
     "modules-right": [
         "group/load",
@@ -64,6 +65,15 @@
     //     },
     //     "separate-outputs": true
     // },
+
+    // ==== Custom Launch Button ====
+    // https://github.com/Alexays/Waybar/wiki/Module:-Custom
+    "custom/launch": {
+        // "format": "󱓞",
+        "format": "󱗼 ", // Has Hair Space " "
+        "tooltip-format": "Launch Application Menu",
+        "on-click": "uwsm-app fuzzel"
+    },
 
     // https://github.com/Alexays/Waybar/wiki/Module:-Group
     // Time and Battery
