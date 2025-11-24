@@ -67,25 +67,23 @@
     # ---- Commits and stashes ----
 
     # Taken: `co` and `c-` for `checkout`, `cp` for `cherry-pick`
+    commit-a = "!git add -A; git commit"
     c    = commit
-    cm   = commit -m
-    cmp  = "!cmp()  { git commit -m \"$@\"; git push; }; cmp"
-    cc   = "!cc()   { git add -A; git commit; }; cc"
-    ccm  = "!ccm()  { git add -A; git commit -m \"$@\"; }; ccm"
-    ccmp = "!ccmp() { git add -A; git commit -m \"$@\"; git push; }; ccmp"
-    ca   = commit --amend
-    cane = commit --amend --no-edit
+    cc   = commit-a
+    cm   = commit   -m
+    ccm  = commit-a -m
+    ca   = commit   --amend
+    cca  = commit-a --amend
+    cane = commit   --amend --no-edit
+    ccane= commit-a --amend --no-edit
     # Fixup
-    cf   = "commit --fixup"
-    cff  = "!git commit --fixup $(git li 'Select commit to fixup')"
-    ccf  = "!ccf() { \
-        git add -A; \
-        git commit --fixup \"$@\"; \
-    }; ccf"
-    ccff = "!ccff() { \
-        git add -A; \
-        git commit --fixup $(git li 'Select commit to fixup'); \
-    }; ccff"
+    cf   = commit   --fixup
+    ccf  = commit-a --fixup
+    cff  = "!git commit   --fixup $(git li 'Select commit to fixup')"
+    ccff = "!git commit-a --fixup $(git li 'Select commit to fixup')"
+    # Commit and push
+    cmp  = "!cmp()  { git commit   -m \"$@\"; git push; }; cmp"
+    ccmp = "!ccmp() { git commit-a -m \"$@\"; git push; }; ccmp"
 
     st   = stash
     stm  = stash -m
