@@ -30,3 +30,5 @@ export OPENAI_CONFIG_HOME=$XDG_CONFIG_HOME/chatgpt-cli
 export OPENAI_DATA_HOME=$XDG_DATA_HOME/chatgpt-cli
 
 export GHDL=/usr/local/bin/ghdl
+
+export LIBVIRT_DEFAULT_URI=qemu:///system

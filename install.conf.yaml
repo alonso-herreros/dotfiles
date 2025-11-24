@@ -31,7 +31,8 @@
     ~/.config/sc-im: config/sc-im
     ~/.config/X11: config/X11
     ~/.config/uwsm: config/uwsm
-    
+    ~/.config/winapps: config/winapps
+
     # I wish this fucker kept its history out of the config directory
     ~/.config/qalculate/qalc.cfg: config/qalculate/qalc.cfg
     # ... and its definitions, which I want to track, IN the config directory!
