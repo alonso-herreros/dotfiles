@@ -55,7 +55,7 @@
     aa   = add -A
     ap   = add --patch
 
-    # Taken: `rb` for `rebase`, `rv` and `ra` for `remote`
+    # Taken: `rb` for `rebase`, `re` for `remote`
     r    = restore
     rr   = restore .
     rp   = restore --patch
