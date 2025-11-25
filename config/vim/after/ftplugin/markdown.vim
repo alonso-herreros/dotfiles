@@ -9,7 +9,7 @@ set formatoptions+=ron
 " ==== Custom text objects ====
 
 " ---- Code Block Text Object ----
-function! s:SelectInnerCodeBlock()
+function! s:SelectACodeBlock()
     function! IsFence()
         return getline('.') =~ '^```'
     endfunction
@@ -42,21 +42,20 @@ function! s:SelectInnerCodeBlock()
 
     if IsClosingFence()
         call search('^```', 'Wbs')
-        normal +
-        normal V''k
+        normal V''
         return 1
     endif
 
     " Implicitly return 0
 endfunction
 
-function! s:SelectACodeBlock()
-    if s:SelectInnerCodeBlock()
-        normal okoj
+function! s:SelectInnerCodeBlock()
+    if s:SelectACodeBlock()
+        normal o+o-
     endif
 endfunction
 
-xnoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
-onoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
 xnoremap <buffer> <silent> ac :<C-u>call <SID>SelectACodeBlock()<CR>
 onoremap <buffer> <silent> ac :<C-u>call <SID>SelectACodeBlock()<CR>
+xnoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
+onoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
