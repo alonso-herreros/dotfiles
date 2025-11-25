@@ -10,37 +10,24 @@ set formatoptions+=ron
 
 " ---- Code Block Text Object ----
 function! s:SelectACodeBlock()
-    function! IsFence()
-        return getline('.') =~ '^```'
-    endfunction
+    let IsFence         = { x -> getline(x) =~ '^```' }
+    let FencesUpTo      = { x -> getline(1,x)->filter("v:val=~'^```'")->len() }
+    let IsOpeningFence  = { x -> IsFence(x) && FencesUpTo(x) % 2 == 1 }
+    let IsClosingFence  = { x -> IsFence(x) && FencesUpTo(x) % 2 == 0 }
+    let SynIDName       = { x -> synID(line(x),col(x), 0)->synIDattr('name') }
+    let IsBetweenFences = { x -> SynIDName(x) =~? 'markdownCodeBlock' }
 
-    function! FencesAfterLine(line)
-        return getline(line(a:line),'$')->filter({ _, v -> v =~ '^```'})->len()
-    endfunction
-
-    function! IsOpeningFence()
-        return IsFence() && FencesBeforeLine('.') % 2 == 0
-    endfunction
-
-    function! IsClosingFence()
-        return IsFence() && FencesBeforeLine('.') % 2 == 1
-    endfunction
-
-    function! IsBetweenFences()
-        return synID(line("."), col("."), 0)->synIDattr('name') =~? 'markdownCodeBlock'
-    endfunction
-
-    if !IsBetweenFences()
+    if !IsBetweenFences('.')
         " Move to the opening fence
         call search('^```', 'W')
     endif
 
-    if IsOpeningFence() || IsBetweenFences()
+    if IsOpeningFence('.') || IsBetweenFences('.')
         " Move to the closing fence
         call search('^```', 'W')
     endif
 
-    if IsClosingFence()
+    if IsClosingFence('.')
         call search('^```', 'Wbs')
         normal V''
         return 1
