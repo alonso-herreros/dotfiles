@@ -74,19 +74,24 @@ function! s:SelectASection()
 
     " Move to the start of the section and start visual line mode
     execute l:current_line
+    normal V
 
-    " Move to end of paragraph before the next heading of same or higher level
-    if !search('\n\+#\{1,' . l:current_level . '}\s', 'Ws')
+    " Move to line before the next heading of same or higher level
+    if search('^#\{1,' . l:current_level . '}\s', 'W')
+        normal -
+    else
         normal G
     endif
-    normal V''
 
     return 1
 endfunction
 
 function! s:SelectInnerSection()
     if s:SelectASection()
+        normal o
         call search('^.', 'W')
+        normal o
+        call search ('.', 'Wb')
     endif
 endfunction
 
