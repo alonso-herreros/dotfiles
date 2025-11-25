@@ -46,3 +46,51 @@ xnoremap <buffer> <silent> ac :<C-u>call <SID>SelectACodeBlock()<CR>
 onoremap <buffer> <silent> ac :<C-u>call <SID>SelectACodeBlock()<CR>
 xnoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
 onoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
+
+
+" ---- Heading section text object ----
+" Selects content under the current heading, up to the next heading of the
+" same or higher level
+
+function! s:SelectASection()
+    let l:current_line = line('.')
+    let l:current_level = 0
+
+    let IsHeading = { x -> getline(x) =~# '^#\+\s' }
+    " -1 if not a heading
+    let HeadingLevel = { x -> getline(x)->matchstr('^#\+\s')->len() - 1 }
+
+    " Determine current heading level
+    let l:current_line = line('.')
+    while !IsHeading(l:current_line) && l:current_line > 0
+        let l:current_line -= 1
+    endwhile
+    let l:current_level = HeadingLevel(l:current_line)
+
+    " If not inside a heading section
+    if l:current_level < 0
+        return
+    endif
+
+    " Move to the start of the section and start visual line mode
+    execute l:current_line
+
+    " Move to end of paragraph before the next heading of same or higher level
+    if !search('\n\+#\{1,' . l:current_level . '}\s', 'Ws')
+        normal G
+    endif
+    normal V''
+
+    return 1
+endfunction
+
+function! s:SelectInnerSection()
+    if s:SelectASection()
+        call search('^.', 'W')
+    endif
+endfunction
+
+xnoremap <buffer> <silent> ah :<C-u>call <SID>SelectASection()<CR>
+onoremap <buffer> <silent> ah :<C-u>call <SID>SelectASection()<CR>
+xnoremap <buffer> <silent> ih :<C-u>call <SID>SelectInnerSection()<CR>
+onoremap <buffer> <silent> ih :<C-u>call <SID>SelectInnerSection()<CR>
