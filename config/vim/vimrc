@@ -566,6 +566,13 @@ nmap <Leader>z :wq<CR>
 nmap <Leader>Z :wqa<CR>
 nmap <Leader>x :confirm bd<CR>
 nmap <Leader>X :confirm tabc<CR>
+" Navigate quickfix/location lists
+nmap ]q <cmd>cnext<CR>
+nmap [q <cmd>cprev<CR>
+nmap ]Q <cmd>cnfile<CR>
+nmap [Q <cmd>cpfile<CR>
+nmap ]l <cmd>lnext<CR>
+nmap [l <cmd>lprev<CR>
 " Inspect character
 nnoremap gi ga
 nnoremap g? ga
