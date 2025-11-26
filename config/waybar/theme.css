@@ -1,0 +1,71 @@
+@import       "macchiato.css";
+
+@define-color burgundy                #800020;
+
+/* Basics and surfaces */
+@define-color background              transparent;
+@define-color surface-lowest          @mantle;
+@define-color surface-low             @base;
+@define-color surface                 @surface0;
+@define-color surface-high            @surface1;
+@define-color surface-highest         @surface2;
+@define-color surface-raised          @overlay1;
+@define-color on-surface              @text;
+@define-color on-surface-dim          @overlay2;
+
+@define-color outline                 @overlay1;
+@define-color outline-variant         @overlay0;
+
+/* Primary and Secondary */
+@define-color primary                 @teal;
+@define-color on-primary              @base;
+@define-color primary-surface         @teal;
+@define-color on-primary-surface      @base;
+
+@define-color secondary               @mauve;
+@define-color on-secondary            @base;
+@define-color secondary-surface       @mauve;
+@define-color on-secondary-surface    @base;
+
+/* Functional */
+@define-color warning                 @peach;
+@define-color on-warning              @base;
+@define-color warning-surface         @peach;
+@define-color on-warning-surface      @base;
+
+@define-color error                   @red;
+@define-color on-error                @base;
+@define-color error-surface           @red;
+@define-color on-error-surface        @base;
+
+@define-color range-worst             @red;
+@define-color range-bad               @peach;
+@define-color range-medium            @yellow;
+@define-color range-good              @green;
+@define-color range-best              @teal;
+@define-color on-range-worst          @base;
+@define-color on-range-bad            @base;
+@define-color on-range-medium         @base;
+@define-color on-range-good           @base;
+@define-color on-range-best           @base;
+
+@define-color range-worst-surface     @red;
+@define-color range-bad-surface       @peach;
+@define-color range-medium-surface    @yellow;
+@define-color range-good-surface      @green;
+@define-color range-best-surface      @teal;
+@define-color on-range-worst-surface  @base;
+@define-color on-range-bad-surface    @base;
+@define-color on-range-medium-surface @base;
+@define-color on-range-good-surface   @base;
+@define-color on-range-best-surface   @base;
+
+@define-color temp-low                @blue;
+@define-color temp-medium             @yellow;
+@define-color temp-high               @red;
+
+
+@define-color power                   @sapphire;
+@define-color on-power                @base;
+@define-color power-surface           @sapphire;
+@define-color on-power-surface        @base;
