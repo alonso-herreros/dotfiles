@@ -53,30 +53,12 @@ onoremap <buffer> <silent> ic :<C-u>call <SID>SelectInnerCodeBlock()<CR>
 " same or higher level
 
 function! s:SelectASection()
-    let l:current_line = line('.')
-    let l:current_level = 0
+    " Find last heading before cursor or return
+    if !search('^#\{1,5\}\s', 'Wbc') | return | endif
+    let l:current_level = getline('.')->matchstr('^#\{1,5\}\s')->len() - 1
 
-    let IsHeading = { x -> getline(x) =~# '^#\+\s' }
-    " -1 if not a heading
-    let HeadingLevel = { x -> getline(x)->matchstr('^#\+\s')->len() - 1 }
-
-    " Determine current heading level
-    let l:current_line = line('.')
-    while !IsHeading(l:current_line) && l:current_line > 0
-        let l:current_line -= 1
-    endwhile
-    let l:current_level = HeadingLevel(l:current_line)
-
-    " If not inside a heading section
-    if l:current_level < 0
-        return
-    endif
-
-    " Move to the start of the section and start visual line mode
-    execute l:current_line
+    " Select up to to line before the next heading of same or higher level
     normal V
-
-    " Move to line before the next heading of same or higher level
     if search('^#\{1,' . l:current_level . '}\s', 'W')
         normal -
     else
