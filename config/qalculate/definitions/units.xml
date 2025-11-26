@@ -70,4 +70,11 @@
       </base>
     </unit>
   </category>
+  <category>
+    <title>Population</title>
+    <unit type="base">
+      <title>Person</title>
+      <names>r:person,p:people</names>
+    </unit>
+  </category>
 </QALCULATE>
