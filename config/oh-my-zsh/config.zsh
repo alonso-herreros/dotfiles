@@ -20,6 +20,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # ===== Options =====
 
+# Auto update Oh My Zsh
+DISABLE_UPDATE_PROMPT=true
+
 # Use case-sensitive completion.
 CASE_SENSITIVE="false"
 
