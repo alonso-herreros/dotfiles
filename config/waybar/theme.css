@@ -11,7 +11,8 @@
 @define-color surface-highest         @surface2;
 @define-color surface-light           @overlay1;
 @define-color on-surface              @text;
-@define-color on-surface-dim          @overlay2;
+@define-color on-surface-dim          @overlay1;
+@define-color on-surface-bright       shade(@text, 1.1);
 
 @define-color outline                 @overlay1;
 @define-color outline-variant         @overlay0;
