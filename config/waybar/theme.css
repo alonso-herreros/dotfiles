@@ -9,7 +9,7 @@
 @define-color surface                 @surface0;
 @define-color surface-high            @surface1;
 @define-color surface-highest         @surface2;
-@define-color surface-raised          @overlay1;
+@define-color surface-light           @overlay1;
 @define-color on-surface              @text;
 @define-color on-surface-dim          @overlay2;
 

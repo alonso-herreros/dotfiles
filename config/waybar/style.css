@@ -202,7 +202,7 @@ button.urgent,
 
 #battery {
     margin: 0;
-    background-color: @surface-highest;
+    background-color: @surface-light;
     background-repeat: no-repeat;
     color: @on-range-good;
     background-image: linear-gradient(@range-good, @range-good);
