@@ -4,12 +4,12 @@
 
 /* Basics and surfaces */
 @define-color background              transparent;
-@define-color surface-lowest          @mantle;
-@define-color surface-low             @base;
-@define-color surface                 @surface0;
-@define-color surface-high            @surface1;
-@define-color surface-highest         @surface2;
-@define-color surface-light           @overlay1;
+@define-color surface-lowest          alpha(@mantle, 0.4);
+@define-color surface-low             alpha(@base, 0.4);
+@define-color surface                 alpha(@surface0, 0.4);
+@define-color surface-high            alpha(@surface1, 0.4);
+@define-color surface-highest         alpha(@surface2, 0.4);
+@define-color surface-light           alpha(@overlay1, 0.4);
 @define-color on-surface              @text;
 @define-color on-surface-dim          @overlay1;
 @define-color on-surface-bright       shade(@text, 1.1);
@@ -28,23 +28,23 @@
 /* Primary and Secondary */
 @define-color primary                 @teal;
 @define-color on-primary              @base;
-@define-color primary-surface         @teal;
+@define-color primary-surface         alpha(@teal, 0.9);
 @define-color on-primary-surface      @base;
 
 @define-color secondary               @mauve;
 @define-color on-secondary            @base;
-@define-color secondary-surface       @mauve;
+@define-color secondary-surface       alpha(@mauve, 0.9);
 @define-color on-secondary-surface    @base;
 
 /* Functional */
 @define-color warning                 @peach;
 @define-color on-warning              @base;
-@define-color warning-surface         @peach;
+@define-color warning-surface         alpha(@peach, 0.9);
 @define-color on-warning-surface      @base;
 
 @define-color error                   @red;
 @define-color on-error                @base;
-@define-color error-surface           @red;
+@define-color error-surface           alpha(@red, 0.9);
 @define-color on-error-surface        @base;
 
 @define-color range-worst             @red;
@@ -58,11 +58,11 @@
 @define-color on-range-good           @base;
 @define-color on-range-best           @base;
 
-@define-color range-worst-surface     @red;
-@define-color range-bad-surface       @peach;
-@define-color range-medium-surface    @yellow;
-@define-color range-good-surface      @green;
-@define-color range-best-surface      @teal;
+@define-color range-worst-surface     alpha(@red, 0.8);
+@define-color range-bad-surface       alpha(@peach, 0.8);
+@define-color range-medium-surface    alpha(@yellow, 0.8);
+@define-color range-good-surface      alpha(@green, 0.8);
+@define-color range-best-surface      alpha(@teal, 0.8);
 @define-color on-range-worst-surface  @base;
 @define-color on-range-bad-surface    @base;
 @define-color on-range-medium-surface @base;
@@ -76,5 +76,5 @@
 
 @define-color power                   @sapphire;
 @define-color on-power                @base;
-@define-color power-surface           @sapphire;
+@define-color power-surface           alpha(@sapphire, 0.7);
 @define-color on-power-surface        @base;
