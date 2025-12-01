@@ -171,6 +171,7 @@ button:hover,
 
 /* Activated */
 button.active,
+#tray > .active,
 #custom-tlp.manual,
 #idle_inhibitor.activated {
     background: @surface-high;
@@ -180,6 +181,7 @@ button.active,
 }
 
 /* Disabled */
+#tray > .passive,
 #workspaces button:not(.hosting-monitor),
 #mpris.track.paused,
 #custom-shuffle.Off,
