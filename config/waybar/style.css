@@ -60,7 +60,7 @@ tooltip.background {
     border-radius: 100px;
     margin: 2px 3px;
     box-shadow:
-        inset 0.5px 1.2px 1.5px -0.7px @light-medium,
+        inset 0.5px 1.2px 1.5px -0.9px @light-medium,
               0.4px 0.7px 1.0px  0     @shadow-medium;
 }
 
@@ -147,10 +147,11 @@ button:hover,
 #custom-poweroff:hover,
 #custom-hibernate:hover,
 #custom-restart:hover {
-    background: @surface-highest;
+    background: @surface-high;
+    color: @on-surface-bright;
     box-shadow:
-             -0.4px -0.7px 1.0px 0   @light-low,
-              0.4px  0.7px 1.0px 0   @shadow-medium;
+        inset 0.5px 1.2px 1.5px -1.0px @light-high,
+              0.4px 0.7px 1.0px  0     @shadow-high;
 }
 
 /* Non-actionable hovers */
@@ -162,10 +163,10 @@ button:hover,
 #load-mem:hover,
 #network-group:hover,
 #clock:hover {
-    background: @surface-high;
+    background: @surface;
     box-shadow:
-        inset  0.5px  1.2px 1.5px -0.7px @shadow-low,
-        inset -0.5px -1.2px 1.5px -0.7px @light-low;
+        inset 0.5px 1.2px 1.5px -0.7px @light-high,
+              0.4px 0.7px 1.0px  0     @shadow-high;
 }
 
 /* Activated */
@@ -174,8 +175,8 @@ button.active,
 #idle_inhibitor.activated {
     background: @surface-high;
     box-shadow:
-        inset 0.5px 1.2px 1.5px -0.7px @shadow-low,
-              0.4px 0.7px 1.0px  0.0px @light-low;
+        inset 0.5px 1.2px 1.5px -0.9px @light-high,
+              0.4px 0.7px 1.0px  0     @shadow-high;
 }
 
 /* Disabled */
