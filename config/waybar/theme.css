@@ -16,6 +16,14 @@
 @define-color outline                 @overlay1;
 @define-color outline-variant         @overlay0;
 
+/* Shadows and overlays */
+@define-color shadow-low              rgba(0, 0, 0, 0.20);
+@define-color shadow-medium           rgba(0, 0, 0, 0.40);
+@define-color shadow-high             rgba(0, 0, 0, 0.60);
+@define-color light-low               rgba(255, 255, 255, 0.30);
+@define-color light-medium            rgba(255, 255, 255, 0.50);
+@define-color light-high              rgba(255, 255, 255, 0.60);
+
 /* Primary and Secondary */
 @define-color primary                 @teal;
 @define-color on-primary              @base;
