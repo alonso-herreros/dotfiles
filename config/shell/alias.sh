@@ -13,6 +13,7 @@ alias g='git'
 alias s='ssh'
 alias h='hyprctl'
 alias n='nnn'
+alias t='tmux'
 # alias y='yazi' # sourcing the yazi_quitcd script instead
 
 alias hg='history | grep'
