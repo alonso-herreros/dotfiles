@@ -77,4 +77,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [ya pkg upgrade]
   - [mkdir -p $XDG_STATE_HOME/clipse, Creating Clipse state directory]
