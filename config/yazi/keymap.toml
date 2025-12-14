@@ -50,8 +50,6 @@ keymap = [
 	{ on = "<Right>", run = "enter", desc = "Enter directory" },
 
 	{ on = "-", run = "back",    desc = "Go back to the previous directory" },
-	{ on = "H", run = "back",    desc = "Go back to the previous directory" },
-	{ on = "L", run = "forward", desc = "Go forward to the next directory" },
 
 	# ==== Following symlink ====
 	{ on = ["g", "f"], run = "follow" , desc = "Follow symlink" },
@@ -99,6 +97,8 @@ keymap = [
 	{ on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "O",         run = "shell ' \"$@\"' --block --interactive --cursor=0",               desc = "Open file(s) with command" },
+	{ on = "P",         run = "shell '$PAGER \"$@\"' --block ",               desc = "Open file(s) with pager" },
+	{ on = "E",         run = "shell '$EDITOR \"$@\"' --block ",               desc = "Open file(s) with editor" },
 	# { on = "<C-d>",     run = "shell 'dragon-drop -x -i -T -a \"$@\"'" },
 	{ on = "<C-d>",     run = "shell -- ripdrag -x -A -W 200 -H 100 \"$@\" &" },
 
@@ -115,7 +115,6 @@ keymap = [
 		"yank" ],                               desc = "Yank selected files" },
 	{ on = "x",        run = "yank --cut",      desc = "Cut selected files" },
 	{ on = "p",        run = "paste",           desc = "Paste yanked files" },
-	{ on = "P",        run = "paste --force",   desc = "Paste yanked files (overwrite if the destination exists)" },
 	{ on = ["@", "s"], run = "link",            desc = "Symlink yanked files" },
 	{ on = ["@", "r"], run = "link --relative", desc = "Symlink yanked files (relative)" },
 	{ on = ["@", "h"], run = "hardlink",        desc = "Hardlink yanked files" },
