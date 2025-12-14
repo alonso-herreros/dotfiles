@@ -50,6 +50,7 @@ edit = [
 ]
 
 view = [
+    { run = 'less "$1"',   desc = "Less",       for = "unix",    block = true },
     { run = 'vim -R "$1"', desc = "Vim (view)", for = "unix",    block = true},
     { run = 'vim -R "%1"', desc = "Vim (view)", for = "windows", block = true }
 ]
