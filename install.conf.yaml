@@ -13,6 +13,7 @@
     ~/.screenrc: screenrc
 
     ~/.config/git: config/git
+    ~/.config/tmux: config/tmux
     ~/.config/synth-shell: config/synth-shell
     ~/.config/kitty: config/kitty
     ~/.config/hypr: config/hypr
