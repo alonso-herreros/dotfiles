@@ -23,6 +23,7 @@ alias btctl='bluetoothctl'
 alias wlc='wl-copy'
 alias tf='terraform'
 alias sc='sc-im'
+alias trr='transmission-remote'
 
 alias svirsh='sudo virsh'
 alias sv='sudo virsh'
