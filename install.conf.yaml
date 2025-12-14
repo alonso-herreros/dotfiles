@@ -77,6 +77,6 @@
     ~/.ssh/config: private/.ssh/config
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
-  - [ya pkg upgrade]
+  - [git submodule update --init --recursive --remote .dotbot config scripts local sys, Installing submodules]
+  - [ya pkg upgrade, Updating yazi packages]
   - [mkdir -p $XDG_STATE_HOME/clipse, Creating Clipse state directory]
