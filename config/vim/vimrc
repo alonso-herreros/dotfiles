@@ -70,7 +70,7 @@ Plug 'jasonccox/vim-wayland-clipboard'   " Wayland clipboard in + and w regs
 Plug 'tpope/vim-fugitive'                " A git wrapper
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'github/copilot.vim'                " Shame on me, but it's useful
+" Plug 'github/copilot.vim'                " Shame on me, but it's useful
 
 " Languages
 " Plug 'sheerun/vim-polyglot'
