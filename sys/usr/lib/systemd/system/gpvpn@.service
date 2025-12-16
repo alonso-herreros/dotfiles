@@ -1,0 +1,14 @@
+[Unit]
+Description=GlobalProtect VPN client based on OpenConnect and Tauri
+Documentation=https://github.com/yuezk/GlobalProtect-openconnect
+PartOf=network.target
+After=network.target
+Requires=network.target
+
+[Service]
+EnvironmentFile=/etc/gpvpn/%i.env
+ExecStart=/bin/sh -c 'gpclient connect $GPCONNECT_OPTS $GPVPN_HOST --cookie-on-stdin < "$GPVPN_COOKIE_FIFO"'
+Restart=always
+
+[Install]
+WantedBy=network-online.target
