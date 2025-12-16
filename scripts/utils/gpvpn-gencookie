@@ -1,0 +1,37 @@
+#!/usr/bin/env sh
+
+GPVPN_CONF_DIR="${GPVPN_CONF_DIR:-/etc/gpvpn}"
+GPVPN_GROUP="gpvpn"
+
+case "$1" in '' | -h | --help )
+    cat <<EOF
+Usage: $0 <config>
+
+ARGUMENTS
+    config          Name of the config to use. A file '<config>.env' or
+                    '<config>' is loaded from '$GPVPN_CONF_DIR'.
+
+NOTES
+    The user should be a member of the 'gpvpn' group.
+EOF
+    [ -z "$1" ] && exit 1 || exit 0
+    ;;
+esac
+
+CONF_NAME="$1"
+shift
+
+if . "$GPVPN_CONF_DIR/$CONF_NAME.env" || . "$GPVPN_CONF_DIR/$CONF_NAME"; then :; else
+    echo "fatal: Can't find config '$CONF_NAME' or '$CONF_NAME.env' in '$GPVPN_CONF_DIR'" >&2
+    exit 1
+fi
+
+if [ ! -w "$GPVPN_COOKIE_FIFO" ]; then
+    echo "warn: Can't write to fifo at '$GPVPN_COOKIE_FIFO'. Trying to fix." >&2
+    sudo mkfifo "$GPVPN_COOKIE_FIFO"
+    sudo chown root:$GPVPN_GROUP "$GPVPN_COOKIE_FIFO"
+    sudo chmod 620 "$GPVPN_COOKIE_FIFO"
+    test -w "$GPVPN_COOKIE_FIFO" || exit 1
+fi
+
+gpauth $GPAUTH_OPTS "$GPVPN_HOST" --browser default "$@" | tee "$GPVPN_COOKIE_FIFO" >/dev/null
