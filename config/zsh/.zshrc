@@ -61,8 +61,9 @@ fi
 [ -f "$XDG_CONFIG_HOME/shell/alias.sh" ] && source "$XDG_CONFIG_HOME/shell/alias.sh"
 
 
-# ===== Disable globbing in some cases =====
-alias git='noglob git'  # Disable globbing for git commands
+# ===== Selectively disable globbing =====
+alias git='noglob git'
+alias find='noglob find'
 
 
 # ===== Docker =====
