@@ -226,7 +226,7 @@
     # Helper for branch selection: fzf --ansi | sed 's/.* //;s#remotes/origin/##'
     fzfb = "!gfzfb() { \
         fzf \
-            --ansi \
+            --multi --ansi \
             --layout=reverse-list \
             --header=\"${1:-Browse branches}\" \
             --preview='git log --all --graph --oneline --color=always | \
