@@ -3,7 +3,7 @@
 install-all() {
     dir="$1"
     prefix="$2"
-    sudo find "$dir" -type f ! -exec diff -u --color=always "/{}" "{}" \; -ok install -Dm644 "{}" -T "$prefix/{}" \;
+    sudo find -L "$dir" -type f ! -exec diff -u --color=always "/{}" "{}" \; -ok install -Dm644 "{}" -T "$prefix/{}" \;
 }
 
 install-all etc
