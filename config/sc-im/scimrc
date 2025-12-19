@@ -4,14 +4,15 @@
 set autocalc
 set numeric=1
 set numeric_zero=0
-set numeric_decimal=0
+set numeric_decimal=1
 
 set overlap
 set truncate
 
-set newline_action=j
-set command_timeout=1000
+set newline_action=0
+set command_timeout=2000
 set ignorecase
+set input_bar_bottom
 
 set xlsx_readformulas
 
@@ -23,15 +24,21 @@ nnoremap "L" "$"
 nnoremap "J" "#"
 nnoremap "K" "^"
 
+# Inserting cell contents
+nnoremap "i" "<"
+nnoremap "a" "EA"
+nnoremap "C" "<"
+nnoremap "cc" "drir<"
+
 # Creating/opening rows/columns
-nnoremap "o" "or"
-nnoremap "O" "kor"
-nnoremap "A" "oc"
-nnoremap "I" "hoc"
-nnoremap "<Space>o" "ir"
-nnoremap "<Space>O" "kir"
+nnoremap "o" "orj="
+nnoremap "O" "ir="
+nnoremap "A" "oc="
+nnoremap "I" "ic="
+nnoremap "<Space>o" "or"
+nnoremap "<Space>O" "ir"
+nnoremap "<Space>A" "oc"
 nnoremap "<Space>I" "ic"
-nnoremap "<Space>A" "hic"
 
 nmap "g-" "gl"
 
