@@ -7,5 +7,5 @@ Comment=Bluetooth Control Command Line Tool
 TryExec=bluetoothctl
 StartupNotify=true
 StartupWMClass=term-mgmt.bluetooth
-Exec=uwsm-app -T --app-id=term-mgmt.bluetooth bluetoothctl
+Exec=uwsm-app -T --app-id=term-mgmt.bluetooth -- sh -c "rfkill unblock bluetooth; bluetoothctl"
 Categories=System;Utility;
