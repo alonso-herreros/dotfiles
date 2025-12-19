@@ -10,7 +10,7 @@
     ~/.zshrc: config/zsh/.zshrc
     # ~/.vim: vim
     ~/.vimrc: config/vim/vimrc
-    ~/.screenrc: screenrc
+    ~/.screenrc: config/screen/screenrc
 
     ~/.config/git: config/git
     ~/.config/tmux: config/tmux
