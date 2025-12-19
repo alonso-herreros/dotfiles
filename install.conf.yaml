@@ -6,7 +6,7 @@
 - clean: ['~']
 
 - link:
-    ~/.bashrc: bashrc
+    ~/.bashrc: config/bash/bashrc
     ~/.zshrc: config/zsh/.zshrc
     # ~/.vim: vim
     ~/.vimrc: config/vim/vimrc
