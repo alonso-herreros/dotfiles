@@ -94,8 +94,7 @@
         },
         "modules": [
             "battery",
-            // "power-profiles-daemon",
-            "custom/tlp",
+            "power-profiles-daemon",
             "idle_inhibitor"
         ]
     },
@@ -126,23 +125,6 @@
             "balanced": " ",
             "power-saver": " "
         }
-    },
-
-    // ---- Custom TLP ----
-    // https://github.com/Alexays/Waybar/wiki/Module:-Custom
-    "custom/tlp": {
-        "format": "{icon}",
-        "format-icons": {
-            "battery": " ",
-            "AC": "  "
-        },
-        "exec": "~/.config/waybar/scripts/tlp-ctl.sh get --json",
-        "exec-on-event": true,
-        "return-type": "json",
-        // We need to run every now and then in case there are outside changes.
-        "interval": 20,
-        "on-click": "~/.config/waybar/scripts/tlp-ctl.sh toggle",
-        "on-click-right": "~/.config/waybar/scripts/tlp-ctl.sh set auto"
     },
 
     // ---- Idle Inhibitor ----
