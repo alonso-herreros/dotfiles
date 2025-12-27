@@ -223,7 +223,7 @@
         paste -s; \
     }; gfzfc"
 
-    # Helper for branch selection: fzf --ansi | sed 's/.* //;s#remotes/origin/##'
+    # Helper for branch selection
     fzfb = "!gfzfb() { \
         fzf \
             --multi --ansi \
