@@ -28,9 +28,13 @@ fi
 
 if [ ! -w "$GPVPN_COOKIE_FIFO" ]; then
     echo "warn: Can't write to fifo at '$GPVPN_COOKIE_FIFO'. Trying to fix." >&2
-    sudo mkfifo "$GPVPN_COOKIE_FIFO"
-    sudo chown root:$GPVPN_GROUP "$GPVPN_COOKIE_FIFO"
-    sudo chmod 620 "$GPVPN_COOKIE_FIFO"
+    GPVPN_COOKIE_DIR="$(dirname "$GPVPN_COOKIE_FIFO")"
+    sudo bash <<-EOF
+        mkdir -p "$GPVPN_COOKIE_DIR"
+        mkfifo "$GPVPN_COOKIE_FIFO"
+        chown root:$GPVPN_GROUP "$GPVPN_COOKIE_DIR" -R
+        chmod 620 "$GPVPN_COOKIE_FIFO"
+	EOF
     test -w "$GPVPN_COOKIE_FIFO" || exit 1
 fi
 
