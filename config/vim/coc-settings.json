@@ -27,9 +27,9 @@
             "code_blocks": false,
             "stern": true
         },
-        "MD022": {                                 // Blanks around headers
+        "MD022": {                                 // Blanks around headings
             "lines_above": [1, 3, 2, 1, 1, 1],
-            "lines_below": [2, 1, 1, 0, 0, 0]
+            "lines_below": [1, 1, 1, 0, 0, 0]
         },
         // "MD024": {"siblings_only": true}, // No duplicate heading
         "MD025": {"front_matter_title": ""}, // Single H1
