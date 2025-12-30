@@ -13,6 +13,11 @@
         "ghdl": {
             "command": "ghdl-ls",
             "filetypes": [ "vhdl" ]
+        },
+        "typst": {
+            "command": "tinymist",
+            "args": [ "lsp" ],
+            "filetypes": [ "typst" ]
         }
     },
 
