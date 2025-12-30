@@ -24,7 +24,6 @@ call plug#begin()
 " Misc
 Plug 'tpope/vim-repeat'        " Repeat (most) plugin actions with .
 Plug 'tpope/vim-abolish'       " Describe word variants (+Subvert command)
-Plug 'preservim/NERDTree'
 Plug 'tpope/vim-sleuth'        " Detect tab styles
 
 " Moving / selecting
@@ -45,22 +44,16 @@ Plug 'sirver/UltiSnips'        " Snippets
 Plug 'tpope/vim-surround'      " Delete/change/add parentheses/quotes/tags/etc
 Plug 'tpope/vim-commentary'    " Comments
 Plug 'junegunn/vim-easy-align'
-" Plug 'godlygeek/tabular'     " Text filtering and alignment
 Plug 'tommcdo/vim-exchange'    " Exchange text objects
 
 " Display
 Plug 'vim-airline/vim-airline' " Status & tabline
 Plug 'kshenoy/vim-signature'   " Toggle, display and navigate marks
 Plug 'wellle/context.vim'      " Shows the current line context
-Plug 'junegunn/vim-peekaboo'   " See registers
 Plug 'chrisbra/Colorizer'      " Show colors described by hex codes
-let g:qs_enable=0
-Plug 'unblevable/quick-scope'  " Highlights a unique character in every word
 
 " Appearance
 Plug 'tomasiser/vim-code-dark'           " VSCode dark theme (sort of)
-Plug 'jeffkreeftmeijer/vim-numbertoggle' " Autoset line number mode
-" Plug 'obcat/vim-sclow'                   " Text-based scrollbar
 Plug 'preservim/vim-indent-guides'       " Visually displaying indent levels
 Plug 'junegunn/rainbow_parentheses.vim'
 
@@ -68,8 +61,6 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'            " Git status in the gutter
 Plug 'jasonccox/vim-wayland-clipboard'   " Wayland clipboard in + and w regs
 Plug 'tpope/vim-fugitive'                " A git wrapper
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
 " Plug 'github/copilot.vim'                " Shame on me, but it's useful
 
 " Languages
