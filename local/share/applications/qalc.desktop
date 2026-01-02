@@ -14,4 +14,5 @@ Actions=Float;
 
 [Desktop Action Float]
 Name=Floating Window
+Terminal=false
 Exec=uwsm-app -T --app-id=term-float -- qalc %F
