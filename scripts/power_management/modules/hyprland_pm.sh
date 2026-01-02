@@ -35,6 +35,7 @@ VARS_SAVING=(
     ["decoration:inactive_opacity"]="1.0"
     ["decoration:blur:enabled"]="false"
     ["decoration:shadow:enabled"]="false"
+    ["group:groupbar:blur"]="false"
     ["misc:vfr"]="true"
 )
 # Default values SHOULD be saved before enabling power management options and
