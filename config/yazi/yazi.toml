@@ -14,7 +14,7 @@ linemode       = "none"
 show_hidden    = false
 show_symlink   = false
 scrolloff      = 4
-mouse_events   = [ "click", "scroll", "move", "drag" ]
+mouse_events   = [ "click", "scroll", "touch", "move", "drag" ]
 title_format   = "Yazi: {cwd}"
 
 [preview]
@@ -26,66 +26,71 @@ cache_dir       = ""
 image_delay     = 30
 image_filter    = "nearest"
 image_quality   = 75
-sixel_fraction  = 15
 ueberzug_scale  = 1
 ueberzug_offset = [ 0, 0, 0, 0 ]
 
 [opener]
 
 open = [
-    { run = 'xdg-open "$1"', desc = "Open (XDG)",      for = "linux", orphan = true },
-    { run = 'open "$@"',     desc = "Open",            for = "macos" },
-    { run = 'start "" "%1"', desc = "Open",            for = "windows", orphan = true },
-
+    { run = "xdg-open %s1",    desc = "Open", for = "linux", orphan = true },
+    { run = "open %s",         desc = "Open", for = "macos" },
+    { run = 'start "" %s1',    desc = "Open", for = "windows", orphan = true },
+    { run = "termux-open %s1", desc = "Open", for = "android" },
     { run = 'code "$@"',   desc = "Code",       for = "unix" },
     { run = 'code "%@"',   desc = "Code",       for = "windows" }
 ]
 
 edit = [
-    { run = '${EDITOR:-vi} "$@"', desc = "Use $EDITOR", for = "unix",    block = true },
-    { run = 'vim "$1"',           desc = "Vim",         for = "unix",    block = true },
-    { run = 'vim "%1"',           desc = "Vim",         for = "windows", block = true },
-    { run = 'code "$@"',          desc = "Code",        for = "unix",    orphan = true },
-    { run = 'code %*',            desc = "Code",        for = "windows", orphan = true }
+    { run = "${EDITOR:-vi} %s", desc = "$EDITOR",      for = "unix", block = true },
+    { run = "vim %s",           desc = "Vim",          block = true },
+    { run = "code %s",          desc = "Code",         orphan = true },
 ]
 
 view = [
-    { run = 'less "$1"',   desc = "Less",       for = "unix",    block = true },
-    { run = 'vim -R "$1"', desc = "Vim (view)", for = "unix",    block = true},
-    { run = 'vim -R "%1"', desc = "Vim (view)", for = "windows", block = true }
+    { run = "less %s",   desc = "Less",       for = "unix",    block = true },
+    { run = "vim -R %s", desc = "Vim (view)", block = true},
 ]
 
 reveal = [
-    { run = 'xdg-open "$(dirname "$1")"',           desc = "Reveal", for = "linux" },
-    { run = 'open -R "$1"',                         desc = "Reveal", for = "macos" },
-    { run = 'explorer /select,"%1"', orphan = true, desc = "Reveal", for = "windows" },
-    { run = '''exiftool "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show EXIF", for = "unix" },
+    { run = "xdg-open %d1",         desc = "Reveal", for = "linux" },
+    { run = "open -R %s1",          desc = "Reveal", for = "macos" },
+    { run = "explorer /select,%s1", desc = "Reveal", for = "windows", orphan = true },
+    { run = "termux-open %d1",      desc = "Reveal", for = "android" },
+    { run = "clear; exiftool %s1; echo 'Press enter to exit'; read _", desc = "Show EXIF", for = "unix", block = true },
 ]
 
 extract = [
-    { run = 'ya pub extract --list "$@"', desc = "Extract here", for = "unix" },
-    { run = 'ya pub extract --list %*',   desc = "Extract here", for = "windows" },
+    { run = "ya pub extract --list %s", desc = "Extract here" },
 ]
 
 play = [
-    { run = 'mpv --force-window "$@"', orphan = true, for = "unix" },
-    { run = 'mpv --force-window %*', orphan = true, for = "windows" },
-    { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
+    { run = "xdg-open %s1",                desc = "Play", for = "linux" },
+    { run = "open %s",                     desc = "Play", for = "macos" },
+    { run = 'start "" %s1', orphan = true, desc = "Play", for = "windows" },
+    { run = "termux-open %s1",             desc = "Play", for = "android" },
+    { run = "mpv --force-window %s",       desc = "MPV",  orphan = true },
+    { run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },
+    { run = "mediainfo %s1 & pause", block = true, desc = "Show media info", for = "windows" },
 ]
 
 pdf = [
-    { run = 'okular "$@" &', desc = "Open with Okular", for = "linux", "orphan" = true },
-    { run = 'qpdf --empty --pages "$@" -- merged.pdf', desc = "Merge PDFs", for = "linux", orphan = true },
-    { run = 'zathura --fork "$@"', desc = "Open with Zathura", for = "linux", "orphan" = true },
+    { run = "okular %s &",       desc = "Open with Okular",               for = "linux", orphan = true },
+    { run = "zathura --fork %s", desc = "Open with Zathura",              for = "linux", orphan = true },
+    { run = "qpdf --empty --pages %s -- merged.pdf", desc = "Merge PDFs", for = "linux", orphan = true },
 ]
 
 image = [
-	{ run = 'gimp "$@" &', desc = "GIMP", for = "linux", orphan = true },
-	{ run = 'swappy -f "$@" -o "${@%.*}-edit.${@##*.}" &', desc = "Swappy", for = "linux", orphan = true },
+	{ run = "gimp %s &",                                       desc = "GIMP",   for = "linux", orphan = true },
+	{ run = 'f=%s; swappy -f %s -o "${f%.*}-edit.${f##*.}" &', desc = "Swappy", for = "linux", orphan = true },
 ]
 
 qalc = [
     { run = 'qalc -f "$@" -i', desc = "Open with QALC", for = "linux", block = true },
+]
+
+download = [
+    { run = "ya emit download --open %S", desc = "Download and open" },
+    { run = "ya emit download %S",        desc = "Download" },
 ]
 
 [open]
@@ -93,7 +98,7 @@ rules = [
     # Empty file
     { mime = "inode/x-empty", use = [ "edit", "reveal" ] },
     # Folder
-    { name = "*/", use = [ "edit", "open", "reveal" ] },
+    { url = "*/", use = [ "edit", "open", "reveal" ] },
 
     # JSON
     { mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
@@ -115,17 +120,22 @@ rules = [
     # Media
     { mime = "{audio,video}/*", use = [ "play", "reveal" ] },
     # Archive
-    { mime = "application/{,g}zip", use = [ "extract", "reveal" ] },
-    { mime = "application/{tar,bzip*,7z-compressed,xz,rar}", use = [ "extract", "reveal" ] },
-
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+    # JSON
+    { mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
+    { mime = "*/javascript", use = [ "edit", "reveal" ] },
+    # Empty file
+    { mime = "inode/empty", use = [ "edit", "reveal" ] },
+    # Virtual file system
+    { mime = "vfs/{absent,stale}", use = "download" },
     # Fallback
-    { name = "*", use = [ "open", "edit", "reveal" ] },
+    { url = "*", use = [ "open", "edit", "reveal" ] },
 ]
 
 [tasks]
 micro_workers    = 10
-macro_workers    = 25
-bizarre_retry    = 5
+macro_workers    = 10
+bizarre_retry    = 3
 image_alloc      = 268435456  # 256MB
 image_bound      = [ 0, 0 ]
 suppress_preload = false
@@ -134,14 +144,35 @@ suppress_preload = false
 
 fetchers = [
     # Mimetype
-    { id = "mime", name = "*", run = "mime", if = "!mime", prio = "high" },
-    { id = "git", name = "*", run = "git" },
-    { id = "git", name = "*/", run = "git" },
+    { id = "mime", url = "*/",         run = "mime.dir", prio = "high" },
+    { id = "mime", url = "local://*",  run = "mime.local", prio = "high" },
+    { id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
+    { id = "git",  url = "*/",         run = "git" },
+    { id = "git",  url = "local://*",  run = "git" },
+]
+spotters = [
+    { url = "*/", run = "folder" },
+    # Code
+    { mime = "text/*", run = "code" },
+    { mime = "application/{mbox,javascript,wine-extension-ini}", run = "code" },
+    # Image
+    { mime = "image/{avif,hei?,jxl}", run = "magick" },
+    { mime = "image/svg+xml", run = "svg" },
+    { mime = "image/*", run = "image" },
+    # Video
+    { mime = "video/*", run = "video" },
+    # Virtual file system
+    { mime = "vfs/*", run = "vfs" },
+    # Error
+    { mime = "null/*", run = "null" },
+    # Fallback
+    { url = "*", run = "file" },
 ]
 
 preloaders = [
     # Image
-    { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+    { mime = "image/{avif,hei?,jxl}", run = "magick" },
+    { mime = "image/svg+xml", run = "svg" },
     { mime = "image/*", run = "image" },
     # Video
     { mime = "video/*", run = "video" },
@@ -149,21 +180,22 @@ preloaders = [
     { mime = "application/pdf", run = "pdf" },
     # Font
     { mime = "font/*", run = "font" },
-    { mime = "application/vnd.ms-opentype", run = "font" },
+    { mime = "application/ms-opentype", run = "font" },
 ]
 
 previewers = [
-    { name = "*/", run = "folder", sync = true },
+    { url = "*/", run = "folder" },
 
     # Code
     { mime = "text/*", run = "code" },
-    { mime = "*/{xml,javascript,x-wine-extension-ini}", run = "code" },
+    { mime = "application/{mbox,javascript,wine-extension-ini}", run = "code" },
 
     # JSON
-    { mime = "application/{json,x-ndjson}", run = "json" },
+    { mime = "application/{json,ndjson}", run = "json" },
 
     # Image
-    { mime = "image/{avif,hei?,jxl,svg+xml}", run = "magick" },
+    { mime = "image/{avif,hei?,jxl}", run = "magick" },
+    { mime = "image/svg+xml", run = "svg" },
     { mime = "image/*", run = "image" },
 
     # Video
@@ -172,17 +204,25 @@ previewers = [
     { mime = "application/pdf", run = "pdf" },
 
     # Archive
-    { mime = "application/{,g}zip", run = "archive" },
-    { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar,iso9660-image}", run = "archive" },
-
+    { mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", run = "archive" },
+    { mime = "application/{debian*-package,redhat-package-manager,rpm,android.package-archive}", run = "archive" },
+    { url = "*.{AppImage,appimage}", run = "archive" },
+    # Virtual Disk / Disk Image
+    { mime = "application/{iso9660-image,qemu-disk,ms-wim,apple-diskimage}", run = "archive" },
+    { mime = "application/virtualbox-{vhd,vhdx}", run = "archive" },
+    { url = "*.{img,fat,ext,ext2,ext3,ext4,squashfs,ntfs,hfs,hfsx}", run = "archive" },
     # Font
     { mime = "font/*", run = "font" },
-    { mime = "application/vnd.ms-opentype", run = "font" },
+    { mime = "application/ms-opentype", run = "font" },
 
     # Empty file
-    { mime = "inode/x-empty", run = "empty" },
+    { mime = "inode/empty", run = "empty" },
+    # Virtual file system
+    { mime = "vfs/*", run = "vfs" },
+    # Error
+    { mime = "null/*", run = "null" },
     # Fallback
-    { name = "*", run = "file" },
+    { url = "*", run = "file" },
 ]
 
 [input]
@@ -246,7 +286,7 @@ quit_content = "The following task is still running, are you sure you want to qu
 quit_origin  = "center"
 quit_offset  = [ 0, 0, 50, 15 ]
 
-[select]
+[pick]
 open_title  = "Open with:"
 open_origin = "hovered"
 open_offset = [ 0, 1, 50, 7 ]
@@ -259,4 +299,3 @@ sort_translit  = false
 
 [log]
 enabled = false
-
