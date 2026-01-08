@@ -96,11 +96,11 @@ keymap = [
 	{ on = "<Enter>",   run = "plugin smart-enter",  desc = "Open files or enter directory" },
 	{ on = "<S-Enter>", run = "open --interactive", desc = "Open selected files interactively" },
 	{ on = "o",         run = "open --interactive", desc = "Open selected files interactively" },
-	{ on = "O",         run = "shell ' \"%s\"' --block --interactive --cursor=0",               desc = "Open file(s) with command" },
-	{ on = "P",         run = "shell '$PAGER \"%s\"' --block ",               desc = "Open file(s) with pager" },
-	{ on = "E",         run = "shell '$EDITOR \"%s\"' --block ",               desc = "Open file(s) with editor" },
+	{ on = "O",         run = "shell ' %s' --block --interactive --cursor=0",               desc = "Open file(s) with command" },
+	{ on = "P",         run = "shell '$PAGER %s' --block ",               desc = "Open file(s) with pager" },
+	{ on = "E",         run = "shell '$EDITOR %s' --block ",               desc = "Open file(s) with editor" },
 	# { on = "<C-d>",     run = "shell 'dragon-drop -x -i -T -a \"%s\"'" },
-	{ on = "<C-d>",     run = "shell -- ripdrag -x -A -W 200 -H 100 \"%s\" &" },
+	{ on = "<C-d>",     run = "shell -- ripdrag -x -A -W 200 -H 100 %s &" },
 
 	# ==== Copying paths and names ====
 	{ on = "Y",        run = "copy path",             desc = "Copy file path" },
@@ -111,7 +111,7 @@ keymap = [
 
 	# ==== Copy-pasting ====
 	{ on = "y",        run = [
-		"shell -- for path in \"%s\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list",
+		"shell -- for path in %s; do echo \"file://$path\"; done | wl-copy -t text/uri-list",
 		"yank" ],                               desc = "Yank selected files" },
 	{ on = "x",        run = "yank --cut",      desc = "Cut selected files" },
 	{ on = "p",        run = "paste",           desc = "Paste yanked files" },
@@ -138,16 +138,16 @@ keymap = [
 	{ on = ["g", "m"], run = "plugin mount", desc = "Mount" },
 
 	# ==== Zipping ====
-	{ on = ["g", "z"], run = ["shell 'zip -r zipped $(realpath --relative-to=\"$PWD\" \"%s\")' --interactive", "toggle_all --state=false"], desc = "Zip files" },
+	{ on = ["g", "z"], run = ["shell 'zip -r zipped $(realpath --relative-to=\"$PWD\" %s)' --interactive", "toggle_all --state=false"], desc = "Zip files" },
 
 	#########
 	## GIT ##
 	#########
 
 	{ on = ["g", "s"], run = ["shell --block -- git -c color.status=always status | less -R"], desc = "Git Status" },
-	{ on = ["g", "a"], run = ['shell         -- git add "%s"'],              desc = "Git Add" },
-	{ on = ["g", "A"], run = ['shell --block -- git add -p "%s"'],           desc = "Git Add patches" },
-	{ on = ["g", "r"], run = ['shell         -- git restore --staged "%s"'], desc = "Git Unstage" },
+	{ on = ["g", "a"], run = ['shell         -- git add %s'],              desc = "Git Add" },
+	{ on = ["g", "A"], run = ['shell --block -- git add -p %s'],           desc = "Git Add patches" },
+	{ on = ["g", "r"], run = ['shell         -- git restore --staged %s'], desc = "Git Unstage" },
 	{ on = ["g", "c"], run = ["shell --block -- git commit"],                desc = "Git Commit" },
 
 	###########
