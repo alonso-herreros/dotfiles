@@ -5,7 +5,7 @@
 # ==== Shortcuts and shorthand ====
 
 # One-chars
-alias H='exec uwsm start Hyprland || exit'
+alias H='exec uwsm start hyprland.desktop || exit'
 alias c='cd'
 alias l='ls'
 alias v='vim'
