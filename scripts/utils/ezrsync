@@ -2,8 +2,11 @@
 
 # ==== Usage ====
 USAGE="
-Easy, interactive rsync.
-Usage: $0 SRC...
+Easy rsync.
+Usage: $0 [--no-defaults] SRC...
+
+OPTIONS
+    --no-defaults      Prompt all options, including sane defaults
 "
 
 function Help() {
@@ -12,8 +15,12 @@ function Help() {
 
 # ==== Specifics ====
 
+# Prompts for setting a flag and prints it if the answer is positive
+# @param flag  The flag in question
+# @param description  Description of the flag's effect
+# @param [default]  The default answer (y/n/yy/nn). When set to 'yy' or 'nn',
+#     the prompt will be skipped if SANE_DEFAULTS is 1
 opt_flag() {
-    # Prompts for setting a flag and prints it if the answer is positive
     flag="$1"
     description="$2"
     default="${3:-n}"
@@ -22,6 +29,8 @@ opt_flag() {
     [ -n "$description" ] && details=" ($description)"
 
     case "$default" in
+        YY|yy ) answer="y";;
+        NN|nn ) answer="y";;
         [Yy] ) default="y";;
         * )    default="n";;
     esac
@@ -48,36 +57,45 @@ opt_flag() {
     fi
 }
 
-# Run rsync prompting flags
+# ==== Main ====
+SANE_DEFAULTS=1
+
+if [ "$1" == "--no-defaults" ]; then
+    SANE_DEFAULTS=0
+    shift
+fi
+
+# Run rsync with sane defaults and prompting flags
 rsync \
-    $(opt_flag -P "Keep partial transfers and print progress" y) \
-    $(opt_flag -i "Itemize" y) \
+    $(opt_flag -P "Keep partial transfers and print progress" yy) \
+    $(opt_flag -i "Itemize" yy) \
+    $(opt_flag -h "Human-readable" yy) \
     $(opt_flag --size-only "Skip based on size only" y \
         || opt_flag -c "Skip based on checksum only" n \
         || opt_flag -I "Don't skip files that match size and time" n \
     ) \
     $(opt_flag -a "Archive: recurse and preserve mtimes, links, perms, group, owner, devices and specials (sudo only)" n \
         || ( \
-            opt_flag -r "Recurse into directories" y; \
-            opt_flag -t "Preserve mtimes" y; \
-            opt_flag -U "Preserve atimes" n; \
+            opt_flag -r "Recurse into directories" yy; \
+            opt_flag -t "Preserve mtimes" yy; \
+            opt_flag -U "Preserve atimes" nn; \
             opt_flag -p "Preserve permissions" y; \
             opt_flag -E "Preserve executability" y; \
             opt_flag -o "Preserve owner (sudo only)" n; \
             opt_flag -g "Preserve group" y; \
-            opt_flag -D "Preserve special files and devices (sudo only)" y; \
+            opt_flag -D "Preserve special files and devices (sudo only)" n; \
         ) \
     ) \
-    $(opt_flag -l "Copy symlinks as symlinks" y \
+    $(opt_flag -l "Copy symlinks as symlinks" yy \
         || ( \
             opt_flag -L "Copy symlink files as their targets" n; \
             opt_flag -k "Copy symlink dirs as their targets" n; \
         ) \
     ) \
-    $(opt_flag -m "Prune empty directories" n) \
-    $(opt_flag --mkpath "Create destination's missing paths" y) \
-    $(opt_flag --del "Receiver deletes during the transfer" n) \
+    $(opt_flag -m "Prune empty directories" nn) \
+    $(opt_flag --mkpath "Create destination's missing paths" yy) \
+    $(opt_flag --del "Receiver deletes during the transfer" nn) \
     $(opt_flag -z "Compress data during transfer" n) \
-    $(opt_flag -n "Dry run" n) \
-    $(opt_flag -v "Increase verbosity" y) \
+    $(opt_flag -n "Dry run" nn) \
+    $(opt_flag -v "Increase verbosity" yy) \
     "$@"
