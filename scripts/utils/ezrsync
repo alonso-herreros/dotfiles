@@ -1,0 +1,83 @@
+#!/usr/bin/env bash
+
+# ==== Usage ====
+USAGE="
+Easy, interactive rsync.
+Usage: $0 SRC...
+"
+
+function Help() {
+    echo "$USAGE"
+}
+
+# ==== Specifics ====
+
+opt_flag() {
+    # Prompts for setting a flag and prints it if the answer is positive
+    flag="$1"
+    description="$2"
+    default="${3:-n}"
+    answer=
+
+    [ -n "$description" ] && details=" ($description)"
+
+    case "$default" in
+        [Yy] ) default="y";;
+        * )    default="n";;
+    esac
+    [ "$default" == "y" ] && opts="Y/n" || opts="y/N"
+
+    while [ -z "$answer" ]; do
+        printf " Set '$flag'$details? [$opts] " >&2
+        read answer
+        case "$answer" in
+            [Yy]|yes ) answer="y";;
+            [Nn]|no )  answer="n";;
+            "" )       answer="$default";;
+            *)
+                answer=""
+                printf "Unkown answer '$answer', try 'y' or 'n'.\n" >&2
+        esac
+    done
+
+    if [ "$answer" == "y" ];then
+        echo "$flag"
+        return 0
+    else
+        return 1
+    fi
+}
+
+# Run rsync prompting flags
+rsync \
+    $(opt_flag -P "Keep partial transfers and print progress" y) \
+    $(opt_flag -i "Itemize" y) \
+    $(opt_flag --size-only "Skip based on size only" y \
+        || opt_flag -c "Skip based on checksum only" n \
+        || opt_flag -I "Don't skip files that match size and time" n \
+    ) \
+    $(opt_flag -a "Archive: recurse and preserve mtimes, links, perms, group, owner, devices and specials (sudo only)" n \
+        || ( \
+            opt_flag -r "Recurse into directories" y; \
+            opt_flag -t "Preserve mtimes" y; \
+            opt_flag -U "Preserve atimes" n; \
+            opt_flag -p "Preserve permissions" y; \
+            opt_flag -E "Preserve executability" y; \
+            opt_flag -o "Preserve owner (sudo only)" n; \
+            opt_flag -g "Preserve group" y; \
+            opt_flag -D "Preserve special files and devices (sudo only)" y; \
+        ) \
+    ) \
+    $(opt_flag -l "Copy symlinks as symlinks" y \
+        || ( \
+            opt_flag -L "Copy symlink files as their targets" n; \
+            opt_flag -k "Copy symlink dirs as their targets" n; \
+        ) \
+    ) \
+    $(opt_flag -m "Prune empty directories" n) \
+    $(opt_flag --mkpath "Create destination's missing paths" y) \
+    $(opt_flag --del "Receiver deletes during the transfer" n) \
+    $(opt_flag -z "Compress data during transfer" n) \
+    $(opt_flag -n "Dry run" n) \
+    $(opt_flag -v "Increase verbosity" y) \
+    "$@"
