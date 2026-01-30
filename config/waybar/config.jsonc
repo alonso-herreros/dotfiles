@@ -110,7 +110,7 @@
         "format": "{capacity}%",
         "format-alt": "{power:.1f} W",
         "format-full": "{capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
         "format-plugged": " {capacity}%",
         "format-icons": [ "󰁻", "󰁼", "󰁾", "󰂀", "󰂂", "󰁹" ],
         "tooltip-format": "{timeTo} | {power} W"
@@ -438,15 +438,15 @@
     // https://github.com/Alexays/Waybar/wiki/Module:-PulseAudio
     "pulseaudio#sink": {
         "format": "{icon}",
-        "format-muted": "",
+        "format-muted": " ", // Using thin space " "
         "format-icons": {
-            "headphone": " ",
-            "hands-free": "",
-            "headset": "",
+            "headphone": " ", // Using thin space " "
+            "hands-free": " ", // Using thin space " "
+            "headset": " ", // Using thin space " "
             "phone": "",
             "portable": "",
             "car": "",
-            "hdmi": "",
+            "hdmi": "",
             "default": [" ", " ", " "]
         },
         "tooltip-format": "{desc}: {volume}%",
