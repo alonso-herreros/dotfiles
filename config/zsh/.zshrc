@@ -9,7 +9,7 @@ export LANG=en_US.utf8
 
 PATH="$HOME/.local/bin:$PATH"
 export EDITOR="vim"
-export PAGER="less -Ri"
+export PAGER="less"
 
 unsetopt correct_all
 unsetopt correct
@@ -64,6 +64,10 @@ fi
 # ===== Selectively disable globbing =====
 alias git='noglob git'
 alias find='noglob find'
+
+
+# ===== Less =====
+export LESS="-Ri"
 
 
 # ===== Docker =====
