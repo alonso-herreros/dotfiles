@@ -221,6 +221,7 @@ set t_Co=256
 set t_ut=
 
 set tabstop=4 shiftwidth=4 expandtab
+set colorcolumn=80
 
 set foldmethod=syntax foldlevel=99
 
