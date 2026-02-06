@@ -38,6 +38,8 @@ alias sctl='systemctl'
 alias ssctl='sudo systemctl'
 alias stui='systemctl-tui'
 alias sstui='sudo systemctl-tui'
+alias jctl='journalctl'
+alias sjctl='sudo journalctl'
 
 alias gimme='git clone'
 alias bgo='bg 1>/dev/null 2>&1'
