@@ -17,3 +17,10 @@
 [submodule "config/oh-my-zsh/custom/plugins/fast-syntax-highlighting"]
 	path = config/oh-my-zsh/custom/plugins/fast-syntax-highlighting
 	url = https://github.com/zdharma-continuum/fast-syntax-highlighting
+[submodule "config/oh-my-zsh/custom/plugins/zsh-autosuggestions-abbreviations-strategy"]
+	path = config/oh-my-zsh/custom/plugins/zsh-autosuggestions-abbreviations-strategy
+	url = https://github.com/olets/zsh-autosuggestions-abbreviations-strategy
+[submodule "config/oh-my-zsh/custom/plugins/zsh-abbr"]
+	path = config/oh-my-zsh/custom/plugins/zsh-abbr
+	url = https://github.com/olets/zsh-abbr
+	ignore = dirty
