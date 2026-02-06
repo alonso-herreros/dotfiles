@@ -60,6 +60,12 @@ fi
 # ===== Aliases =====
 [ -f "$XDG_CONFIG_HOME/shell/alias.sh" ] && source "$XDG_CONFIG_HOME/shell/alias.sh"
 
+alias off-the-record='unset HISTFILE; export SAVEHIST=0'
+alias otr='off-the-record'
+
+alias forget=' . ~/.scripts/utils/forget.zsh'
+alias nvm='forget'
+
 
 # ===== Selectively disable globbing =====
 alias git='noglob git'
