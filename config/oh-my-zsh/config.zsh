@@ -71,9 +71,6 @@ plugins=(
   fzf
   zsh-abbr
   zsh-autosuggestions
-  zsh-autosuggestions-abbreviations-strategy
   fast-syntax-highlighting
   docker
 )
-
-ZSH_AUTOSUGGEST_STRATEGY=( abbreviations $ZSH_AUTOSUGGEST_STRATEGY )
