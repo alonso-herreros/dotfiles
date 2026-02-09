@@ -44,6 +44,7 @@ tooltip.background {
 
 /* Groups and standalones */
 #batt-utils,
+#systemd-failed-units,
 #keyboard,
 #workspaces,
 #tray,
@@ -75,8 +76,8 @@ tooltip.background {
 #clock,
 #battery,
 #power-profiles-daemon,
-#custom-tlp,
 #idle_inhibitor,
+#systemd-failed-units,
 #keyboard-icon,
 #keyboard-state,
 #language,
@@ -145,6 +146,7 @@ button:hover,
 }
 
 /* Non-actionable hovers */
+#systemd-failed-units,
 #language:hover,
 #custom-mediavolume:hover,
 #load-temp:hover,
@@ -277,6 +279,9 @@ button.urgent,
 #custom-tlp.AC { color: @power; }
 
 #idle_inhibitor { padding: 0 5px; }
+#systemd-failed-units { color: @primary }
+#systemd-failed-units.ok { color: @primary }
+#systemd-failed-units.degraded { color: @error }
 
 /* ==== Keyboard ==== */
 #language { padding: 0 8px; }

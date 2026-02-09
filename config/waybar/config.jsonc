@@ -12,6 +12,7 @@
 
     "modules-left": [
         "group/batt-utils",
+        "systemd-failed-units",
         "group/keyboard",
         "group/media",
     ],
@@ -134,6 +135,12 @@
         "format-icons": { "activated": " ", "deactivated": " " },
         "tooltip-format-activated": "Idle inhibitor: on",
         "tooltip-format-deactivated": "Idle inhibitor: off"
+    },
+
+    // ---- Failed units ----
+    // https://github.com/alexays/waybar/wiki/Module:-Systemd-failed-units
+    "systemd-failed-units": {
+        "format": "  {nr_failed} unit failed ({nr_failed_system} sys)"
     },
 
     // ==== Keyboard group ====
