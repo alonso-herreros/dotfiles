@@ -88,7 +88,7 @@ alias grep='grep --color=auto'
 alias tree='tree --dirsfirst -F'
 
 alias pacman='pacman --color=auto'
-alias yay="yay --color=auto"
+alias yay='yay --color=auto'
 
 alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 
@@ -100,9 +100,9 @@ alias sf='ssh -o ForwardAgent=yes'                              #abbr
 alias nn='nnn -n'                                               #abbr
 alias matlabcli='matlab -nosplash -nodisplay'
 alias gpconnect='sudo gpclient connect --default-browser'       #abbr
-alias matlabdocker="xdg-open 'https://www.mathworks.com/mwa/otp'; docker run -it --mount type=bind,src='$PWD',dst=/home/matlab/app matlab"
+alias matlabdocker='xdg-open "https://www.mathworks.com/mwa/otp"; docker run -it --mount type=bind,src="$PWD",dst=/home/matlab/app matlab'
 alias pacman-updates='pacman -Qu --color=always | less -R'      #abbr
-alias pmupds="pacman-updates"                                   #abbr
+alias pmupds='pacman-updates'                                   #abbr
 
 alias off-the-record='unset HISTFILE; export SAVEHIST=0'
 alias otr='off-the-record'                                      #abbr
