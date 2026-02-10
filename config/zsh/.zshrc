@@ -63,6 +63,12 @@ fi
 alias forget=' . ~/.scripts/utils/forget.zsh'
 alias nvm='forget'
 
+# Map space to expand abbr in vi insert mode
+if echo "$plugins" | grep zsh-abbr >/dev/null; then
+  bindkey -M viins " " abbr-expand-and-insert
+  export ABBR_AUTOLOAD=0
+fi
+
 
 # ===== Selectively disable globbing =====
 alias git='noglob git'
