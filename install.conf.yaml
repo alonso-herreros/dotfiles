@@ -19,6 +19,9 @@
     description: Adding zsh abbreviations
     quiet: true
 
+- create:
+    - $XDG_STATE_HOME/clipse
+
 
 - link:
     ~/.bashrc: config/bash/bashrc
@@ -95,4 +98,3 @@
 - shell:
   - [git submodule update --init --recursive --remote .dotbot config scripts local sys, Installing submodules]
   - [ya pkg upgrade, Updating yazi packages]
-  - [mkdir -p $XDG_STATE_HOME/clipse, Creating Clipse state directory]
