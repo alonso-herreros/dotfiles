@@ -2,67 +2,73 @@
 ## TRUE ALIASES ##
 ##################
 
+# Align with                                      (align here:) #abbr
+#     :EasyAlign */#abbr/ig[]dr
+
 # ==== Shortcuts and shorthand ====
 
 # One-chars
 alias H='exec uwsm start hyprland.desktop || exit'
-alias c='cd'
-alias l='ls'
-alias v='vim'
-alias g='git'
-alias s='ssh'
-alias h='hyprctl'
-alias n='nnn'
-alias t='tmux'
+alias c='cd'                                                    #abbr
+alias l='ls'                                                    #abbr
+alias v='vim'                                                   #abbr
+alias g='git'                                                   #abbr
+alias s='ssh'                                                   #abbr
+alias h='hyprctl'                                               #abbr
+alias n='nnn'                                                   #abbr
+alias t='tmux'                                                  #abbr
 # alias y='yazi' # sourcing the yazi_quitcd script instead
 
-alias hg='history | grep'
-alias so='source'
-alias pm='pacman'
-alias btctl='bluetoothctl'
-alias wlc='wl-copy'
-alias tf='terraform'
-alias sc='sc-im'
-alias trr='transmission-remote'
+alias hg='history | grep'                                       #abbr
+alias so='source'                                               #abbr
+alias pm='pacman'                                               #abbr
+alias btctl='bluetoothctl'                                      #abbr
+alias wlc='wl-copy'                                             #abbr
+alias tf='terraform'                                            #abbr
+alias sc='sc-im'                                                #abbr
+alias trr='transmission-remote'                                 #abbr
 
-alias svirsh='sudo virsh'
-alias sv='sudo virsh'
+alias svirsh='sudo virsh'                                       #abbr
+alias sv='sudo virsh'                                           #abbr
 
-alias sdocker='sudo docker'
-alias sd='sudo docker'
-alias sdc='sudo docker-compose'
-alias sdct='sudo docker container'
-alias sdi='sudo docker image'
+alias sdocker='sudo docker'                                     #abbr
+alias sd='sudo docker'                                          #abbr
+alias sdc='sudo docker-compose'                                 #abbr
+alias sdct='sudo docker container'                              #abbr
+alias sdi='sudo docker image'                                   #abbr
 
-alias sctl='systemctl'
-alias ssctl='sudo systemctl'
-alias stui='systemctl-tui'
-alias sstui='sudo systemctl-tui'
-alias jctl='journalctl'
-alias sjctl='sudo journalctl'
+alias sctl='systemctl'                                          #abbr
+alias ssctl='sudo systemctl'                                    #abbr
+alias stui='systemctl-tui'                                      #abbr
+alias sstui='sudo systemctl-tui'                                #abbr
+alias jctl='journalctl'                                         #abbr
+alias sjctl='sudo journalctl'                                   #abbr
 
-alias gimme='git clone'
+alias gimme='git clone'                                         #abbr
 alias bgo='bg 1>/dev/null 2>&1'
 
 alias chatty='chatgpt'
-alias chat='chatgpt'
+alias chat='chatgpt'                                            #abbr
 alias gepeto='chatgpt'
-alias gpt='chatgpt'
+alias gpt='chatgpt'                                             #abbr
 
 # Hyprctl
-alias hk='hyprctl keyword'
-alias hd='hyprctl dispatch'
-alias hm='hyprctl keyword monitor'
-alias hms='hyprctl monitors'
-alias hcs='hyprctl clients'
-alias hpm='hyprpm'
+alias hk='hyprctl keyword'                                      #abbr
+alias hd='hyprctl dispatch'                                     #abbr
+alias hm='hyprctl keyword monitor'                              #abbr
+alias hms='hyprctl monitors'                                    #abbr
+alias hcs='hyprctl clients'                                     #abbr
+alias hpm='hyprpm'                                              #abbr
 
 # Quick cd
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ..3='cd ../../..'
-alias ..4='cd ../../../..'
-alias ..5='cd ../../../../..'
+alias ..='cd ..'                                                #abbr
+alias ...='cd ../..'                                            #abbr
+alias ....='cd ../../..'                                        #abbr
+alias .....='cd ../../../..'                                    #abbr
+alias ..2='cd ../..'                                            #abbr
+alias ..3='cd ../../..'                                         #abbr
+alias ..4='cd ../../../..'                                      #abbr
+alias ..5='cd ../../../../..'                                   #abbr
 function -() { cd -; }
 
 alias bell="echo -n $'\eg\a'"
@@ -89,47 +95,48 @@ alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 # ==== Combos & Options ====
 
 alias lsg='ls && echo " " && git status'
-alias ks='kitten ssh'
-alias sf='ssh -o ForwardAgent=yes'
-alias nn='nnn -n'
+alias ks='kitten ssh'                                           #abbr
+alias sf='ssh -o ForwardAgent=yes'                              #abbr
+alias nn='nnn -n'                                               #abbr
 alias matlabcli='matlab -nosplash -nodisplay'
-alias gpconnect='sudo gpclient connect --default-browser'
+alias gpconnect='sudo gpclient connect --default-browser'       #abbr
 alias matlabdocker="xdg-open 'https://www.mathworks.com/mwa/otp'; docker run -it --mount type=bind,src='$PWD',dst=/home/matlab/app matlab"
-alias pacman-updates='pacman -Qu --color=always | less -R'
-alias pmupds="pacman-updates"
+alias pacman-updates='pacman -Qu --color=always | less -R'      #abbr
+alias pmupds="pacman-updates"                                   #abbr
 
 alias off-the-record='unset HISTFILE; export SAVEHIST=0'
-alias otr='off-the-record'
+alias otr='off-the-record'                                      #abbr
 
 alias curl-tor='curl --socks5-hostname localhost:9050'
 
 # ==== Easy Remember ====
 
-alias fonts='fc-list'
-alias open='xdg-open'
+alias fonts='fc-list'                                           #abbr
+alias open='xdg-open'                                           #abbr
 
 # ==== Confusions & Mistypes ====
 
-alias pamcan='pacman'
-alias nmctl='nmcli'
-alias suod='sudo'
-alias sduo='sudo'
+alias pamcan='pacman'                                           #abbr
+alias nmctl='nmcli'                                             #abbr
+alias suod='sudo'                                               #abbr
+alias sduo='sudo'                                               #abbr
+alias pign='ping'                                               #abbr
 
 alias dog='cat'
 alias meow='cat'
 alias :q='echo Not vi, but okay...; sleep 0.5; exit'
-alias :e='vim'
-alias :view='vim -R -c"set nomodifiable readonly"'
-alias :v=':view'
-alias view=':view'
+alias :e='vim'                                                  #abbr
+alias view='vim -R -c"set nomodifiable readonly"'
+alias :view='view'                                              #abbr
+alias :v='view'                                                 #abbr
 
 # ==== Yeah ... ====
 alias sudo='\sudo'
 alias fucking='sudo'
-alias fkin='fucking'
+alias fkin='fucking'                                            #abbr
 alias simonsays='sudo'
 alias please='sudo'
-alias plz='please'
+alias plz='please'                                              #abbr
 alias fuck='sudo $(fc -ln -1)'
 alias ffs='fuck'
 alias frtho='fuck'
@@ -155,7 +162,7 @@ function mkdircd() {
     mkdir ${@:1}
     cd ${@:1}
 }
-alias mkcd='mkdircd'
+alias mkcd='mkdircd'                                            #abbr
 
 function lastcmd() {
     [[ -n "$1" ]] && n="$1" || n=1
