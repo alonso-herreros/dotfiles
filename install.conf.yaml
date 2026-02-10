@@ -48,10 +48,6 @@
     ~/.vim/coc-settings.json: config/vim/coc-settings.json
     ~/.vim/after/ftplugin: config/vim/after/ftplugin
 
-    ~/.config/locale.conf: config/locale/locale.conf
-
-    ~/.config/p10k.zsh: config/p10k/config.zsh
-
     # App flags - removed trailing slash to specify ~/.config/ twice
     ~/.config:
       glob: true
