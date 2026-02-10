@@ -5,7 +5,10 @@
     shell:
       stderr: true
 
-- clean: ['~']
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
 
 - shell:
   - command: |
@@ -24,61 +27,34 @@
 
 
 - link:
+    # How uncivilized...
     ~/.bashrc: config/bash/bashrc
     ~/.zshrc: config/zsh/.zshrc
-    # ~/.vim: vim
     ~/.vimrc: config/vim/vimrc
     ~/.screenrc: config/screen/screenrc
 
-    ~/.config/git: config/git
-    ~/.config/tmux: config/tmux
-    ~/.config/synth-shell: config/synth-shell
-    ~/.config/kitty: config/kitty
-    ~/.config/hypr: config/hypr
-    ~/.config/waybar: config/waybar
-    ~/.config/fusuma: config/fusuma
-    ~/.config/gh: config/gh
-    ~/.config/xdg-desktop-portal: config/xdg-desktop-portal
-    ~/.config/xdg-desktop-portal-termfilechooser: config/xdg-desktop-portal-termfilechooser
-    ~/.config/cura: config/cura
-    ~/.config/fuzzel: config/fuzzel
-    ~/.config/dunst: config/dunst
-    ~/.config/yazi: config/yazi
-    ~/.config/clipse: config/clipse
-    ~/.config/shell: config/shell
-    ~/.config/zsh: config/zsh
-    ~/.config/sc-im: config/sc-im
-    ~/.config/X11: config/X11
-    ~/.config/uwsm: config/uwsm
-    ~/.config/winapps: config/winapps
-    ~/.config/zsh-abbr: config/zsh-abbr
-
-    # I wish this fucker kept its history out of the config directory
-    ~/.config/qalculate/qalc.cfg: config/qalculate/qalc.cfg
-    # ... and its definitions, which I want to track, IN the config directory!
-    ~/.local/share/qalculate/definitions: config/qalculate/definitions
-
-    ~/.vim/UltiSnips: config/vim/UltiSnips
-    ~/.vim/coc-settings.json: config/vim/coc-settings.json
-    ~/.vim/after/ftplugin: config/vim/after/ftplugin
-
-    ~/.config/libinput-gestures.conf: config/libinput-gestures.conf
-    ~/.config/locale.conf: config/locale/locale.conf
-    ~/.config/mimeapps.list: config/mimeapps.list
-    ~/.config/batsignal: config/batsignal
-    ~/.config/kwalletrc: config/kwalletrc
-    ~/.config/lesskey: config/lesskey
-
-    ~/.config/oh-my-zsh: config/oh-my-zsh # Powerlevel10k in custom themes
-    ~/.config/p10k.zsh: config/p10k/config.zsh
-
-    # App flags
+    # It's quicker to list the ones i _don't_ want linked...
     ~/.config/:
+      glob: true
+      path: config/*
+      exclude:
+        - config/vimium
+
+    # App flags - removed trailing slash to specify ~/.config/ twice
+    ~/.config:
       glob: true
       path: config/app-flags/*.conf
 
+    ~/.vim/:
+      glob: true
+      path: config/vim/*
+      eclude: [ config/vim/vimrc ]
+
     # Okular stores the actual config in a rather peculiar place
     ~/.local/share/kxmlgui5/okular: config/okular
+
+    # Why do they make these things so hard?
+    ~/.local/share/qalculate/definitions: config/qalculate/definitions
 
     # Desktop Entries
     ~/.local/share/applications/:
