@@ -5,7 +5,10 @@
     shell:
       stderr: true
 
-- clean: ['~']
+- clean:
+    ~/:
+    ~/.config:
+      recursive: true
 
 - shell:
   - command: |
