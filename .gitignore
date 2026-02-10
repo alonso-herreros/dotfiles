@@ -3,6 +3,9 @@ hosts.yml
 yazi_cmd_history
 **/yazi/plugins
 
+# ==== Auto-generated ====
+config/zsh-abbr/user-abbreviations
+
 
 # ==== Local / overrides ====
 
