@@ -1,0 +1,234 @@
+[alias]
+# ---- Init and management ----
+i    = init                                                     #abbr
+
+su   = submodule                                                #abbr
+suu  = submodule update --init                                  #abbr
+suur = submodule update --init --recursive                      #abbr
+suuu = submodule update --init --recursive                      #abbr
+sum  = submodule foreach "git checkout main; git reset --hard"  #abbr
+
+# ---- Informational: status, log, diff, show ----
+
+# Taken: `st` for `stash`, `su` for `submodule`, `sh` for `show`
+s    = status -sb                                               #abbr
+ss   = status --short                                           #abbr
+sl   = status                                                   #abbr
+
+l    = log --oneline                                            #abbr
+ls   = log --oneline -n 10                                      #abbr
+la   = log --oneline --all --graph                              #abbr
+las  = log --oneline --all --graph -n 10                        #abbr
+ll   = log                                                      #abbr
+lla  = log --all --graph                                        #abbr
+# Log interactive (with preview)
+li   = "!git l   --oneline --color=always | git fzfc \"$@\""
+lai  = "!git la  --oneline --color=always | git fzfc \"$@\""
+lsi  = "!git ls  --oneline --color=always | git fzfc \"$@\""
+lasi = "!git las --oneline --color=always | git fzfc \"$@\""
+lia  = lai
+lis  = lsi
+lias = lasi
+
+d    = diff                                                     #abbr
+ds   = diff --cached                                            #abbr
+dst  = diff --stat                                              #abbr
+dm   = diff main                                                #abbr
+dmst = diff main --stat                                         #abbr
+
+sh   = show                                                     #abbr
+shh  = "!git show $(git lai)"
+shs  = show --stat                                              #abbr
+shhs = "!git show --stat $(git lai)"
+
+# ---- Index operations: add, restore ----
+
+a    = add                                                      #abbr
+aa   = add -A                                                   #abbr
+ap   = add --patch                                              #abbr
+
+# Taken: `rb` for `rebase`, `re` for `remote`
+r    = restore                                                  #abbr
+rr   = restore .                                                #abbr
+rp   = restore --patch                                          #abbr
+rs   = restore --staged                                         #abbr
+rrs  = restore . --staged                                       #abbr
+rsp  = restore --staged --patch                                 #abbr
+rrr  = reset --hard                                             #abbr
+
+# ---- Commits and stashes ----
+
+# Taken: `co` and `c-` for `checkout`, `cp` for `cherry-pick`
+commit-a = "!git add -A; git commit"
+c    = commit                                                   #abbr
+cc   = commit-a                                                 #abbr
+cm   = commit   -m                                              #abbr
+ccm  = commit-a -m                                              #abbr
+ca   = commit   --amend                                         #abbr
+cca  = commit-a --amend                                         #abbr
+cane = commit   --amend --no-edit                               #abbr
+ccane= commit-a --amend --no-edit                               #abbr
+# Fixup
+cf   = commit   --fixup                                         #abbr
+ccf  = commit-a --fixup                                         #abbr
+cff  = "!git commit   --fixup $(git li 'Select commit to fixup')"
+ccff = "!git commit-a --fixup $(git li 'Select commit to fixup')"
+# Commit and push
+cmp  = "!cmp()  { git commit   -m \"$@\"; git push; }; cmp"
+ccmp = "!ccmp() { git commit-a -m \"$@\"; git push; }; ccmp"
+
+st   = stash                                                    #abbr
+stm  = stash -m                                                 #abbr
+stt  = stash --all                                              #abbr
+sttm = stash --all -m                                           #abbr
+stk  = stash --keep-index                                       #abbr
+stkm = stash --keep-index -m                                    #abbr
+sts  = stash push -S                                            #abbr
+sta  = stash apply                                              #abbr
+stl  = stash list                                               #abbr
+stp  = stash pop                                                #abbr
+std  = stash drop                                               #abbr
+stsh = stash show                                               #abbr
+
+# ---- Branch operations: checkout, branch, merge, rebase, tag ----
+
+co   = checkout                                                 #abbr
+coo  = "!git checkout $(git blai)"
+cob  = checkout -b                                              #abbr
+c-   = checkout -                                               #abbr
+com  = checkout main                                            #abbr
+
+b    = branch                                                   #abbr
+ba   = branch -a                                                #abbr
+bl   = branch -l                                                #abbr
+bla  = branch -la                                               #abbr
+# List interactive (with short log preview)
+bli  = "!git branch -l  --color=always | git fzfb \"$@\""
+bai  = "!git branch -a  --color=always | git fzfb \"$@\""
+blai = "!git branch -la --color=always | git fzfb \"$@\""
+bia  = bai
+blia = blai
+# Branch operations
+bd   = branch -d                                                #abbr
+bdf  = branch -D                                                #abbr
+bdd  = "!git branch -d $(git blai 'Select branch to delete')"
+bddf = "!git branch -D $(git blai 'Select branch to delete')"
+br   = branch -r                                                #abbr
+bm   = branch -m                                                #abbr
+bmm  = "!git branch -m $(git branch --show-current)"
+
+m    = merge                                                    #abbr
+me   = merge --edit                                             #abbr
+mnc  = merge --no-ff --no-commit                                #abbr
+ms   = merge --squash                                           #abbr
+mc   = merge --continue                                         #abbr
+ma   = merge --abort                                            #abbr
+mm   = merge main                                               #abbr
+mom  = merge origin/main                                        #abbr
+
+mt   = mergetool                                                #abbr
+
+cp   = cherry-pick                                              #abbr
+cpp  = "!git cherry-pick $(git lai 'Select commit(s) to cherry-pick')"
+cpnc = cherry-pick --no-commit                                  #abbr
+cppnc= "!git cherry-pick --no-commit $(git lai 'Select commit(s) to cherry-pick')"
+cpa  = cherry-pick --abort                                      #abbr
+cpc  = cherry-pick --continue                                   #abbr
+
+rb   = rebase                                                   #abbr
+rbm  = rebase main                                              #abbr
+rbom = rebase origin/main                                       #abbr
+rba  = rebase --abort                                           #abbr
+rbc  = rebase --continue                                        #abbr
+rbs  = rebase --skip                                            #abbr
+rbi  = rebase --interactive                                     #abbr
+rbii = "!git rebase --interactive $(git lai 'Select commit to rebase onto')"
+
+t    = tag                                                      #abbr
+
+# ---- Remote operations: fetch, push, pull, remote ----
+
+f    = fetch                                                    #abbr
+fa   = fetch --all                                              #abbr
+fp   = fetch --prune                                            #abbr
+fap  = fetch --all --prune                                      #abbr
+ff   = "!git fetch --all --prune && git branch -la"
+
+# Taken `pl` for `pull`
+p    = push                                                     #abbr
+pt   = push --tags                                              #abbr
+pd   = push --dry-run                                           #abbr
+pf   = push --force-with-lease                                  #abbr
+pff  = push --force                                             #abbr
+po   = push origin                                              #abbr
+pu   = push upstream                                            #abbr
+p-   = "!git push -q &"
+
+pl   = pull                                                     #abbr
+plr  = pull --rebase                                            #abbr
+pla  = pull --autostash                                         #abbr
+plar = pull --autostash --rebase                                #abbr
+plom = pull origin main                                         #abbr
+plu  = pull upstream                                            #abbr
+plur = pull upstream --rebase                                   #abbr
+
+pnp  = "!git pull --rebase && git push"
+
+# Not to be confused with `reset` aliases, which also start with `r`
+re   = remote                                                   #abbr
+rev  = remote --verbose                                         #abbr
+rea  = remote add                                               #abbr
+reao = remote add origin                                        #abbr
+
+# ---- Other chains ----
+
+fapla = "!git fetch --all --prune && git log --oneline --all --graph"
+fapbla = "!git fetch --all --prune && git branch -la"
+fapb  = "!git fetch --all --prune && git branch -la"
+
+compl = "!git checkout main && git pull origin main"
+compl- = "!git checkout main && git pull origin main && git checkout -"
+
+fapcompl = "!git fetch --all --prune && git checkout main && git pull origin main"
+fapcompl- = "!git fetch --all --prune && git checkout main && git pull origin main && git checkout -"
+
+
+# ---- Others ----
+
+uncommit = reset --soft HEAD^                                   #abbr
+shit = uncommit
+unstage = reset HEAD --                                         #abbr
+ignore = update-index --asume-unchanged                         #abbr
+
+# ---- FZF helpers ----
+# Helper for commit selection
+fzfc = "!gfzfc() { \
+    fzf \
+        --multi --ansi \
+        --layout=reverse-list \
+        --header=\"${1:-Browse commits}\" \
+        --preview='git show --patch-with-stat --color=always \
+            $(echo {} | grep -o \"[0-9a-f]\\{7\\}\")' \
+        --preview-window=hidden \
+        --bind='alt-p:toggle-preview' | \
+    grep -o '[0-9a-f]\\{7\\}' | \
+    paste -s; \
+}; gfzfc"
+
+# Helper for branch selection
+fzfb = "!gfzfb() { \
+    fzf \
+        --multi --ansi \
+        --layout=reverse-list \
+        --header=\"${1:-Browse branches}\" \
+        --preview='git log --all --graph --oneline --color=always | \
+            grep -B3 -A999 $(echo {} | \
+            sed \"s#^.\\s\\(remotes/[^/]*/\\|origin/\\)\\?##;s/\\s.*$//\")'\
+        --preview-window=hidden \
+        --bind='alt-p:toggle-preview' | \
+    sed 's#^.\\s##; s/\\s.*$//'; \
+}; gfzfb"
+
+# Align with                                      (align here:) #abbr
+#     :EasyAlign */#abbr/ig[]dr
+# vim: ft=gitconfig
