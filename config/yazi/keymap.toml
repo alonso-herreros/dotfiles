@@ -142,6 +142,15 @@ keymap = [
 	{ on = ["g", "z"], run = ["shell 'zip -r zipped $(realpath --relative-to=\"$PWD\" %s)' --interactive", "toggle_all --state=false"], desc = "Zip files" },
 
 	#########
+	## GPG ##
+	#########
+
+	{ on = ["g", "p", "g", "c"], run = ["shell --block -- gpg -c %s"], desc = "GPG encrypt symmetric" },
+	{ on = ["g", "p", "g", "d"], run = ["shell --block -- gpg -d %s > %s-"], desc = "GPG decrypt symmetric" },
+	{ on = ["g", "p", "g", "o"], run = ["shell --block --interactive -- gpg -d %s | "], desc = "GPG decrypt symmetric to pipe (block)" },
+	{ on = ["g", "p", "g", "O"], run = ["shell --orphan --interactive -- gpg -d %s | "], desc = "GPG decrypt symmetric to pipe (orphan)" },
+
+	#########
 	## GIT ##
 	#########
 
