@@ -30,7 +30,6 @@
     # How uncivilized...
     ~/.bashrc: config/bash/bashrc
     ~/.zshrc: config/zsh/.zshrc
-    # ~/.vim: vim
     ~/.vimrc: config/vim/vimrc
     ~/.screenrc: config/screen/screenrc
 
@@ -41,14 +40,15 @@
       exclude:
         - config/vimium
 
-    ~/.vim/UltiSnips: config/vim/UltiSnips
-    ~/.vim/coc-settings.json: config/vim/coc-settings.json
-    ~/.vim/after/ftplugin: config/vim/after/ftplugin
-
     # App flags - removed trailing slash to specify ~/.config/ twice
     ~/.config:
       glob: true
       path: config/app-flags/*.conf
+
+    ~/.vim/:
+      glob: true
+      path: config/vim/*
+      eclude: [ config/vim/vimrc ]
 
     # Okular stores the actual config in a rather peculiar place
     ~/.local/share/kxmlgui5/okular: config/okular
