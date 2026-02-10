@@ -12,7 +12,7 @@
           echo "# See '~/.dotfiles/install.conf.yaml' ."
           cat config/zsh-abbr/user-abbreviations.base
           scripts/utils/abbr-parse config/shell/alias.sh
-          # scripts/utils/abbr-parse -m git config/shell/alias.sh
+          scripts/utils/abbr-parse -m git config/git/alias
       } > "${ABBR_USER_ABBREVIATIONS_FILE:?}"
     description: Adding zsh abbreviations
     quiet: true

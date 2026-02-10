@@ -29,8 +29,11 @@ parse_abbr_sh() {
 }
 
 parse_abbr_git() {
-    echo "Error: git parse not implemented" >&2
-    return 1
+    sed -nE "
+        s/\"/\\\\\"/g;
+        s/^\s*([^ =]+)\s*=\s*(( *[^ ])+)\s*#abbr\s*$/abbr \"git \1\"=\"git \2\"/p
+    "
+    # TODO: parse aliases with leading "!"
 }
 
 # ==== Main flow ====
