@@ -25,7 +25,7 @@ get_abbr_lines() {
 }
 
 parse_abbr_sh() {
-    sed -E "s/^\s*alias ([^=]+)='([^']+)'.*/abbr \"\1\"=\"\2\"/"
+    sed -E "s/^\s*alias '?([^'=]+)'?='([^']+)'.*/abbr \"\1\"=\"\2\"/"
 }
 
 parse_abbr_git() {
