@@ -3,7 +3,7 @@
 ##################
 
 # Align with                                      (align here:) #abbr
-#     :EasyAlign */#abbr/ig[]dr
+#     :%EasyAlign */#\s\?abbr/ig[]dr
 
 # ==== Shortcuts and shorthand ====
 

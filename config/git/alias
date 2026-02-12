@@ -231,5 +231,5 @@ fzfb = "!gfzfb() { \
 }; gfzfb"
 
 # Align with                                      (align here:) #abbr
-#     :EasyAlign */#abbr/ig[]dr
+#     :%EasyAlign */#\s\?abbr/ig[]dr
 # vim: ft=gitconfig
