@@ -17,6 +17,7 @@ alias s='ssh'                                                   #abbr
 alias h='hyprctl'                                               #abbr
 alias n='nnn'                                                   #abbr
 alias t='tmux'                                                  #abbr
+alias '?'='echo $?'                                             #abbr
 # alias y='yazi' # sourcing the yazi_quitcd script instead
 
 alias hg='history | grep'                                       #abbr
@@ -131,6 +132,7 @@ alias :view='view'                                              #abbr
 alias :v='view'                                                 #abbr
 
 # ==== Yeah ... ====
+alias _='sudo'                                                  #abbr
 alias sudo='\sudo'
 alias fucking='sudo'
 alias fkin='fucking'                                            #abbr
