@@ -179,6 +179,7 @@ re   = remote                                                   #abbr
 rev  = remote --verbose                                         #abbr
 rea  = remote add                                               #abbr
 reao = remote add origin                                        #abbr
+reau = remote add upstream                                      #abbr
 
 # ---- Other chains ----
 
