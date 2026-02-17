@@ -5,6 +5,37 @@
     <deactivate>b</deactivate>
   </category>
   <category>
+    <title>Mass</title>
+    <unit type="composite">
+      <hidden>true</hidden>
+      <system>British Gravitational</system>
+      <title>Slug</title>
+      <names>r:_slug</names>
+      <part>
+        <unit>s</unit>
+        <exponent>2</exponent>
+      </part>
+      <part>
+        <unit>lbf</unit>
+        <exponent>1</exponent>
+      </part>
+      <part>
+        <unit>ft</unit>
+        <exponent>-1</exponent>
+      </part>
+    </unit>
+    <unit type="alias">
+      <system>British Gravitational</system>
+      <title>Slug</title>
+      <names>a-cpr:slug</names>
+      <base>
+        <unit>_slug</unit>
+        <relation>1</relation>
+        <exponent>1</exponent>
+      </base>
+    </unit>
+  </category>
+  <category>
     <title>Information</title>
     <deactivate>bit</deactivate>
     <unit type="base">
