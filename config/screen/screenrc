@@ -1,4 +1,6 @@
-escape ^ka
+escape ^Bb
+register S ^B
+bindkey "^[a" process S
 autodetach on 
 startup_message off 
 
