@@ -28,6 +28,7 @@ alias wlc='wl-copy'                                             #abbr
 alias tf='terraform'                                            #abbr
 alias sc='sc-im'                                                #abbr
 alias trr='transmission-remote'                                 #abbr
+alias ff='fastfetch'                                            #abbr
 
 alias svirsh='sudo virsh'                                       #abbr
 alias sv='sudo virsh'                                           #abbr
