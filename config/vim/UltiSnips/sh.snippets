@@ -1,32 +1,53 @@
-# Bash snippets
+# Shell script snippets
 
-snippet template1 "Bash script template 1" i
-#!/usr/bin/env bash
+snippet template1 "Shell script template 1" i
+#!/usr/bin/env sh
 
 # ==== Usage ====
 USAGE="
-Usage: \$0
+Usage: \$0 [OPTIONS]
        \$0 -h
 
 OPTIONS
-
-    -h, --help      Show this message
+    -h, --help          Show this message
 "
 
 OPTSTRING="h"
 OPTSTRING_LONG="help"
 
-function Help() {
+Help() {
     echo "$USAGE"
 }
 
-# ==== Specifics ====
+# Helpers
 
+# Logs a message through printf.
+# Doesn't print if VERBOSE is set and less than specified (`Log -X 'message'`).
+# If X is a letter, the level is also prepended. Newlines not included.
+Log() {
+    case "$1" in
+        -F) level=-2; prefix='Fatal: ';;
+        -E) level=-1; prefix='Error: ';;
+        -W) level=0;  prefix='Warn:  ';;
+        -I) level=1;  prefix='Info:  ';;
+        -D) level=2;  prefix='Debug: ';;
+        -*) level=${1#-};;
+    esac
+    [ -z "$level" ] && level=0 || shift # Default to 0 or remove first arg
 
+    if [ -z "$VERBOSE" ] || [ $VERBOSE -ge ${level:-0} ]; then
+        printf "$prefix"
+        printf "$@"
+    fi >&2
+}
+
+Exit() {
+    exit "$@"
+}
 
 # ==== Argument parsing ====
 
-function args() {
+args() {
     local options=$(getopt -o "$OPTSTRING" --long "$OPTSTRING_LONG" -- "$@")
     eval set -- "$options"
 
@@ -43,11 +64,15 @@ function args() {
     done
 }
 
+
+# ==== Specifics ====
+
+
 # ==== Main flow ====
 
 # Options and defaults
 
-# Parse args, setting options on the way
-args "\$0" "$@"
+# Parse args and set options
+args "$@"
 endsnippet
 
