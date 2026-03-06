@@ -45,5 +45,9 @@
         "MD041": false, // First line H1
         "MD046": false, // Expected fenced code blocks
         "MD049": false  // Emphasis style consistent
-    }
+    },
+
+    // ----- Tinymist -----
+    "tinymist.lint.enabled": "true",
+    "tinymist.lint.when": "onSave"
 }
