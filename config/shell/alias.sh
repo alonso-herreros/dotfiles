@@ -111,6 +111,13 @@ alias otr=' off-the-record'                                     #abbr
 
 alias curl-tor='curl --socks5-hostname localhost:9050'
 
+# ==== Containers ====
+
+alias pandoc/typst='podman run --entrypoint typst --rm -itv "$(pwd)":/data docker.io/pandoc/typst'
+alias pandoc/latex='podman run --rm -itv "$(pwd)":/data docker.io/pandoc/latex'
+alias pandoc/extra='podman run --rm -itv "$(pwd)":/data docker.io/pandoc/extra'
+alias pandoc/pdflatex='podman run --entrypoint pdflatex --rm -itv "$(pwd)":/data docker.io/pandoc/extra'
+
 # ==== Easy Remember ====
 
 alias fonts='fc-list'                                           #abbr
