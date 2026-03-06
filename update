@@ -1,0 +1,5 @@
+echo "Updating git submodules"
+git submodule update --init --recursive --remote config scripts local sys
+
+echo "Updating yazi packages"
+ya pkg upgrade

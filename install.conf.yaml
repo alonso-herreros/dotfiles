@@ -74,5 +74,4 @@
     ~/.ssh/config: private/ssh/config
 
 - shell:
-  - [git submodule update --init --recursive --remote .dotbot config scripts local sys, Installing submodules]
-  - [ya pkg upgrade, Updating yazi packages]
+  - [git submodule update --init --recursive --remote --no-fetch .dotbot, Installing submodules]
