@@ -106,8 +106,8 @@ alias matlabdocker='xdg-open "https://www.mathworks.com/mwa/otp"; docker run -it
 alias pacman-updates='pacman -Qu --color=always | less -R'      #abbr
 alias pmupds='pacman-updates'                                   #abbr
 
-alias off-the-record='unset HISTFILE; export SAVEHIST=0'
-alias otr='off-the-record'                                      #abbr
+alias off-the-record=' unset HISTFILE; export SAVEHIST=0'
+alias otr=' off-the-record'                                     #abbr
 
 alias curl-tor='curl --socks5-hostname localhost:9050'
 
