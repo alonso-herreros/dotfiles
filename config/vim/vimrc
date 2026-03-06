@@ -116,7 +116,10 @@ function IndentWithHeadings(line)
     let indent = indent(a:line)
     if indent < 0 | return [indent, indent] | endif
 
-    let headings = match(getline(a:line), '^#\+\zs\s')+1
+    let headings = 0
+    if &ft == 'markdown'  | let headings = match(getline(a:line), '^#\+\zs\s')+1
+    elseif &ft == 'typst' | let headings = match(getline(a:line), '^=\+\zs\s')+1
+    endif
     if headings <= 0 | let headings = 6 | endif
 
     return [indent+headings, indent]
