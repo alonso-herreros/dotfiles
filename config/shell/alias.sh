@@ -186,6 +186,11 @@ function lines() {
     head -n $last $2 | tail -n $num
 }
 
+# ==== Useful chains ====
+yqq() {
+	yq -y $@ | bat -ppl YAML
+}
+
 # ==== User-scope process operations ====
 function upgrep() {
     pgrep -u $USER ${@:1}
