@@ -71,7 +71,9 @@
       glob: True
       path: scripts/.to-path/**
 
-    ~/.ssh/config: private/ssh/config
+    ~/.ssh/config:
+      if: test -r private/ssh/config
+      path: private/ssh/config
 
 - shell:
   - [git submodule update --init --recursive --remote --no-fetch .dotbot, Installing submodules]
