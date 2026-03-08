@@ -453,7 +453,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "hdmi": "",
+            "hdmi": " ",
             "default": [" ", " ", " "]
         },
         "tooltip-format": "{desc}: {volume}%",
