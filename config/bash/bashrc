@@ -3,22 +3,26 @@ try_source() { [[ -f "$1" ]] && source "$1"; }
 # Environment vars
 try_source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/env.sh"
 
+# Do nothing if not interactive
+case $- in
+    *i*) ;;
+    *)   return;;
+esac
+
 export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
 
-#################
-## synth-shell ##
-#################
 
-if [ -n "$( echo $- | grep i )" ]; then
-    # try_source ~/.config/synth-shell/synth-shell-greeter.sh
-    try_source ~/.config/synth-shell/synth-shell-prompt.sh
-    # try_source ~/.config/synth-shell/better-ls.sh
-    # try_source ~/.config/synth-shell/alias.sh
-    try_source ~/.config/synth-shell/better-history.sh
-fi
+# Synth Shell
+# try_source ~/.config/synth-shell/synth-shell-greeter.sh
+try_source ~/.config/synth-shell/synth-shell-prompt.sh
+# try_source ~/.config/synth-shell/better-ls.sh
+# try_source ~/.config/synth-shell/alias.sh
+try_source ~/.config/synth-shell/better-history.sh
 
+# Alias
 try_source "~/.config/shell/alias.sh"
 
+# Init
 eval "$(zoxide init bash --cmd cd)"
 try_source ~/.fzf.bash || eval "$(fzf --bash)"
 try_source /usr/share/git/completion/git-completion.bash
