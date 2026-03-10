@@ -9,8 +9,12 @@ case $- in
     *)   return;;
 esac
 
-export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
+# If we can run zsh, then do it. Drop back to bash on non-0 exit.
+if command -v zsh >/dev/null 2>&1; then
+    zsh && exit 0
+fi
 
+export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
 
 # Synth Shell
 # try_source ~/.config/synth-shell/synth-shell-greeter.sh
