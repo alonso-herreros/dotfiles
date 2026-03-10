@@ -24,10 +24,10 @@ unsetopt correct
 # ---- Make Zsh store its files where it should ----
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-[ -d "$XDG_STATE_HOME/zsh" ] || mkdir -p "$XDG_STATE_HOME/zsh"
+mkdir -p "$XDG_STATE_HOME/zsh"
 HISTFILE="$XDG_STATE_HOME"/zsh/history
 
-[ -d "$XDG_CACHE_HOME/zsh" ] || mkdir -p "$XDG_CACHE_HOME/zsh"
+mkdir -p "$XDG_CACHE_HOME/zsh"
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 # zcompdump handled by OMZ
 
