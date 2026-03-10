@@ -1,8 +1,8 @@
+try_source() { [[ -f "$1" ]] && source "$1"; }
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # See: https://github.com/romkatv/powerlevel10k#instant-prompt
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+try_source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
 
 export LANG=en_US.utf8
@@ -47,18 +47,16 @@ ZSH_CONFIG="$XDG_CONFIG_HOME/oh-my-zsh/config.zsh" # Separate config file
 ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh/oh-my-zsh"      # OMZ Cache directory
 ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION"
 
-if [ -f "$ZSH/oh-my-zsh.sh" ]; then
-    [ -f "$ZSH_CONFIG" ] && source "$ZSH_CONFIG" # Source config
-    source "$ZSH/oh-my-zsh.sh"                   # Source Oh My Zsh!
-fi
+try_source "$ZSH_CONFIG"       # Source config
+try_source "$ZSH/oh-my-zsh.sh" # Source Oh My Zsh!
 
 
 # ===== Powerlevel10k =====
-[ -f ~/.config/p10k.zsh ] && source ~/.config/p10k.zsh
+try_source ~/.config/p10k.zsh
 
 
 # ===== Aliases =====
-[ -f "$XDG_CONFIG_HOME/shell/alias.sh" ] && source "$XDG_CONFIG_HOME/shell/alias.sh"
+try_source "$XDG_CONFIG_HOME/shell/alias.sh"
 
 alias forget=' . ~/.scripts/utils/forget.zsh'
 alias nvm='forget'
@@ -84,7 +82,7 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 
 # ===== Yazi =====
-[ -f ~/.scripts/rc/yazi_quitcd.sh ] && source ~/.scripts/rc/yazi_quitcd.sh
+try_source ~/.scripts/rc/yazi_quitcd.sh
 
 
 # ==== ghdl-ls ====
@@ -97,8 +95,7 @@ function zvm_config() {
   ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
 }
 
-file_arch="/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
-[ -f "$file_arch" ] && source "$file_arch"
+try_source "/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 
 
 # ==== Binds ====
@@ -107,9 +104,8 @@ bindkey '^n' history-beginning-search-forward
 
 
 # ===== Local overrides =====
-
-[ -f "$ZDOTDIR/zshrc_local" ] && source "$ZDOTDIR/zshrc_local"
-[ -f ~/.zshrc_local ] && source ~/.zshrc_local
+try_source "$ZDOTDIR/zshrc_local"
+try_source ~/.zshrc_local
 
 
 # ===== Clear exit status =====
