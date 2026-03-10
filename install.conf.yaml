@@ -76,4 +76,4 @@
       path: private/ssh/config
 
 - shell:
-  - [git submodule update --init --recursive --remote --no-fetch .dotbot, Installing submodules]
+  - [git submodule update --init --recursive --remote --no-fetch .dotbot config scripts local sys, Installing submodules]
