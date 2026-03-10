@@ -40,7 +40,7 @@
 
 [merge]
     stat = true
-    conflictstyle = zdiff3
+    conflictstyle = diff3
     tool = fugitive
 
 [mergetool]
