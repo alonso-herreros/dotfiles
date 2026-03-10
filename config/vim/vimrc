@@ -37,8 +37,6 @@ Plug 'tpope/vim-rsi'           " Readline mappings when appropriate
 " Typing
 Plug 'jiangmiao/auto-pairs'    " Insert/delete brackets/parens/quotes in pair
 Plug 'tpope/vim-endwise'       " End certain structures automatically
-Plug 'neoclide/coc.nvim'       " Code Completion
-Plug 'sirver/UltiSnips'        " Snippets
 
 " Editing
 Plug 'tpope/vim-surround'      " Delete/change/add parentheses/quotes/tags/etc
@@ -702,19 +700,6 @@ inoremap <A-v> <C-o>v
 inoremap <C-j> <C-o>J
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 inoremap <A-q> <C-o>gwip
-
-" ---- Tab (completion & snippets) ----
-" Snippet jumping is handled by plugin. See `:h UltiSnips-trigger-key-mappings`
-" Selection of first instead of second handled in `coc-settings.json`
-inoremap <silent><expr> <Tab>
-    \ UltiSnips#CanExpandSnippet() ? '<C-R>=UltiSnips#ExpandSnippet()<CR>' :
-    \ coc#pum#visible() ? coc#pum#next(1) :
-    \ '<Tab>'
-
-inoremap <silent><expr> <S-Tab>
-    \ coc#pum#visible() ? coc#pum#prev(1) :
-    \ '<C-d>'
-
 
 " ======= COMMAND MODE MAPPINGS =======
 " Sudo write
