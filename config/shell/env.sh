@@ -36,6 +36,7 @@ fi
 if command -v less >/dev/null 2>&1; then
     export PAGER="less"
     export LESS="-Ri"
+    export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 fi
 
 if command -v ghdl >/dev/null 2>&1; then
