@@ -48,4 +48,5 @@ export NNN_PLUG="v:-preview-tui;e:-!echo $nnn|wl-copy*;c:-!echo $PWD/$nnn|wl-cop
 ## LOCAL OVERRIDES ##
 #####################
 
+try_source "${XDG_CONFIG_HOME:-$HOME/.config}/bash/bashrc_local"
 try_source ~/.bashrc_local

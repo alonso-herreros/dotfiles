@@ -13,6 +13,7 @@ config/git/config.d/*
 config/git/config_local
 
 config/zsh/zshrc_local
+config/bash/bashrc_local
 
 config/kitty/*.d.conf
 
