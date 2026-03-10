@@ -7,7 +7,7 @@
 
 # An include guard, since this is technically not idempotent
 if [ -z "$INCLUDED_ENV" ]; then
-    export INCLUDED_ENV=1
+    INCLUDED_ENV=1
 
     # ===== Options ============================================
     export LANG=en_US.utf8
