@@ -4,22 +4,11 @@ try_source() { [[ -f "$1" ]] && source "$1"; }
 # See: https://github.com/romkatv/powerlevel10k#instant-prompt
 try_source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 
-
-export LANG=en_US.utf8
-
-PATH="$HOME/.local/bin:$PATH"
-export EDITOR="vim"
-export PAGER="less"
+# ===== Environment vars =====
+try_source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/env.sh"
 
 unsetopt correct_all
 unsetopt correct
-
-# ==== Set XDG Base Directories ====
-
-[ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
-[ -z "$XDG_CACHE_HOME" ]  && export XDG_CACHE_HOME="$HOME/.cache"
-[ -z "$XDG_DATA_HOME" ]   && export XDG_DATA_HOME="$HOME/.local/share"
-[ -z "$XDG_STATE_HOME" ]  && export XDG_STATE_HOME="$HOME/.local/state"
 
 # ---- Make Zsh store its files where it should ----
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
@@ -30,13 +19,6 @@ HISTFILE="$XDG_STATE_HOME"/zsh/history
 mkdir -p "$XDG_CACHE_HOME/zsh"
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 # zcompdump handled by OMZ
-
-
-# ==== Default user and hostname ====
-
-# We need to check if the variable is set to avoid overriding it
-[ -z "$DEFAULT_USER" ] && export DEFAULT_USER="$(whoami)"
-[ -z "$DEFAULT_HOSTNAME" ] && export DEFAULT_HOSTNAME="$(hostname)"
 
 
 # ===== Oh My Zsh! =====
@@ -73,21 +55,8 @@ alias git='noglob git'
 alias find='noglob find'
 
 
-# ===== Less =====
-export LESS="-Ri"
-
-
-# ===== Docker =====
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
-
-
 # ===== Yazi =====
 try_source ~/.scripts/rc/yazi_quitcd.sh
-
-
-# ==== ghdl-ls ====
-# ghdl-ls gets completely lost without this...
-export GHDL="$(which ghdl)"
 
 
 # ===== zsh-vi-mode =====

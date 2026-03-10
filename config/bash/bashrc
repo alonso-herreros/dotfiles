@@ -1,10 +1,8 @@
 try_source() { [[ -f "$1" ]] && source "$1"; }
 
-export LANG=en_US.utf8
+# Environment vars
+try_source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/env.sh"
 
-PATH="$HOME/.local/bin:$PATH"
-export EDITOR=vim
-export PAGER="less -Ri"
 export HISTFILE="${XDG_STATE_HOME:-$HOME/.local/state}/bash/history"
 
 #################
