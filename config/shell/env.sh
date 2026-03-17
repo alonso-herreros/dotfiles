@@ -73,6 +73,9 @@ export ANSIBLE_LOCAL_TEMP="${XDG_CACHE_HOME}/ansible/tmp"
 export ANSIBLE_SSH_CONTROL_PATH_DIR="${XDG_CACHE_HOME}/ansible/cp"
 export ANSIBLE_ASYNC_DIR="${XDG_CACHE_HOME}/ansible_async"
 
+# NVIDIA
+export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
+
 
 # ===== Default user and hostname ==========================
 # We need to check if the variable is set to avoid overriding it
