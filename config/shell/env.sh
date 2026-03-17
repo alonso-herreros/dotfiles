@@ -38,24 +38,23 @@ export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
 
 # ===== Programs and options ===============================
-if command -v vim >/dev/null 2>&1; then
-    export EDITOR="vim"
-fi
 
-if command -v less >/dev/null 2>&1; then
-    export PAGER="less"
-    export LESS="-Ri"
-    export LESSHISTFILE="$XDG_STATE_HOME/less/history"
-fi
+# Editor and pager
+command -v vim >/dev/null 2>&1  && export EDITOR="vim"
+command -v less >/dev/null 2>&1 && export PAGER="less"
 
+# GHDL LS may get lost without this
 if command -v ghdl >/dev/null 2>&1; then
     export GHDL="$(command -v ghdl)"
 fi
 
-if command -v screen >/dev/null 2>&1; then
-    export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
-    export SCREENDIR="$XDG_RUNTIME_DIR/screen"
-fi
+# Less
+export LESS="-Ri"
+export LESSHISTFILE="$XDG_STATE_HOME/less/history"
+
+# Screen
+export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+export SCREENDIR="$XDG_RUNTIME_DIR/screen"
 
 
 # ===== Default user and hostname ==========================
