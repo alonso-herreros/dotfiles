@@ -58,6 +58,9 @@ export SCREENDIR="$XDG_RUNTIME_DIR/screen"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
+# NPM
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+
 
 # ===== Default user and hostname ==========================
 # We need to check if the variable is set to avoid overriding it
