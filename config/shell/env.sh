@@ -19,11 +19,20 @@ if [ -z "$INCLUDED_ENV_PATHS" ]; then
     [ -d "$HOME/.local/lib/locale" ] && export LOCPATH="$HOME/.local/lib/locale:$LOCPATH"
 fi
 
-# ----- XDG --------------------------------------
+# ----- XDG Base Directories ---------------------
+# Ideally, we wouldn't need any of this
 [ -z "$XDG_CONFIG_HOME" ] && export XDG_CONFIG_HOME="$HOME/.config"
 [ -z "$XDG_DATA_HOME" ]   && export XDG_DATA_HOME="$HOME/.local/share"
 [ -z "$XDG_STATE_HOME" ]  && export XDG_STATE_HOME="$HOME/.local/state"
 [ -z "$XDG_CACHE_HOME" ]  && export XDG_CACHE_HOME="$HOME/.cache"
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+    for dir in "/run/user/$UID" "/tmp/runtime-$UID" "$HOME/.run"; do
+        mkdir -p "$dir" \
+            && chmod 0700 "$dir" \
+            && export XDG_RUNTIME_DIR="$dir" \
+            && break
+    done
+fi
 
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
