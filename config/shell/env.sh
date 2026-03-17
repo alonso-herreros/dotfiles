@@ -43,6 +43,11 @@ if command -v ghdl >/dev/null 2>&1; then
     export GHDL="$(command -v ghdl)"
 fi
 
+if command -v screen >/dev/null 2>&1; then
+    export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
+    export SCREENDIR="$XDG_RUNTIME_DIR/screen"
+fi
+
 
 # ===== Default user and hostname ==========================
 # We need to check if the variable is set to avoid overriding it
