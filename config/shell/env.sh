@@ -61,6 +61,10 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 # NPM
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 
+# Go
+export GOPATH="$XDG_DATA_HOME/go"
+export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
+
 
 # ===== Default user and hostname ==========================
 # We need to check if the variable is set to avoid overriding it
