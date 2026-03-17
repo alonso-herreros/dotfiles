@@ -34,8 +34,6 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
     done
 fi
 
-export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
-
 
 # ===== Programs and options ===============================
 
@@ -55,6 +53,10 @@ export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 # Screen
 export SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 export SCREENDIR="$XDG_RUNTIME_DIR/screen"
+
+# Docker
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
 
 # ===== Default user and hostname ==========================
