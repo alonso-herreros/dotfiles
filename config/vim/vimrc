@@ -273,9 +273,8 @@ set formatoptions+=n       " Detect lists when formatting
 set formatoptions+=ro      " Insert comment leader on new lines
 set autoindent             " Autoindent new lines and formatted lines
 
-if empty($XDG_STATE_HOME)
-    let $XDG_STATE_HOME = $HOME . "/.local/state"
-endif
+let $XDG_STATE_HOME = get(environ(), 'XDG_STATE_HOME', $HOME.'/.local/state')
+silent! call mkdir($XDG_STATE_HOME.'/vim', 'p')
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
 set runtimepath+=$PWD/.vim " Add local .vim to runtimepath
