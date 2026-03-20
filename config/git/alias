@@ -15,11 +15,11 @@ s    = status -sb                                               #abbr
 ss   = status --short                                           #abbr
 sl   = status                                                   #abbr
 
-l    = log --oneline                                            #abbr
-ls   = log --oneline -n 10                                      #abbr
+l    = log --oneline --first-parent                             #abbr
+ls   = log --oneline --first-parent -n 10                       #abbr
 la   = log --oneline --all --graph                              #abbr
 las  = log --oneline --all --graph -n 10                        #abbr
-ll   = log                                                      #abbr
+ll   = log --first-parent                                       #abbr
 lla  = log --all --graph                                        #abbr
 # Log interactive (with preview)
 li   = "!git l   --oneline --color=always | git fzfc \"$@\""
