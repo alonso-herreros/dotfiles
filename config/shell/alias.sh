@@ -79,6 +79,8 @@ alias bell="echo -n $'\eg\a'"
 
 alias ls='ls -hlA --color=auto --group-directories-first'
 alias cp='cp -r'
+alias rm='rm -i'
+alias mv='mv -i'
 alias mkdir='mkdir -p'
 
 alias free='free -mht'
