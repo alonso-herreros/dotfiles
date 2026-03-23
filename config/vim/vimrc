@@ -275,6 +275,8 @@ set formatoptions+=n       " Detect lists when formatting
 set formatoptions+=ro      " Insert comment leader on new lines
 set autoindent             " Autoindent new lines and formatted lines
 
+set listchars=tab:•\ >,space:⋅,multispace:⋅⋅⋅⋅•
+
 let $XDG_STATE_HOME = get(environ(), 'XDG_STATE_HOME', $HOME.'/.local/state')
 silent! call mkdir($XDG_STATE_HOME.'/vim', 'p')
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
