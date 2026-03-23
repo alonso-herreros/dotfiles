@@ -80,6 +80,7 @@ pdf = [
 ]
 
 image = [
+	{ run = "mpv %s", desc = "MPV",  orphan = true },
 	{ run = "gimp %s &",                                       desc = "GIMP",   for = "linux", orphan = true },
 	{ run = 'f=%s; swappy -f %s -o "${f%.*}-edit.${f##*.}" &', desc = "Swappy", for = "linux", orphan = true },
 ]
