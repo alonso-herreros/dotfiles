@@ -149,6 +149,9 @@ keymap=[
 	##|---< Common tools >----------------------|
 	{ on="P",        run="shell --block -- $PAGER %s",  desc="Open: PAGER" },
 	{ on="E",        run="shell --block -- $EDITOR %s", desc="Open: EDITOR" },
+	{ on=["g", "e"], run="shell --block -- $EDITOR %s", desc="Open: EDITOR" },
+	{ on=["g", "?"], run="shell --block -- stat %s | $PAGER", desc="Stat" },
+	{ on=["g", "i"], run="shell --block -- exiftool %s | $PAGER", desc="See EXIF" },
 
 	##|---< Drag and drop >---------------------|
 	# { on="<C-d>",     run="shell 'dragon-drop -x -i -T -a \"%s\"'" },
