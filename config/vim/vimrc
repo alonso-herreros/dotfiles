@@ -119,6 +119,12 @@ function IndentWithHeadings(line)
     let headings = 0
     if &ft == 'markdown'  | let headings = match(getline(a:line), '^#\+\zs\s')+1
     elseif &ft == 'typst' | let headings = match(getline(a:line), '^=\+\zs\s')+1
+    else
+        if     match(getline(a:line), '^\s*#\+\s\?|\?==')>=0 | let headings = 2
+        elseif match(getline(a:line), '^\s*#\+\s\?|\?--')>=0 | let headings = 3
+        elseif match(getline(a:line), '^\s*#\+\s\?|\?\~\~')>=0 | let headings = 4
+        elseif match(getline(a:line), '^\s*##\s')>=0 | let headings = 1
+        endif
     endif
     if headings <= 0 | let headings = 6 | endif
 
