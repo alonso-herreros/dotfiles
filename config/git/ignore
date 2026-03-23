@@ -1,6 +1,7 @@
 *.sw?
 .nfs*
 *.orig
+.~lock.*#
 
 *.code-workspace
 .vscode/
