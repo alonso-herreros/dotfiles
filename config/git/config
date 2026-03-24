@@ -65,6 +65,7 @@
 
 [submodule]
     recurse = true
+    fetchJobs = 5
 
 [help]
     autocorrect = prompt
