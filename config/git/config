@@ -26,6 +26,9 @@
 [commit]
     verbose = true
 
+[fetch]
+    recurseSubmodules = on-demand
+
 [push]
     autoSetupRemote = true
     followTags = true
