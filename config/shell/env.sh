@@ -5,6 +5,30 @@
 #
 #     . ~/.config/shell/env.sh
 
+# ===== Helper function ====================================
+
+# ----- Path manipulation ------------------------
+# Remove a segment from a path
+path_remove() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    case "$val" in
+        *:$segment:* ) val="${val%%:$segment:*}:${val#*:$segment:}" ;;
+        $segment:* )   val="${val#$segment:}" ;;
+        *:$segment )   val="${val%:$segment}" ;;
+        $segment )     val="" ;;
+    esac
+    eval "$var=\"\$val\""
+}
+# Prepend a segment to the path variable given, without duplicates
+path_prepend() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    path_remove "$val" "$segment" "$var"
+    eval "$var=\"\$segment\${$var:+:\$$var}\""
+}
+# Append a segment to the path variable given, without duplicates
+path_append() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    path_remove "$val" "$segment" "$var"
+    eval "$var=\"\${$var:+\$$var:}\$segment\""
+}
+
 
 # ===== Options ============================================
 export LANG=en_US.utf8
@@ -12,12 +36,10 @@ export LANG=en_US.utf8
 
 # ===== Paths ==============================================
 # ----- Search paths -----------------------------
-# An include guard, since this is technically not idempotent
-if [ -z "$INCLUDED_ENV_PATHS" ]; then
-    INCLUDED_ENV_PATHS=1
-    [ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
-    [ -d "$HOME/.local/lib/locale" ] && export LOCPATH="$HOME/.local/lib/locale:$LOCPATH"
-fi
+path_prepend "$PATH" "$HOME/.local/bin"
+export PATH="$REPLY"
+path_prepend "$LOCPATH" "$HOME/.local/lib/locale"
+export LOCPATH="$REPLY"
 
 # ----- XDG Base Directories ---------------------
 # Ideally, we wouldn't need any of this
