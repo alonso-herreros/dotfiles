@@ -296,7 +296,7 @@ set formatoptions+=n       " Detect lists when formatting
 set formatoptions+=ro      " Insert comment leader on new lines
 set autoindent             " Autoindent new lines and formatted lines
 
-set listchars=tab:•\ >,space:⋅,multispace:⋅⋅⋅⋅•
+set listchars=tab:•\ >,space:⋅
 
 let s:state_dir = getenv('XDG_STATE_HOME') ?? ($HOME . '/.local/state/vim')
 let s:swap_dir = s:state_dir . '/swap'
