@@ -14,11 +14,11 @@ path_remove() { path="${1?}"; segment="${2?}"
 }
 # Prepend a segment to the path variable given, without duplicates
 path_prepend() { path="${1?}"; segment="${2?}"
-    echo "$segment:$(path_remove "$path" "$segment")"
+    echo "$segment${path:+:$(path_remove "$path" "$segment")}"
 }
 # Append a segment to the path variable given, without duplicates
 path_append() { path="${1?}"; segment="${2?}"
-    echo "$(path_remove "$path" "$segment"):$segment"
+    echo "${path:+$(path_remove "$path" "$segment"):}$segment"
 }
 
 
@@ -28,8 +28,8 @@ export LANG=en_US.utf8
 
 # ===== Paths ==============================================
 # ----- Search paths -----------------------------
-PATH="$(path_prepend "$PATH" "$HOME/.local/bin")"
-LOCPATH="$(path_prepend "$LOCPATH" "$HOME/.local/lib/locale:$LOCPATH")"
+export PATH="$(path_prepend "$PATH" "$HOME/.local/bin")"
+export LOCPATH="$(path_prepend "$LOCPATH" "$HOME/.local/lib/locale")"
 
 # ----- XDG Base Directories ---------------------
 # Ideally, we wouldn't need any of this
