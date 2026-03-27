@@ -10,7 +10,12 @@
 # ----- Path manipulation ------------------------
 # Remove a segment from a path
 path_remove() { path="${1?}"; segment="${2?}"
-    echo "$path" | /usr/bin/sed 's@:'"$segment"'$|'"$segment"':?@@'
+    case "$path" in
+        *:$segment:* ) echo "${path%%:$segment:*}:${path#*:$segment:}" ;;
+        $segment:* )   echo "${path#$segment:}" ;;
+        *:$segment )   echo "${path%:$segment}" ;;
+        *) echo "$path" ;;
+    esac
 }
 # Prepend a segment to the path variable given, without duplicates
 path_prepend() { path="${1?}"; segment="${2?}"
