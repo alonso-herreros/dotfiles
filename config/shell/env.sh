@@ -9,21 +9,24 @@
 
 # ----- Path manipulation ------------------------
 # Remove a segment from a path
-path_remove() { path="${1?}"; segment="${2?}"
-    case "$path" in
-        *:$segment:* ) echo "${path%%:$segment:*}:${path#*:$segment:}" ;;
-        $segment:* )   echo "${path#$segment:}" ;;
-        *:$segment )   echo "${path%:$segment}" ;;
-        *) echo "$path" ;;
+path_remove() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    case "$val" in
+        *:$segment:* ) val="${val%%:$segment:*}:${val#*:$segment:}" ;;
+        $segment:* )   val="${val#$segment:}" ;;
+        *:$segment )   val="${val%:$segment}" ;;
+        $segment )     val="" ;;
     esac
+    eval "$var=\"\$val\""
 }
 # Prepend a segment to the path variable given, without duplicates
-path_prepend() { path="${1?}"; segment="${2?}"
-    echo "$segment${path:+:$(path_remove "$path" "$segment")}"
+path_prepend() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    path_remove "$val" "$segment" "$var"
+    eval "$var=\"\$segment\${$var:+:\$$var}\""
 }
 # Append a segment to the path variable given, without duplicates
-path_append() { path="${1?}"; segment="${2?}"
-    echo "${path:+$(path_remove "$path" "$segment"):}$segment"
+path_append() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    path_remove "$val" "$segment" "$var"
+    eval "$var=\"\${$var:+\$$var:}\$segment\""
 }
 
 
@@ -33,8 +36,10 @@ export LANG=en_US.utf8
 
 # ===== Paths ==============================================
 # ----- Search paths -----------------------------
-export PATH="$(path_prepend "$PATH" "$HOME/.local/bin")"
-export LOCPATH="$(path_prepend "$LOCPATH" "$HOME/.local/lib/locale")"
+path_prepend "$PATH" "$HOME/.local/bin"
+export PATH="$REPLY"
+path_prepend "$LOCPATH" "$HOME/.local/lib/locale"
+export LOCPATH="$REPLY"
 
 # ----- XDG Base Directories ---------------------
 # Ideally, we wouldn't need any of this
