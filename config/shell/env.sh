@@ -20,11 +20,13 @@ path_remove() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
 }
 # Prepend a segment to the path variable given, without duplicates
 path_prepend() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    [ -d "$segment" ] || return 1 # Existence check
     path_remove "$val" "$segment" "$var"
     eval "$var=\"\$segment\${$var:+:\$$var}\""
 }
 # Append a segment to the path variable given, without duplicates
 path_append() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
+    [ -d "$segment" ] || return 1 # Existence check
     path_remove "$val" "$segment" "$var"
     eval "$var=\"\${$var:+\$$var:}\$segment\""
 }
