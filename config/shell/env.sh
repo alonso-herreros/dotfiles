@@ -38,10 +38,8 @@ export LANG=en_US.utf8
 
 # ===== Paths ==============================================
 # ----- Search paths -----------------------------
-path_prepend "$PATH" "$HOME/.local/bin"
-export PATH="$REPLY"
-path_prepend "$LOCPATH" "$HOME/.local/lib/locale"
-export LOCPATH="$REPLY"
+path_prepend "$PATH" "$HOME/.local/bin" "PATH" && export PATH
+path_prepend "$LOCPATH" "$HOME/.local/lib/locale" "LOCPATH" && export LOCPATH
 
 # ----- XDG Base Directories ---------------------
 # Ideally, we wouldn't need any of this
