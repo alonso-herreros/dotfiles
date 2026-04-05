@@ -22,13 +22,13 @@ las  = log --oneline --all --graph -n 10                        #abbr
 ll   = log --first-parent                                       #abbr
 lla  = log --all --graph                                        #abbr
 # Log interactive (with preview)
-li   = "!git l   --oneline --color=always | git fzfc \"$@\""
-lai  = "!git la  --oneline --color=always | git fzfc \"$@\""
-lsi  = "!git ls  --oneline --color=always | git fzfc \"$@\""
-lasi = "!git las --oneline --color=always | git fzfc \"$@\""
-lia  = lai
-lis  = lsi
-lias = lasi
+li   = "!git l   --oneline --color=always | git fzfc \"$@\""    #abbr
+lai  = "!git la  --oneline --color=always | git fzfc \"$@\""    #abbr
+lsi  = "!git ls  --oneline --color=always | git fzfc \"$@\""    #abbr
+lasi = "!git las --oneline --color=always | git fzfc \"$@\""    #abbr
+lia  = lai                                                      #abbr
+lis  = lsi                                                      #abbr
+lias = lasi                                                     #abbr
 
 d    = diff                                                     #abbr
 ds   = diff --cached                                            #abbr
@@ -37,9 +37,9 @@ dm   = diff main                                                #abbr
 dmst = diff main --stat                                         #abbr
 
 sh   = show                                                     #abbr
-shh  = "!git show $(git lai)"
+shh  = "!git show $(git lai)"                                   #abbr
 shs  = show --stat                                              #abbr
-shhs = "!git show --stat $(git lai)"
+shhs = "!git show --stat $(git lai)"                            #abbr
 
 # ---- Index operations: add, restore ----
 
@@ -59,7 +59,7 @@ rrr  = reset --hard                                             #abbr
 # ---- Commits and stashes ----
 
 # Taken: `co` and `c-` for `checkout`, `cp` for `cherry-pick`
-commit-a = "!git add -A; git commit"
+commit-a = "!git add -A; git commit"                            #abbr
 c    = commit                                                   #abbr
 cc   = commit-a                                                 #abbr
 cm   = commit   -m                                              #abbr
@@ -71,11 +71,11 @@ ccane= commit-a --amend --no-edit                               #abbr
 # Fixup
 cf   = commit   --fixup                                         #abbr
 ccf  = commit-a --fixup                                         #abbr
-cff  = "!git commit   --fixup $(git li 'Select commit to fixup')"
-ccff = "!git commit-a --fixup $(git li 'Select commit to fixup')"
+cff  = "!git commit   --fixup $(git li 'Fixup commit...')"      #abbr
+ccff = "!git commit-a --fixup $(git li 'Fixup commit...')"      #abbr
 # Commit and push
-cmp  = "!cmp()  { git commit   -m \"$@\"; git push; }; cmp"
-ccmp = "!ccmp() { git commit-a -m \"$@\"; git push; }; ccmp"
+cmp  = "!cmp()  { git commit   -m \"$@\"; git push; }; cmp"     #abbr
+ccmp = "!ccmp() { git commit-a -m \"$@\"; git push; }; ccmp"    #abbr
 
 st   = stash                                                    #abbr
 stm  = stash -m                                                 #abbr
@@ -93,7 +93,7 @@ stsh = stash show                                               #abbr
 # ---- Branch operations: checkout, branch, merge, rebase, tag ----
 
 co   = checkout                                                 #abbr
-coo  = "!git checkout $(git blai)"
+coo  = "!git checkout $(git blai)"                              #abbr
 cob  = checkout -b                                              #abbr
 c-   = checkout -                                               #abbr
 com  = checkout main                                            #abbr
@@ -103,19 +103,19 @@ ba   = branch -a                                                #abbr
 bl   = branch -l                                                #abbr
 bla  = branch -la                                               #abbr
 # List interactive (with short log preview)
-bli  = "!git branch -l  --color=always | git fzfb \"$@\""
-bai  = "!git branch -a  --color=always | git fzfb \"$@\""
-blai = "!git branch -la --color=always | git fzfb \"$@\""
-bia  = bai
-blia = blai
+bli  = "!git branch -l  --color=always | git fzfb \"$@\""       #abbr
+bai  = "!git branch -a  --color=always | git fzfb \"$@\""       #abbr
+blai = "!git branch -la --color=always | git fzfb \"$@\""       #abbr
+bia  = bai                                                      #abbr
+blia = blai                                                     #abbr
 # Branch operations
 bd   = branch -d                                                #abbr
 bdf  = branch -D                                                #abbr
-bdd  = "!git branch -d $(git blai 'Select branch to delete')"
-bddf = "!git branch -D $(git blai 'Select branch to delete')"
+bdd  = "!git branch -d $(git blai 'Delete branch')"             #abbr
+bddf = "!git branch -D $(git blai 'Delete branch (force)')"     #abbr
 br   = branch -r                                                #abbr
 bm   = branch -m                                                #abbr
-bmm  = "!git branch -m $(git branch --show-current)"
+bmm  = "!git branch -m $(git branch --show-current)"            #abbr
 
 m    = merge                                                    #abbr
 me   = merge --edit                                             #abbr
@@ -129,9 +129,9 @@ mom  = merge origin/main                                        #abbr
 mt   = mergetool                                                #abbr
 
 cp   = cherry-pick                                              #abbr
-cpp  = "!git cherry-pick $(git lai 'Select commit(s) to cherry-pick')"
+cpp  = "!git cherry-pick $(git lai 'Cherry-pick')"              #abbr
 cpnc = cherry-pick --no-commit                                  #abbr
-cppnc= "!git cherry-pick --no-commit $(git lai 'Select commit(s) to cherry-pick')"
+cppnc= "!git cherry-pick --no-commit $(git lai 'Cherry-pick')"  #abbr
 cpa  = cherry-pick --abort                                      #abbr
 cpc  = cherry-pick --continue                                   #abbr
 
@@ -142,7 +142,7 @@ rba  = rebase --abort                                           #abbr
 rbc  = rebase --continue                                        #abbr
 rbs  = rebase --skip                                            #abbr
 rbi  = rebase --interactive                                     #abbr
-rbii = "!git rebase --interactive $(git lai 'Select commit to rebase onto')"
+rbii = "!git rebase --interactive $(git lai 'Rebase onto...')"  #abbr
 
 t    = tag                                                      #abbr
 
@@ -152,7 +152,7 @@ f    = fetch                                                    #abbr
 fa   = fetch --all                                              #abbr
 fp   = fetch --prune                                            #abbr
 fap  = fetch --all --prune                                      #abbr
-ff   = "!git fetch --all --prune && git branch -la"
+ff   = "!git fetch --all --prune && git branch -la"             #abbr
 
 # Taken `pl` for `pull`
 p    = push                                                     #abbr
@@ -162,7 +162,7 @@ pf   = push --force-with-lease                                  #abbr
 pff  = push --force                                             #abbr
 po   = push origin                                              #abbr
 pu   = push upstream                                            #abbr
-p-   = "!git push -q &"
+p-   = "!git push -q &"                                         #abbr
 
 pl   = pull                                                     #abbr
 plr  = pull --rebase                                            #abbr
@@ -172,7 +172,7 @@ plom = pull origin main                                         #abbr
 plu  = pull upstream                                            #abbr
 plur = pull upstream --rebase                                   #abbr
 
-pnp  = "!git pull --rebase && git push"
+pnp  = "!git pull --rebase && git push"                         #abbr
 
 # Not to be confused with `reset` aliases, which also start with `r`
 re   = remote                                                   #abbr
@@ -183,21 +183,20 @@ reau = remote add upstream                                      #abbr
 
 # ---- Other chains ----
 
-fapla = "!git fetch --all --prune && git log --oneline --all --graph"
-fapbla = "!git fetch --all --prune && git branch -la"
-fapb  = "!git fetch --all --prune && git branch -la"
+fapla = "!git fetch --all --prune && git log --oneline --all --graph"  #abbr
+fapbla = "!git fetch --all --prune && git branch -la"           #abbr
+fapb  = "!git fetch --all --prune && git branch -la"            #abbr
 
-compl = "!git checkout main && git pull origin main"
-compl- = "!git checkout main && git pull origin main && git checkout -"
+compl = "!git checkout main && git pull origin main"            #abbr
+compl- = "!git checkout main && git pull origin main && git checkout -"  #abbr
 
-fapcompl = "!git fetch --all --prune && git checkout main && git pull origin main"
-fapcompl- = "!git fetch --all --prune && git checkout main && git pull origin main && git checkout -"
+fapcompl = "!git fetch --all --prune && git checkout main && git pull origin main"  #abbr
+fapcompl- = "!git fetch --all --prune && git checkout main && git pull origin main && git checkout -"  #abbr
 
 
 # ---- Others ----
 
 uncommit = reset --soft HEAD^                                   #abbr
-shit = uncommit
 unstage = reset HEAD --                                         #abbr
 ignore = update-index --asume-unchanged                         #abbr
 
