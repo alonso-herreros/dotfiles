@@ -29,10 +29,11 @@ parse_abbr_sh() {
 }
 
 parse_abbr_git() {
-    sed -nE "
-        s/\"/\\\\\"/g;
-        s/^\s*([^ =]+)\s*=\s*(( *[^ ])+)\s*#abbr\s*$/abbr \"git \1\"=\"git \2\"/p
-    "
+    sed -nE '
+        s/^\s*([^ =]+)\s*=\s*("(!git )?(( *[^ ])+)"|(( *[^ ])+))\s*#abbr\s*$/\1\t\4\6/;
+        s/([^\\])"/\1\\"/g;
+        s/^([^\t]+)\t([^\t]+)$/abbr "git \1"="git \2"/p;
+    '
     # TODO: parse aliases with leading "!"
 }
 
