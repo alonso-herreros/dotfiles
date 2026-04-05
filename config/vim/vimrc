@@ -120,7 +120,8 @@ function IndentWithHeadings(line)
     if &ft == 'markdown'  | let headings = match(getline(a:line), '^#\+\zs\s')+1
     elseif &ft == 'typst' | let headings = match(getline(a:line), '^=\+\zs\s')+1
     elseif match(getline(a:line), '====\|---\|\~\~\~\|##')>=0
-        let cml = trim(substitute(&cms, "%s", "", "")) " Comment leader
+        let cml = trim(substitute(&cms, "%s.*$", "", "")) " Comment leader
+        let cml = substitute(cml, "\*", "\\\\*", "g") " Special chars
         if     match(getline(a:line), '^\s*'.cml.'#*\s\?|\?====')>=0
             let headings = 2
         elseif match(getline(a:line), '^\s*'.cml.'#*\s\?|\?---')>=0
