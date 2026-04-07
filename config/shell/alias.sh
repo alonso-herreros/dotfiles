@@ -99,9 +99,14 @@ alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 
 # ==== Combos & Options ====
 
-alias lsg='ls && echo " " && git status'
 alias ks='kitten ssh'                                           #abbr
 alias sf='ssh -o ForwardAgent=yes'                              #abbr
+ssh-tmux() { ssh "${1:?}" -- tmux new -As "${2:-ssh}"; }
+kitten-ssh-tmux() { kitten ssh "${1:?}" -- tmux new -As "${2:-ssh}"; }
+alias st='ssh-tmux'                                             #abbr
+alias kst='kitten-ssh-tmux'                                     #abbr
+
+alias lsg='ls && echo " " && git status'
 alias nn='nnn -n'                                               #abbr
 alias matlabcli='matlab -nosplash -nodisplay'
 alias gpconnect='sudo gpclient connect --default-browser'       #abbr
