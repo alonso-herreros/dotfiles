@@ -74,7 +74,10 @@ fi
 
 # Editor and pager
 command -v vim >/dev/null 2>&1  && export EDITOR="vim"
-command -v less >/dev/null 2>&1 && export PAGER="less"
+command -v less >/dev/null 2>&1 && {
+    export PAGER="less"
+    export MANPAGER="less --header=1"
+}
 
 # GHDL LS may get lost without this
 if command -v ghdl >/dev/null 2>&1; then
