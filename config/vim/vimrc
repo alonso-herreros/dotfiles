@@ -493,6 +493,14 @@ noremap <C-a> <Esc>ggvG$
 noremap <C-+> <C-a>
 noremap <C-_> <C-x>
 
+" ---- Movement ----
+map <Leader>k {
+map <Leader>j }
+map <Leader>K {zz
+map <Leader>J }zz
+map <Leader>h [
+map <Leader>l ]
+
 " Yank to clipboard
 map <Leader>y "+y
 map <Leader>Y "+Y
