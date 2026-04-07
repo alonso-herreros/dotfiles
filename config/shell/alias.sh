@@ -29,6 +29,7 @@ alias tf='terraform'                                            #abbr
 alias sc='sc-im'                                                #abbr
 alias trr='transmission-remote'                                 #abbr
 alias ff='fastfetch'                                            #abbr
+alias tt='tmux new -As'                                         #abbr
 
 alias svirsh='sudo virsh'                                       #abbr
 alias sv='sudo virsh'                                           #abbr
