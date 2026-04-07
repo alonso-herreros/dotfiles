@@ -20,14 +20,12 @@ path_remove() { val="${1?}"; segment="${2?}"; var="${3:-REPLY}"
 }
 # Add a segment to the path variable given, without duplicates
 path_add() {
-    mode=insert; export=0 # Defaults
-    while [ "$#" -gt 0 ]; do case "$1" in # Arg parse
-        -a | --append ) mode=append;;
-        -i | --insert ) mode=insert;;
-        -e | --export ) export=1;;
-        -- ) shift; break;;
-        * ) break;;
-    esac; shift; done
+    mode=insert # Defaults
+    case "$1" in # Arg parse
+        -a | --append ) mode=append; shift;;
+        -i | --insert ) mode=insert; shift;;
+        -- ) shift;;
+    esac
     val="${1?}"; segment="${2?}"; var="${3}"
 
     [ -d "$segment" ] || return 1 # Dir existence check
@@ -43,7 +41,6 @@ path_add() {
         append) eval "$var=\"\${$var:+\$$var:}\$segment\"";;
         insert) eval "$var=\"\$segment\${$var:+:\$$var}\"";;
     esac
-    [ "${export:-0}" -eq 1 ] && eval "export $var" || :
 }
 
 
@@ -53,8 +50,9 @@ export LANG=en_US.utf8
 
 # ===== Paths ==============================================
 # ----- Search paths -----------------------------
-path_add -i -e '$PATH' "$HOME/.local/bin"
-path_add -i -e '$LOCPATH' "$HOME/.local/lib/locale"
+export PATH LOCPATH
+path_add -i '$PATH' "$HOME/.local/bin"
+path_add -i '$LOCPATH' "$HOME/.local/lib/locale"
 
 # ----- XDG Base Directories ---------------------
 # Ideally, we wouldn't need any of this
