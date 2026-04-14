@@ -199,7 +199,8 @@
         },
         "modules": [
             "cpu",
-            "cpu#val"
+            "cpu#val",
+            "cpu#bars"
         ]
     },
     // https://github.com/Alexays/Waybar/wiki/Module:-CPU
@@ -219,21 +220,35 @@
     "cpu#val": {
         "interval": 10,
         "format": "{usage}%",
-        // "format-alt": "({usage}%)",
-        // "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ({usage}%)",
-        "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11} ({usage}%)",
+        "format-alt": "{usage}%",
         "tooltip": true,
+        "states": {
+            "low": 0,
+            "normal": 10,
+            "medium": 30,
+            "high": 60,
+            "max": 85
+        }
+    },
+    "cpu#bars": {
+        "interval": 10,
+        "format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}{icon8}{icon9}{icon10}{icon11}",
         "format-icons": [
             // Catppuccin macchiato
-            "<span color='#8bd5ca'>▁</span>", // Teal
-            "<span color='#a6da95'>▂</span>", // Green
-            "<span color='#a6da95'>▃</span>", // Green
-            "<span color='#eed49f'>▄</span>", // Yellow
-            "<span color='#eed49f'>▅</span>", // Yellow
-            "<span color='#f5a97f'>▆</span>", // Peach
-            "<span color='#f5a97f'>▇</span>", // Peach
-            "<span color='#ed8796'>█</span>"  // Red
+            "<span color='#8bd5ca'>⡀</span>", // Teal
+            "<span color='#8bd5ca'>⡀</span>", // Teal
+            "<span color='#eed49f'>⡄</span>", // Green
+            "<span color='#eed49f'>⡄</span>", // Green
+            "<span color='#a6da95'>⡄</span>", // Yellow
+            "<span color='#a6da95'>⡄</span>", // Yellow
+            "<span color='#f5a97f'>⡆</span>", // Peach
+            "<span color='#f5a97f'>⡆</span>", // Peach
+            "<span color='#f5a97f'>⡆</span>", // Peach
+            "<span color='#ed8796'>⡇</span>", // Red
+            "<span color='#ed8796'>⡇</span>"  // Red
         ],
+        "tooltip": true,
         "states": {
             "low": 0,
             "normal": 10,

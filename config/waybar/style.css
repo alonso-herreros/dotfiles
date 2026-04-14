@@ -370,6 +370,11 @@ button.urgent,
 #cpu.medium { color: @range-medium; }
 #cpu.high   { color: @range-bad; }
 #cpu.max    { color: @range-worst; }
+#cpu.bars   {
+    margin-left: -0.25em;
+    margin-right: -0.45em;
+    letter-spacing: -0.45em;
+}
 
 #temperature          { color: @temp-low; }
 #temperature.warning  { color: @temp-medium; }
