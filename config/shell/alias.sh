@@ -102,8 +102,14 @@ alias dmesg='dmesg --color=auto --reltime --human --nopager --decode'
 
 alias ks='kitten ssh'                                           #abbr
 alias sf='ssh -o ForwardAgent=yes'                              #abbr
-ssh-tmux() { ssh "${1:?}" -- tmux new -As "${2:-ssh}"; }
-kitten-ssh-tmux() { kitten ssh "${1:?}" -- tmux new -As "${2:-ssh}"; }
+ssh-tmux() {
+    h="${1:?}"; s="${2:-ssh}"; shift 2
+    ssh "$h" "$@" -- tmux new -As "$s"
+}
+kitten-ssh-tmux() {
+    h="${1:?}"; s="${2:-ssh}"; shift 2
+    kitten ssh "$h" "$@" -- tmux new -As "$s"
+}
 alias st='ssh-tmux'                                             #abbr
 alias kst='kitten-ssh-tmux'                                     #abbr
 
