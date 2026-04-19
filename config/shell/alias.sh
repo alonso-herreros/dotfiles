@@ -41,6 +41,7 @@ alias sdct='sudo docker container'                              #abbr
 alias sdi='sudo docker image'                                   #abbr
 
 alias sctl='systemctl'                                          #abbr
+alias sctlu='systemctl --user'                                  #abbr
 alias ssctl='sudo systemctl'                                    #abbr
 alias stui='systemctl-tui'                                      #abbr
 alias sstui='sudo systemctl-tui'                                #abbr
