@@ -1,10 +1,14 @@
+# Vim swap files
 *.sw?
-.nfs*
+# Git merge conflicts
 *.orig
+# MS Office
 .~lock.*#
 # Draw.io
 .$*.bkp
+.nfs*
 
+# VS Code
 *.code-workspace
 .vscode/
 .local/
