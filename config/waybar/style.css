@@ -393,7 +393,6 @@ button.urgent,
 #bluetooth {
     padding: 0 2px;
     color: @blue;
-    letter-spacing: -3px;
 }
 
 #network { color: @yellow; }
