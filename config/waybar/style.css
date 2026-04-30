@@ -391,6 +391,7 @@ button.urgent,
 #pulseaudio { color: @maroon; }
 
 #bluetooth {
+    font-size: 1.15em;
     padding: 0 2px;
     color: @blue;
 }
