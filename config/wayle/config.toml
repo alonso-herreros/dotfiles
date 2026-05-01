@@ -1,0 +1,122 @@
+# Wayle configuration file
+
+[bar]
+bg = "bg-base"
+scale = 0.75
+button-variant = "basic"
+#button-icon-padding = 1.1 # Not available in 'basic' variant
+button-icon-size = 0.9
+button-label-padding = 0.7
+button-label-size = 1.05
+button-border-width = 0
+button-rounding = "full"
+button-group-background = "bg-surface-elevated"
+button-group-rounding = "full"
+
+[general]
+tearing-mode = true
+
+[[bar.layout]]
+monitor = "*"
+show = true
+left = [
+    { name = "batt-util", modules = [
+    "battery",
+    "idle-inhibit",
+] },
+    { name = "kbd", modules = ["keyboard-input"] },
+    "media",
+]
+center = [
+    "systray",
+    "hyprland-workspaces",
+]
+right = [
+    { name = "sys", modules = [
+    "cpu",
+    "ram",
+] },
+    { name = "status", modules = [
+    "volume",
+    "microphone",
+    "bluetooth",
+    "network",
+] },
+    "clock",
+    "dashboard",
+]
+
+[styling]
+rounding = "lg"
+
+[styling.palette]
+bg = "#1e2030"
+surface = "#24273a"
+elevated = "#2d3147"
+fg = "#cad3f5"
+fg-muted = "#8087a2"
+primary = "#8bd5ca"
+red = "#ed8796"
+yellow = "#eed49f"
+green = "#a6da95"
+blue = "#8aadf4"
+
+[modules.bluetooth]
+label-show = false
+left-click = ""
+right-click = "dropdown:bluetooth"
+
+[modules.clock]
+icon-show = false
+format = "  %a %b %d %I:%M %p  "
+
+[modules.cpu]
+poll-interval-ms = 5000
+right-click = "dropdown:dashboard"
+
+[modules.hyprland-workspaces]
+show-special = false
+urgent-mode = "application"
+label-use-name = true
+
+[modules.keyboard-input]
+icon-show = false
+
+[modules.keyboard-input.layout-alias-map]
+Spanish = "ES"
+
+[modules.microphone]
+label-show = false
+left-click = "wayle audio input-mute"
+right-click = "dropdown:audio"
+middle-click = ""
+scroll-up = "wayle audio input-volume +5"
+scroll-down = "wayle audio input-volume -5"
+
+[modules.network]
+label-show = false
+left-click = ""
+right-click = "dropdown:network"
+
+[modules.ram]
+right-click = "dropdown:dashboard"
+
+[modules.volume]
+label-show = false
+left-click = "wayle audio output-mute"
+right-click = "dropdown:audio"
+middle-click = ""
+scroll-up = "wayle audio output-volume +5"
+scroll-down = "wayle audio output-volume -5"
+
+[modules.weather]
+location = "Madrid"
+
+[osd]
+position = "top"
+duration = 1500
+monitor = "active"
+margin = 0.0
+
+[wallpaper]
+engine-enabled = false
