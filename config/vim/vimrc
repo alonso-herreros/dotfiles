@@ -216,6 +216,11 @@ function! UltiExpandTryBackslash()
     return g:ulti_expand_res
 endfunction
 
+" ==== Copilot ====
+let g:copilot_filetypes = {
+    \ 'gitcommit': v:true,
+    \ }
+
 
 " ==== Language-specific plugins ====
 
