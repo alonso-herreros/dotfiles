@@ -101,6 +101,9 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=none
 hi IndentGuidesEven ctermbg=234
 
+" ==== AutoPairs ====
+let g:AutoPairsShortcutToggle = ''
+
 " ==== Surround ====
 " Surround with newlines
 let g:surround_{char2nr("o")} = "\n\r\n"
@@ -678,6 +681,11 @@ inoremap <A-h> <Left>
 inoremap <A-j> <Down>
 inoremap <A-k> <Up>
 inoremap <A-l> <Right>
+" Duplicating lines
+inoremap <A-J> <Esc>yypA
+inoremap <A-K> <Esc>yyPA
+inoremap <A-y> <C-o>yy
+inoremap <A-P> <Esc>pA
 " TODO: fix wbe moving in insert mode
 " inoremap <A-w> <C-o>w
 " inoremap <A-e> <C-Right>
@@ -689,10 +697,6 @@ inoremap <A-`> <C-o>``
 inoremap <A-i> <C-o>^
 inoremap <A-a> <Esc>A
 " Visual from Insert
-inoremap <A-H> <C-o>vh
-inoremap <A-J> <C-o>vj
-inoremap <A-K> <C-o>vk
-inoremap <A-L> <C-o>vl
 inoremap <A-v> <C-o>v
 " Joining lines with Ctrl+j
 inoremap <C-j> <C-o>J
