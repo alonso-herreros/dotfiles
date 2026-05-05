@@ -59,6 +59,12 @@ opt_flag() {
     fi
 }
 
+_rsync() {
+    printf "running: rsync %s\n" "$*"
+    rsync "$@"
+    printf "command used: rsync %s\n" "$*"
+}
+
 # ==== Main ====
 SANE_DEFAULTS=1
 
@@ -68,7 +74,7 @@ if [ "$1" == "--no-defaults" ]; then
 fi
 
 # Run rsync with sane defaults and prompting flags
-rsync \
+_rsync \
     $(opt_flag -P "Keep partial transfers and print progress" yy) \
     $(opt_flag -i "Itemize" yy) \
     $(opt_flag -h "Human-readable" yy) \
