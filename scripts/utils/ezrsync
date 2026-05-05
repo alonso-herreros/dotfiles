@@ -29,10 +29,12 @@ opt_flag() {
     [ -n "$description" ] && details=" ($description)"
 
     case "$default" in
-        YY|yy ) answer="y";;
-        NN|nn ) answer="y";;
-        [Yy] ) default="y";;
-        * )    default="n";;
+        YY|yy ) [ ${SANE_DEFAULTS:-0} -eq 1 ] && answer="y";;
+        NN|nn ) [ ${SANE_DEFAULTS:-0} -eq 1 ] && answer="n";;
+    esac
+    case "$default" in
+        [Yy]* ) default="y";;
+        * )     default="n";;
     esac
     [ "$default" == "y" ] && opts="Y/n" || opts="y/N"
 
