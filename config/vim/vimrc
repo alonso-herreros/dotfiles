@@ -133,7 +133,11 @@ function IndentWithHeadings(line)
         elseif match(line, '^\\subsection') >= 0    | let headings = 3
         elseif match(line, '^\\subsubsection') >= 0 | let headings = 4
         endif
-    elseif match(line, '====\|---\|\~\~\~\|##')>=0
+    endif
+    if headings <= 0 | let headings = 6 | endif
+
+    let commentheadings = 0
+    if match(line, '====\|---\|\~\~\~\|##')>=0
         let cml = trim(substitute(&cms, "%s.*$", "", "")) " Comment leader
         let cml = substitute(cml, "\*", "\\\\*", "g") " Special chars
         if     match(line, '^\s*'.cml.'#*\s\?|\?====')>=0
@@ -146,9 +150,9 @@ function IndentWithHeadings(line)
             let commentheadings = 10
         endif
     endif
-    if headings <= 0 | let headings = 6 | endif
+    if commentheadings <= 0 | let commentheadings = 40 | endif
 
-    return [indent+headings, indent]
+    return [indent+headings+commentheadings, indent]
 endfunction
 
 let g:context_max_height = 8
