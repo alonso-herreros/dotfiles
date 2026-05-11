@@ -123,20 +123,27 @@ function IndentWithHeadings(line)
     let indent = indent(a:line)
     if indent < 0 | return [indent, indent] | endif
 
+    let line=getline(a:line)
     let headings = 0
-    if &ft == 'markdown'  | let headings = match(getline(a:line), '^#\+\zs\s')+1
-    elseif &ft == 'typst' | let headings = match(getline(a:line), '^=\+\zs\s')+1
-    elseif match(getline(a:line), '====\|---\|\~\~\~\|##')>=0
+    if &ft == 'markdown'  | let headings = match(line, '^#\+\zs\s')+1
+    elseif &ft == 'typst' | let headings = match(line, '^=\+\zs\s')+1
+    elseif &ft == 'tex' && match(line, '^\\') >= 0
+        if     match(line, '^\\chapter') >= 0       | let headings = 1
+        elseif match(line, '^\\section') >= 0       | let headings = 2
+        elseif match(line, '^\\subsection') >= 0    | let headings = 3
+        elseif match(line, '^\\subsubsection') >= 0 | let headings = 4
+        endif
+    elseif match(line, '====\|---\|\~\~\~\|##')>=0
         let cml = trim(substitute(&cms, "%s.*$", "", "")) " Comment leader
         let cml = substitute(cml, "\*", "\\\\*", "g") " Special chars
-        if     match(getline(a:line), '^\s*'.cml.'#*\s\?|\?====')>=0
-            let headings = 2
-        elseif match(getline(a:line), '^\s*'.cml.'#*\s\?|\?---')>=0
-            let headings = 3
-        elseif match(getline(a:line), '^\s*'.cml.'#*\s\?|\?\~\~')>=0
-            let headings = 4
-        elseif match(getline(a:line), '^\s*'.cml.'#\s')>=0
-            let headings = 1
+        if     match(line, '^\s*'.cml.'#*\s\?|\?====')>=0
+            let commentheadings = 20
+        elseif match(line, '^\s*'.cml.'#*\s\?|\?---')>=0
+            let commentheadings = 30
+        elseif match(line, '^\s*'.cml.'#*\s\?|\?\~\~')>=0
+            let commentheadings = 40
+        elseif match(line, '^\s*'.cml.'#\s')>=0
+            let commentheadings = 10
         endif
     endif
     if headings <= 0 | let headings = 6 | endif
