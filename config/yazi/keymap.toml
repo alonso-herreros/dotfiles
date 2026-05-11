@@ -127,8 +127,8 @@ keymap=[
 	{ on=["g", "D"], run="shell -- shred -u %s", desc="Shred selected files" },
 
 	##|---< Creating >--------------------------|
-	{ on="a",        run="create",       desc="Add file (ending / for dir)" },
-	{ on="A",        run="create --dir", desc="Add directory" },
+	{ on="a",        run="create", desc="Add file (ending / for dir)" },
+	{ on="A",        run="create", desc="Add file (ending / for dir)" },
 
 	##|---< Renaming >--------------------------|
 	{ on="<F2>",  run="rename --cursor=before_ext", desc="Rename" },
