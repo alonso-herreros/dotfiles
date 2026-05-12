@@ -47,6 +47,7 @@ edit = [
 
 view = [
 	{ run = "less %s",   desc = "Less",       for = "unix",  block = true },
+	{ run = "bat -n --paging=always %s", desc = "Bat",        for = "unix",  block = true },
 	{ run = "vim -R %s", desc = "Vim (view)", block = true},
 ]
 
