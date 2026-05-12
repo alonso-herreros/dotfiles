@@ -1,7 +1,7 @@
- # A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to
- # validate your config.  If you encounter any issues, please make an issue at
- # https://github.com/yazi-rs/schemas.
-"$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
+# A TOML linter such as Tombi can use this schema to validate your config.
+# If you encounter any problems, please file an issue at https://github.com/yazi-rs/schemas.
+
+#:schema https://yazi-rs.github.io/schemas/yazi.json
 
 [mgr]
 ratio           = [ 2, 7, 5 ]
@@ -10,6 +10,7 @@ sort_sensitive  = false
 sort_reverse    = false
 sort_dir_first  = true
 sort_translit   = false
+sort_fallback   = "alphabetical"
 linemode        = "none"
 show_hidden     = false
 show_symlink    = false
@@ -36,8 +37,6 @@ open = [
 	{ run = "open %s",         desc = "Open", for = "macos" },
 	{ run = 'start "" %s1',    desc = "Open", for = "windows",   orphan = true },
 	{ run = "termux-open %s1", desc = "Open", for = "android" },
-	{ run = 'code "$@"',       desc = "Code", for = "unix" },
-	{ run = 'code "%@"',       desc = "Code", for = "windows" }
 ]
 
 edit = [
@@ -97,13 +96,10 @@ download = [
 [open]
 rules = [
 	# Empty file
-	{ mime = "inode/x-empty", use = [ "edit", "reveal" ] },
+	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Folder
 	{ url = "*/", use = [ "edit", "open", "reveal" ] },
 
-	# JSON
-	{ mime = "application/{json,x-ndjson}", use = [ "edit", "reveal" ] },
-	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
 	# PDF
 	{ mime = "application/pdf", use = [ "open", "pdf", "reveal" ] },
 
@@ -111,22 +107,18 @@ rules = [
 	{ mime = "image/*", use = [ "open", "image", "reveal" ] },
 
 	# QALC
-	{ name = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
+	{ url  = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
 
 	# Text
 	{ mime = "text/html", use = [ "open", "edit", "reveal" ] },
-	{ mime = "text/*", use = [ "edit", "open", "reveal" ] },
-	# Image
-	{ mime = "image/*", use = [ "open", "reveal" ] },
+	{ mime = "text/*", use = [ "edit", "reveal" ] },
+
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	# Code
+	{ mime = "application/{json,ndjson,javascript,wine-extension-ini}", use = [ "edit", "reveal" ] },
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
-	# JSON
-	{ mime = "application/{json,ndjson}", use = [ "edit", "reveal" ] },
-	{ mime = "*/javascript", use = [ "edit", "reveal" ] },
-	# Empty file
-	{ mime = "inode/empty", use = [ "edit", "reveal" ] },
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
 	# Fallback
@@ -134,8 +126,11 @@ rules = [
 ]
 
 [tasks]
-micro_workers    = 10
-macro_workers    = 10
+file_workers     = 3
+plugin_workers   = 5
+fetch_workers    = 5
+preload_workers  = 2
+process_workers  = 5
 bizarre_retry    = 3
 image_alloc      = 268435456  # 256MB
 image_bound      = [ 0, 0 ]
@@ -144,15 +139,18 @@ suppress_preload = false
 [plugin]
 
 fetchers = [
-	# Mimetype
-	{ id = "mime", url = "*/",         run = "mime.dir",    prio = "high" },
-	{ id = "mime", url = "local://*",  run = "mime.local",  prio = "high" },
-	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
-	{ id = "git",  url = "*/",         run = "git" },
-	{ id = "git",  url = "local://*",  run = "git" },
+	# MIME-type
+	{ url = "*/",         run = "mime.dir",    prio = "high", group = "mime" },
+	{ url = "local://*",  run = "mime.local",  prio = "high", group = "mime" },
+	{ url = "remote://*", run = "mime.remote", prio = "high", group = "mime" },
+	{ url = "*/",         run = "git",                        group = "git" },
+	{ url = "local://*",  run = "git",                        group = "git" },
 ]
 
 spotters = [
+	# Multi-file
+	{ mime = "multi/*", run = "multi" },
+	# Folder
 	{ url = "*/", run = "folder" },
 	# Code
 	{ mime = "text/*", run = "code" },
@@ -277,16 +275,16 @@ delete_origin = "center"
 delete_offset = [ 0, 0, 70, 20 ]
 
 # overwrite
-overwrite_title   = "Overwrite file?"
-overwrite_content = "Will overwrite the following file:"
-overwrite_origin  = "center"
-overwrite_offset  = [ 0, 0, 50, 15 ]
+overwrite_title  = "Overwrite file?"
+overwrite_body   = "Will overwrite the following file:"
+overwrite_origin = "center"
+overwrite_offset = [ 0, 0, 50, 15 ]
 
 # quit
-quit_title   = "Quit?"
-quit_content = "The following task is still running, are you sure you want to quit?"
-quit_origin  = "center"
-quit_offset  = [ 0, 0, 50, 15 ]
+quit_title  = "Quit?"
+quit_body   = "There are unfinished tasks, quit anyway?"
+quit_origin = "center"
+quit_offset = [ 0, 0, 50, 15 ]
 
 [pick]
 open_title  = "Open with:"
@@ -298,6 +296,3 @@ sort_by        = "none"
 sort_sensitive = false
 sort_reverse   = false
 sort_translit  = false
-
-[log]
-enabled = false
