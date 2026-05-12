@@ -111,7 +111,7 @@ rules = [
 	{ mime = "image/*", use = [ "open", "image", "reveal" ] },
 
 	# QALC
-	{ name = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
+	{ url  = "*.qalc", use = [ "edit", "qalc", "reveal" ] },
 
 	# Text
 	{ mime = "text/html", use = [ "open", "edit", "reveal" ] },
