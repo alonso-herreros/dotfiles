@@ -111,7 +111,8 @@ rules = [
 
 	# Text
 	{ mime = "text/html", use = [ "open", "edit", "reveal" ] },
-	{ mime = "text/*", use = [ "edit", "open", "reveal" ] },
+	{ mime = "text/*", use = [ "edit", "reveal" ] },
+
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Code
