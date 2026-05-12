@@ -88,7 +88,7 @@ sta  = stash apply                                              #abbr
 stl  = stash list                                               #abbr
 stp  = stash pop                                                #abbr
 std  = stash drop                                               #abbr
-stsh = stash show                                               #abbr
+stsh = stash show --patch                                       #abbr
 
 # ---- Branch operations: checkout, branch, merge, rebase, tag ----
 
