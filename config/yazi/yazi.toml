@@ -37,8 +37,6 @@ open = [
 	{ run = "open %s",         desc = "Open", for = "macos" },
 	{ run = 'start "" %s1',    desc = "Open", for = "windows",   orphan = true },
 	{ run = "termux-open %s1", desc = "Open", for = "android" },
-	{ run = 'code "$@"',       desc = "Code", for = "unix" },
-	{ run = 'code "%@"',       desc = "Code", for = "windows" }
 ]
 
 edit = [
