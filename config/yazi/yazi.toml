@@ -139,12 +139,12 @@ suppress_preload = false
 [plugin]
 
 fetchers = [
-	# Mimetype
-	{ id = "mime", url = "*/",         run = "mime.dir",    prio = "high" },
-	{ id = "mime", url = "local://*",  run = "mime.local",  prio = "high" },
-	{ id = "mime", url = "remote://*", run = "mime.remote", prio = "high" },
-	{ id = "git",  url = "*/",         run = "git" },
-	{ id = "git",  url = "local://*",  run = "git" },
+	# MIME-type
+	{ url = "*/",         run = "mime.dir",    prio = "high", group = "mime" },
+	{ url = "local://*",  run = "mime.local",  prio = "high", group = "mime" },
+	{ url = "remote://*", run = "mime.remote", prio = "high", group = "mime" },
+	{ url = "*/",         run = "git",                        group = "git" },
+	{ url = "local://*",  run = "git",                        group = "git" },
 ]
 
 spotters = [
