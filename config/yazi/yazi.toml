@@ -69,8 +69,6 @@ play = [
 	{ run = 'start "" %s1', orphan = true, desc = "Play", for = "windows" },
 	{ run = "termux-open %s1",             desc = "Play", for = "android" },
 	{ run = "mpv --force-window %s",       desc = "MPV",  orphan = true },
-	{ run = "mediainfo %s1; echo 'Press enter to exit'; read _", block = true, desc = "Show media info", for = "unix" },
-	{ run = "mediainfo %s1 & pause", block = true, desc = "Show media info", for = "windows" },
 ]
 
 pdf = [
