@@ -59,6 +59,13 @@ reveal = [
 	{ run = "clear; exiftool %s1; echo 'Press enter to exit'; read _", desc = "Show EXIF", for = "unix", block = true },
 ]
 
+checksum = [
+	{ run = "sha256sum %s; read _", desc = "SHA256", block=true },
+	{ run = "diff <(sha256sum %s | cut -d ' ' -f 1) <(wl-paste)", desc = "Compare SHA256 with clipboard", block=true },
+	{ run = "md5sum %s; read _", desc = "MD5", block=true },
+	{ run = "diff <(md5sum %s | cut -d ' ' -f 1) <(wl-paste)", desc = "Compare MD5 with clipboard", block=true },
+]
+
 extract = [
 	{ run = "ya pub extract --list %s", desc = "Extract here" },
 ]
@@ -109,19 +116,21 @@ rules = [
 	{ url  = "*.qalc", use = [ "edit", "qalc", "view", "reveal" ] },
 
 	# Text
-	{ mime = "text/html", use = [ "open", "edit", "view", "reveal" ] },
-	{ mime = "text/*", use = [ "edit", "view", "reveal" ] },
+	{ mime = "text/html", use = [ "open", "edit", "view", "reveal", "checksum" ] },
+	{ mime = "text/*", use = [ "edit", "view", "reveal", "checksum" ] },
 
 	# Media
-	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
+	{ mime = "{audio,video}/*", use = [ "play", "reveal", "checksum" ] },
 	# Code
-	{ mime = "application/{json,ndjson,javascript,wine-extension-ini}", use = [ "edit", "view", "reveal" ] },
+	{ mime = "application/{json,ndjson,javascript,wine-extension-ini}", use = [ "edit", "view", "reveal", "checksum" ] },
 	# Archive
-	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal" ] },
+	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal", "checksum" ] },
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
+	# Deb package
+	{ url = "*.deb", use = [ "open", "reveal", "checksum" ] },
 	# Fallback
-	{ url = "*", use = [ "open", "edit", "view", "reveal" ] },
+	{ url = "*", use = [ "open", "edit", "view", "reveal", "checksum" ] },
 ]
 
 [tasks]
