@@ -556,6 +556,9 @@ noremap <Tab> gt
 noremap <S-Tab> gT
 
 " ---- Splits ----
+" Creating splits
+noremap <silent> <C-w>" <CMD>split<CR>
+noremap <silent> <C-w>% <CMD>vsplit<CR>
 " Split manipulation with Ctrl+Alt+key (Not used enough to need Ctrl+key)
 noremap <C-A-h> <C-w>h
 noremap <C-A-j> <C-w>j
