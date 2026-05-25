@@ -74,6 +74,7 @@ keymap=[
 	{ on=["'", "V"], run="cd /virt",                desc="Go: /virt" },
 	{ on=["'", "c"], run="cd ~/.config",            desc="Go: .config" },
 	{ on=["'", "."], run="cd ~/.dotfiles",          desc="Go: .dotfiles" },
+	{ on=["'", "l"], run="cd ~/.local",             desc="Go: .local" },
 	{ on=["'", "b"], run="cd ~/.bookmarks",         desc="Go: .bookmarks" },
 	{ on=["'", "t"], run="cd ~/tmp",                desc="Go: tmp" },
 	{ on=["'", "d"], run="cd ~/Downloads",          desc="Go: Downloads" },
