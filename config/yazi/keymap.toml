@@ -106,11 +106,11 @@ keymap=[
 	#|====< MANAGEMENT >=======================================|
 
 	##|---< Copying paths and names >-----------|
-	{ on="Y",        run="copy path",             desc="Copy file path" },
-	{ on=["c", "p"], run="copy path",             desc="Copy file path" },
-	{ on=["c", "d"], run="copy dirname",          desc="Copy dir path" },
-	{ on=["c", "f"], run="copy filename",         desc="Copy filename" },
-	{ on=["c", "n"], run="copy name_without_ext", desc="Copy name (no ext.)" },
+	{ on=["Y", "y"], run="copy path",             desc="Copy file path" },
+	{ on=["Y", "p"], run="copy path",             desc="Copy file path" },
+	{ on=["Y", "d"], run="copy dirname",          desc="Copy dir path" },
+	{ on=["Y", "f"], run="copy filename",         desc="Copy filename" },
+	{ on=["Y", "n"], run="copy name_without_ext", desc="Copy name (no ext.)" },
 
 	##|---< Copy-pasting >----------------------|
 	{ on="y",        run=[
