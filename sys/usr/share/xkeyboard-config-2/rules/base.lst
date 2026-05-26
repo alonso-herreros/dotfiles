@@ -9,6 +9,9 @@
   altmath:sup_dot      Subscript dead key at AltGr+.
   undead               Layers to remove or specify dead keys
   undead:es_only       Make non-spanish keys not dead
+  numpad               Regular modern numpad, no NumLock required
+  numpad:hex           Map numpad 0-5 to a-f with shift
+  numpad:operators_ext Map numpad operators to useful functions with shift
   custom               Miscellaneous options
   custom:types         Use user-defined custom XKB types
   custom:test          Option for testing

@@ -38,6 +38,26 @@
     <group allowMultipleSelection="true">
       <option>
         <configItem>
+          <name>numpad</name>
+          <description>Regular modern numpad, no NumLock required</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>numpad:hex</name>
+          <description>Map numpad 0-5 to a-f with shift</description>
+        </configItem>
+      </option>
+      <option>
+        <configItem>
+          <name>numpad:operators_ext</name>
+          <description>Map numpad operators to useful functions with shift</description>
+        </configItem>
+      </option>
+    </group>
+    <group allowMultipleSelection="true">
+      <option>
+        <configItem>
           <name>undead</name>
           <description>Layers to remove or specify dead keys</description>
         </configItem>

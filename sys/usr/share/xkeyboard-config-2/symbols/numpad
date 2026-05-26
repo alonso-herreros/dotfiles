@@ -1,0 +1,74 @@
+default  hidden partial keypad_keys
+xkb_symbols "basic" {
+
+    include "numpad(core)"
+    include "numpad(number)"
+    include "numpad(operators)"
+};
+
+hidden partial keypad_keys
+xkb_symbols "number" {
+
+    key  <KP7> { [ KP_7, KP_7, KP_7, KP_7 ] };
+    key  <KP8> { [ KP_8, KP_8, KP_8, KP_8 ] };
+    key  <KP9> { [ KP_9, KP_9, KP_9, KP_9 ] };
+
+    key  <KP4> { [ KP_4, KP_4, KP_4, KP_4 ] };
+    key  <KP5> { [ KP_5, KP_5, KP_5, KP_5 ] };
+    key  <KP6> { [ KP_6, KP_6, KP_6, KP_6 ] };
+
+    key  <KP1> { [ KP_1, KP_1, KP_1, KP_1 ] };
+    key  <KP2> { [ KP_2, KP_2, KP_2, KP_2 ] };
+    key  <KP3> { [ KP_3, KP_3, KP_3, KP_3 ] };
+
+    key  <KP0> { [ KP_0, KP_0, KP_0, KP_0 ] };
+};
+
+hidden partial keypad_keys
+xkb_symbols "operators" {
+    key <KPDV> { [ KP_Divide,   KP_Divide,   KP_Divide,   KP_Divide   ] };
+    key <KPMU> { [ KP_Multiply, KP_Multiply, KP_Multiply, KP_Multiply ] };
+    key <KPSU> { [ KP_Subtract, KP_Subtract, KP_Subtract, KP_Subtract ] };
+    key <KPAD> { [ KP_Add,      KP_Add,      KP_Add,      KP_Add      ] };
+
+    key <KPDL> { [ KP_Decimal, KP_Decimal, KP_Decimal, KP_Decimal ] };
+    key <KPPT> { [ KP_Decimal, KP_Decimal, KP_Decimal, KP_Decimal ] };
+};
+
+// Keypad keys nobody changes
+// Copyright © 2006 Nicolas Mailhot <nicolas.mailhot @ laposte.net>
+partial keypad_keys
+xkb_symbols "core" {
+
+    modifier_map Mod2 { Num_Lock };
+
+    key <NMLK> { [ Num_Lock ] };
+    key <KPEN> { [ KP_Enter ] };
+    key <KPEQ> { [ KP_Equal ] };
+};
+
+partial keypad_keys
+xkb_symbols "hex" {
+    include "numpad(core)"
+    include "numpad(number)"
+    key  <KP0> { [ NoSymbol, a ] };
+    key  <KP1> { [ NoSymbol, b ] };
+    key  <KP2> { [ NoSymbol, c ] };
+    key  <KP3> { [ NoSymbol, d ] };
+    key  <KP4> { [ NoSymbol, e ] };
+    key  <KP5> { [ NoSymbol, f ] };
+    key  <KP6> { [ NoSymbol, numbersign ] };
+};
+
+partial keypad_keys
+xkb_symbols "operators_ext" {
+    include "numpad(core)"
+    include "numpad(operators)"
+    key <KPDV> { [ NoSymbol, parenleft  ] };
+    key <KPMU> { [ NoSymbol, parenright ] };
+    key <KPSU> { [ NoSymbol, underscore ] };
+    key <KPAD> { [ NoSymbol, KP_Equal   ] };
+
+    key <KPDL> { [ NoSymbol, colon ] };
+    key <KPPT> { [ NoSymbol, colon ] };
+};
