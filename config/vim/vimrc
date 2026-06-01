@@ -113,6 +113,14 @@ let g:surround_{char2nr("2")} = "\1character: \1\1\1\r\1\1\1\1"
 " Surround with LaTeX environments or commands
 let g:surround_{char2nr("e")} = "\\begin{\1environment: \1}\n\t\r\n\\end{\1\1}"
 let g:surround_{char2nr("c")} = "\\\1command: \1{\r}"
+" Surround with true unicode angle brackets (chevrons)
+let g:surround_{char2nr("A")} = "⟨\r⟩"
+let g:surround_{char2nr("⟨")} = "⟨ \r ⟩"
+let g:surround_{char2nr("⟩")} = "⟨\r⟩"
+" Surround with unicode angle quotes (guillemets)
+let g:surround_{char2nr("g")} = "«\r»"
+let g:surround_{char2nr("«")} = "« \r »"
+let g:surround_{char2nr("»")} = "«\r»"
 
 " ==== GitGutter ====
 let g:gitgutter_terminal_reports_focus=0
