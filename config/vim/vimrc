@@ -291,6 +291,13 @@ elseif &term =~'screen'
     let &t_ti .= "\eP\e[1 q\e\\"  " blink block
     let &t_te .= "\eP\e[0 q\e\\"  " default (normally blink block)
 endif
+" Bracketed paste
+if &term =~ 'xterm' || &term =~ 'screen' || &term =~ 'tmux'
+    let &t_BE = "\<Esc>[?2004h"
+    let &t_BD = "\<Esc>[?2004l"
+    let &t_PS = "\<Esc>[200~"
+    let &t_PE = "\<Esc>[201~"
+endif
 
 set showcmd                " Show (partial) command in status line.
 set showmatch              " Show matching brackets.
