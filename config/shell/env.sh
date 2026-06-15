@@ -85,7 +85,7 @@ if command -v ghdl >/dev/null 2>&1; then
 fi
 
 # Less
-export LESS="-Ri"
+export LESS="-MRi --wordwrap --incsearch"
 export LESSHISTFILE="$XDG_STATE_HOME/less/history"
 
 # Screen
