@@ -76,6 +76,7 @@ tooltip.background {
 #clock,
 #battery,
 #power-profiles-daemon,
+#custom-dunst,
 #idle_inhibitor,
 #systemd-failed-units,
 #keyboard-icon,
@@ -125,6 +126,7 @@ button:hover,
 #custom-launch:hover,
 #power-profiles-daemon:hover,
 #custom-tlp:hover,
+#custom-dunst:hover,
 #idle_inhibitor:hover,
 #tray *:hover,
 #tray > .passive:hover,
@@ -166,6 +168,7 @@ button.active,
 }
 
 /* Disabled */
+#custom-dunst.paused,
 #workspaces button:not(.hosting-monitor),
 #mpris.track.paused,
 #custom-shuffle.Off,
@@ -274,9 +277,7 @@ button.urgent,
 #power-profiles-daemon.balanced { color: @range-medium; }
 #power-profiles-daemon.performance { color: @power; }
 
-#custom-tlp { padding: 0 8px; }
-#custom-tlp.battery { color: @green; }
-#custom-tlp.AC { color: @power; }
+#custom-dunst { padding: 0 6px; }
 
 #idle_inhibitor { padding: 0 5px; }
 #systemd-failed-units { color: @primary }

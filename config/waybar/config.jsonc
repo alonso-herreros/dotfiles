@@ -96,6 +96,7 @@
         "modules": [
             "battery",
             "power-profiles-daemon",
+            "custom/dunst",
             "idle_inhibitor"
         ]
     },
@@ -126,6 +127,19 @@
             "balanced": " ",
             "power-saver": " "
         }
+    },
+
+    // ---- Custom dunst controls ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Custom
+    "custom/dunst": {
+        "format": "{}", // Using thin space " "
+        "exec": "~/.config/waybar/scripts/dunst-info.sh -j pause",
+        "exec-on-event": true,
+        "return-type": "json",
+        // We need to run every now and then in case there are outside changes.
+        "interval": 60,
+        "on-click": "dunstctl set-paused toggle",
+        "on-click-right": "dunstctl history-pop"
     },
 
     // ---- Idle Inhibitor ----
