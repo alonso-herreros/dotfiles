@@ -1,0 +1,80 @@
+snippet \m "Math span delimiter" i
+\$${1:${VISUAL}}\$
+endsnippet
+
+snippet \M "Math block delimiter" i
+\$\$
+${0:${VISUAL}}
+\$\$
+endsnippet
+
+snippet \( "Math: Left/right ()" i
+\\left(${1:${VISUAL}}\\right)
+endsnippet
+
+snippet \[ "Math: Left/right []" i
+\\left[${1:${VISUAL}}\\right]
+endsnippet
+
+snippet \{ "Math: Left/right {}" i
+\\left\\{${1:${VISUAL}}\\right\\}
+endsnippet
+
+snippet "\\(f|frac|/)" "Math: Fraction" ir
+\\frac{${1:${VISUAL}}}{$2}
+endsnippet
+
+snippet "\\(h|hat)" "Math: Hat" ir
+\hat{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(v|vec)" "Math: Vector arrow" ir
+\\vec{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(-|bar)" "Math: Bar" ir
+\\bar{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(b|boxed)" "Math: Boxed" ir
+\\boxed{${1:${VISUAL}}}
+endsnippet
+
+snippet "\\(s|sqrt)" "Math: Square Root" ir
+\\sqrt{${1:${VISUAL}}}
+endsnippet
+
+snippet \= "Tex: aligned equals" i
+&=
+endsnippet
+
+snippet \e "Math: Scientific notation" i
+⋅10^{$1}
+endsnippet
+
+snippet \B "Environment" i
+\\begin{${1:aligned}}
+	${VISUAL}$0
+\\end{$1}
+endsnippet
+
+snippet "\\\&|BALd" "Math: Aligned Environment" ir
+\\begin{aligned}
+	$1${VISUAL: = /=/&=/}$2 \\\\
+	$0
+\\end{aligned}
+endsnippet
+
+snippet "\\\&|BAL" "Math: Aligned Environment" ir
+\\begin{align}
+	$1${VISUAL: = /=/&=/}$2 \\\\
+	$0
+\\end{align}
+endsnippet
+
+snippet BCA "Math: Cases Environment" i
+\\begin{cases}
+	$0${VISUAL: \\\\/\n/ \\\\\n/}
+\\end{cases}
+endsnippet
+
