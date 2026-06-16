@@ -591,17 +591,47 @@
     "group/session-time": {
         "orientation": "inherit",
         "modules": [
-            "clock",
+            "group/datetime",
             "group/session"
+        ]
+    },
+
+    // ---- Date and time ----
+    "group/datetime": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "clock",
+            "clock#date"
         ]
     },
 
     // ---- Clock ----
     // https://github.com/Alexays/Waybar/wiki/Module:-Clock
     "clock": {
-        // "locale": "es_ES.UTF-8", // Makes weeks start on Monday, but uses Spanish
-        "format": "{:%b %e, %I:%M %p}",
+        "format": "{:%I:%M %p}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click": "date '+%I:%M %p' | wl-copy",
+        "on-click-right": "date '+%T' | wl-copy",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": "3",
+            // "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "today": "<span color='red'><b>{}</b></span>"
+            }
+        }
+    },
+    "clock#date": {
+        "format": "{:%b %e}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "on-click": "date '+%b %e %Y' | wl-copy",
+        "on-click-right": "date '+%c' | wl-copy",
         "calendar": {
             "mode": "month",
             "mode-mon-col": "3",
