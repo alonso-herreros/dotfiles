@@ -272,7 +272,7 @@ button.urgent,
 }
 
 /* ==== Utils ==== */
-#power-profiles-daemon { padding: 0 8px; }
+#power-profiles-daemon { padding: 0 6px; }
 #power-profiles-daemon.power-saver { color: @green; }
 #power-profiles-daemon.balanced { color: @range-medium; }
 #power-profiles-daemon.performance { color: @power; }

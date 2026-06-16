@@ -123,7 +123,7 @@
     "power-profiles-daemon": {
         "format": "{icon}",
         "format-icons": {
-            "performance": "   ",
+            "performance": "    ", // Spaces 6-per-em " ", hair " ", thin " "
             "balanced": " ",
             "power-saver": " "
         }
