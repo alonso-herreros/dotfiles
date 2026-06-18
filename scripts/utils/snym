@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+if [ -z "$1" ]; then
+    echo "Usage: syn <word>"
+    exit 1
+fi
+    
+curl -s "https://api.datamuse.com/words?rel_syn=$1" \
+    | jq -r '
+        .[] | 
+        (.score // 0) as $s |
+        if $s >= 30000 then
+            "\u001b[32m\(.word)\u001b[0m"   # Green
+        elif $s >= 10000 then
+            "\u001b[33m\(.word)\u001b[0m"   # Yellow
+        else
+            "\u001b[31m\(.word)\u001b[0m"   # Red
+        end' \
+    | column
