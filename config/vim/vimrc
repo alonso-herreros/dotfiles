@@ -154,7 +154,7 @@ function IndentWithHeadings(line)
             let commentheadings = 30
         elseif match(line, '^\s*'.cml.'#*\s\?|\?\~\~')>=0
             let commentheadings = 40
-        elseif match(line, '^\s*'.cml.'#\s')>=0
+        elseif match(line, '^\s*'.cml.'##\?\s')>=0
             let commentheadings = 10
         endif
     endif
