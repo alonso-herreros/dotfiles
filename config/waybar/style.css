@@ -374,7 +374,7 @@ button.urgent,
 #cpu.bars   {
     margin-left: -0.25em;
     margin-right: -0.45em;
-    letter-spacing: -0.45em;
+    letter-spacing: -0.35em;
 }
 
 #temperature          { color: @temp-low; }
