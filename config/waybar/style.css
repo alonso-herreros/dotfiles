@@ -95,6 +95,7 @@ tooltip.background {
 #custom-nextsong,
 #custom-shuffle,
 #custom-loop,
+#custom-camera,
 #pulseaudio,
 #bluetooth,
 #network,
@@ -136,6 +137,7 @@ button:hover,
 #custom-nextsong:hover,
 #custom-shuffle:hover,
 #custom-loop:hover,
+#custom-camera:hover,
 #audio-sinks:hover,
 #audio-sources:hover,
 #bluetooth-group:hover,
@@ -173,6 +175,7 @@ button.active,
 #mpris.track.paused,
 #custom-shuffle.Off,
 #custom-loop.None,
+#custom-camera.disabled,
 #pulseaudio.sink.muted,
 #pulseaudio.sink_val.muted,
 #pulseaudio.mic.source-muted,
@@ -388,6 +391,14 @@ button.urgent,
 #memory.max    { color: @range-worst; }
 
 /* ==== Status ==== */
+#custom-camera {
+    padding: 0 9px;
+    color: @range-best;
+}
+#custom-camera.active {
+    color: @range-worst;
+}
+
 #audio-sources { padding: 0 4px 0 6px; }
 #pulseaudio { color: @maroon; }
 

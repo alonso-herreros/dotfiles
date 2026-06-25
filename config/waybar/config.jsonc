@@ -453,12 +453,26 @@
         "orientation": "inherit",
         "modules": [
             // "group/backlight",
+            "custom/camera",
             "group/audio-sinks",
             "group/audio-sources",
             "group/bluetooth-group",
             "group/network-group"
         ]
     },
+
+    // ---- Custom webcam controls ----
+    // https://github.com/Alexays/Waybar/wiki/Module:-Custom
+    "custom/camera": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/webcam-ctl.sh -j status",
+        "exec-on-event": true,
+        "return-type": "json",
+        // We need to run every now and then in case there are outside changes.
+        "interval": 10,
+        "on-click": "~/.config/waybar/scripts/webcam-ctl.sh toggle",
+    },
+
 
     // ---- Audio sink ----
     "group/audio-sinks": {
