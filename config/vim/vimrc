@@ -607,6 +607,8 @@ nnoremap <silent> <A-j> ddp==
 nnoremap <silent> <A-J> yyp
 nnoremap <silent> <A-k> ddkP==
 nnoremap <silent> <A-K> yyP
+nnoremap <silent> <A-o> pA
+nnoremap <silent> <A-O> PA
 " Joining lines without taking J
 nnoremap <silent> <C-j> J
 nnoremap <silent> g<C-j> gJ
@@ -704,7 +706,6 @@ inoremap JK <Esc>l
 inoremap <S-CR> <Esc>O
 inoremap <C-CR> <CR><CR><Up>
 inoremap <A-o> <Esc>o
-inoremap <A-O> <Esc>O
 " hjkl moving
 inoremap <A-h> <Left>
 inoremap <A-j> <Down>
