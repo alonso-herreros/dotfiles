@@ -615,8 +615,8 @@ nnoremap <silent> g<C-j> gJ
 " Adding spaces, lines and line breaks
 nnoremap <Leader>i i<Space><Esc>l
 nnoremap <Leader>a a<Space><Esc>h
-nnoremap <Leader>o m`o<Esc>0D``
-nnoremap <Leader>O m`O<Esc>0D``
+nnoremap <Leader>o m`o<Space><C-u><Esc>``
+nnoremap <Leader>O m`O<Space><C-u><Esc>``
 nnoremap <Leader><CR> cl<CR><Esc>
 " Overwrite with yanked
 nmap <Leader>R R<C-r>0<Esc>
