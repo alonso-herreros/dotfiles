@@ -1,17 +1,121 @@
 #!/usr/bin/env sh
 
-if [ -z "$1" ]; then
-    echo "Usage: syn <word>"
+# ===== USAGE =====
+Help() {
+    cat <<EOF
+Usage: $0 [OPTIONS] <word>
+
+OPTIONS:
+    -l, --lang LANG    Use a specific language
+    -q, --query QUERY  Use a specific query parameter (default 'rel_syn')
+    -h, --help         Show this help message and exit
+EOF
+}
+
+# ===== FUNCTIONS =====
+add_param() {
+    param="$1"
+    case "$param" in
+        lang ) param="v";;
+    esac
+    [ -n "$PARAMS" ] && PARAMS+="&"
+    PARAMS+="$param=$2"
+}
+
+
+
+# ===== CONSTANTS =====
+URL_BASE="https://api.datamuse.com"
+
+
+# ===== ARGS PARSE =====
+LANGUAGE="en"
+PARAMS=
+WORD=
+QUERY=rel_syn
+MAX_THRESH=30000
+MID_THRESH=10000
+
+while [ -n "$1" ]; do
+    case "$1" in
+        -h | --help )
+            Help
+            exit 0;;
+        -q | --query )
+            QUERY="${2:?"fatal: missing argument to '$1'"}"
+            shift;;
+        -l | --lang )
+            LANGUAGE="${2:?"fatal: missing argument to '$1'"}"
+            shift;;
+        -es | --es )
+            LANGUAGE="es"
+            ;;
+        -* | --* )
+            echo "fatal: bad argument '$1'" >&2
+            exit 1;;
+        * )
+            WORD="$1"
+            break;;
+    esac
+    shift
+done
+
+if [ -z "$WORD" ]; then
+    echo "fatal: missing word '$1'" >&2
     exit 1
 fi
-    
-curl -s "https://api.datamuse.com/words?rel_syn=$1" \
+
+
+# ===== MAIN FLOW =====
+
+# Set language
+[ -n "$LANGUAGE" ] && add_param lang "$LANGUAGE"
+
+# Fix rel_* queries unavailable in spanish
+if [ $LANGUAGE=es ]; then
+    case "$QUERY" in
+        rel_syn )
+            echo "error: 'rel_syn' unavailable in Spanish. Using 'ml'" >&2
+            QUERY="ml"
+            ;;
+        rel_* )
+            echo "fatal: '$QUERY' unavailable in Spanish." >&2
+            exit 1
+            ;;
+    esac
+fi
+
+# Set color thresholds
+case "$QUERY" in
+    rel_syn )
+        MAX_THRESH=30000
+        MID_THRESH=10000
+        ;;
+    ml )
+        case $LANGUAGE in
+            en )
+                MAX_THRESH=30500000
+                MID_THRESH=29500000
+                ;;
+            es )
+                MAX_THRESH=5500000
+                MID_THRESH=5000000
+                ;;
+        esac
+        ;;
+esac
+
+# Add query param
+add_param "$QUERY" "$WORD"
+
+# Call API
+curl -s "$URL_BASE/words?$PARAMS" \
     | jq -r '
-        .[] | 
+        .[] |
         (.score // 0) as $s |
-        if $s >= 30000 then
+        if $s >= '"$MAX_THRESH"' then
             "\u001b[32m\(.word)\u001b[0m"   # Green
-        elif $s >= 10000 then
+        elif $s >= '"$MID_THRESH"' then
             "\u001b[33m\(.word)\u001b[0m"   # Yellow
         else
             "\u001b[31m\(.word)\u001b[0m"   # Red
