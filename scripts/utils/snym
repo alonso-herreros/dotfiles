@@ -72,7 +72,7 @@ fi
 [ -n "$LANGUAGE" ] && add_param lang "$LANGUAGE"
 
 # Fix rel_* queries unavailable in spanish
-if [ $LANGUAGE=es ]; then
+if [ "$LANGUAGE" = "es" ]; then
     case "$QUERY" in
         rel_syn )
             echo "error: 'rel_syn' unavailable in Spanish. Using 'ml'" >&2
