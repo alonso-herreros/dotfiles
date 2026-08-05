@@ -37,11 +37,14 @@ try_source "$ZSH/oh-my-zsh.sh" # Source Oh My Zsh!
 try_source ~/.config/p10k.zsh
 
 
+# ===== Custom widgets =====
+try_source "$XDG_CONFIG_HOME/zsh/widgets.zsh"
+
+
 # ===== Aliases =====
 try_source "$XDG_CONFIG_HOME/shell/alias.sh"
-
-alias forget=' . ~/.scripts/utils/forget.zsh'
-alias nvm='forget'
+alias forget=" history-forget"
+alias nvm=" forget"
 
 # Map space to expand abbr in vi insert mode
 if echo "$plugins" | grep zsh-abbr >/dev/null; then
@@ -70,6 +73,7 @@ try_source "/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 # ==== Binds ====
 bindkey '^p' history-beginning-search-backward
 bindkey '^n' history-beginning-search-forward
+bindkey -v '^x' history-forget
 
 
 # ===== Local overrides =====
