@@ -21,7 +21,8 @@ else
 
     # Get the files contents minus the last N entries (head -n -<N> does that)
     head -n "-${lines_to_remove}" ${HISTFILE} > ${history_temp_file} \
-        && mv "${history_temp_file}" "${HISTFILE}"
+        && mv -f "${history_temp_file}" "${HISTFILE}" \
+        && rm -f "${history_temp_file}"
 
     fc -R # read history file.
 fi
