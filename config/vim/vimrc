@@ -665,9 +665,6 @@ onoremap gP :<C-u>normal! ']V'[<CR>
 " ======= VISUAL MODE MAPPINGS =======
 " Visual easy exit
 vnoremap ñ <Esc>
-" Visual mode will use visual j/k
-vnoremap j gj
-vnoremap k gk
 " HJKL: 10-fold j/k & Beginning/end of line
 vnoremap J 10gj
 vnoremap K 10gk
