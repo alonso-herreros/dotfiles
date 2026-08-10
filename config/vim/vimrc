@@ -65,6 +65,7 @@ Plug 'tpope/vim-fugitive'                " A git wrapper
 
 " Languages
 " Plug 'sheerun/vim-polyglot'
+Plug 'lervag/vimtex'
 Plug 'alonso-herreros/vim-markdown'
 Plug 'fladson/vim-kitty'
 Plug 'iffse/qalculate.vim'
@@ -260,6 +261,10 @@ let g:markdown_strikethrough = 1
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_strikethrough = 1
+
+" VimTeX
+let g:vimtex_fold_enabled = 1
+let g:vimtex_compiler_enabled = 0
 
 
 " =====================================================================
