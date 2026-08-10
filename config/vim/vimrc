@@ -390,8 +390,10 @@ set <A-`>=`
 
 " ======= OPTIONS =======
 map <C-,>q <plug>(QuickScopeToggle)
-map <C-,>c :ContextToggle<CR>
-map <C-,>i :IndentGuidesToggle<CR>
+map <C-,>c <Cmd>ContextToggle<CR>
+map <C-,>i <Cmd>IndentGuidesToggle<CR>
+map <C-,>w <Cmd>set wrap!<CR>
+map <C-,>l <Cmd>set list!<CR>
 
 " ======= PLUGIN MAPPINGS =======
 " Sneak-f
