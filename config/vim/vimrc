@@ -421,10 +421,6 @@ map <A-f> <Plug>(easymotion-f)
 map <Leader><Leader>F <Plug>(easymotion-F)
 map <A-F> <Plug>(easymotion-F)
 
-" Unsurround (latex)
-nmap dsc csBBdF\dsB
-nnoremap dse ?\\begin<CR>dt{daB/\\end<C-r>"<CR>dt{daB
-
 " Align
 nmap <A-a> <Plug>(EasyAlign)ip
 nmap ga <Plug>(EasyAlign)
