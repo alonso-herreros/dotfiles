@@ -651,6 +651,8 @@ nnoremap gP ']V'[
 nnoremap ! :sh<CR>
 " Reflow with Alt+q (due to VSCode reflow shortcut)
 nnoremap <A-q> gwip
+" Drag and drop!
+noremap <silent> <A-d> <Cmd>silent !ripdrag -xA % >/dev/null 2>&1 &<CR><C-l>
 
 " ======= OP-PENDING MODE MAPPINGS =======
 " Beginning/end of line with H/L
