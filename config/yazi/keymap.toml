@@ -111,6 +111,7 @@ keymap=[
 	{ on=["Y", "d"], run="copy dirname",          desc="Copy dir path" },
 	{ on=["Y", "f"], run="copy filename",         desc="Copy filename" },
 	{ on=["Y", "n"], run="copy name_without_ext", desc="Copy name (no ext.)" },
+	{ on=["Y", "c"], run="shell -- cat %s | wl-copy" , desc="Copy contents" },
 
 	##|---< Copy-pasting >----------------------|
 	{ on="y",        run=[
