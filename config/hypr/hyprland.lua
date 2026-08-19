@@ -6,3 +6,4 @@
 --------------------
 
 require("hyprland/general")    -- General matters
+require("hyprland/group")      -- Groups and groupbars
