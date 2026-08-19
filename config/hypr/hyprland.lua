@@ -22,4 +22,6 @@ require("hyprland/opengl")     -- OpenGL config
 require("hyprland/render")     -- Render config
 
 require("hyprland/xwayland")   -- XWayland
+require("hyprland/ecosystem")  -- Ecosystem
+require("hyprland/quirks")     -- Quirks
 require("hyprland/misc")       -- Misc
