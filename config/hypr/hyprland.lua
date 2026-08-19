@@ -16,6 +16,7 @@ require("hyprland/input")      -- Input
 require("hyprland/devices")    -- Devices
 require("hyprland/gestures")   -- Touchpad / touchscreen gestures
 require("hyprland/binds")      -- Keybinds
+require("hyprland/cursor")     -- Cursor config
 
 require("hyprland/opengl")     -- OpenGL config
 require("hyprland/render")     -- Render config
