@@ -18,6 +18,7 @@ require("hyprland/gestures")   -- Touchpad / touchscreen gestures
 require("hyprland/binds")      -- Keybinds
 
 require("hyprland/opengl")     -- OpenGL config
+require("hyprland/render")     -- Render config
 
 require("hyprland/xwayland")   -- XWayland
 require("hyprland/misc")       -- Misc
