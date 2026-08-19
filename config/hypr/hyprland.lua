@@ -15,5 +15,6 @@ require("hyprland/layout")     -- Layout config
 require("hyprland/input")      -- Input
 require("hyprland/devices")    -- Devices
 require("hyprland/gestures")   -- Touchpad / touchscreen gestures
+require("hyprland/binds")      -- Keybinds
 
 require("hyprland/misc")       -- Misc
