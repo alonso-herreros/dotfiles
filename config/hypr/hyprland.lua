@@ -1,4 +1,4 @@
--- hyprland.conf
+-- hyprland.lua
 -- Tuned by Alonso Herreros <alonso.herreros.c@gmail.com>
 
 --------------------
@@ -17,4 +17,5 @@ require("hyprland/devices")    -- Devices
 require("hyprland/gestures")   -- Touchpad / touchscreen gestures
 require("hyprland/binds")      -- Keybinds
 
+require("hyprland/xwayland")   -- XWayland
 require("hyprland/misc")       -- Misc
