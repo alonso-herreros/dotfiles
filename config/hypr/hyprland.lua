@@ -10,6 +10,7 @@ require("hyprland/general")    -- General matters
 require("hyprland/decoration") -- Decorations
 require("hyprland/group")      -- Groups and groupbars
 require("hyprland/animations") -- Animations
+require("hyprland/layout")     -- Layout config
 
 require("hyprland/input")      -- Input
 require("hyprland/devices")    -- Devices
