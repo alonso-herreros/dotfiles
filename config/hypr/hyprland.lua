@@ -14,3 +14,5 @@ require("hyprland/animations") -- Animations
 require("hyprland/input")      -- Input
 require("hyprland/devices")    -- Devices
 require("hyprland/gestures")   -- Touchpad / touchscreen gestures
+
+require("hyprland/misc")       -- Misc
