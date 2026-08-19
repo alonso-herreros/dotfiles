@@ -17,5 +17,7 @@ require("hyprland/devices")    -- Devices
 require("hyprland/gestures")   -- Touchpad / touchscreen gestures
 require("hyprland/binds")      -- Keybinds
 
+require("hyprland/opengl")     -- OpenGL config
+
 require("hyprland/xwayland")   -- XWayland
 require("hyprland/misc")       -- Misc
