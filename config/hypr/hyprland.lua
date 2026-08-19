@@ -6,6 +6,9 @@
 --------------------
 
 require("hyprland/general")    -- General matters
+
 require("hyprland/decoration") -- Decorations
 require("hyprland/group")      -- Groups and groupbars
 require("hyprland/animations") -- Animations
+
+require("hyprland/input")      -- Input
