@@ -22,6 +22,7 @@ require("hyprland/opengl")     -- OpenGL config
 require("hyprland/render")     -- Render config
 require("hyprland/monitors")   -- Monitor config
 
+-- env vars at `~/.config/uwsm/{env,env-hyprland}` and `~/.config/environment.d/`
 require("hyprland/autostart")  -- Autostart things
 
 require("hyprland/xwayland")   -- XWayland
