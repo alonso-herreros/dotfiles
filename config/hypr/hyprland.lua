@@ -33,3 +33,6 @@ require("hyprland/debug")      -- Debug config
 require("hyprland/ecosystem")  -- Ecosystem
 require("hyprland/quirks")     -- Quirks
 require("hyprland/misc")       -- Misc
+
+-- Plugins
+require("hyprland/dynamic-cursors")
