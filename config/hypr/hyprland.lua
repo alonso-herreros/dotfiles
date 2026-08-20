@@ -26,6 +26,7 @@ require("hyprland/monitors")   -- Monitor config
 require("hyprland/autostart")  -- Autostart things
 
 require("hyprland/rules")      -- Window and Workspace Rules
+require("hyprland/layouts/*")  -- Layout-specific configs
 
 require("hyprland/xwayland")   -- XWayland
 require("hyprland/debug")      -- Debug config
