@@ -22,6 +22,8 @@ require("hyprland/opengl")     -- OpenGL config
 require("hyprland/render")     -- Render config
 require("hyprland/monitors")   -- Monitor config
 
+require("hyprland/autostart")  -- Autostart things
+
 require("hyprland/xwayland")   -- XWayland
 require("hyprland/debug")      -- Debug config
 require("hyprland/ecosystem")  -- Ecosystem
