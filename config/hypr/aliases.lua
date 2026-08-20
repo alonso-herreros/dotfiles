@@ -37,7 +37,7 @@ A.editor            = launch .. "vim.desktop"
 A.notepad           = launch .. "vim.desktop"
 
 -- Menus and system tools
-A.menu        = launch .. "fuzzel --launch-prefix 'p'"
+A.menu        = launch .. "fuzzel --launch-prefix '" .. launch .. "'"
 A.config      = A.fileManager .. " ~/.config"
 A.bluetooth   = launch .. "bluetoothctl.desktop"
 A.network     = launch .. "nmtui.desktop"
