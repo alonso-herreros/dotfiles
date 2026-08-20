@@ -44,4 +44,6 @@ args "$@"
 target_id=$(toggle_secondary_id)
 
 # Execute dispatcher with proper parameters
-hyprctl dispatch $1 $target_id
+dispatcher="$(printf "$1" 'workspace="'"$target_id"'"')"
+
+hyprctl eval "hl.dispatch(hl.dsp.$dispatcher)"

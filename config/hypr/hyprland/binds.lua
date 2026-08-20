@@ -84,9 +84,9 @@ A.volumectl     = scripts .. "/system/volume_ctl.sh"
 A.brightnessctl = scripts .. "/system/brightness_ctl.sh"
 A.rename_current_workspace = hypr_scripts .. "/rename-workspace.sh -i"
 
--- local function dsp_secondary(cmd)
--- 	return hl.dsp.exec_cmd(hypr_scripts .. "/dispatch-secondary.sh" .. cmd)
--- end
+local function alt(str)
+	return hl.dsp.exec_cmd(hypr_scripts .. "/dispatch-alt.sh '" .. str .. "'")
+end
 
 
 
@@ -327,13 +327,12 @@ bind("SUPER+SHIFT+CTRL + LESS", win.move({workspace="special:tmp",follow=false})
 bind("SUPER + Tab",       focus({workspace="previous_per_monitor"}), F("u"))
 bind("SUPER+SHIFT + Tab", win.move({workspace="previous"}), F("u"))
 
--- TODO: FIX THIS
 -- Auto-determined secondary workspace using MOD+ALT+TAB or MOD+ALT+<
--- bind("SUPER+ALT + Tab",             dsp_secondary("focusworkspaceoncurrentmonitor"), F("u"))
--- bind("SUPER+ALT+SHIFT + Tab",       dsp_secondary("movetoworkspace"),                F("u"))
--- bind("SUPER+ALT + LESS",            dsp_secondary("focusworkspaceoncurrentmonitor"), F("u"))
--- bind("SUPER+ALT+SHIFT + LESS",      dsp_secondary("movetoworkspace"),                F("u"))
--- bind("SUPER+ALT+SHIFT+CTRL + LESS", dsp_secondary("movetoworkspacesilent"),          F("u"))
+bind("SUPER+ALT + Tab",        alt("focus({%s})"),       F("u"))
+bind("SUPER+ALT+SHIFT + Tab",  alt("window.move({%s})"), F("u"))
+bind("SUPER+ALT + LESS",       alt("focus({%s})"),       F("u"))
+bind("SUPER+ALT+SHIFT + LESS", alt("window.move({%s})"), F("u"))
+bind("SUPER+ALT+SHIFT+CTRL + LESS", alt("window.move({%s, follow=false})"), F("u"))
 
 -- Scroll to toggle previous or 'tmp' scratchpad
 bind("SUPER + mouse_up", focus({workspace="previous"}), F("u"))
