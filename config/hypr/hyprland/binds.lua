@@ -208,10 +208,10 @@ bind("SUPER+SHIFT + g", win.move({out_of_group=true}), F("u"))
 bind("SUPER+CTRL + g", group.lock_active(), F("u"))
 
 -- Group tabbing with MOD+ALT + hl
-bind("SUPER+CTRL + Tab", group.next(), F("u"))
+bind("SUPER+CTRL + Tab",       group.next(), F("u"))
 bind("SUPER+CTRL+SHIFT + Tab", group.prev(), F("u"))
-bind("SUPER+ALT + h", group.next(), F("u"))
-bind("SUPER+ALT + l", group.prev(), F("u"))
+bind("SUPER+ALT + l",          group.next(), F("u"))
+bind("SUPER+ALT + h",          group.prev(), F("u"))
 
 -- Group tab moving with MOD+ALT+SHIFT+hl
 bind("SUPER+ALT+SHIFT + h", group.move_window({forward=false}), F("u"))
