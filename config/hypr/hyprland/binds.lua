@@ -23,7 +23,7 @@ hl.config({binds = {
 	window_direction_monitor_fallback = true,
 	disable_keybind_grabbing = true,
 	--allow_pin_fullscreen = false,
-	--drag_threshold = 0,
+	drag_threshold = 30,
 }})
 
 
