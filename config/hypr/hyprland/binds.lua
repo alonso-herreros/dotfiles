@@ -365,21 +365,21 @@ bind("SUPER+ALT + d",   exec("dunstctl context"),     F("u"))
 --####################
 
 -- ==== Volume ====
-bind("XF86AudioRaiseVolume", exec(A.volumectl .. "-ui 5"), F("ule"))
-bind("XF86AudioLowerVolume", exec(A.volumectl .. "-d 5"), F("ule"))
-bind("XF86AudioMute",        exec(A.volumectl .. "-t"), F("ule"))
+bind("XF86AudioRaiseVolume", exec(A.volumectl .. " -ui 5"), F("ule"))
+bind("XF86AudioLowerVolume", exec(A.volumectl .. " -d 5"), F("ule"))
+bind("XF86AudioMute",        exec(A.volumectl .. " -t"), F("ule"))
 
-bind("SUPER+CTRL + mouse_up",   exec(A.volumectl .. "-i 5"), F("ul"))
-bind("SUPER+CTRL + mouse_down", exec(A.volumectl .. "-d 5"), F("ul"))
+bind("SUPER+CTRL + mouse_up",   exec(A.volumectl .. " -i 5"), F("ul"))
+bind("SUPER+CTRL + mouse_down", exec(A.volumectl .. " -d 5"), F("ul"))
 
-bind("SUPER+CTRL + Up",         exec(A.volumectl .. "-i 5"),         F("ul"))
-bind("SUPER+CTRL + Down",       exec(A.volumectl .. "-d 5"),         F("ul"))
-bind("SUPER+CTRL+SHIFT + Up",   exec(A.volumectl .. "-u -- Unmute"), F("ul"))
-bind("SUPER+CTRL+SHIFT + Down", exec(A.volumectl .. "-m -- Mute"),   F("ul"))
+bind("SUPER+CTRL + Up",         exec(A.volumectl .. " -i 5"),         F("ul"))
+bind("SUPER+CTRL + Down",       exec(A.volumectl .. " -d 5"),         F("ul"))
+bind("SUPER+CTRL+SHIFT + Up",   exec(A.volumectl .. " -u -- Unmute"), F("ul"))
+bind("SUPER+CTRL+SHIFT + Down", exec(A.volumectl .. " -m -- Mute"),   F("ul"))
 
 -- Volume overdrive
-bind("CTRL + XF86AudioRaiseVolume", exec(A.volumectl .. "-ui 5 --allow-boost"), F("ule"))
-bind("CTRL + XF86AudioLowerVolume", exec(A.volumectl .. "-d 5 --allow-boost"), F("ule"))
+bind("CTRL + XF86AudioRaiseVolume", exec(A.volumectl .. " -ui 5 --allow-boost"), F("ule"))
+bind("CTRL + XF86AudioLowerVolume", exec(A.volumectl .. " -d 5 --allow-boost"), F("ule"))
 
 -- ==== Player track / position ====
 bind("SUPER+CTRL + mouse:272", exec("playerctl previous"), F("ul"))
@@ -399,8 +399,8 @@ bind("XF86AudioStop", exec("playerctl stop"), F("ul"))
 
 -- ==== Brightness ====
 
-bind("XF86MonBrightnessUp",   exec(A.brightnessctl .. "s 5%+"),    F("ule"))
-bind("XF86MonBrightnessDown", exec(A.brightnessctl .. "s -n 5%-"), F("ule"))
+bind("XF86MonBrightnessUp",   exec(A.brightnessctl .. " s 5%+"),    F("ule"))
+bind("XF86MonBrightnessDown", exec(A.brightnessctl .. " s -n 5%-"), F("ule"))
 
 -- ==== Gamma ====
 bind("CTRL + XF86MonBrightnessUp",         exec("hyprctl hyprsunset gamma +5"),  F("ule"))
