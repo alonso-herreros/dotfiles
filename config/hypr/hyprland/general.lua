@@ -25,7 +25,7 @@ hl.config({general = {
 
 	resize_on_border = true,
 	extend_border_grab_area = 3,
-	hover_icon_on_hover = true,
+	hover_icon_on_border = true,
 
 	-- https://wiki.hyprland.org/Configuring/Tearing/
 	allow_tearing = true,
