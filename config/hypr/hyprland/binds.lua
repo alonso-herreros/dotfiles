@@ -218,10 +218,10 @@ bind("SUPER+ALT+SHIFT + l", group.move_window({forward=true}),  F("u"))
 
 
 -- Moving into and out of group with MOD+CTRL+SHIFT + hjkl
-bind("SUPER+CTRL+SHIFT + h", win.move({into_or_create_group="l"}), F("u"))
-bind("SUPER+CTRL+SHIFT + l", win.move({into_or_create_group="r"}), F("u"))
-bind("SUPER+CTRL+SHIFT + j", win.move({into_or_create_group="d"}), F("u"))
-bind("SUPER+CTRL+SHIFT + k", win.move({into_or_create_group="u"}), F("u"))
+bind("SUPER+CTRL+SHIFT + h", win.move({direction="l", group_aware=true}), F("u"))
+bind("SUPER+CTRL+SHIFT + l", win.move({direction="r", group_aware=true}), F("u"))
+bind("SUPER+CTRL+SHIFT + j", win.move({direction="d", group_aware=true}), F("u"))
+bind("SUPER+CTRL+SHIFT + k", win.move({direction="u", group_aware=true}), F("u"))
 
 
 --############################
