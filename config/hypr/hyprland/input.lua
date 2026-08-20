@@ -1,12 +1,12 @@
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#input
-hl.config({input = {,
+hl.config({input = {
 
 	-- Be sure to check out xkb setup
-	kb_model   = ,
+	kb_model   = "",
 	kb_layout  = "es,us",
-	kb_variant = ,
+	kb_variant = "",
 	kb_options = "eurosign:5,altgreek,undead:es_only,altmath,caps:escape_shifted_capslock,numpad:hex,numpad:operators_ext",
-	kb_rules   = ,
+	kb_rules   = "",
 	--kb_file	 = ,
 
 	numlock_by_default = false,
