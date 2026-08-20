@@ -36,3 +36,6 @@ require("hyprland/misc")       -- Misc
 
 -- Plugins
 require("hyprland/dynamic-cursors")
+
+-- Drop-ins
+require("hyprland/conf.d/*")
