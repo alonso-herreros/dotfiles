@@ -35,8 +35,10 @@ VARS_SAVING=(
     ["decoration:inactive_opacity"]="1.0"
     ["decoration:blur:enabled"]="false"
     ["decoration:shadow:enabled"]="false"
+    ["decoration:motion_blur:enabled"]="false"
+    ["animations:enabled"]="false"
     ["group:groupbar:blur"]="false"
-    ["misc:vfr"]="true"
+    ["debug:vfr"]="true"
 )
 # Default values SHOULD be saved before enabling power management options and
 # then loaded in order to restore true defaults. Otherwise, the whole hyprland
