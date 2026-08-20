@@ -1,9 +1,9 @@
 local A = {}
 
 -- Prefix for all commands, e.g. to integrate with systemd
-local launch = "uwsm-app -t service --"
+local launch = "uwsm-app -t service -- "
 -- Prefix for terminal apps (oneshot)
-local term = "uwsm-app -t service -T"
+local term = "uwsm-app -t service -T "
 
 -- Terminal as its own app is better with close confirmation
 A.terminal               = launch .. "kitty.desktop:Confirm"
@@ -38,7 +38,7 @@ A.notepad           = launch .. "vim.desktop"
 
 -- Menus and system tools
 A.menu        = launch .. "fuzzel --launch-prefix 'p'"
-A.config      = A.fileManager .. "~/.config"
+A.config      = A.fileManager .. " ~/.config"
 A.bluetooth   = launch .. "bluetoothctl.desktop"
 A.network     = launch .. "nmtui.desktop"
 A.systemctl   = launch .. "systemctl-tui.desktop"
