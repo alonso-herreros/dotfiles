@@ -148,27 +148,27 @@ bind("ALT + Less",      win.alter_zorder({mode="top"}),       F("u"))
 --#########################
 
 -- Move windows with MOD + Shift + hjkl
-bind("SUPER+SHIFT + h", win.move("l"), F("u"))
-bind("SUPER+SHIFT + l", win.move("r"), F("u"))
-bind("SUPER+SHIFT + j", win.move("d"), F("u"))
-bind("SUPER+SHIFT + k", win.move("u"), F("u"))
+bind("SUPER+SHIFT + h", win.move({direction="left"}),  F("u"))
+bind("SUPER+SHIFT + l", win.move({direction="right"}), F("u"))
+bind("SUPER+SHIFT + j", win.move({direction="down"}),  F("u"))
+bind("SUPER+SHIFT + k", win.move({direction="up"}),    F("u"))
 -- Resize windows with MOD + Ctrl (+ Alt) + hjkl / MOD + Arrow keys
 local resizeStep = 90
 local resizeStepVert = 60
 local resizeStepMed = 45
 local resizeStepSmall = 30
-bind("SUPER+CTRL + h", win.resize({-resizeStep,     0}), F("ul"))
-bind("SUPER+CTRL + l", win.resize({resizeStep,      0}), F("ul"))
-bind("SUPER+CTRL + j", win.resize({0,  resizeStepVert}), F("ul"))
-bind("SUPER+CTRL + k", win.resize({0, -resizeStepVert}), F("ul"))
-bind("SUPER+CTRL+ALT + h", win.resize({-resizeStepSmall, 0}), F("ul"))
-bind("SUPER+CTRL+ALT + l", win.resize({resizeStepSmall,  0}), F("ul"))
-bind("SUPER+CTRL+ALT + j", win.resize({0,  resizeStepSmall}), F("ul"))
-bind("SUPER+CTRL+ALT + k", win.resize({0, -resizeStepSmall}), F("ul"))
-bind("SUPER + Left",  win.resize({-resizeStepMed, 0}), F("ul"))
-bind("SUPER + Right", win.resize({resizeStepMed,  0}), F("ul"))
-bind("SUPER + Down",  win.resize({0,  resizeStepMed}), F("ul"))
-bind("SUPER + Up",    win.resize({0, -resizeStepMed}), F("ul"))
+bind("SUPER+CTRL + h", win.resize({x=-resizeStep,     y=0}), F("ul"))
+bind("SUPER+CTRL + l", win.resize({x=resizeStep,      y=0}), F("ul"))
+bind("SUPER+CTRL + j", win.resize({x=0,  y=resizeStepVert}), F("ul"))
+bind("SUPER+CTRL + k", win.resize({x=0, y=-resizeStepVert}), F("ul"))
+bind("SUPER+CTRL+ALT + h", win.resize({x=-resizeStepSmall, y=0}), F("ul"))
+bind("SUPER+CTRL+ALT + l", win.resize({x=resizeStepSmall,  y=0}), F("ul"))
+bind("SUPER+CTRL+ALT + j", win.resize({x=0,  y=resizeStepSmall}), F("ul"))
+bind("SUPER+CTRL+ALT + k", win.resize({x=0, y=-resizeStepSmall}), F("ul"))
+bind("SUPER + Left",  win.resize({x=-resizeStepMed, y=0}), F("ul"))
+bind("SUPER + Right", win.resize({x=resizeStepMed,  y=0}), F("ul"))
+bind("SUPER + Down",  win.resize({x=0,  y=resizeStepMed}), F("ul"))
+bind("SUPER + Up",    win.resize({x=0, y=-resizeStepMed}), F("ul"))
 
 -- Toggle windowed fullscreen
 bind("SUPER + Space", win.fullscreen({mode="maximized"}), F("u"))
