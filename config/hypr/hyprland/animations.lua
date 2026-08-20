@@ -21,7 +21,6 @@ hl.curve("overshot2", { type="bezier", points={{ 0.05,  0.9   }, { 0.1,   1.2  }
 hl.curve("tangent1",  { type="bezier", points={{ 0,     1     }, { 0,     1    }} })
 hl.curve("tangent2",  { type="bezier", points={{ 0,     1     }, { 0,     1    }} })
 hl.curve("custom2",   { type="bezier", points={{ 0.14,  0.75  }, { 0,     1    }} })
-hl.curve("custom3",   { type="bezier", points={{ 0.1,   -5    }, { 0,     1.1  }} })
 
 hl.animation({enabled=true, leaf="windows",
 	speed  = 1.5,
