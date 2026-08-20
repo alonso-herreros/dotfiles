@@ -38,7 +38,7 @@ hl.config({misc = {
 	--session_lock_blur = false,
 	--lockdead_screen_delay = 1000
 
-	--close_special_on_empty = true,
+	close_special_on_empty = true,
 
 	on_focus_under_fullscreen = 2,
 	--exit_window_retains_fullscreen = 2

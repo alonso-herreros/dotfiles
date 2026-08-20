@@ -10,17 +10,17 @@
 --###################
 
 hl.config({binds = {
-	--pass_mouse_when_bound = false,
+	pass_mouse_when_bound = false,
 	scroll_event_delay = 10,
 	workspace_back_and_forth = true,
-	--hide_special_on_workspace_change = false,
+	hide_special_on_workspace_change = true,
 	--allow_workspace_cycles = false,
 	--workspace_center_on = 1,
 	--focus_preferred_method = 0,
 	--ignore_group_lock = false,
 	--movefocus_cycles_fullscreen = false,
 	--movefocus_cycles_groupfirst = false,
-	--window_direction_monitor_fallback = true,
+	window_direction_monitor_fallback = true,
 	disable_keybind_grabbing = true,
 	--allow_pin_fullscreen = false,
 	--drag_threshold = 0,

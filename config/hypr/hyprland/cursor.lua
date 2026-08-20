@@ -1,7 +1,7 @@
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#cursor
 hl.config({cursor = {
 	--invisible = false,
-	--sync_gsettings_theme = true,
+	sync_gsettings_theme = true,
 	--no_hardware_cursors = 2,
 	--no_break_fs_vrr = 2,
 	--min_refresh_rate = 24,
@@ -15,11 +15,11 @@ hl.config({cursor = {
 	--zoom_factor = 1.0,
 	--zoom_rigid = false,
 	--zoom_detached_camera = true,
-	--enable_hyprcursor = true,
+	enable_hyprcursor = true,
 	--hide_on_key_press = false,
 	--hide_on_touch = true,
 	--hide_on_tablet = false,
-	--use_cpu_buffer = 2
+	--use_cpu_buffer = 2,
 	--warp_back_after_non_mouse_input = false,
 	--zoom_disable_aa = false,
 }})
