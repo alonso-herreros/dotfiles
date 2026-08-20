@@ -158,18 +158,18 @@ local resizeStep = 90
 local resizeStepVert = 60
 local resizeStepMed = 45
 local resizeStepSmall = 30
-bind("SUPER+CTRL + h",     win.resize({ x=-resizeStep,      y=0 }), F("ul"))
-bind("SUPER+CTRL + l",     win.resize({ x=resizeStep,       y=0 }), F("ul"))
-bind("SUPER+CTRL + j",     win.resize({ x=0, y=resizeStepVert   }), F("ul"))
-bind("SUPER+CTRL + k",     win.resize({ x=0, y=-resizeStepVert  }), F("ul"))
-bind("SUPER+CTRL+ALT + h", win.resize({ x=-resizeStepSmall, y=0 }), F("ul"))
-bind("SUPER+CTRL+ALT + l", win.resize({ x=resizeStepSmall,  y=0 }), F("ul"))
-bind("SUPER+CTRL+ALT + j", win.resize({ x=0, y=resizeStepSmall  }), F("ul"))
-bind("SUPER+CTRL+ALT + k", win.resize({ x=0, y=-resizeStepSmall }), F("ul"))
-bind("SUPER + Left",       win.resize({ x=-resizeStepMed,   y=0 }), F("ul"))
-bind("SUPER + Right",      win.resize({ x=resizeStepMed,    y=0 }), F("ul"))
-bind("SUPER + Down",       win.resize({ x=0, y=resizeStepMed    }), F("ul"))
-bind("SUPER + Up",         win.resize({ x=0, y=-resizeStepMed   }), F("ul"))
+bind("SUPER+CTRL + h",     win.resize({ x=-resizeStep,      y=0, relative=true}), F("ul"))
+bind("SUPER+CTRL + l",     win.resize({ x=resizeStep,       y=0, relative=true}), F("ul"))
+bind("SUPER+CTRL + j",     win.resize({ x=0, y=resizeStepVert,   relative=true}), F("ul"))
+bind("SUPER+CTRL + k",     win.resize({ x=0, y=-resizeStepVert,  relative=true}), F("ul"))
+bind("SUPER+CTRL+ALT + h", win.resize({ x=-resizeStepSmall, y=0, relative=true}), F("ul"))
+bind("SUPER+CTRL+ALT + l", win.resize({ x=resizeStepSmall,  y=0, relative=true}), F("ul"))
+bind("SUPER+CTRL+ALT + j", win.resize({ x=0, y=resizeStepSmall,  relative=true}), F("ul"))
+bind("SUPER+CTRL+ALT + k", win.resize({ x=0, y=-resizeStepSmall, relative=true}), F("ul"))
+bind("SUPER + Left",       win.resize({ x=-resizeStepMed,   y=0, relative=true}), F("ul"))
+bind("SUPER + Right",      win.resize({ x=resizeStepMed,    y=0, relative=true}), F("ul"))
+bind("SUPER + Down",       win.resize({ x=0, y=resizeStepMed,    relative=true}), F("ul"))
+bind("SUPER + Up",         win.resize({ x=0, y=-resizeStepMed,   relative=true}), F("ul"))
 
 -- Toggle windowed fullscreen
 bind("SUPER + Space", win.fullscreen({mode="maximized"}), F("u"))
