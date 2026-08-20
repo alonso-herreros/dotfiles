@@ -26,7 +26,7 @@ require("hyprland/monitors")   -- Monitor config
 require("hyprland/autostart")  -- Autostart things
 
 require("hyprland/rules")      -- Window and Workspace Rules
-require("hyprland/layouts/*")  -- Layout-specific configs
+require("hyprland/layouts/dwindle")  -- Layout-specific configs
 
 require("hyprland/xwayland")   -- XWayland
 require("hyprland/debug")      -- Debug config
@@ -38,4 +38,4 @@ require("hyprland/misc")       -- Misc
 require("hyprland/dynamic-cursors")
 
 -- Drop-ins
-require("hyprland/conf.d/*")
+-- require("hyprland/conf.d/*")
