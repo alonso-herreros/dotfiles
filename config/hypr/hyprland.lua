@@ -25,6 +25,8 @@ require("hyprland/monitors")   -- Monitor config
 -- env vars at `~/.config/uwsm/{env,env-hyprland}` and `~/.config/environment.d/`
 require("hyprland/autostart")  -- Autostart things
 
+require("hyprland/rules")      -- Window and Workspace Rules
+
 require("hyprland/xwayland")   -- XWayland
 require("hyprland/debug")      -- Debug config
 require("hyprland/ecosystem")  -- Ecosystem
