@@ -35,7 +35,7 @@ require("hyprland/quirks")     -- Quirks
 require("hyprland/misc")       -- Misc
 
 -- Plugins
-require("hyprland/dynamic-cursors")
+require("hyprland/plugins/dynamic-cursors")
 
 -- Drop-ins
 -- require("hyprland/conf.d/*")
