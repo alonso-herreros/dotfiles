@@ -78,6 +78,14 @@ play = [
 	{ run = "mpv --force-window %s",       desc = "MPV",  orphan = true },
 ]
 
+json-view = [
+	{ run = "jq -C . %s | less", desc = "JQ",  block = true },
+]
+
+yaml-view = [
+	{ run = "yq -Y . %s | bat -pl yaml --paging=always", desc = "YQ",  block = true },
+]
+
 pdf = [
 	{ run = "okular %s &",                           desc = "Open with Okular",  for = "linux", orphan = true },
 	{ run = "zathura --fork %s",                     desc = "Open with Zathura", for = "linux", orphan = true },
@@ -115,20 +123,27 @@ rules = [
 	# QALC
 	{ url  = "*.qalc", use = [ "edit", "qalc", "view", "reveal" ] },
 
-	# Text
-	{ mime = "text/html", use = [ "open", "edit", "view", "reveal", "checksum" ] },
-	{ mime = "text/*", use = [ "edit", "view", "reveal", "checksum" ] },
+	# Data
+	{ url = "*.yml", use = [ "edit", "yaml-view", "view", "checksum" ] },
+	{ mime = "application/{json,jsonc,ndjson}", use = [ "edit", "json-view", "view", "checksum" ] },
 
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal", "checksum" ] },
+
 	# Code
-	{ mime = "application/{json,ndjson,javascript,wine-extension-ini}", use = [ "edit", "view", "reveal", "checksum" ] },
+	{ mime = "application/{javascript,wine-extension-ini}", use = [ "edit", "view", "reveal", "checksum" ] },
+
 	# Archive
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", use = [ "extract", "reveal", "checksum" ] },
 	# Virtual file system
 	{ mime = "vfs/{absent,stale}", use = "download" },
 	# Deb package
 	{ url = "*.deb", use = [ "open", "reveal", "checksum" ] },
+
+	# Text
+	{ mime = "text/html", use = [ "open", "edit", "view", "reveal", "checksum" ] },
+	{ mime = "text/*", use = [ "edit", "view", "reveal", "checksum" ] },
+
 	# Fallback
 	{ url = "*", use = [ "open", "edit", "view", "reveal", "checksum" ] },
 ]
