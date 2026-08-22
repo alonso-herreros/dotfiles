@@ -119,6 +119,10 @@ rules = [
 
 	# Images
 	{ mime = "image/*", use = [ "open", "image", "reveal" ] },
+	# Media
+	{ mime = "{audio,video}/*", use = [ "play", "reveal", "checksum" ] },
+	# Web
+	{ mime = "text/html", use = [ "open", "edit", "view", "reveal", "checksum" ] },
 
 	# QALC
 	{ url  = "*.qalc", use = [ "edit", "qalc", "view", "reveal" ] },
@@ -126,10 +130,6 @@ rules = [
 	# Data
 	{ url = "*.yml", use = [ "edit", "yaml-view", "view", "checksum" ] },
 	{ mime = "application/{json,jsonc,ndjson}", use = [ "edit", "json-view", "view", "checksum" ] },
-
-	# Media
-	{ mime = "{audio,video}/*", use = [ "play", "reveal", "checksum" ] },
-
 	# Code
 	{ mime = "application/{javascript,wine-extension-ini}", use = [ "edit", "view", "reveal", "checksum" ] },
 
@@ -140,11 +140,8 @@ rules = [
 	# Deb package
 	{ url = "*.deb", use = [ "open", "reveal", "checksum" ] },
 
-	# Text
-	{ mime = "text/html", use = [ "open", "edit", "view", "reveal", "checksum" ] },
+	# Fallbacks
 	{ mime = "text/*", use = [ "edit", "view", "reveal", "checksum" ] },
-
-	# Fallback
 	{ url = "*", use = [ "open", "edit", "view", "reveal", "checksum" ] },
 ]
 
