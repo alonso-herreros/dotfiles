@@ -1,13 +1,13 @@
 swipe:
   3:
     up:
-      command: "hyprctl dispatch workspace previous"
+      command: hyprctl dispatch 'hl.dsp.focus({workspace="previous_per_monitor"})'
     down:
-      command: "hyprctl dispatch togglespecialworkspace tmp"
+      command: hyprctl dispatch 'hl.dsp.workspace.toggle_special("tmp")'
     left:
-      command: "hyprctl dispatch sendshortcut CTRL, Tab, activewindow"
+      command: hyprctl dispatch 'hl.dsp.send_shortcut({mods="CTRL", key="Tab"})'
     right:
-      command: "hyprctl dispatch sendshortcut CTRL SHIFT, Tab, activewindow"
+      command: hyprctl dispatch 'hl.dsp.send_shortcut({mods="CTRL+SHIFT", key="Tab"})'
   4:
     up:
       update:
