@@ -15,16 +15,16 @@ msg() {
 history-forget() {
 	history_temp_file="${HISTFILE:?}.tmp" # Error if HISTFILE unset
 
-	lines_to_remove="${1:-1}"
-	if ! [ "${lines_to_remove}" -eq "${lines_to_remove}" ] 2>/dev/null; then
-		msg "fatal: '${lines_to_remove}' is not a number"
+	n_to_remove="${1:-1}"
+	if ! [ "${n_to_remove}" -eq "${n_to_remove}" ] 2>/dev/null; then
+		msg "fatal: '${n_to_remove}' is not a number"
 		return 1
 	fi
 
 	fc -W # write current shell's history to the history file.
 
 	# Get the files contents minus the last N entries (head -n -<N> does that)
-	head -n "-${lines_to_remove}" ${HISTFILE} > ${history_temp_file} \
+	head -n "-${n_to_remove}" ${HISTFILE} > ${history_temp_file} \
 		&& mv -f "${history_temp_file}" "${HISTFILE}" \
 		&& rm -f "${history_temp_file}"
 
