@@ -273,7 +273,7 @@ let g:vimtex_compiler_enabled = 0
 set t_Co=256
 set t_ut=
 
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4 shiftwidth=4 noexpandtab
 set colorcolumn=80
 
 set foldmethod=syntax foldlevel=99
