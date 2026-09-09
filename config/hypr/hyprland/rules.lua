@@ -4,7 +4,7 @@ local T = require("theme") -- load theme
 
 local win_rule   = hl.window_rule
 local layer_rule = hl.layer_rule
---local ws_rule    = hl.workspace_rule
+local ws_rule    = hl.workspace_rule
 
 -- ==== Window states ====
 win_rule({match = {fullscreen=1}, border_color=T.green})
