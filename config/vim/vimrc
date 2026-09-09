@@ -548,8 +548,6 @@ map! <C-A-s> <Esc>:w!!<CR>
 " Ctrl-F to search
 noremap <C-f> /
 noremap <C-h> :%s/\v
-" Ctrl-A to select all
-noremap <C-a> <Esc>ggvG$
 " Increment and decrement
 noremap <C-+> <C-a>
 noremap <C-_> <C-x>
@@ -641,7 +639,6 @@ nnoremap <Leader><CR> cl<CR><Esc>
 nmap <Leader>R R<C-r>0<Esc>
 " Save/quit with leader->key
 nmap <Leader>w :w<CR>
-nmap <Leader>W :w!!<CR>
 nmap <Leader>q :confirm q<CR>
 nmap <Leader>Q :q!<CR>
 nmap <Leader>e :confirm e<CR>
