@@ -424,6 +424,9 @@ map <A-f> <Plug>(easymotion-f)
 map <Leader><Leader>F <Plug>(easymotion-F)
 map <A-F> <Plug>(easymotion-F)
 
+" Surround
+nmap yS ysiw
+
 " Align
 nmap <A-a> <Plug>(EasyAlign)ip
 nmap ga <Plug>(EasyAlign)
