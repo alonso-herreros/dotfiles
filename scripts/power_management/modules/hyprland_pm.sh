@@ -30,6 +30,39 @@ PERSISTENCE_FILE="$PERSISTENCE_DIR/$PERSISTENCE_FILENAME"
 
 # ==== Specifics ====
 
+INACTIVE_OPACITY=1.0
+BLUR=false
+SHADOW=false
+MOTION_BLUR=false
+ANIMATIONS=false
+GROUPBAR_BLUR=false
+DYNAMIC_CURSORS=false
+
+print_config() {
+    cat <<EOF
+{
+    decoration = {
+        inactive_opacity = $INACTIVE_OPACITY,
+        blur        = { enabled = $BLUR },
+        shadow      = { enabled = $SHADOW },
+        motion_blur = { enabled = $MOTION_BLUR },
+    },
+    animations = {
+        enabled = $ANIMATIONS,
+    },
+    group = {
+        groupbar = { blur = $GROUPBAR_BLUR },
+    },
+    plugin = {
+        dynamic_cursors = {
+            enabled = $DYNAMIC_CURSORS,
+        },
+    },
+}
+EOF
+}
+
+
 declare -A VARS_SAVING
 VARS_SAVING=(
     ["decoration:inactive_opacity"]="1.0"
@@ -62,18 +95,22 @@ save_vars() {
 
     mkdir -p $PERSISTENCE_DIR
     declare -p VARS_DEFAULT > $PERSISTENCE_FILE
+
+# cat <<EOF > $PERSISTENCE_FILE
+# INACTIVE_OPACITY=1.0
+# BLUR=false
+# SHADOW=false
+# MOTION_BLUR=false
+# ANIMATIONS=false
+# GROUPBAR_BLUR=false
+# DYNAMIC_CURSORS=false
+# EOF
 }
 
 set_pm() {
     case "$1" in
         on)
-            for key in "${!VARS_SAVING[@]}"; do
-                hyprctl keyword $key ${VARS_SAVING[$key]}
-            done
-
-            for val in "${KEYWORDS_SAVING[@]}"; do
-                hyprctl keyword $val
-            done
+            hyprctl eval "hl.config($(print_config))"
             ;;
         off)
             source "$PERSISTENCE_FILE" &>/dev/null
