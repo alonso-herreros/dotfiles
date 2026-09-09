@@ -530,6 +530,14 @@ omap ah <Plug>(GitGutterTextObjectOuterPending)
 xmap ih <Plug>(GitGutterTextObjectInnerVisual)
 xmap ah <Plug>(GitGutterTextObjectOuterVisual)
 
+" ---- Text exchange ----
+" I'm used to using g<key> for complex/plugin operations, so this works great
+nmap gx cx
+xmap gx X
+" And because I do want an Open mapping, and never once have used 'go'...
+nnoremap go gx
+xnoremap go gx
+
 
 " ======= GENERAL MAPPINGS =======
 " Save with C-s, sudo save with C-A-s
