@@ -426,6 +426,13 @@ map <A-F> <Plug>(easymotion-F)
 
 " Surround
 nmap yS ysiw
+" Unsurround
+nnoremap <silent> dss m`lF xf x``
+nnoremap <silent> ds<Space> m`lF xf x``
+nnoremap <silent> ds<Tab> m`lgEldweEldw``
+nnoremap <silent> dsA m`lF⟨xf⟩x``
+nnoremap <silent> ds⟩ dsA
+nnoremap <silent> ds⟨ dsA
 
 " Align
 nmap <A-a> <Plug>(EasyAlign)ip
