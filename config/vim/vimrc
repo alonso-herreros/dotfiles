@@ -667,6 +667,11 @@ nnoremap <A-q> gwip
 " Drag and drop!
 noremap <silent> <A-d> <Cmd>silent !ripdrag -xA % >/dev/null 2>&1 &<CR><C-l>
 
+" If i don't put this here it refuses to even register
+" Same position as colon on US keyboard: 1 keystroke in home row
+nmap ñ :
+xmap ñ :
+
 " ======= OP-PENDING MODE MAPPINGS =======
 " Beginning/end of line with H/L
 onoremap H ^
@@ -681,8 +686,6 @@ onoremap gp :<C-u>normal! `]v`[<CR>
 onoremap gP :<C-u>normal! ']V'[<CR>
 
 " ======= VISUAL MODE MAPPINGS =======
-" Visual easy exit
-vnoremap ñ <Esc>
 " HJKL: 10-fold j/k & Beginning/end of line
 vnoremap J 10gj
 vnoremap K 10gk
