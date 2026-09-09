@@ -1,9 +1,15 @@
+set formatoptions+=ron
+
+" ==== Custom text objects ====
+" Bold, italics
 nmap <C-b> ysiw2*<CR>
 nmap <C-i> ysiw*
 vmap <C-b> S2*<CR>
 vmap <C-i> S*
 
-set formatoptions+=ron
+" Align tables
+nnoremap <silent> gat m`:'{,'}EasyAlign *\|<CR>``
+nmap <silent> <A-Q> gat
 
 
 " ==== Custom text objects ====
