@@ -427,9 +427,6 @@ map <A-F> <Plug>(easymotion-F)
 nmap <A-a> <Plug>(EasyAlign)ip
 nmap ga <Plug>(EasyAlign)
 xmap ga <Plug>(EasyAlign)
-nmap <A-a> <Plug>(EasyAlign)ip
-nmap ga <Plug>(EasyAlign)
-xmap ga <Plug>(EasyAlign)
 
 " Commentary with Ctrl+ç
 nmap  m`gcc``
