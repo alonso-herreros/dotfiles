@@ -175,12 +175,12 @@
   <Action name="edit_undo" shortcut="Ctrl+Z; U"/>
   <Action name="file_export_as" shortcut="Ctrl+Shift+E"/>
   <Action name="file_print_preview" shortcut="Ctrl+Alt+P"/>
-  <Action name="file_reload" shortcut="F5; Space, E"/>
+  <Action name="file_reload" shortcut="F5; "/>
   <Action name="first_page" shortcut="Ctrl+Home; G, G"/>
   <Action name="fit_window_to_page" shortcut=""/>
   <Action name="go_document_back" shortcut="Alt+Shift+Left; Alt+K"/>
   <Action name="go_document_forward" shortcut="Alt+Shift+Right; Alt+J"/>
-  <Action name="go_next" shortcut="; L"/>
+  <Action name="go_next" shortcut="Space; L"/>
   <Action name="go_previous" shortcut="; H"/>
   <Action name="last_page" shortcut="Ctrl+End; Shift+G"/>
   <Action name="mouse_select" shortcut="Ctrl+3; Ctrl+V"/>
