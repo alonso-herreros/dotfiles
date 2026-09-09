@@ -13,8 +13,8 @@ hl.config({input = {
 	--resolve_binds_by_sym = false,
 	left_handed = false,
 
-	--repeat_rate  = ,
-	--repeat_delay = ,
+	repeat_rate  = 30,
+	repeat_delay = 200,
 
 	sensitivity   = -0.2, -- -1.0 to 1.0, 0 means no modification
 	accel_profile = "custom",
