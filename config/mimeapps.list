@@ -1,10 +1,10 @@
 [Added Associations]
-text/html=brave.desktop;
+text/html=brave-2.desktop;brave.desktop;
 video/quicktime=brave-browser.desktop;com.github.rafostar.Clapper.desktop;
 
 [Default Applications]
 application/pdf=org.kde.okular.desktop
-text/html=brave.desktop;
+text/html=brave-2.desktop;
 text/markdown=vim.desktop
 video/quicktime=com.github.rafostar.Clapper.desktop
 x-scheme-handler/capture=wireshark-capture-uri.desktop
