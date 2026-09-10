@@ -1,0 +1,102 @@
+#!/usr/bin/env bash
+
+# Check for batctl existence
+if ! command -v batctl >/dev/null; then
+    echo "Fatal: Couldn't find dunstctl." >&2
+    exit 1
+fi
+
+# ==== Usage ====
+USAGE="
+$0 - Wrapper for batctl
+Usage: $0 [OPTIONS] [COMMAND]
+       $0 -h
+
+OPTIONS:
+
+    -h, --help      Show this message
+    -j, --json      Output custom JSON
+
+See 'batctl --help'
+"
+
+function Help() {
+    echo "$USAGE"
+    batctl --help
+}
+
+# ==== Constants ====
+
+ICON_BATT_UP="󱟠 "
+ICON_BATT_HEART="󱈑 "
+ICON_BATT_SYNC="󱠴 "
+ICON_BATT_PLUS="󰂏 "
+ICON_BATT_MINUS="󰂌 "
+ICON_BATT_CHARGE="󰂄 "
+# hair space: " "; thin space: " "
+
+# ==== Functions ====
+
+get_mode() {
+    thresholds="$(batctl status | grep Threshold)"
+    case "$thresholds" in
+        *stop=100% )  echo full-charge;;
+        *start=70%* ) echo plugged-in;;
+        *start=40%* ) echo balanced;;
+        * )           echo max-lifespan;;
+    esac
+}
+
+get_toggle() {
+    case "$(get_mode)" in
+        'full-charge' ) echo 'max-lifespan';;
+        * )             echo 'full-charge';;
+    esac
+}
+
+print_info() {
+    mode="$(get_mode)"
+    case "$mode" in
+        full-charge )  icon="$ICON_BATT_UP";;
+        max-lifespan ) icon="$ICON_BATT_HEART";;
+        plugged-in   ) icon="$ICON_BATT_CHARGE";;
+        balanced     ) icon="$ICON_BATT_PLUS";;
+    esac
+
+    if [ "$JSON" -eq 1 ]; then
+        jq -n --unbuffered --compact-output \
+            --arg text "$icon" \
+            --arg status "$mode" \
+            --arg tooltip "Preset: $mode" \
+            '{
+                "text": $text, "alt": $status,
+                "tooltip": $tooltip, "class": $status
+            }'
+    else
+        echo "$mode"
+    fi
+}
+
+
+# ==== Main ====
+
+# ---- Globals ----
+JSON=0
+
+# ---- Args ----
+case "$1" in
+    -h | --help )
+        Help
+        exit 0;;
+    -j | --json )
+        JSON=1
+        shift;;
+esac
+
+case "$1" in
+    toggle ) set -- set --preset "$(get_toggle)";;
+esac
+
+[ -n "$1" ] && pkexec batctl "$@"
+
+print_info -j
