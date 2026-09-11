@@ -1,0 +1,74 @@
+@import "themes/latte-custom.css";
+
+@define-color burgundy                #800020;
+
+/* Basics and surfaces */
+@define-color background              transparent;
+@define-color surface-lowest          #f9f9fb;
+@define-color surface-low             #f6f6f9;
+@define-color surface                 @base;
+@define-color surface-high            @mantle;
+@define-color surface-highest         @crust;
+@define-color surface-light           @surface0;
+@define-color on-surface              #21212c;
+@define-color on-surface-dim          @surface2;
+
+@define-color outline                 @overlay1;
+@define-color outline-variant         @overlay0;
+
+/* Primary and Secondary */
+@define-color primary                 @teal;
+@define-color on-primary              @on-surface;
+@define-color primary-surface         @teal;
+@define-color on-primary-surface      @on-surface;
+
+@define-color secondary               @mauve;
+@define-color on-secondary            @on-surface;
+@define-color secondary-surface       @mauve;
+@define-color on-secondary-surface    @on-surface;
+
+/* Functional */
+@define-color warning                 @peach;
+@define-color on-warning              @on-surface;
+@define-color warning-surface         @peach;
+@define-color on-warning-surface      @on-surface;
+
+@define-color error                   @red;
+@define-color on-error                @on-surface;
+@define-color error-surface           @red;
+@define-color on-error-surface        @on-surface;
+
+@define-color range-worst             @red;
+@define-color range-bad               @peach;
+@define-color range-medium            @yellow;
+@define-color range-good              @green;
+@define-color range-best              @teal;
+@define-color on-range-worst          @on-surface;
+@define-color on-range-bad            @on-surface;
+@define-color on-range-medium         @on-surface;
+@define-color on-range-good           @on-surface;
+@define-color on-range-best           @on-surface;
+
+@define-color range-worst-surface     @red;
+@define-color range-bad-surface       @peach;
+@define-color range-medium-surface    @yellow;
+@define-color range-good-surface      @green;
+@define-color range-best-surface      @teal;
+@define-color on-range-worst-surface  @on-surface;
+@define-color on-range-bad-surface    @on-surface;
+@define-color on-range-medium-surface @on-surface;
+@define-color on-range-good-surface   @on-surface;
+@define-color on-range-best-surface   @on-surface;
+
+@define-color temp-low                @blue;
+@define-color temp-medium             @yellow;
+@define-color temp-high               @red;
+
+@define-color power                   @sapphire;
+@define-color on-power                @on-surface;
+@define-color power-surface           @sapphire;
+@define-color on-power-surface        @on-surface;
+
+
+@import "common.css";
+@import "style-local.css";

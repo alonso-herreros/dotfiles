@@ -1,4 +1,4 @@
-@import       "macchiato.css";
+@import "themes/macchiato.css";
 
 @define-color burgundy                #800020;
 
@@ -64,8 +64,11 @@
 @define-color temp-medium             @yellow;
 @define-color temp-high               @red;
 
-
 @define-color power                   @sapphire;
 @define-color on-power                @base;
 @define-color power-surface           @sapphire;
 @define-color on-power-surface        @base;
+
+
+@import "common.css";
+@import "style-local.css";
