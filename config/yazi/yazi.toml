@@ -77,6 +77,9 @@ play = [
 	{ run = "termux-open %s1",             desc = "Play", for = "android" },
 	{ run = "mpv --force-window %s",       desc = "MPV",  orphan = true },
 ]
+media-inspect = [
+	{ run = "ffprobe -hide_banner %s | $PAGER", desc = "FFprobe",  block = true },
+]
 
 json-view = [
 	{ run = "jq -C . %s | less", desc = "JQ",  block = true },
@@ -120,7 +123,7 @@ rules = [
 	# Images
 	{ mime = "image/*", use = [ "open", "image", "reveal" ] },
 	# Media
-	{ mime = "{audio,video}/*", use = [ "play", "reveal", "checksum" ] },
+	{ mime = "{audio,video}/*", use = [ "play", "media-inspect", "reveal", "checksum" ] },
 	# Web
 	{ mime = "text/html", use = [ "open", "edit", "view", "reveal", "checksum" ] },
 
