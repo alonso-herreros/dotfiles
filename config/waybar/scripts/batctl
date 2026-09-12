@@ -57,10 +57,10 @@ get_toggle() {
 print_info() {
     mode="$(get_mode)"
     case "$mode" in
-        full-charge )  icon="$ICON_BATT_UP";;
+        full-charge )  icon="$ICON_BATT_PLUS";;
         max-lifespan ) icon="$ICON_BATT_HEART";;
         plugged-in   ) icon="$ICON_BATT_CHARGE";;
-        balanced     ) icon="$ICON_BATT_PLUS";;
+        balanced     ) icon="$ICON_BATT_SYNC";;
     esac
 
     if [ "$JSON" -eq 1 ]; then
