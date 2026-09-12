@@ -46,7 +46,7 @@ hl.config({misc = {
 	initial_workspace_tracking = 1,
 	--initial_workspace_token_timeout = ,
 
-	--middle_click_paste = true,
+	middle_click_paste = true,
 
 	--render_unfocused_fps = 15,
 
