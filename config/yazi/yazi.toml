@@ -56,13 +56,13 @@ reveal = [
 	{ run = "open -R %s1",          desc = "Reveal", for = "macos" },
 	{ run = "explorer /select,%s1", desc = "Reveal", for = "windows",   orphan = true },
 	{ run = "termux-open %d1",      desc = "Reveal", for = "android" },
-	{ run = "clear; exiftool %s1; echo 'Press enter to exit'; read _", desc = "Show EXIF", for = "unix", block = true },
+	{ run = "exiftool %s1 | $PAGER", desc = "Show EXIF", for = "unix", block = true },
 ]
 
 checksum = [
-	{ run = "sha256sum %s; read _", desc = "SHA256", block=true },
+	{ run = "sha256sum %s | $PAGER", desc = "SHA256", block=true },
 	{ run = "diff <(sha256sum %s | cut -d ' ' -f 1) <(wl-paste)", desc = "Compare SHA256 with clipboard", block=true },
-	{ run = "md5sum %s; read _", desc = "MD5", block=true },
+	{ run = "md5sum %s | $PAGER", desc = "MD5", block=true },
 	{ run = "diff <(md5sum %s | cut -d ' ' -f 1) <(wl-paste)", desc = "Compare MD5 with clipboard", block=true },
 ]
 
