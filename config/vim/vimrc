@@ -53,6 +53,8 @@ Plug 'wellle/context.vim'      " Shows the current line context
 Plug 'chrisbra/Colorizer'      " Show colors described by hex codes
 
 " Appearance
+Plug 'tribela/vim-transparent'
+Plug 'catppuccin/vim', { 'as': 'catppuccin', 'branch': 'main' }
 Plug 'tomasiser/vim-code-dark'           " VSCode dark theme (sort of)
 Plug 'preservim/vim-indent-guides'       " Visually displaying indent levels
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -77,11 +79,9 @@ call plug#end()
 
 " ==== Theme ====
 set background=dark
-let g:codedark_modern=1
-let g:codedark_transparent=1
-let g:airline_theme = 'codedark'
-colorscheme codedark
-hi DiffText term=bold cterm=bold ctermfg=188 ctermbg=25 guifg=#D4D4D4 guibg=#339ab2
+let g:airline_theme = 'catppuccin'
+colorscheme catppuccin
+" hi DiffText term=bold cterm=bold ctermfg=188 ctermbg=25 guifg=#D4D4D4 guibg=#339ab2
 
 " ==== Peekaboo ====
 let g:peekaboo_delay=1000
