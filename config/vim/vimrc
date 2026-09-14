@@ -53,6 +53,7 @@ Plug 'wellle/context.vim'      " Shows the current line context
 Plug 'chrisbra/Colorizer'      " Show colors described by hex codes
 
 " Appearance
+Plug 'vimpostor/vim-lumen'
 Plug 'tribela/vim-transparent'
 Plug 'catppuccin/vim', { 'as': 'catppuccin', 'branch': 'main' }
 Plug 'tomasiser/vim-code-dark'           " VSCode dark theme (sort of)
