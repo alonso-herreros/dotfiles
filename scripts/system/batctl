@@ -113,3 +113,5 @@ esac
 mode="$(get_mode)"
 print_info "$mode"
 [ "$NOTIFY" -eq 1 ] && notify "$mode"
+
+exit 0
