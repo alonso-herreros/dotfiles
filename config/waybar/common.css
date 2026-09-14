@@ -73,6 +73,7 @@ tooltip.background {
 #clock,
 #battery,
 #custom-batctl,
+#custom-lightswitch,
 #power-profiles-daemon,
 #custom-dunst,
 #idle_inhibitor,
@@ -124,6 +125,7 @@ tooltip.background {
 button:hover,
 #custom-launch:hover,
 #custom-batctl:hover,
+#custom-lightswitch:hover,
 #power-profiles-daemon:hover,
 #custom-tlp:hover,
 #custom-dunst:hover,
@@ -274,6 +276,8 @@ button.urgent,
 
 /* ==== Utils ==== */
 #custom-batctl { padding: 0 8px; }
+
+#custom-lightswitch { padding: 0 8px; }
 
 #power-profiles-daemon { padding: 0 6px; }
 #power-profiles-daemon.power-saver { color: @green; }
