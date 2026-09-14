@@ -124,12 +124,12 @@
     // https://github.com/Alexays/Waybar/wiki/Module:-Custom
     "custom/lightswitch": {
         "format": "{}", // Using thin space " "
-        "exec": "~/.config/waybar/scripts/lightswitch -j",
+        "exec": "~/.scripts/system/lightswitch -j",
         "exec-on-event": true,
         "return-type": "json",
         // We need to run every now and then in case there are outside changes.
         "interval": 60,
-        "on-click": "~/.config/waybar/scripts/lightswitch -j toggle",
+        "on-click": "~/.scripts/system/lightswitch -j toggle",
     },
 
     // ---- Battery control  ----
@@ -137,13 +137,13 @@
     // https://github.com/Ooooze/batctl
     "custom/batctl": {
         "format": "{}", // Using thin space " "
-        "exec": "~/.config/waybar/scripts/batctl -j",
+        "exec": "~/.scripts/system/batctl -j",
         "exec-on-event": true,
         "return-type": "json",
         // We need to run every now and then in case there are outside changes.
         "interval": 60,
-        "on-click": "~/.config/waybar/scripts/batctl -j toggle",
-        "on-click-right": "~/.config/waybar/scripts/batctl -j set --preset max-lifespan"
+        "on-click": "~/.scripts/system/batctl -j toggle",
+        "on-click-right": "~/.scripts/system/batctl -j set --preset max-lifespan"
     },
 
     // ---- Power Profiles Daemon ----
