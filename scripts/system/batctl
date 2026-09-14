@@ -2,7 +2,7 @@
 
 # Check for batctl existence
 if ! command -v batctl >/dev/null; then
-    echo "Fatal: Couldn't find dunstctl." >&2
+    echo "Fatal: Couldn't find batctl." >&2
     exit 1
 fi
 
