@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 # Check for batctl existence
 if ! command -v dconf >/dev/null; then
@@ -20,7 +20,7 @@ OPTIONS:
 See 'batctl --help'
 "
 
-function Help() {
+Help() {
     echo "$USAGE"
 }
 
