@@ -68,29 +68,40 @@ print_info() {
     fi
 }
 
+notify() {
+    mode="${1:-$(get_mode)}"
+    title="System theme"
+    message="Option: $mode"
+    notify-send "$title" "$message" -t 3000 -r 2593 -u low
+}
+
 
 # ==== Main ====
 
 # ---- Globals ----
 SET=
 JSON=0
+NOTIFY=0
 
 # ---- Args ----
-case "$1" in
-    -h | --help )
-        Help
-        exit 0;;
-    -j | --json )
-        JSON=1
-        shift;;
-esac
+# Options
+while [ -n "$1" ]; do case "$1" in
+    -h | --help )   Help; exit 0;;
+    -j | --json )   JSON=1;;
+    -n | --notify ) NOTIFY=1;;
+    * ) break;;
+esac; shift; done
 
 case "$1" in
     toggle ) SET="$(get_toggle)";;
     set )    SET="${2:?"Missing value for '$1'"}";;
 esac
 
+# ---- Action ----
 [ -n "$SET" ] && dconf write "$DCONF_PATH" "'$SET'"
-[ -n "$SET" ] && echo dconf write "$DCONF_PATH" "'$SET'"
 
-print_info
+
+# ---- Reporting ----
+mode="$(get_mode)"
+print_info "$mode"
+[ "$NOTIFY" -eq 1 ] && notify "$mode"

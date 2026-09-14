@@ -55,7 +55,7 @@ get_toggle() {
 }
 
 print_info() {
-    mode="$(get_mode)"
+    mode="${1:-$(get_mode)}"
     case "$mode" in
         full-charge )  icon="$ICON_BATT_PLUS";;
         max-lifespan ) icon="$ICON_BATT_HEART";;
@@ -77,26 +77,40 @@ print_info() {
     fi
 }
 
+notify() {
+    mode="${1:-$(get_mode)}"
+    title="Battery management"
+    message="Preset: $mode"
+    notify-send "$title" "$message" -t 3000 -r 2593 -u low
+}
+
 
 # ==== Main ====
 
 # ---- Globals ----
 JSON=0
+NOTIFY=0
 
 # ---- Args ----
-case "$1" in
-    -h | --help )
-        Help
-        exit 0;;
-    -j | --json )
-        JSON=1
-        shift;;
-esac
+# Options
+while [ -n "$1" ]; do case "$1" in
+    -h | --help )   Help; exit 0;;
+    -j | --json )   JSON=1;;
+    -n | --notify ) NOTIFY=1;;
+    * ) break;;
+esac; shift; done
 
+# Commands
 case "$1" in
     toggle ) set -- set --preset "$(get_toggle)";;
 esac
 
+
+# ---- Action ----
 [ -n "$1" ] && pkexec batctl "$@"
 
-print_info -j
+
+# ---- Reporting ----
+mode="$(get_mode)"
+print_info "$mode"
+[ "$NOTIFY" -eq 1 ] && notify "$mode"
