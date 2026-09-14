@@ -1,6 +1,7 @@
 -- https://wiki.hypr.land/Plugins/Using-Plugins/
 -- https://github.com/VirtCode/hypr-dynamic-cursors
 
+if hl.plugin.dynamic_cursors then
 hl.config({plugin = { dynamic_cursors = {
 	enabled = true,
 
@@ -71,3 +72,5 @@ local shape_rule = hl.plugin.dynamic_cursors.shape_rule
 shape_rule({shape="text", mode="tilt", tilt={limit=1500}})
 -- shape_rule({shape="grab", mode="rotate", rotate={offset=180}})
 shape_rule({shape="grabbing", mode="rotate", rotate={offset=180}})
+
+end
