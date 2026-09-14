@@ -82,6 +82,8 @@ local hypr_scripts = "~/.config/hypr/scripts"
 A.specialworkspace_tmp = "hyprctl eval 'hl.dsp.focus({workspace=\"special:tmp\"})'; "
 A.volumectl     = scripts .. "/system/volume_ctl.sh"
 A.brightnessctl = scripts .. "/system/brightness_ctl.sh"
+A.lightswitch   = scripts .. "/system/lightswitch"
+A.batctl        = scripts .. "/system/batctl"
 A.rename_current_workspace = hypr_scripts .. "/rename-workspace.sh -i"
 
 local function alt(str)
@@ -397,22 +399,29 @@ bind("XF86AudioNext", exec("playerctl next"), F("ul"))
 bind("XF86AudioPrev", exec("playerctl previous"), F("ul"))
 bind("XF86AudioStop", exec("playerctl stop"), F("ul"))
 
--- ==== Brightness ====
-
+-- ==== Display options ====
+-- Brightness
 bind("XF86MonBrightnessUp",   exec(A.brightnessctl .. " s 5%+"),    F("ule"))
 bind("XF86MonBrightnessDown", exec(A.brightnessctl .. " s -n 5%-"), F("ule"))
 
--- ==== Gamma ====
+-- Gamma
 bind("CTRL + XF86MonBrightnessUp",         exec("hyprctl hyprsunset gamma +5"),  F("ule"))
 bind("CTRL + XF86MonBrightnessDown",       exec("hyprctl hyprsunset gamma -5"),  F("ule"))
 bind("CTRL+SHIFT + XF86MonBrightnessUp",   exec("hyprctl hyprsunset gamma 100"), F("ule"))
 bind("CTRL+SHIFT + XF86MonBrightnessDown", exec("hyprctl hyprsunset gamma 100"), F("ule"))
 
--- ==== Temperature ====
+-- Temperature
 bind("ALT + XF86MonBrightnessUp",         exec("hyprctl hyprsunset temperature -500"), F("ule"))
 bind("ALT + XF86MonBrightnessDown",       exec("hyprctl hyprsunset temperature +500"), F("ule"))
 bind("ALT+SHIFT + XF86MonBrightnessUp",   exec("hyprctl hyprsunset temperature 6000"), F("ule"))
 bind("ALT+SHIFT + XF86MonBrightnessDown", exec("hyprctl hyprsunset temperature 6000"), F("ule"))
+
+-- Brightness
+bind("SUPER+CTRL + t", exec(A.lightswitch .. " -n toggle"), F("ule"))
+
+-- ==== Battery ====
+bind("SUPER+CTRL + p", exec(A.batctl .. " -n toggle"), F("ule"))
+
 
 --###################
 --# SCREEN CAPTURE ##
