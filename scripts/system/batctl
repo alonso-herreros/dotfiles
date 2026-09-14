@@ -2,27 +2,26 @@
 
 # Check for batctl existence
 if ! command -v batctl >/dev/null; then
-    echo "Fatal: Couldn't find batctl." >&2
-    exit 1
+	echo "Fatal: Couldn't find batctl." >&2
+	exit 1
 fi
 
 # ==== Usage ====
 USAGE="
 $0 - Wrapper for batctl
 Usage: $0 [OPTIONS] [COMMAND]
-       $0 -h
 
 OPTIONS:
 
-    -h, --help      Show this message
-    -j, --json      Output custom JSON
+	-h, --help      Show this message and exit
+	-j, --json      Output custom JSON
 
 See 'batctl --help'
 "
 
 Help() {
-    echo "$USAGE"
-    batctl --help
+	echo "$USAGE"
+	batctl --help
 }
 
 # ==== Constants ====
@@ -38,50 +37,50 @@ ICON_BATT_CHARGE="󰂄 "
 # ==== Functions ====
 
 get_mode() {
-    thresholds="$(batctl status | grep Threshold)"
-    case "$thresholds" in
-        *stop=100% )  echo full-charge;;
-        *start=70%* ) echo plugged-in;;
-        *start=40%* ) echo balanced;;
-        * )           echo max-lifespan;;
-    esac
+	thresholds="$(batctl status | grep Threshold)"
+	case "$thresholds" in
+		*stop=100% )  echo full-charge;;
+		*start=70%* ) echo plugged-in;;
+		*start=40%* ) echo balanced;;
+		* )           echo max-lifespan;;
+	esac
 }
 
 get_toggle() {
-    case "$(get_mode)" in
-        'full-charge' ) echo 'max-lifespan';;
-        * )             echo 'full-charge';;
-    esac
+	case "$(get_mode)" in
+		'full-charge' ) echo 'max-lifespan';;
+		* )             echo 'full-charge';;
+	esac
 }
 
 print_info() {
-    mode="${1:-$(get_mode)}"
-    case "$mode" in
-        full-charge )  icon="$ICON_BATT_PLUS";;
-        max-lifespan ) icon="$ICON_BATT_HEART";;
-        plugged-in   ) icon="$ICON_BATT_CHARGE";;
-        balanced     ) icon="$ICON_BATT_SYNC";;
-    esac
+	mode="${1:-$(get_mode)}"
+	case "$mode" in
+		full-charge )  icon="$ICON_BATT_PLUS";;
+		max-lifespan ) icon="$ICON_BATT_HEART";;
+		plugged-in )   icon="$ICON_BATT_CHARGE";;
+		balanced )     icon="$ICON_BATT_SYNC";;
+	esac
 
-    if [ "$JSON" -eq 1 ]; then
-        jq -n --unbuffered --compact-output \
-            --arg text "$icon" \
-            --arg status "$mode" \
-            --arg tooltip "Preset: $mode" \
-            '{
-                "text": $text, "alt": $status,
-                "tooltip": $tooltip, "class": $status
-            }'
-    else
-        echo "$mode"
-    fi
+	if [ "$JSON" -eq 1 ]; then
+		jq -n --unbuffered --compact-output \
+			--arg text "$icon" \
+			--arg status "$mode" \
+			--arg tooltip "Preset: $mode" \
+			'{
+				"text": $text, "alt": $status,
+				"tooltip": $tooltip, "class": $status
+			}'
+	else
+		echo "$mode"
+	fi
 }
 
 notify() {
-    mode="${1:-$(get_mode)}"
-    title="Battery management"
-    message="Preset: $mode"
-    notify-send "$title" "$message" -t 3000 -r 2593 -u low
+	mode="${1:-$(get_mode)}"
+	title="Battery management"
+	message="Preset: $mode"
+	notify-send "$title" "$message" -t 3000 -r 2593 -u low
 }
 
 
@@ -94,15 +93,15 @@ NOTIFY=0
 # ---- Args ----
 # Options
 while [ -n "$1" ]; do case "$1" in
-    -h | --help )   Help; exit 0;;
-    -j | --json )   JSON=1;;
-    -n | --notify ) NOTIFY=1;;
-    * ) break;;
+	-h | --help )   Help; exit 0;;
+	-j | --json )   JSON=1;;
+	-n | --notify ) NOTIFY=1;;
+	* ) break;;
 esac; shift; done
 
 # Commands
 case "$1" in
-    toggle ) set -- set --preset "$(get_toggle)";;
+	toggle ) set -- set --preset "$(get_toggle)";;
 esac
 
 

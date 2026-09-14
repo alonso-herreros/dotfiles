@@ -2,26 +2,25 @@
 
 # Check for batctl existence
 if ! command -v dconf >/dev/null; then
-    echo "Fatal: Couldn't find dconf." >&2
-    exit 1
+	echo "Fatal: Couldn't find dconf." >&2
+	exit 1
 fi
 
 # ==== Usage ====
 USAGE="
 $0 - Switch for gnome color scheme via dconf
 Usage: $0 [OPTIONS] [COMMAND]
-       $0 -h
 
 OPTIONS:
 
-    -h, --help      Show this message
-    -j, --json      Output custom JSON
+	-h, --help      Show this message and exit
+	-j, --json      Output custom JSON
 
 See 'batctl --help'
 "
 
 Help() {
-    echo "$USAGE"
+	echo "$USAGE"
 }
 
 # ==== Constants ====
@@ -36,43 +35,43 @@ ICON_FORBID=" "
 # ==== Functions ====
 
 get_mode() {
-    dconf read "$DCONF_PATH" | sed "s/'//g"
+	dconf read "$DCONF_PATH" | sed "s/'//g"
 }
 
 get_toggle() {
-    case "$(get_mode)" in
-        prefer-dark ) echo "prefer-light";;
-        * )           echo "prefer-dark";;
-    esac
+	case "$(get_mode)" in
+		prefer-dark ) echo "prefer-light";;
+		* )           echo "prefer-dark";;
+	esac
 }
 
 print_info() {
-    mode="$(get_mode)"
-    case "$mode" in
-        prefer-dark )  icon="$ICON_MOON";;
-        prefer-light ) icon="$ICON_SUN";;
-        default )      icon="$ICON_FORBID";;
-    esac
+	mode="$(get_mode)"
+	case "$mode" in
+		prefer-dark )  icon="$ICON_MOON";;
+		prefer-light ) icon="$ICON_SUN";;
+		default )      icon="$ICON_FORBID";;
+	esac
 
-    if [ "$JSON" -eq 1 ]; then
-        jq -n --unbuffered --compact-output \
-            --arg text "$icon" \
-            --arg status "$mode" \
-            --arg tooltip "Theme: $mode" \
-            '{
-                "text": $text, "alt": $status,
-                "tooltip": $tooltip, "class": $status
-            }'
-    else
-        echo "$mode"
-    fi
+	if [ "$JSON" -eq 1 ]; then
+		jq -n --unbuffered --compact-output \
+			--arg text "$icon" \
+			--arg status "$mode" \
+			--arg tooltip "Theme: $mode" \
+			'{
+				"text": $text, "alt": $status,
+				"tooltip": $tooltip, "class": $status
+			}'
+	else
+		echo "$mode"
+	fi
 }
 
 notify() {
-    mode="${1:-$(get_mode)}"
-    title="System theme"
-    message="Option: $mode"
-    notify-send "$title" "$message" -t 3000 -r 2593 -u low
+	mode="${1:-$(get_mode)}"
+	title="System theme"
+	message="Option: $mode"
+	notify-send "$title" "$message" -t 3000 -r 2593 -u low
 }
 
 
@@ -86,15 +85,15 @@ NOTIFY=0
 # ---- Args ----
 # Options
 while [ -n "$1" ]; do case "$1" in
-    -h | --help )   Help; exit 0;;
-    -j | --json )   JSON=1;;
-    -n | --notify ) NOTIFY=1;;
-    * ) break;;
+	-h | --help )   Help; exit 0;;
+	-j | --json )   JSON=1;;
+	-n | --notify ) NOTIFY=1;;
+	* ) break;;
 esac; shift; done
 
 case "$1" in
-    toggle ) SET="$(get_toggle)";;
-    set )    SET="${2:?"Missing value for '$1'"}";;
+	toggle ) SET="$(get_toggle)";;
+	set )    SET="${2:?"Missing value for '$1'"}";;
 esac
 
 # ---- Action ----
