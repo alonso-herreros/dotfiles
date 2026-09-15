@@ -9,7 +9,7 @@
 @define-color surface                 @base;
 @define-color surface-high            @mantle;
 @define-color surface-highest         @crust;
-@define-color surface-light           @surface2;
+@define-color surface-raised          @surface2;
 @define-color on-surface              #21212c;
 @define-color on-surface-dim          @surface2;
 
