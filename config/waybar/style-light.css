@@ -17,7 +17,7 @@
 @define-color outline-variant         @overlay0;
 
 /* Primary and Secondary */
-@define-color primary                 @teal;
+@define-color primary                 #147f85; /* Modified (darker) teal */
 @define-color on-primary              @surface-lowest;
 @define-color primary-surface         @teal;
 @define-color on-primary-surface      @surface-lowest;
