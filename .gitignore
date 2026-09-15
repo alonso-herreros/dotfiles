@@ -22,5 +22,6 @@ config/dunst/**/*power_saving*.conf
 config/waybar/*-local.*
 
 config/hypr/**/*-local.conf
+config/hypr/**/*-local.lua
 
 config/wayle/runtime.toml

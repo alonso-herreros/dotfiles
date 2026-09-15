@@ -37,5 +37,5 @@ require("hyprland/misc")       -- Misc
 -- Plugins
 require("hyprland/plugins/dynamic-cursors")
 
--- Drop-ins
--- require("hyprland/conf.d/*")
+-- Drop-in
+local _, _ = pcall(require, "hyprland-local")
