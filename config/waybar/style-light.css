@@ -42,7 +42,7 @@
 @define-color range-bad               @peach;
 @define-color range-medium            @yellow;
 @define-color range-good              @green;
-@define-color range-best              @teal;
+@define-color range-best              #09a6ae; /* Modified teal */
 @define-color on-range-worst          @surface-lowest;
 @define-color on-range-bad            @surface-lowest;
 @define-color on-range-medium         @surface-lowest;
@@ -53,7 +53,7 @@
 @define-color range-bad-surface       @peach;
 @define-color range-medium-surface    @yellow;
 @define-color range-good-surface      @green;
-@define-color range-best-surface      @teal;
+@define-color range-best-surface      #09a6ae; /* Modified teal */
 @define-color on-range-worst-surface  @surface-lowest;
 @define-color on-range-bad-surface    @surface-lowest;
 @define-color on-range-medium-surface @surface-lowest;
