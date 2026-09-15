@@ -4,11 +4,11 @@
 
 /* Basics and surfaces */
 @define-color background              transparent;
-@define-color surface-lowest          #f9f9fb;
-@define-color surface-low             #f6f6f9;
-@define-color surface                 @base;
-@define-color surface-high            @mantle;
-@define-color surface-highest         @crust;
+@define-color surface-lowest          #f6f6f9;
+@define-color surface-low             @base;
+@define-color surface                 @mantle;
+@define-color surface-high            @crust;
+@define-color surface-highest         @surface0;
 @define-color surface-raised          @surface2;
 @define-color on-surface              @text;
 @define-color on-surface-dim          @surface2;
