@@ -174,13 +174,15 @@ bind("SUPER + Down",       win.resize({ x=0, y=resizeStepMed,    relative=true})
 bind("SUPER + Up",         win.resize({ x=0, y=-resizeStepMed,   relative=true}), F("ul"))
 
 -- Toggle windowed fullscreen
-bind("SUPER + Space", win.fullscreen({mode="maximized"}), F("u"))
--- Toggle fake fullscreen
-bind("SUPER+SHIFT + Space", win.fullscreen_state({internal=-1, client=2}), F("u"))
-bind("SUPER+SHIFT + F11",   win.fullscreen_state({internal=-1, client=2}), F("u"))
+bind("SUPER + Space",            win.fullscreen({mode="maximized"}), F("u"))
+bind("SUPER+SHIFT + F11",        win.fullscreen({mode="maximized"}), F("u"))
 -- Toggle true fullscreen
-bind("SUPER+SHIFT+CTRL + Space", win.fullscreen({mode="fullscreen"}), F("u"))
+bind("SUPER+SHIFT + Space",      win.fullscreen({mode="fullscreen"}), F("u"))
 bind("SUPER + F11",              win.fullscreen({mode="fullscreen"}), F("u"))
+-- Toggle fake fullscreen
+bind("SUPER+SHIFT+CTRL + Space", win.fullscreen_state({internal=-1, client=2}), F("u"))
+bind("SUPER+CTRL + F11",         win.fullscreen_state({internal=-1, client=2}), F("u"))
+
 -- Floating, pinning (if floating) and pseudo (if tiled)
 bind("SUPER + f", win.float({action="toggle"}), F("u"))
 bind("SUPER + P", win.pin({action="toggle"}), F("u"))
