@@ -47,7 +47,7 @@ edit = [
 
 view = [
 	{ run = "less %s",   desc = "Less",       for = "unix",  block = true },
-	{ run = "bat -n --paging=always %s", desc = "Bat",        for = "unix",  block = true },
+	{ run = "bat --style=numbers,header-filename --paging=always %s", desc = "Bat",        for = "unix",  block = true },
 	{ run = "vim -R %s", desc = "Vim (view)", block = true},
 ]
 
@@ -82,11 +82,11 @@ media-inspect = [
 ]
 
 json-view = [
-	{ run = "jq -C . %s | less", desc = "JQ",  block = true },
+	{ run = "{ echo %s; jq -C . %s; } | less --header=1", desc = "JQ",  block = true },
 ]
 
 yaml-view = [
-	{ run = "yq -Y . %s | bat -pl yaml --paging=always", desc = "YQ",  block = true },
+	{ run = "{ echo %s; yq -Y . %s; } | bat -pl yaml --paging=always --style=header", desc = "YQ",  block = true },
 ]
 
 pdf = [
