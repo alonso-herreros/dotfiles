@@ -99,7 +99,7 @@ end
 -- Lock screen
 bind("SUPER + ESCAPE", exec(A.lock), F("ul"))
 -- Lock screen and turn off display
-bind("SUPER+ALT + ESCAPE", cmd(A.lock .. " & sleep 1; hyprctl dispatch dpms off"), F("ul"))
+bind("SUPER+ALT + ESCAPE", cmd(A.lock .. "; sleep 1; hyprctl dispatch 'hl.dsp.dpms({ action = \"disable\" })'"), F("ul"))
 -- Hibernate and sleep (locking included via hypridle)
 bind("SUPER + F12",       exec("systemctl hibernate -i"), F("ul"))
 bind("SUPER+SHIFT + F12", exec("systemctl sleep -i"),     F("ul"))
