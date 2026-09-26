@@ -41,6 +41,7 @@
       path: config/*
       exclude:
         - config/vimium
+        - config/anki
 
     # App flags - removed trailing slash to specify ~/.config/ twice
     ~/.config:
