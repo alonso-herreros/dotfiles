@@ -42,6 +42,7 @@
       exclude:
         - config/vimium
         - config/anki
+        - config/Code
 
     # App flags - removed trailing slash to specify ~/.config/ twice
     ~/.config:
@@ -58,6 +59,11 @@
 
     # Why do they make these things so hard?
     ~/.local/share/qalculate/definitions: config/qalculate/definitions
+
+    # Oh these apps that use the .config dir for literally everything...
+    ~/.config/Code/User/:
+      glob: true
+      path: config/Code/User/*
 
     # Desktop Entries
     ~/.local/share/applications/:
