@@ -1,4 +1,14 @@
 {
+    "idf.hasWalkthroughBeenShown": true,
+    "idf.eimExecutableArgs": [
+        "gui",
+        "--idf-features ide"
+    ],
+    "breadcrumbs.enabled": false,
+    "extensions.ignoreRecommendations": true,
+    "telemetry.feedback.enabled": false,
+    "telemetry.telemetryLevel": "off",
+    "workbench.activityBar.location": "top",
     "workbench.colorTheme": "Darker Dark+",
     "workbench.preferredDarkColorTheme": "Darkest+",
     "workbench.preferredLightColorTheme": "Light+",
@@ -20,6 +30,7 @@
         "*.pdf": "pdf.view",
         "*.md": "vscode.markdown.preview.editor"
     },
+    "window.autoDetectColorScheme": true,
     "window.confirmSaveUntitledWorkspace": false,
     "window.experimentalControlOverlay": false,
     "window.customTitleBarVisibility": "windowed",
@@ -689,7 +700,6 @@
     "print.folder.maxLines": 1200,
     "print.folder.maxFiles": 30,
     "print.folder.includeFileList": false,
-    "workbench.activityBar.location": "top",
     "java.configuration.runtimes": [
         {
             "name": "JavaSE-17",
@@ -700,7 +710,6 @@
     "java.configuration.detectJdksAtStart": false,
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "keyboard.dispatch": "keyCode",
-    "breadcrumbs.enabled": false,
     "notebook.cellFocusIndicator": "border",
     "notebook.globalToolbarShowLabel": "dynamic",
     "notebook.insertToolbarLocation": "betweenCells",
