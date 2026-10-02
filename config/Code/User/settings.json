@@ -716,6 +716,10 @@
     "notebook.output.textLineLimit": 20,
     "notebook.showFoldingControls": "always",
     "notebook.stickyScroll.enabled": true,
+    "workbench.editor.showTabs": "none",
+    "chat.titleBar.signIn.enabled": false,
+    "chat.titleBar.openInAgentsWindow.enabled": false,
+    "workbench.browser.showInTitleBar": false,
     // #endregion Language-specific settings
 
 }
