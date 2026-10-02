@@ -334,12 +334,12 @@ set autoindent             " Autoindent new lines and formatted lines
 
 set listchars=tab:•\ >,space:⋅,multispace:⋅⋅⋅⋅•
 
-let s:state_dir = getenv('XDG_STATE_HOME') ?? ($HOME . '/.local/state/vim')
-let s:swap_dir = s:state_dir . '/swap'
-silent! call mkdir(s:state_dir, 'p', 0750)
-silent! call mkdir(s:swap_dir, 'p', 0750)
-let &viminfofile = s:state_dir .'/vim/viminfo'
-let &directory   = s:swap_dir . '//,' . &directory
+let state_dir = (getenv('XDG_STATE_HOME') ?? ($HOME . '/.local/state')) . '/vim'
+let swap_dir = state_dir . '/swap'
+silent! call mkdir(state_dir, 'p', 0750)
+silent! call mkdir(swap_dir, 'p', 0750)
+let &viminfofile = state_dir .'/viminfo'
+let &directory   = swap_dir . '//,' . &directory
 
 set runtimepath+=$PWD/.vim " Add local .vim to runtimepath
 
