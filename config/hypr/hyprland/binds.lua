@@ -328,18 +328,18 @@ bind("SUPER+SHIFT + LESS",      win.move({workspace="special:tmp"}), F("u"))
 bind("SUPER+SHIFT+CTRL + LESS", win.move({workspace="special:tmp",follow=false}), F("u"))
 
 -- Quick switching between two workspaces
-bind("SUPER + Tab",       focus({workspace="previous_per_monitor"}), F("u"))
+bind("SUPER + Tab",       focus({workspace="previous_per_monitor",on_current_monitor=true}), F("u"))
 bind("SUPER+SHIFT + Tab", win.move({workspace="previous"}), F("u"))
 
 -- Auto-determined secondary workspace using MOD+ALT+TAB or MOD+ALT+<
-bind("SUPER+ALT + Tab",        alt("focus({%s})"),       F("u"))
+bind("SUPER+ALT + Tab",        alt("focus({%s},on_current_monitor=true)"), F("u"))
 bind("SUPER+ALT+SHIFT + Tab",  alt("window.move({%s})"), F("u"))
-bind("SUPER+ALT + LESS",       alt("focus({%s})"),       F("u"))
+bind("SUPER+ALT + LESS",       alt("focus({%s},on_current_monitor=true)"), F("u"))
 bind("SUPER+ALT+SHIFT + LESS", alt("window.move({%s})"), F("u"))
 bind("SUPER+ALT+SHIFT+CTRL + LESS", alt("window.move({%s, follow=false})"), F("u"))
 
 -- Scroll to toggle previous or 'tmp' scratchpad
-bind("SUPER + mouse_up", focus({workspace="previous"}), F("u"))
+bind("SUPER + mouse_up", focus({workspace="previous",on_current_monitor=true}), F("u"))
 bind("SUPER + mouse_down", ws.toggle_special("tmp"), F("u"))
 
 -- Rename a workspace
