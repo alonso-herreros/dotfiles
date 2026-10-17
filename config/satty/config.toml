@@ -1,0 +1,6 @@
+[general]
+corner-roundness = 12
+initial-tool = "rectangle"
+copy-command = "wl-copy"
+default-fill-shapes = true
+default-round-caps = true
