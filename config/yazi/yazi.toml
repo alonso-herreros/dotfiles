@@ -106,6 +106,7 @@ image = [
 	{ run = "mpv %s", desc = "MPV",  orphan = true },
 	{ run = "gimp %s &",                                       desc = "GIMP",   for = "linux", orphan = true },
 	{ run = 'f=%s; satty -f %s -o "${f%.*}-edit.png" &', desc = "Satty", for = "linux", orphan = true },
+	{ run = 'f=%s1; magick %s "${f%.*}.pdf"',            desc = "Convert to PDF", for = "linux", block = true },
 ]
 
 qalc = [
