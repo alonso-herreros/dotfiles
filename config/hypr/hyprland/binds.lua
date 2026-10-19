@@ -335,9 +335,9 @@ bind("SUPER + Tab",       focus({workspace="previous_per_monitor",on_current_mon
 bind("SUPER+SHIFT + Tab", win.move({workspace="previous"}), F("u"))
 
 -- Auto-determined secondary workspace using MOD+ALT+TAB or MOD+ALT+<
-bind("SUPER+ALT + Tab",        alt("focus({%s},on_current_monitor=true)"), F("u"))
+bind("SUPER+ALT + Tab",        alt("focus({%s,on_current_monitor=true})"), F("u"))
 bind("SUPER+ALT+SHIFT + Tab",  alt("window.move({%s})"), F("u"))
-bind("SUPER+ALT + LESS",       alt("focus({%s},on_current_monitor=true)"), F("u"))
+bind("SUPER+ALT + LESS",       alt("focus({%s,on_current_monitor=true})"), F("u"))
 bind("SUPER+ALT+SHIFT + LESS", alt("window.move({%s})"), F("u"))
 bind("SUPER+ALT+SHIFT+CTRL + LESS", alt("window.move({%s, follow=false})"), F("u"))
 
