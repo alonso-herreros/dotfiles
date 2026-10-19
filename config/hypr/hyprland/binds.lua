@@ -141,8 +141,11 @@ bind("ALT + Tab",       win.alter_zorder({mode="top"}), F("u"))
 bind("ALT+SHIFT + Tab", win.cycle_next({next=false}),   F("u"))
 bind("ALT+SHIFT + Tab", win.alter_zorder({mode="top"}), F("u"))
 -- Swap focus with Alt+<
-bind("ALT + Less",      focus({ urgent_or_last = true }), F("u"))
-bind("ALT + Less",      win.alter_zorder({mode="top"}),       F("u"))
+bind("ALT + Less",      focus({ last = true }),         F("u"))
+bind("ALT + Less",      win.alter_zorder({mode="top"}), F("u"))
+-- Focus urgent with Alt+Shift+<
+bind("ALT+SHIFT + Less", focus({ urgent_or_last = true }), F("u"))
+bind("ALT+SHIFT + Less", win.alter_zorder({mode="top"}),   F("u"))
 
 
 --#########################
