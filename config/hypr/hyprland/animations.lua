@@ -27,11 +27,18 @@ hl.animation({enabled=true, leaf="windows",
 	bezier = "overshot",
 	style  = "popin 40%",
 })
-hl.animation({enabled=true, leaf="layers",
+
+hl.animation({enabled=true, leaf="layersIn",
+	speed  = 0.5,
+	bezier = "default",
+	style  = "popin",
+})
+hl.animation({enabled=true, leaf="layersOut",
 	speed  = 2,
 	bezier = "overshot2",
 	style  = "fade",
 })
+
 hl.animation({enabled=true, leaf="border",
 	speed  = 2,
 	bezier = "default",
