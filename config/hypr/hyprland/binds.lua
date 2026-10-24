@@ -379,8 +379,8 @@ bind("XF86AudioMute",        exec(A.volumectl .. " -t"), F("ule"))
 bind("SUPER+CTRL + mouse_up",   exec(A.volumectl .. " -i 5"), F("ul"))
 bind("SUPER+CTRL + mouse_down", exec(A.volumectl .. " -d 5"), F("ul"))
 
-bind("SUPER+CTRL + Up",         exec(A.volumectl .. " -i 5"),         F("ul"))
-bind("SUPER+CTRL + Down",       exec(A.volumectl .. " -d 5"),         F("ul"))
+bind("SUPER+CTRL + Up",         exec(A.volumectl .. " -i 5"),         F("ule"))
+bind("SUPER+CTRL + Down",       exec(A.volumectl .. " -d 5"),         F("ule"))
 bind("SUPER+CTRL+SHIFT + Up",   exec(A.volumectl .. " -u -- Unmute"), F("ul"))
 bind("SUPER+CTRL+SHIFT + Down", exec(A.volumectl .. " -m -- Mute"),   F("ul"))
 
