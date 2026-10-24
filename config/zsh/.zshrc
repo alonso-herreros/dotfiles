@@ -70,6 +70,12 @@ function zvm_config() {
 try_source "/usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
 
 
+# ===== zsh-abbr perms fix =====
+for dir in /tmp/zsh-job-queue /tmp/zsh-abbr; do
+  [ "$(stat -c '%U' "$dir")" = "$(whoami)" ] && chmod go+rwx,+t "$dir" -R
+done
+
+
 # ==== Binds ====
 bindkey '^p' history-beginning-search-backward
 bindkey '^n' history-beginning-search-forward
