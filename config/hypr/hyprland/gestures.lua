@@ -25,7 +25,7 @@ hl.config({gestures = {
 -- https://wiki.hypr.land/0.56.0/Configuring/Advanced-and-Cool/Gestures/
 
 -- hl.gesture({ fingers=3, direction="pinchout", action="float"})
-hl.gesture({ fingers=3, direction="pinchin", action="fullscreen", mode="maximize"})
+-- hl.gesture({ fingers=3, direction="pinchin", action="fullscreen", mode="maximize"})
 
 -- Slower than fusuma
 --hl.gesture({ fingers=3, direction="down", action="special", workspace_name="tmp"})
@@ -47,11 +47,12 @@ hl.gesture({ fingers=3, direction="pinchin", action="fullscreen", mode="maximize
 --})
 
 hl.gesture({ fingers=4, direction="pinchout", action="close"})
-hl.gesture({ fingers=4, direction="pinchin",
-	action = function()
-		hl.dsp.exec_cmd(A.terminal)
-	end
-})
+hl.gesture({ fingers=4, direction="pinchin", action="fullscreen", mode="maximize"})
+-- hl.gesture({ fingers=4, direction="pinchin",
+-- 	action = function()
+-- 		hl.dsp.exec_cmd(A.terminal)
+-- 	end
+-- })
 
 -- Slower than fusuma
 -- hl.gesture({ fingers=4, direction="left",
