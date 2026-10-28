@@ -68,26 +68,11 @@ keymap=[
 	##|---< Goto >------------------------------|
 	{ on=["g", "<Space>"], run="cd --interactive",  desc="cd..." },
 	{ on=["~"],      run="cd ~",                    desc="Go: ~" },
-	{ on=["'", "~"], run="cd ~",                    desc="Go: ~" },
-	{ on=["'", "/"], run="cd /",                    desc="Go: /" },
-	{ on=["'", "0"], run="cd /",                    desc="Go: /" },
-	{ on=["'", "V"], run="cd /virt",                desc="Go: /virt" },
-	{ on=["'", "c"], run="cd ~/.config",            desc="Go: .config" },
-	{ on=["'", "."], run="cd ~/.dotfiles",          desc="Go: .dotfiles" },
-	{ on=["'", "l"], run="cd ~/.local",             desc="Go: .local" },
-	{ on=["'", "b"], run="cd ~/.bookmarks",         desc="Go: .bookmarks" },
-	{ on=["'", "t"], run="cd ~/tmp",                desc="Go: tmp" },
-	{ on=["'", "d"], run="cd ~/Downloads",          desc="Go: Downloads" },
-	{ on=["'", "D"], run="cd ~/Documents",          desc="Go: Documents" },
-	{ on=["'", "p"], run="cd ~/Pictures",           desc="Go: Pictures" },
-	{ on=["'", "v"], run="cd ~/Videos",             desc="Go: Videos" },
-	{ on=["'", "P"], run="cd ~/Projects",           desc="Go: Projects" },
-	{ on=["'", "T"], run="cd ~/.local/share/Trash", desc="Go: Trash" },
 
 	###|~~~ Bookmarks ~~~~~~~~~~~~~~~~~
-	{ on=["m"], run="plugin bookmarks save",   desc="Create mark here" },
-	{ on=["`"], run="plugin bookmarks jump",   desc="Go to mark" },
-	{ on=["M"], run="plugin bookmarks delete", desc="Delete mark" },
+	{ on=["m"], run="plugin whoosh save_cwd",   desc="Create bookmark here" },
+	{ on=["`"], run="plugin whoosh jump_by_key",   desc="Go to bookmark" },
+	{ on=["M"], run="plugin whoosh jump_key_m", desc="Go to bookmark 'm'" },
 
 	###|~~~ fzf & Zoxide ~~~~~~~~~~~~~~
 	{ on="z", run="plugin zoxide", desc="Zoxide" },

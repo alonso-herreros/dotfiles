@@ -19,11 +19,6 @@ rev = "e0bbd20"
 hash = "187cc58ba7ac3befd49c342129e6f1b6"
 
 [[plugin.deps]]
-use = "dedukun/bookmarks"
-rev = "9ef1254"
-hash = "92fbb5483657fa7976cdf4e0104e18e0"
-
-[[plugin.deps]]
 use = "AnirudhG07/custom-shell"
 rev = "6f68404"
 hash = "32558ab53db6009fb2b0c131c437a139"
@@ -37,6 +32,11 @@ hash = "ba1a606728adb75b091b6eaf3fd60372"
 use = "yazi-rs/plugins:toggle-pane"
 rev = "e0bbd20"
 hash = "5b2fbef7d1513ce38ff72623a071a5e"
+
+[[plugin.deps]]
+use = "WhoSowSee/whoosh"
+rev = "d6ede98"
+hash = "f6c11dc58d674764a4dd20e644138534"
 
 [flavor]
 deps = []

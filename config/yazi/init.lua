@@ -140,21 +140,45 @@ require("smart-enter"):setup {
 }
 
 -- ==== Bookmarks ====
-require("bookmarks"):setup({
-	last_directory = { enable = false, persist = false },
+require("whoosh"):setup({
+	bookmarks = {
+			{ key="~", path="~",           tag="Home (~)" },
+			{ key="h", path="~",           tag="Home (~)" },
+			{ key="H", path="/home",       tag="Homes (/home)" },
+			{ key="/", path="/",           tag="Root (/)" },
+			{ key="r", path="/",           tag="Root (/)" },
+			{ key="v", path="/virt",       tag="/virt" },
+			{ key=".", path="~/.dotfiles", tag=".dotfiles" },
+			{ key="c", path="~/.config",   tag=".config" },
+			{ key="l", path="~/.local",    tag=".local" },
+			{ key="h", path="~/.cache",    tag=".cache" },
+			{ key="D", path="~/Documents", tag="Documents" },
+			{ key="P", path="~/Pictures",  tag="Pictures" },
+			{ key="V", path="~/Videos",    tag="Videos" },
+			{ key="M", path="~/Music",     tag="Music" },
+			{ key="O", path="~/Downloads", tag="Downloads" },
+			{ key="K", path="~/Desktop",   tag="Desktop" },
+			{ key="B", path="~/Public",    tag="Public" },
+			{ key="p", path="~/Projects",  tag="Projects" },
+			{ key="t", path="~/tmp",       tag="tmp" },
+			{ key="T", path="~/.local/share/Trash", tag="Trash" },
+			{ key={"d", "1"}, path="~/Documents/Global/1. Personal",     tag="Docs: personal" },
+			{ key={"d", "2"}, path="~/Documents/Global/2. Professional", tag="Docs: professional" },
+			{ key={"d", "3"}, path="~/Documents/Global/3. Education",    tag="Docs: education" },
+			{ key={"d", "4"}, path="~/Documents/Global/4. Health",       tag="Docs: health" },
+			{ key={"d", "5"}, path="~/Documents/Global/5. Logistics",    tag="Docs: logistics" },
+			{ key={"d", "6"}, path="~/Documents/Global/6. Financial",    tag="Docs: financial" },
+			{ key={"d", "7"}, path="~/Documents/Global/7. Life",         tag="Docs: life" },
+			{ key={"d", "8"}, path="~/Documents/Global/8. Bureaucracy",  tag="Docs: bureaucracy" },
+			{ key={"d", "9"}, path="~/Documents/Global/9. Misc",         tag="Docs: misc" },
+	},
 
-	persist = "all", -- Persist all to make number bookmarks persist.
-	desc_format = "parent",
-	file_pick_mode = "parent",
-
-	notify = {
-		enable = false,
-		timeout = 1,
-		message = {
-			new = "Mark '<key>' added: '<folder>'",
-			delete = "Deleted mark '<key>'",
-			delete_all = "Deleted all bookmarks",
-		},
+	special_keys = {
+		create_temp = "<Enter>",
+		fuzzy_search = "<Space>",
+		history = "<Tab>",
+		previous_dir = "-",
+		project_root = "_"
 	},
 })
 
