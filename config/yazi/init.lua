@@ -180,6 +180,8 @@ require("whoosh"):setup({
 		previous_dir = "-",
 		project_root = "_"
 	},
+
+	bookmarks_path = ( os.getenv("XDG_STATE_HOME") or (os.getenv("HOME") .. ".local/state") ) .. "/yazi/whoosh/bookmarks",
 })
 
 -- ==== Custom Shell ====
