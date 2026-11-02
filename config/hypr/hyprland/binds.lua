@@ -107,6 +107,8 @@ bind("SUPER+SHIFT + F12", exec("systemctl sleep -i"),     F("ul"))
 bind("SUPER+SHIFT + ESCAPE", exec("uwsm stop"), F("u"))
 -- Hyprctl reload
 bind("SUPER+CTRL + R", exec("hyprctl reload"), F("u"))
+-- Restart waybar — for various reasons, I find myself having to do this often
+bind("SUPER+CTRL+ALT + R", exec("systemctl --user restart waybar"), F("u"))
 
 -- Toggle bar
 bind("SUPER+SHIFT + b", exec(A.toggle_bar), F("u"))
