@@ -20,9 +20,9 @@ swipe:
         interval:  0.3
         threshold: 0.8
     left:
-      command: "playerctl next"
+      command: "hyprctl dispatch 'hl.dsp.group.next()'"
     right:
-      command: "playerctl previous"
+      command: "hyprctl dispatch 'hl.dsp.group.prev()'"
 
 hold:
   # 2:
@@ -38,7 +38,8 @@ rotate:
     clockwise:
       update:
         command: "~/.scripts/system/volume_ctl.sh -i 5"
-        interval: 0.8
+        interval: 0.88
+
         threshold: 0.6
     counterclockwise:
       update:
