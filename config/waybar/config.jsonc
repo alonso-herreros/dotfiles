@@ -420,7 +420,7 @@
         "dynamic-order": [ "title", "artist" ],
         "dynamic-len": 39,
         "player-icons": {
-            "spotify": "<span color='#2EF770'> </span>",
+            "spotify": "<span color='#1DB954'> </span>",
             "brave": "<span color='#DB2A04'> </span>",
         },
         "on-click-middle": "hyprctl dispatch workspace special:tmp; ~/.scripts/media_raise.sh",
