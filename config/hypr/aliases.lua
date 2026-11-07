@@ -34,7 +34,7 @@ A.browser           = launch .. "brave-browser.desktop"
 A.fileManager       = launch .. "yazi.desktop"
 A.fileManager_float = launch .. "yazi.desktop:Float"
 A.editor            = launch .. "vim.desktop"
-A.notepad           = launch .. "vim.desktop"
+A.notepad           = launch .. "obsidian.desktop"
 
 -- Menus and system tools
 A.menu        = launch .. "fuzzel --launch-prefix '" .. launch .. "'"
